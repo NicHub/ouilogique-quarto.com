@@ -7,7 +7,6 @@ tags: [Tune, mélodie, Arduino, Uno]
 author: Nico
 comments_: true
 share: true
-image_:
 published: true
 date: 2015-05-28T08:55:00+02:00
 redirect_from:

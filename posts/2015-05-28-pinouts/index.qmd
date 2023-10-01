@@ -6,11 +6,11 @@ categories:
 tags: [Arduino, Diduino, LearnCBOT, Pinout, MSP430, nRF51]
 comments_: true
 share: true
-image_:
 published: true
 author: Nico
 redirect_from:
     - /blog/pinouts/
+date: 2015-05-28T12:00:00+02:00
 ---
 
 ## DEFINES
@@ -54,7 +54,7 @@ AVR_MINI
 
 [![Pinout Arduino MEGA 2560][17]][17]
 
-[17]: ../../files/2015-05-28-pinouts/images/arduino_mega_2560.png
+[17]: ./images/arduino_mega_2560.png
 
 ---
 
@@ -62,11 +62,11 @@ AVR_MINI
 
 [![Pinout Arduino UNO][1]][1]
 
-[1]: ../../files/2015-05-28-pinouts/images/arduino_uno_pinout.png
+[1]: ./images/arduino_uno_pinout.png
 
 [![Pinout Arduino UNO][2]][2]
 
-[2]: ../../files/2015-05-28-pinouts/images/uno.png
+[2]: ./images/uno.png
 
 ---
 
@@ -74,7 +74,7 @@ AVR_MINI
 
 [![Pinout ATmega328][3]][3]
 
-[3]: ../../files/2015-05-28-pinouts/images/atmega328.png
+[3]: ./images/atmega328.png
 
 ---
 
@@ -82,7 +82,7 @@ AVR_MINI
 
 [![Arduino Nano][4]][4]
 
-[4]: ../../files/2015-05-28-pinouts/images/arduino_nano_pinout.png
+[4]: ./images/arduino_nano_pinout.png
 
 ---
 
@@ -90,7 +90,7 @@ AVR_MINI
 
 [![Pinout Arduino PRO MINI][5]][5]
 
-[5]: ../../files/2015-05-28-pinouts/images/arduino-pro-mini.png
+[5]: ./images/arduino-pro-mini.png
 
 ---
 
@@ -98,15 +98,15 @@ AVR_MINI
 
 [![Pinout LearnCBot][6]][6]
 
-[6]: ../../files/2015-05-28-pinouts/images/LearnCbot2.jpg
+[6]: ./images/LearnCbot2.jpg
 
 [![Pinout LearnCBot][7]][7]
 
-[7]: ../../files/2015-05-28-pinouts/images/LearnCbotMathias.jpg
+[7]: ./images/LearnCbotMathias.jpg
 
 [![Pinout LearnCBot][8]][8]
 
-[8]: ../../files/2015-05-28-pinouts/images/xbotMathias.jpg
+[8]: ./images/xbotMathias.jpg
 
 ---
 
@@ -114,7 +114,7 @@ AVR_MINI
 
 [![Pinout Launchpad-MSP430][9]][9]
 
-[9]: ../../files/2015-05-28-pinouts/images/LaunchPadMSP430G2553-V1.5.jpg
+[9]: ./images/LaunchPadMSP430G2553-V1.5.jpg
 
 ---
 
@@ -124,7 +124,7 @@ Voir aussi <a target="_blank" href="https://os.mbed.com/platforms/Nordic-nRF51-D
 
 [![Pinout nRF51-DK][10]][10]
 
-[10]: ../../files/2015-05-28-pinouts/images/xnRF51-DK_Pinout_4.png
+[10]: ./images/xnRF51-DK_Pinout_4.png
 
 ---
 
@@ -134,7 +134,7 @@ Voir aussi <a target="_blank" href="https://os.mbed.com/platforms/Nordic-nRF51-D
 
 [![Pinout carte avec firmware NodeMCU et module WiFi ESP8266 — LoLin][11]][11]
 
-[11]: ../../files/2015-05-28-pinouts/images/NodeMCU_esp8266_lolin_pinout.jpg
+[11]: ./images/NodeMCU_esp8266_lolin_pinout.jpg
 
 ---
 
@@ -153,7 +153,7 @@ Voir aussi <a target="_blank" href="https://os.mbed.com/platforms/Nordic-nRF51-D
 
 [![Pinout carte avec firmware NodeMCU et module WiFi ESP8266 — Amica][12]][12]
 
-[12]: ../../files/2015-05-28-pinouts/images/NodeMCU_esp8266_amica_pinout.png
+[12]: ./images/NodeMCU_esp8266_amica_pinout.png
 
 ---
 
@@ -161,7 +161,7 @@ Voir aussi <a target="_blank" href="https://os.mbed.com/platforms/Nordic-nRF51-D
 
 [![Pinout ESP8266-01][13]{:width="400px"}][13]
 
-[13]: ../../files/2015-05-28-pinouts/images/esp8266-01_pinout.jpg
+[13]: ./images/esp8266-01_pinout.jpg
 
 ---
 
@@ -169,7 +169,7 @@ Voir aussi <a target="_blank" href="https://os.mbed.com/platforms/Nordic-nRF51-D
 
 [![Pinout Wemos D1 mini][14]][14]
 
-[14]: ../../files/2015-05-28-pinouts/images/wemos-pinout.jpg
+[14]: ./images/wemos-pinout.jpg
 
 ---
 
@@ -177,7 +177,7 @@ Voir aussi <a target="_blank" href="https://os.mbed.com/platforms/Nordic-nRF51-D
 
 [![Pinout M5STACK CORE][15]][15]
 
-[15]: ../../files/2015-05-28-pinouts/images/m5stack-info.jpg
+[15]: ./images/m5stack-info.jpg
 
 ---
 
@@ -190,7 +190,7 @@ Voir aussi <a target="_blank" href="https://os.mbed.com/platforms/Nordic-nRF51-D
 
 [![Pinout ESP32 S2 Mini][18]][18]
 
-[18]: ../../files/2015-05-28-pinouts/images/ESP32_S2_mini_V2-R5-01-scaled.jpg
+[18]: ./images/ESP32_S2_mini_V2-R5-01-scaled.jpg
 
 ---
 
@@ -208,7 +208,7 @@ Mon modèle : ESP32-D0WDQ6
 
 [![Pinout ESP32-WROOM-32][16]][16]
 
-[16]: ../../files/2015-05-28-pinouts/images/esp32-wroom-32-pinout.png
+[16]: ./images/esp32-wroom-32-pinout.png
 
 #### LED
 

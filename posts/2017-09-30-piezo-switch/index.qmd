@@ -5,8 +5,6 @@ modified:
 categories:
 excerpt:
 tags: []
-image_:
-    feature:
 date: 2017-09-30T12:54:00+02:00
 published: true
 author: Nico
@@ -21,7 +19,7 @@ author: Nico
 
 [![Bouton piézoélectrique avec Arduino Nano][image-1]][image-1]
 
-[image-1]: ../../files/2017-09-30-piezo-switch/2017-09-30-piezo-switch-001-lowres.jpg
+[image-1]: ./images/2017-09-30-piezo-switch-001-lowres.jpg
 
 ## Fonctionnement
 

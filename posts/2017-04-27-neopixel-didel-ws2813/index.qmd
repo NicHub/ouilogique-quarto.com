@@ -5,8 +5,7 @@ modified:
 categories:
 excerpt:
 tags: []
-image_:
-    feature: 2017-04-27-neopixel-didel-ws2813-000.jpg
+image: ./images/2017-04-27-neopixel-didel-ws2813-000.jpg
 date: 2017-04-27T18:48:00+02:00
 published: true
 author: Nico
@@ -96,9 +95,9 @@ La broche de données est la 18.
 [led adressable p9823-f8]: https://ouilogique.com/leds_adressables/
 [rgbstrips]: ../../files/2017-04-27-neopixel-didel-ws2813/RGBstrips.pdf
 [programme de test]: https://github.com/NicHub/ouilogique-Arduino/tree/master/neopixel-didel-ws2813
-[image-1]: ../../files/2017-04-27-neopixel-didel-ws2813/2017-04-27-neopixel-didel-ws2813-001.jpg
-[image-2]: ../../files/2017-04-27-neopixel-didel-ws2813/2017-04-27-neopixel-didel-ws2813-002.jpg
-[image-3]: ../../files/2017-04-27-neopixel-didel-ws2813/2017-04-27-neopixel-didel-ws2813-003.jpg
-[image-4]: ../../files/2017-04-27-neopixel-didel-ws2813/2017-04-27-neopixel-didel-ws2813-004.jpg
+[image-1]: ./images/2017-04-27-neopixel-didel-ws2813-001.jpg
+[image-2]: ./images/2017-04-27-neopixel-didel-ws2813-002.jpg
+[image-3]: ./images/2017-04-27-neopixel-didel-ws2813-003.jpg
+[image-4]: ./images/2017-04-27-neopixel-didel-ws2813-004.jpg
 [neopixels-rpi]: https://learn.adafruit.com/neopixels-on-raspberry-pi/software
 [stress-test]: https://core-electronics.com.au/tutorials/stress-testing-your-raspberry-pi.html

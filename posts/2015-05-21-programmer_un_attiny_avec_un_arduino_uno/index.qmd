@@ -7,8 +7,8 @@ tags: [ATtiny, ISP, UNO]
 author: Nico
 comments_: true
 share: true
-image_:
-    feature: 2015-02-23_microDelta_002.jpg
+image: ./images/2015-02-23_microDelta_002.jpg
+date: 2015-05-21T12:00:00+02:00
 published: true
 redirect_from:
     - /blog/programmer_un_attiny_avec_un_arduino_uno/

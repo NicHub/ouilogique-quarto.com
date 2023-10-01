@@ -5,8 +5,7 @@ modified:
 categories:
 excerpt:
 tags: []
-image_:
-    feature: esp-prog-board-close-up.jpg
+image: ./images/esp-prog-board-close-up.jpg
 date: 2019-07-26T14:00:00+02:00
 published: true
 author: Nico
@@ -14,11 +13,11 @@ author: Nico
 
 [![ESP-Prog — ouilogique.com][i3]{:style="width:90%;"}][i3]
 
-[i3]: ../../files/2019-07-26-debuggage-esp32/esp-prog-board-close-up-lowres.jpg
+[i3]: ./images/esp-prog-board-close-up-lowres.jpg
 
 [![ESP-Prog back — ouilogique.com][i4]{:style="width:90%;"}][i4]
 
-[i4]: ../../files/2019-07-26-debuggage-esp32/esp-prog-board-close-up-back-lowres.jpg
+[i4]: ./images/esp-prog-board-close-up-back-lowres.jpg
 
 Cet article montre comment mettre en route un board _ESP&#8209;Prog_ et les outils intégrés à PlatformIO pour flasher et débugger un ESP32.
 
@@ -65,7 +64,7 @@ bleu   GND       3. GND             |   4. ESP_TCK       IO_13  violet
 
 [![Debuggage d’un ESP32 avec un ESP-Prog et PIO Unified Debugger — ouilogique.com][i1]{:style="width:90%;"}][i1]
 
-[i1]: ../../files/2019-07-26-debuggage-esp32/esp-prog-board-lowres.jpg
+[i1]: ./images/esp-prog-board-lowres.jpg
 
 ## Mise en route
 
@@ -118,7 +117,7 @@ debug_init_break = tbreak setup
 
 [![Debuggage d’un ESP32 avec un ESP-Prog et PIO Unified Debugger — ouilogique.com][i2]{:style="width:90%;"}][i2]
 
-[i2]: ../../files/2019-07-26-debuggage-esp32/pio-unified-debugger-001.jpg
+[i2]: ./images/pio-unified-debugger-001.jpg
 
 <!--
 

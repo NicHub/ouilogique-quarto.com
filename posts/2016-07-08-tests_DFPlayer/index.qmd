@@ -5,8 +5,6 @@ modified:
 categories:
 excerpt:
 tags: []
-image_:
-    feature:
 date: 2016-07-08T16:23:00+02:00
 published: true
 author: Nico
@@ -26,7 +24,7 @@ J’ai testé deux cartes micro SD : une de 32 Go et une autre de 8 Go et les
 
 [![Test d’un module DFPlayer avec un Arduino nano][image-1]][image-1]
 
-[image-1]: ../../files/2016-07-08-tests_DFPlayer/images/2016-07-08-tests_DFPlayer_001_lowres.jpg
+[image-1]: ./images/2016-07-08-tests_DFPlayer_001_lowres.jpg
 
 ## Programme d’exemple
 

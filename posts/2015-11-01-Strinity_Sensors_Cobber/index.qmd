@@ -5,8 +5,7 @@ modified:
 categories:
 excerpt:
 tags: []
-image_:
-    feature: Strinity_Sensors_Cobber_001.jpg
+image: ./images/Strinity_Sensors_Cobber_001.jpg
 date: 2015-11-01T00:26:00+01:00
 published: true
 author: Nico
@@ -68,10 +67,10 @@ Bon, j’ai décidé de m’y remettre après une semaine de pause et comme le c
 
 <!--
 <figure class="half">
-	<a href="../../files/2015-11-01-Strinity_Sensors_Cobber/Strinity_Sensors_Cobber_002.jpg">
+	<a href="./images/Strinity_Sensors_Cobber_002.jpg">
 		<img src="../../files/2015-11-01-Strinity_Sensors_Cobber/Strinity_Sensors_Cobber_002_low_res.jpg" alt="image" />
 	</a>
-	<a href="../../files/2015-11-01-Strinity_Sensors_Cobber/Strinity_Sensors_Cobber_003.jpg">
+	<a href="./images/Strinity_Sensors_Cobber_003.jpg">
 		<img src="../../files/2015-11-01-Strinity_Sensors_Cobber/Strinity_Sensors_Cobber_003_low_res.jpg" alt="image" />
 	</a>
 </figure>
@@ -79,4 +78,4 @@ Bon, j’ai décidé de m’y remettre après une semaine de pause et comme le c
 
 ![](../../files/2015-11-01-Strinity_Sensors_Cobber/Strinity_Sensors_Cobber_004_low_res.jpg)
 
-![](../../files/2015-11-01-Strinity_Sensors_Cobber/Strinity_Sensors_Cobber_001.jpg)
+![](../../files/2015-11-01-Strinity_Sensors_Cobber/./images/Strinity_Sensors_Cobber_001.jpg)

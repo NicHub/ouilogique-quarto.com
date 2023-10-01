@@ -1,5 +1,7 @@
 project:
   type: website
+  # render:
+  #   - 2014-12-03-manipulation_des_ports/index.qmd
 
 website:
   title: "ouilogique"
@@ -8,12 +10,7 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
 format:
   html:
-    theme: cosmo
+    theme: cyborg
     css: styles.css
-
-
-

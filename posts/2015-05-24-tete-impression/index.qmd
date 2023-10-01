@@ -8,7 +8,8 @@ author: Nico
 comments_: true
 share: true
 image_:
-    feature: 2015-02-23_microDelta_002.jpg
+image: ./images/2015-02-23_microDelta_002.jpg
+date: 2015-05-24T12:00:00+02:00
 published: true
 redirect_from:
     - /blog/tete-impression/
@@ -24,14 +25,32 @@ Petit souci cependant, l’étalonnage de Reprap-France ne fonctionne plus... Il
 
 ![](../../files/2015-05-24-tete-impression/images/FirmwareEEPROMSettings_2.png)
 
-<figure class="half">
-	<img src="../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_001.jpg" alt="image">
-	<img src="../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_002.jpg" alt="image">
-	<figcaption><a href="https://www.thingiverse.com/thing:910737">Voronoi Klein Bottle — Thingiverse 910737</a></figcaption>
-</figure>
 
-<figure class="half">
-	<img src="../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_003.jpg" alt="image">
-	<img src="../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_004.jpg" alt="image">
-	<figcaption><a href="https://www.thingiverse.com/thing:910737">Voronoi Klein Bottle — Thingiverse 910737</a></figcaption>
-</figure>
+![](../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_001.jpg")
+
+![](../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_002.jpg")
+
+![](../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_003.jpg")
+
+![](../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_004.jpg")
+
+
+[Voronoi Klein Bottle — Thingiverse 910737](https://www.thingiverse.com/thing:910737)
+
+
+----
+
+
+
+[![MOOC Microcontrôleurs EPFL][img_mooc]][img_mooc]
+
+[img_mooc]: ./images/Microcontroleurs-v1.0.jpg
+
+
+../../files/2015-05-24-tete-impression/images/2015-05-24_hotend_6628216843.jpg
+../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_001.jpg
+../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_002.jpg
+../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_003.jpg
+../../files/2015-05-24-tete-impression/images/910737-Voronoi_Klein_Bottle_004.jpg
+../../files/2015-05-24-tete-impression/images/FirmwareEEPROMSettings_1.png
+../../files/2015-05-24-tete-impression/images/FirmwareEEPROMSettings_2.png

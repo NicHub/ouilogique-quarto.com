@@ -5,8 +5,6 @@ modified:
 categories:
 excerpt:
 tags: []
-image_:
-    feature:
 date: 2016-11-14T16:00:00+01:00
 published: true
 author: Nico
@@ -123,13 +121,13 @@ Par contre les fils ne sont pas branchés dans le bon ordre, donc il faut corrig
 [2]: https://learn.sparkfun.com/tutorials/using-the-arduino-pro-mini-33v
 [3]: http://www.miniinthebox.com/fr/programme-downloader-ftdi-basic-usb-a-ttl-ft232-pour-arduino_p903425.html
 [4]: /pinouts/#pinout-arduino-pro-mini
-[5]: ../../files/2016-11-14-arduino-pro-mini/arduino-pro-mini-usb-serial_lowres.jpg
-[6]: ../../files/2016-11-14-arduino-pro-mini/usb-serial-converter_lowres.jpg
-[7]: ../../files/2016-11-14-arduino-pro-mini/config_MiniCore.png
-[8]: ../../files/2016-11-14-arduino-pro-mini/arduino-pro-mini-arduino-uno_lowres.jpg
+[5]: ./images/arduino-pro-mini-usb-serial_lowres.jpg
+[6]: ./images/usb-serial-converter_lowres.jpg
+[7]: ./images/config_MiniCore.png
+[8]: ./images/arduino-pro-mini-arduino-uno_lowres.jpg
 [9]: /usb-rs232_bridge_microcontroleurs/
-[10]: ../../files/2016-11-14-arduino-pro-mini/arduino-pro-mini-arduino-uno_lowres.jpg
-[11]: ../../files/2016-11-14-arduino-pro-mini/arduino-pro-mini_lowres.jpg
-[12]: ../../files/2016-11-14-arduino-pro-mini/arduino-pro-mini-back.jpg
+[10]: ./images/arduino-pro-mini-arduino-uno_lowres.jpg
+[11]: ./images/arduino-pro-mini_lowres.jpg
+[12]: ./images/arduino-pro-mini-back.jpg
 [13]: https://www.banggood.com/6Pin-FTDI-FT232RL-USB-To-Serial-Adapter-Module-USB-TO-TTL-RS232-Arduino-Cable-p-1035802.html?p=0431091025639201412F
-[14]: ../../files/2016-11-14-arduino-pro-mini/arduino-pro-mini-as-isp_lowres.jpg
+[14]: ./images/arduino-pro-mini-as-isp_lowres.jpg
