@@ -1,4 +1,5 @@
 ---
+lang: fr
 layout: page
 title: "MOOC — Initiation aux microcontrôleurs"
 modified:

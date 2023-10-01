@@ -10,7 +10,8 @@ listing:
   page-size: 10000
 page-layout: full
 title-block-banner: true
-date-format: iso
+date-format: full # iso
+lang: fr
 ---
 
 # Bienvenue sur ouilogique.com
