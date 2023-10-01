@@ -36,24 +36,24 @@ def extract_img_links_and_copy_img(dest_dir, dest_file):
         content = _f.read()
     links = markdown_link_extractor.getlinks(content)
 
-    pprint(links)
+    # pprint(links)
 
     global COUNT_LINKS
     for link in links:
         if (
-            ".tif" in link
-            or ".jpg" in link
-            or ".jpeg" in link
-            or ".png" in link
-            or ".svg" in link
+            ".tif" in link.lower()
+            or ".jpg" in link.lower()
+            or ".jpeg" in link.lower()
+            or ".png" in link.lower()
+            or ".svg" in link.lower()
         ):
-            if "../../files/" in link:
+            if "../../" in link:
                 COUNT_LINKS += 1
                 img_name = os.path.split(link)[-1]
                 img_name = os.path.split(link)[-1]
                 content = content.replace(link, f"./images/{img_name}")
                 source_img_path = link.replace(
-                    "../../files/", os.path.expanduser("~/Sites/ouilogique.com/files/")
+                    "../../", os.path.expanduser("~/Sites/ouilogique.com/")
                 )
                 dest_dir_img = f"{dest_dir}images/"
                 os.makedirs(f"{dest_dir_img}", exist_ok=True)
@@ -105,7 +105,7 @@ def extract_feature_img_links_and_copy_img(dest_dir, dest_file):
         dest_img_dir = f"{dest_dir}images/"
         os.makedirs(dest_img_dir, exist_ok=True)
         dest_img_path = f"{dest_img_dir}/{img_feature}"
-        pprint(f"img_feature = {img_feature}")
+        # pprint(f"img_feature = {img_feature}")
         shutil.copyfile(feature_img_path, dest_img_path)
         with open(dest_file, "rt", encoding="utf-8") as _f:
             content = _f.read().replace(img_feature, f"./images/{img_feature}")
@@ -130,12 +130,7 @@ SOURCE_PATH = os.path.expanduser("~/Sites/ouilogique.com/_posts/blog/")
 DEST_PATH = "../posts/"
 FILES = os.listdir(SOURCE_PATH)
 # FILES = [
-#     "2015-05-21-programmer_un_attiny_avec_un_arduino_uno.md",
-#     "2015-05-22-leds_adressables.md",
-#     "2015-05-24-tete-impression.md",
-#     "2015-05-28-pinouts.md",
-#     "2015-06-11-mooc_initiation_aux_microcontroleurs.md",
-#     "2019-03-27-plateforme-de-stewart-esp32.md",
+#     "2015-07-02-usb_hub_test.md",
 # ]
 
 COUNT_LINKS = 0
@@ -144,3 +139,4 @@ if __name__ == "__main__":
         main()
     except SystemExit as _e:
         print(_e)
+    print("DONE")
