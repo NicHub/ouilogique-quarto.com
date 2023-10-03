@@ -18,5 +18,6 @@ website:
         href: https://github.com/
 format:
   html:
-    theme: cyborg
-    css: styles.css
+    theme:
+      - cyborg
+      - custom.scss
