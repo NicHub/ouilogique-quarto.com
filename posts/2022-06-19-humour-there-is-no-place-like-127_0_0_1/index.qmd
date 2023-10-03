@@ -4,13 +4,13 @@ date: 2022-06-19 12:00:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Humour There is no place like 127.0.0.1
 ---
 
 Trop bien la pub [init7](https://www.init7.net/)
 
-[![There is no place like 127.0.0.1][image-1]][image-1]
+[![There is no place like 127.0.0.1][img_1]][img_1]
 
-[image-1]: ./images/there-is-no-place-like-127_0_0_1.jpg
+[img_1]: ./images/there-is-no-place-like-127_0_0_1.jpg

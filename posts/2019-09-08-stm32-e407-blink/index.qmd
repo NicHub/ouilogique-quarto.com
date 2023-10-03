@@ -4,7 +4,7 @@ date: 2019-09-08 11:00:00+02:00
 lang: en
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title:
     Mise en route d’une carte <em>STM32&#8209;E407</em> sur <em>PlatformIO</em>
@@ -42,8 +42,13 @@ The upload is done with a USB cable and not with a JTAG programmer.
 > Note that `USB-OTG#1` and `#2` are inverted on the image compared to the board I have.
 > It seems that the images (from Olimex) are showing an older revision of the board.
 
-![STM32-E407 top view](https://github.com/NicHub/STM32-E407-BLINK/raw/master/images/STM32-E407-9_1.jpg)
-![STM32-E407 back view](https://github.com/NicHub/STM32-E407-BLINK/raw/master/images/STM32-E407-10_1.jpg)
+[![STM32-E407 top view][img_1]][img_1]
+
+[img_1]: https://github.com/NicHub/STM32-E407-BLINK/raw/master/images/STM32-E407-9_1.jpg
+
+[![STM32-E407 back view][img_2]][img_2]
+
+[img_2]: https://github.com/NicHub/STM32-E407-BLINK/raw/master/images/STM32-E407-10_1.jpg
 
 ### PREREQUISITE
 
@@ -138,7 +143,9 @@ To read Serial3, you need to connect an UART Serial Bridge to the GND and TX pin
 
 To read Serial6, you need to connect an UART Serial Bridge to pin 2 (GND) and 3 (TX) of the UEXT connector.
 
-![STM32-E407 UEXT connector](https://github.com/NicHub/STM32-E407-BLINK/raw/master/images/STM32-E407-15_2.jpg)
+[![STM32-E407 UEXT connector][img_3]][img_3]
+
+[img_3]: https://github.com/NicHub/STM32-E407-BLINK/raw/master/images/STM32-E407-15_2.jpg
 
 ### REFERENCES
 

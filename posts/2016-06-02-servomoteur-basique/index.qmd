@@ -4,7 +4,7 @@ date: 2016-06-02 18:49:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Programme basique pour commander un servomoteur
 ---
@@ -15,9 +15,9 @@ title: Programme basique pour commander un servomoteur
 
 ## Programme basique pour commander un servomoteur
 
-[![Servo moteur basique][image-1]][image-1]
+[![Servo moteur basique][img_1]][img_1]
 
-[image-1]: ./images/2016-06-02-servomoteur-basique_lowres.jpg
+[img_1]: ./images/2016-06-02-servomoteur-basique_lowres.jpg
 
 ```c++
 /*

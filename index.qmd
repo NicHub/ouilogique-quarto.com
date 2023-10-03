@@ -14,6 +14,14 @@ date-format: long
 lang: fr
 ---
 
+
 ## Bienvenue sur ouilogique.com
 
 Ce site me sert d’aide-mémoire pour mes projets sur Arduino et Raspberry Pi.
+
+[![][img_1]][img_1]
+
+[img_1]: ./images/site-logo.png
+
+<!--
+-->

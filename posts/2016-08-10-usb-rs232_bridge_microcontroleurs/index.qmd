@@ -4,7 +4,7 @@ date: 2016-08-10 10:34:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Utiliser des cartes à microcontrôleurs comme bridge USB&#8209;RS232
 ---
@@ -76,7 +76,7 @@ Et ça fonctionne aussi sans le microcontrôleur.
 
 [![Branchement des Launchpad sans MSP430][img_5]][img_5]
 
-## [img_5]: ../../files/2016-08-10-usb-rs232_bridge_microcontroleurs/branchement_launchpad_sans_msp430_lowres.jpg
+[img_5]: ./images/branchement_launchpad_sans_msp430_lowres.jpg
 
 ## Essai avec ESP8266-12E — Test 1
 

@@ -4,7 +4,7 @@ date: 2016-08-13 09:23:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Mise en route d’un ESP8266-01
 ---
@@ -128,7 +128,7 @@ Pour continuer avec les commandes AT, lire les pages suivantes :
 -   [alselectro — WiFi Module ESP8266 – 1. Getting started with AT commands][3]
 -   [alselectro — WiFi Module ESP8266 – 2. TCP CLIENT /Server mode][4]
 
-[J’ai compilé les informations de ces deux pages télégraphiquement](../../files/2016-08-13-esp8266-01/esp_commandes_at_utiles.md)
+[J’ai compilé les informations de ces deux pages télégraphiquement](../../files/2016-08-13-esp8266-01/docs/esp_commandes_at_utiles.md)
 
 Il y a également des informations intéressantes sur ces pages :
 

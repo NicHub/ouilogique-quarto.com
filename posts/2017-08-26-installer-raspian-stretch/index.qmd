@@ -4,7 +4,7 @@ date: 2017-08-26 18:26:00+02:00
 lang: fr
 layout: page
 published: false
-redirect_from: []
+aliases: []
 tags: []
 title: Installer Raspian Stretch sur Raspberry Pi
 ---

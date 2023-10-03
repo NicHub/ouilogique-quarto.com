@@ -4,7 +4,7 @@ date: 2016-04-25 19:35:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title:
     Test de taille entre les fonctions de manipulation de ports et les fonctions

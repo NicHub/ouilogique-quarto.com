@@ -26,6 +26,7 @@ def make_yaml_header_compliant(fpath):
     content = content.replace('image: ""\nimage: ', "image: ")
     content = content.replace("image: null", 'image: ""')
     content = content.replace('image: ""\n', "")
+    content = content.replace("redirect_from", "aliases")
     with open(fpath, "wt", encoding="utf-8") as _f:
         _f.write(content)
 
@@ -61,8 +62,8 @@ def extract_img_links_and_copy_img(dest_dir, dest_file):
                 if not os.path.exists(source_img_path):
                     raise SystemExit(f"{source_img_path} not found")
                 shutil.copyfile(source_img_path, dest_img_path)
-                print(f"{COUNT_LINKS}. {source_img_path}")
-                print(dest_img_path)
+                # print(f"{COUNT_LINKS}. {source_img_path}")
+                # print(dest_img_path)
 
     with open(dest_file, "wt", encoding="utf-8") as _f:
         _f.write(content)
@@ -196,12 +197,14 @@ def copy_individual_files():
     dirs = os.listdir(f"{SOURCE_PATH}files/")
     dirs = [f"{SOURCE_PATH}files/{dir}" for dir in dirs if dir not in [".DS_Store"]]
     dirs += [
-        "enum",
-        "radios",
-        "scratchpad",
+        f"{SOURCE_PATH}enum",
+        f"{SOURCE_PATH}radios",
+        f"{SOURCE_PATH}scratchpad",
     ]
     for dir in dirs:
-        shutil.copytree(f"{SOURCE_PATH}{dir}", f"{DEST_PATH}{dir}", dirs_exist_ok=True)
+        shutil.copytree(dir, f"{DEST_PATH}{dir}", dirs_exist_ok=True)
+    # pprint(dirs)
+    # raise SystemExit
 
     files = [
         "favicon.ico",
@@ -218,6 +221,30 @@ def create_nojekyll():
         _f.write("")
 
 
+def adapt_links(dest_file):
+    """___"""
+
+    with open(dest_file, "rt", encoding="utf-8") as _f:
+        content = _f.read()
+    # fmt: off
+    replacements = [
+        ["/installer-raspian-stretch/"                                                                            , "2020-12-25-installer-pi-hole-sur-un-raspberry"],
+        # ["/2019-03-27-plateforme-de-stewart-esp32/images/images/2021-04-24-proto-plateforme-de-stewart_001.jpg"   , ""],
+        ["/introduction-html/"                                                                                    , "/2018-02-15-introduction-html/"],
+        ["/introduction-css/"                                                                                     , "/2018-02-16-introduction-css/"],
+        ["/introduction-javascript/"                                                                              , "/2018-02-17-introduction-javascript/"],
+        ["/pinouts/"                                                                                              , "/2015-05-28-pinouts/"],
+        # ["/posts/2015-11-01-Strinity_Sensors_Cobber/images/images/Strinity_Sensors_Cobber_001.jpg"                      , ""],
+    ]
+    # fmt: on
+    for replacement in replacements:
+        if replacement[0] in content:
+            print(f"{dest_file} {replacement[0]}")
+            content = content.replace(replacement[0], replacement[1])
+    with open(dest_file, "wt", encoding="utf-8") as _f:
+        _f.write(content)
+
+
 def main():
     """___"""
     copy_individual_files()
@@ -231,6 +258,7 @@ def main():
         make_yaml_header_compliant(dest_file)
         extract_img_links_and_copy_img(dest_dir, dest_file)
         extract_feature_img_links_and_copy_img(dest_dir, dest_file)
+        # adapt_links(dest_file)
 
 
 SOURCE_PATH = os.path.expanduser("~/Sites/ouilogique.com/")
@@ -255,4 +283,3 @@ if __name__ == "__main__":
     except SystemExit as _e:
         print(_e)
     print("DONE")
-

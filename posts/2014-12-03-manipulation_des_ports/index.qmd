@@ -4,7 +4,7 @@ date: 2014-12-03 12:00:00+01:00
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/manipulation_des_ports/
 tags: []
 title: La manipulation des entrées-sorties à l’aide des registres de port

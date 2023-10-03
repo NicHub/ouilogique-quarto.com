@@ -4,7 +4,7 @@ date: 2016-11-01 20:17:00+01:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Les pointeurs en C
 ---

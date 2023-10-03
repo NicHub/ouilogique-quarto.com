@@ -4,7 +4,7 @@ date: 2015-06-27 20:44:00+01:00
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/Scanalogic-2_Logic_Analyzer/
 tags: []
 title: Analyseur logique Scanalogic-2

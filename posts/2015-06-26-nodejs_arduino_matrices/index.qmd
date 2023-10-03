@@ -4,7 +4,7 @@ date: 2015-06-26 17:15:00+01:00
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/nodejs_arduino_matrices/
 tags: []
 title: Commander des Arduino avec Node.js

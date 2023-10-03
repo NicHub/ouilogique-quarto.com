@@ -4,7 +4,7 @@ date: 2015-06-12 12:00:00+01:00
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/analyseur_logique_Arduino/
 tags: []
 title: Un analyseur logique Arduino
@@ -33,8 +33,6 @@ Et voilà ce que ça donne en action :
 
 [img_3]: ./images/2015-04-22_RF433_proto_2.jpg
 
----
-
 ## Logiciels pour la visualisation des traces
 
 Pour l’analyse post-mortem, il y a :
@@ -44,5 +42,3 @@ Pour l’analyse post-mortem, il y a :
 -   [Et d’autres sur Wikipedia](https://en.wikipedia.org/wiki/Waveform_viewer)
 
 Le format d’enregistrement des traces que j’utilise est le [VCD (Value Change Dump)](https://en.wikipedia.org/wiki/Value_change_dump)
-
----

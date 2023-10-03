@@ -5,7 +5,7 @@ image: ./images/TFT_screen_2.jpg
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/2-4-in_TFT_Touch_screen/
 tags: []
 title: Test d’un écran TFT 2.4"
@@ -154,9 +154,9 @@ Les deux drivers LCD sont des TM74HC245.
 [Datasheet en chinois](https://www.szjdf.net/Private/ProductFiles/595775de665f4acba6a1.pdf)
 Datasheet traduite par Google ~~goo.gl/hKB7W1~~
 
-[![TM74HC245][10]][10]
+[![TM74HC245][4]][4]
 
 [1]: ./images/2-4-in_TFT_Touch_screen_front.jpg
 [2]: ./images/2-4-in_TFT_Touch_screen_ouilogique_com.jpg
 [3]: ./images/2-4-in_TFT_Touch_screen_back.jpg
-[10]: ./images/2-4-in_TFT_Touch_screen_ouilogique_TM74HC245_videoinverse.jpg
+[4]: ./images/2-4-in_TFT_Touch_screen_ouilogique_TM74HC245_videoinverse.jpg

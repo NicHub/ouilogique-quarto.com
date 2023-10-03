@@ -5,7 +5,7 @@ image: ./images/NodeMCU_esp8266.jpg
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/NodeMCU_esp8266/
 tags: []
 title:
@@ -15,7 +15,9 @@ title:
 
 > Voir aussi [l’article sur l’ESP8266 Amica](/NodeMCU_esp8266_amica/)
 
-![](../../files/2015-09-27-NodeMCU_esp8266/NodeMCU_esp8266_001.jpg)
+[![ouilogique.com][img_1]][img_1]
+
+[img_1]: ./images/NodeMCU_esp8266_001.jpg
 
 ## Firmware NodeMCU
 
@@ -31,7 +33,9 @@ title:
 
 ## Référence fabricant
 
-![](../../files/2015-09-27-NodeMCU_esp8266/NodeMCU_esp8266_002_lowres.jpg)
+[![ouilogique.com][img_2]][img_2]
+
+[img_2]: ./images/NodeMCU_esp8266_002_lowres.jpg
 
 La carte est donc une _LoLin_ du fabricant [WeMos](http://www.wemos.cc/)
 
@@ -101,7 +105,9 @@ esptool.py           \
 
 ## Pinout
 
-![](../../files/2015-05-28-pinouts/images/NodeMCU_esp8266_lolin_pinout.jpg)
+[![ouilogique.com][img_3]][img_3]
+
+[img_3]: ./images/NodeMCU_esp8266_lolin_pinout.jpg
 
 ## Programmation de l’ESP8266
 
@@ -145,7 +151,9 @@ La bibliothèque est installée au chemin suivant :
 
 Dans le menu `Outils`
 
-![](../../files/2015-09-27-NodeMCU_esp8266/esp8266-configuration-arduino-c.png)
+[![ouilogique.com][img_4]][img_4]
+
+[img_4]: ./images/esp8266-configuration-arduino-c.png
 
 > L’ESP8266 peut être overclocké à 160 MHz. J’ai observé que la librairie `Tone.h` n’aime pas ça...
 

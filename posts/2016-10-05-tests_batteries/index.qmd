@@ -4,7 +4,7 @@ date: 2016-10-05 09:23:58+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Test de décharge de batteries
 ---

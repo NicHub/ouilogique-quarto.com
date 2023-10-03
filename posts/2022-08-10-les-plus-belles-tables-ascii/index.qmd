@@ -4,7 +4,7 @@ date: 2022-08-10 12:00:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Les plus belles tables ASCII
 ---
@@ -15,9 +15,9 @@ Hier (9 août 2022), je suis tombé sur une table de caractères ASCII de toute 
 
 -   <https://github.com/tomgibara/ascii-table>
 
-[![ASCII table 1.1 Tom Gibara][image-1]][image-1]
+[![ASCII table 1.1 Tom Gibara][img_1]][img_1]
 
-[image-1]: ./images/ascii-table-1.1-tom-gibara.svg
+[img_1]: ./images/ascii-table-1.1-tom-gibara.svg
 
 ## theasciicode.com.ar
 

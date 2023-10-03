@@ -4,7 +4,7 @@ date: 2016-06-27 08:50:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Tests de modules nRF24L01+
 ---

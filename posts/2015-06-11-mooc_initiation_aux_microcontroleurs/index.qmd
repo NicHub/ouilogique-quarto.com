@@ -4,7 +4,7 @@ date: 2015-06-11 12:00:00+01:00
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/mooc_initiation_aux_microcontroleurs/
 tags: []
 title: MOOC — Initiation aux microcontrôleurs

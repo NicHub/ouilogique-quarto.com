@@ -4,7 +4,7 @@ date: 2015-07-02 09:47:00+01:00
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/usb_hub_test/
 tags: []
 title: Test de hubs USB

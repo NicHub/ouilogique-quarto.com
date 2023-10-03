@@ -4,7 +4,7 @@ date: 2016-06-04 14:29:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Test d’une horloge temps réel DS1307 I²C
 ---

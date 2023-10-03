@@ -5,7 +5,7 @@ image: ./images/2015-02-23_microDelta_002.jpg
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/tete-impression/
 tags:
     - Impression 3D

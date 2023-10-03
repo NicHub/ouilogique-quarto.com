@@ -4,11 +4,11 @@ date: 2020-05-25 06:33:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from: []
+aliases: []
 tags: []
 title: Humour Magic Word
 ---
 
-[![sudo is the magic word][image-1]][image-1]
+[![sudo is the magic word][img_1]][img_1]
 
-[image-1]: ./images/magic-word.jpg
+[img_1]: ./images/magic-word.jpg

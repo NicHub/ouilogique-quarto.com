@@ -4,7 +4,7 @@ date: 2015-05-28 08:55:00+02:00
 lang: fr
 layout: page
 published: true
-redirect_from:
+aliases:
     - /blog/melodie/
 tags:
     - Tune
