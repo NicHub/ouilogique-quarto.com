@@ -10,10 +10,10 @@ listing:
   page-size: 10000
 page-layout: full
 title-block-banner: true
-date-format: full # iso
+date-format: long
 lang: fr
 ---
 
-# Bienvenue sur ouilogique.com
+## Bienvenue sur ouilogique.com
 
 Ce site me sert d’aide-mémoire pour mes projets sur Arduino et Raspberry Pi.

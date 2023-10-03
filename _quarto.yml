@@ -1,10 +1,16 @@
 project:
   type: website
   # render:
-  #   - 2014-12-03-manipulation_des_ports/index.qmd
+  #   - ./index.qmd
+  #   - posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
+  #   - posts/2017-04-14-relai-bistable-commande-tension/index.qmd
+  #   - posts/2016-10-22-esp8266-dht22-oled/index.qmd
 
 website:
-  title: "ouilogique"
+  favicon: ./images/favicon.ico
+  title: "OUILOGIQUE"
+  image: ./images/site-logo.png
+  page-navigation: true
   navbar:
     right:
       - about.qmd
