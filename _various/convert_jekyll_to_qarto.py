@@ -27,6 +27,8 @@ def make_yaml_header_compliant(fpath):
     content = content.replace("image: null", 'image: ""')
     content = content.replace('image: ""\n', "")
     content = content.replace("redirect_from", "aliases")
+    content = content.replace("published: false", "draft: true")
+    content = content.replace("published: true", "draft: false")
     with open(fpath, "wt", encoding="utf-8") as _f:
         _f.write(content)
 

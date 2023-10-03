@@ -3,7 +3,7 @@ author: Nico
 date: 2017-05-11 16:12:00+02:00
 lang: fr
 layout: page
-published: true
+draft: false
 aliases: []
 tags: []
 title: BMP280 avec Arduino Pro Mini

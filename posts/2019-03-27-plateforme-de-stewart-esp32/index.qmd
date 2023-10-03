@@ -4,7 +4,7 @@ date: 2019-03-27 17:00:00+01:00
 image: ./images/2021-04-24-proto-plateforme-de-stewart_001.jpg
 lang: fr
 layout: page
-published: true
+draft: false
 aliases: []
 tags: []
 title: Plateforme de Stewart pilotée avec un ESP32

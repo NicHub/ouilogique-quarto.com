@@ -4,7 +4,7 @@ date: 2015-07-14 14:20:00+01:00
 image: ./images/TFT_screen_2.jpg
 lang: fr
 layout: page
-published: true
+draft: false
 aliases:
     - /blog/2-4-in_TFT_Touch_screen/
 tags: []

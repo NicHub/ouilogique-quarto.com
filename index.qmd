@@ -1,5 +1,5 @@
 ---
-title: "ouilogique"
+title: "OUILOGIQUE.COM"
 listing:
   contents: posts
   sort: "date desc"
@@ -14,14 +14,12 @@ date-format: long
 lang: fr
 ---
 
-
-## Bienvenue sur ouilogique.com
-
-Ce site me sert d’aide-mémoire pour mes projets sur Arduino et Raspberry Pi.
-
-[![][img_1]][img_1]
+[[![][img_1]][img_1]]{.cls-site-logo}
 
 [img_1]: ./images/site-logo.png
 
 <!--
+## Bienvenue sur ouilogique.com
+
+Ce site me sert d’aide-mémoire pour mes projets sur Arduino et Raspberry Pi.
 -->

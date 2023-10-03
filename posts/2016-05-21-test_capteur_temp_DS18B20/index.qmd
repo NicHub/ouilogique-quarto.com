@@ -3,7 +3,7 @@ author: Nico
 date: 2016-05-21 19:00:00+02:00
 lang: fr
 layout: page
-published: true
+draft: false
 aliases: []
 tags: []
 title: Test du capteur de température DS18B20 avec le protocole OneWire

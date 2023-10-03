@@ -3,7 +3,7 @@ author: Nico
 date: 2023-02-17 12:00:00+01:00
 lang: fr
 layout: page
-published: false
+draft: true
 aliases: []
 tags: []
 title: Trucs et astuces en Python

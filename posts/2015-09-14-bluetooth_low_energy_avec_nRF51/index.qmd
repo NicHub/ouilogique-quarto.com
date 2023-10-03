@@ -4,7 +4,7 @@ date: 2015-09-14 00:00:00+01:00
 image: ./images/nRF51.jpg
 lang: fr
 layout: page
-published: true
+draft: false
 aliases:
     - /blog/bluetooth_low_energy_avec_nRF51/
 tags: []

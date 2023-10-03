@@ -4,7 +4,7 @@ date: 2015-05-24 12:00:00+02:00
 image: ./images/2015-02-23_microDelta_002.jpg
 lang: fr
 layout: page
-published: true
+draft: false
 aliases:
     - /blog/tete-impression/
 tags:

@@ -3,7 +3,7 @@ author: Nico
 date: 2015-09-05 13:53:00+01:00
 lang: fr
 layout: page
-published: true
+draft: false
 aliases:
     - /blog/sites_web_statiques/
 tags: []

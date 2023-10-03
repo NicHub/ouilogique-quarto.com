@@ -4,7 +4,7 @@ date: 2015-11-01 00:26:00+01:00
 image: ./images/Strinity_Sensors_Cobber_001.jpg
 lang: fr
 layout: page
-published: true
+draft: false
 aliases: []
 tags: []
 title:
