@@ -8,6 +8,9 @@ aliases:
     - /blog/manipulation_des_ports/
 tags: []
 title: La manipulation des entrées-sorties à l’aide des registres de port
+categories:
+    - AVR
+    - MSP
 ---
 
 ## Description des registres AVR & MSP
