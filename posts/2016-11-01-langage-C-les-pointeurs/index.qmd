@@ -1,11 +1,12 @@
 ---
+aliases:
+- /langage-C-les-pointeurs
 author: Nico
+categories: []
 date: 2016-11-01 20:17:00+01:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Les pointeurs en C
 ---
 
@@ -197,7 +198,6 @@ void ex03( int *adresseDeMaVariable )
 
 On peut écrire indifféremment `int *adresseDeMaVariable` ou `int* adresseDeMaVariable`
 
----
 
 La notation d’un pointeur en C se fait en deux parties :
 
@@ -208,7 +208,6 @@ Dans mon exemple ci-dessus, cela donne : `*adresseDeMaVariable`.
 
 Donc pour ne pas se mélanger les pinceaux, il vaut mieux éviter d’écrire : ~~`*pointeurVersMaVariable`~~, car le pointeur est composée des deux parties (le signe `*` et l’adresse).
 
----
 
 ! La syntaxe du C n’est pas cohérente, car suivant le contexte, le signe `*` aura une signification différente :
 

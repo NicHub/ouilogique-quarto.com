@@ -1,13 +1,14 @@
 ---
+aliases:
+- /blog/bluetooth_low_energy_avec_nRF51/
+- /bluetooth_low_energy_avec_nRF51
 author: Nico
+categories: []
 date: 2015-09-14 00:00:00+01:00
+draft: false
 image: ./images/nRF51.jpg
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/bluetooth_low_energy_avec_nRF51/
-tags: []
 title: Découverte du Bluetooth Low Energy avec la carte Nordic Semiconductor nRF51
 ---
 

@@ -1,12 +1,13 @@
 ---
+aliases:
+- /neopixel-didel-ws2813
 author: Nico
+categories: []
 date: 2017-04-27 18:48:00+02:00
+draft: false
 image: ./images/2017-04-27-neopixel-didel-ws2813-000.jpg
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Neopixel Didel WS2813
 ---
 
@@ -92,7 +93,7 @@ La broche de données est la 18.
 
 [édit-de-février-mars-2018]: #édit-de-février-mars-2018
 [led adressable p9823-f8]: https://ouilogique.com/leds_adressables/
-[rgbstrips]: ../../files/2017-04-27-neopixel-didel-ws2813/docs/RGBstrips.pdf
+[rgbstrips]: ./docs/RGBstrips.pdf
 [programme de test]: https://github.com/NicHub/ouilogique-Arduino/tree/master/neopixel-didel-ws2813
 [img_1]: ./images/2017-04-27-neopixel-didel-ws2813-001.jpg
 [img_2]: ./images/2017-04-27-neopixel-didel-ws2813-002.jpg

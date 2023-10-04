@@ -1,11 +1,12 @@
 ---
+aliases:
+- /test_horloge_temps_reel_i2c
 author: Nico
+categories: []
 date: 2016-06-04 14:29:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Test d’une horloge temps réel DS1307 I²C
 ---
 

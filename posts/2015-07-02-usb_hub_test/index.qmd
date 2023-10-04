@@ -1,12 +1,13 @@
 ---
+aliases:
+- /blog/usb_hub_test/
+- /usb_hub_test
 author: Nico
+categories: []
 date: 2015-07-02 09:47:00+01:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/usb_hub_test/
-tags: []
 title: Test de hubs USB
 ---
 
@@ -58,7 +59,6 @@ Il a quand même deux défauts agaçants :
 
 Un autre souci de ma config, c’est mon écran Apple Thunderbolt 27". Il a un hub USB intégré sur lequel je branche mon clavier et ma souris. Lorsque j’ai branché le hub Delock sur le hub de l’écran pour la première fois, ça a fait planter l’ordi. Ça m’était déjà arrivé en connectant des cartes Arduino et c’est d’ailleurs pour ça que je préfère les connecter à un hub plutôt que directement sur le Mac ou sur le hub de l’écran. Résultat des courses, il me semble que mon Mac et mon écran ont quelques soucis électriques...
 
----
 
 Sur cette image, on voit que la LED ne s’allume pas ⇒ donc c’est bon.
 
@@ -66,7 +66,6 @@ Sur cette image, on voit que la LED ne s’allume pas ⇒ donc c’est bon.
 
 [img_4]: ./images/test_usb_hub_005_lowres.jpg
 
----
 
 Sur cette image, on voit que le montage de test fonctionne et que si la LED ne s’est pas allumée dans le test ci-dessus, c’est vraiment parce qu’il n’y avait pas de jus.
 
@@ -74,7 +73,6 @@ Sur cette image, on voit que le montage de test fonctionne et que si la LED ne s
 
 [img_5]: ./images/test_usb_hub_006_lowres.jpg
 
----
 
 Pour info, le hub vu de dessous
 

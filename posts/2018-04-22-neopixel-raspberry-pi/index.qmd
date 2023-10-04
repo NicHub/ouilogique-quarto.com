@@ -1,11 +1,12 @@
 ---
+aliases:
+- /neopixel-raspberry-pi
 author: Nico
+categories: []
 date: 2018-04-22 12:33:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: NeoPixel sur Raspberry Pi
 ---
 

@@ -1,13 +1,14 @@
 ---
+aliases:
+- /blog/2-4-in_TFT_Touch_screen/
+- /2-4-in_TFT_Touch_screen
 author: Nico
+categories: []
 date: 2015-07-14 14:20:00+01:00
+draft: false
 image: ./images/TFT_screen_2.jpg
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/2-4-in_TFT_Touch_screen/
-tags: []
 title: Test d’un écran TFT 2.4"
 ---
 
@@ -66,7 +67,6 @@ devient
 #define XP 6   // can be a digital pin
 ```
 
----
 
 À la ligne 92
 
@@ -80,7 +80,6 @@ devient
 uint16_t identifier = 0x9341;
 ```
 
----
 
 À la ligne 165
 
@@ -94,7 +93,6 @@ devient
 p.x = map(p.x, TS_MINX, TS_MAXX, 0, tft.width());
 ```
 
----
 
 [![mcufriend LCD touch screen][2]][2]
 

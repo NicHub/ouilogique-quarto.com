@@ -1,11 +1,12 @@
 ---
+aliases:
+- /test_ecran_oled_i2c_128x64
 author: Nico
+categories: []
 date: 2016-05-25 17:22:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Test d’un écran OLED 128×64 I²C
 ---
 

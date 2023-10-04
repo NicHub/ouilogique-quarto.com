@@ -1,12 +1,13 @@
 ---
+aliases:
+- /afficheur_a_led_128x16
 author: Nico
+categories: []
 date: 2015-11-26 15:00:00+01:00
+draft: false
 image: ./images/2015-11-26-afficheur_a_led_128x16_010.jpg
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Afficheur à LED 128×16
 ---
 

@@ -1,16 +1,17 @@
 ---
+aliases:
+- /blog/programmer_un_attiny_avec_un_arduino_uno/
+- /programmer_un_attiny_avec_un_arduino_uno
 author: Nico
+categories:
+- ATtiny
+- ISP
+- UNO
 date: 2015-05-21 12:00:00+02:00
+draft: false
 image: ./images/2015-02-23_microDelta_002.jpg
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/programmer_un_attiny_avec_un_arduino_uno/
-tags:
-    - ATtiny
-    - ISP
-    - UNO
 title: Programmer un ATtiny25V avec un Arduino UNO comme programmateur
 ---
 

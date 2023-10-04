@@ -1,15 +1,15 @@
 ---
+aliases:
+- /blog/NodeMCU_esp8266/
+- /NodeMCU_esp8266
 author: Nico
+categories: []
 date: 2015-09-27 14:36:00+01:00
+draft: false
 image: ./images/NodeMCU_esp8266.jpg
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/NodeMCU_esp8266/
-tags: []
-title:
-    Mise en route d’une carte <em>WeMos-LoLin</em> avec le firmware NodeMCU et
+title: Mise en route d’une carte <em>WeMos-LoLin</em> avec le firmware NodeMCU et
     un module WiFi ESP8266
 ---
 

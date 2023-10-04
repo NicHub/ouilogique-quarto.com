@@ -1,12 +1,13 @@
 ---
+aliases:
+- /blog/Scanalogic-2_Logic_Analyzer/
+- /Scanalogic-2_Logic_Analyzer
 author: Nico
+categories: []
 date: 2015-06-27 20:44:00+01:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/Scanalogic-2_Logic_Analyzer/
-tags: []
 title: Analyseur logique Scanalogic-2
 ---
 

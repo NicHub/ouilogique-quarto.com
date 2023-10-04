@@ -17,18 +17,30 @@ def copy_posts_from_jekyll_to_qarto(source_file, dest_dir, dest_file):
 
 def make_yaml_header_compliant(fpath):
     """___"""
-    with open(fpath, "rt", encoding="utf-8") as _f:
-        content = (
-            _f.read()
-            # .replace("comments:", "comments_:")
-            .replace("    feature:", "image:").replace("image:\n", 'image: ""\n')
-        )
-    content = content.replace('image: ""\nimage: ', "image: ")
-    content = content.replace("image: null", 'image: ""')
-    content = content.replace('image: ""\n', "")
-    content = content.replace("redirect_from", "aliases")
-    content = content.replace("published: false", "draft: true")
-    content = content.replace("published: true", "draft: false")
+
+    yaml_header, content = readyaml_header(fpath)
+    yaml_header = yaml.safe_load(yaml_header)
+    if yaml_header["image"]["feature"]:
+        yaml_header["image"] = f'./images/{yaml_header["image"]["feature"]}'
+    else:
+        del yaml_header["image"]
+    yaml_header["draft"] = not yaml_header["published"]
+    del yaml_header["published"]
+    yaml_header["categories"] = yaml_header["tags"]
+    del yaml_header["tags"]
+
+    new_fpath = "/" + fpath[len("../posts/") + len("2015-05-21-") : fpath.rfind("/")]
+    # print(new_fpath)
+    yaml_header["aliases"] = yaml_header["redirect_from"]
+    yaml_header["aliases"] += [new_fpath]
+    del yaml_header["redirect_from"]
+
+    yaml_header = (
+        f"---\n{yaml.safe_dump(yaml_header,allow_unicode=True, indent=4, width=4)}---\n"
+    )
+    content = yaml_header + content
+    # print(content)
+    # raise SystemExit
     with open(fpath, "wt", encoding="utf-8") as _f:
         _f.write(content)
 
@@ -76,21 +88,27 @@ def extract_img_links_and_copy_img(dest_dir, dest_file):
 def readyaml_header(file_path):
     """___"""
     yaml_header = ""
+    content = ""
     cnt = 0
     with open(file_path, "rt", encoding="utf-8") as _f:
         for line in _f:
-            if cnt == 2:
-                break
             if line[:3] == "---":
                 cnt += 1
                 continue
-            yaml_header += line
-    return yaml_header
+            if cnt < 2:
+                yaml_header += line
+            else:
+                content += line
+    # print(yaml_header)
+    # print(content)
+
+    return yaml_header, content
 
 
 def extract_feature_img_links_and_copy_img(dest_dir, dest_file):
     """___"""
-    yaml_header = readyaml_header(dest_file)
+    yaml_header, _ = readyaml_header(dest_file)
+
     img_feature = None
     feature_img_path = None
     try:
@@ -98,7 +116,7 @@ def extract_feature_img_links_and_copy_img(dest_dir, dest_file):
         img_feature = yaml_header["image"]
         if img_feature is None or len(img_feature) == 0:
             raise KeyError(
-                f"Le champ `image_/feature` n’existe pas dans le fichier YAML."
+                "Le champ `image_/feature` n’existe pas dans le fichier YAML."
             )
         feature_img_dir = os.path.expanduser("~/Sites/ouilogique.com/_site/images/")
         feature_img_path = f"{feature_img_dir}{img_feature}"
@@ -107,8 +125,6 @@ def extract_feature_img_links_and_copy_img(dest_dir, dest_file):
     except KeyError:
         pass
     except TypeError:
-        pass
-    except:
         pass
     else:
         dest_img_dir = f"{dest_dir}images/"
@@ -149,26 +165,26 @@ def compare_jekyll_post_metadata():
     """___"""
     files = os.listdir(SOURCE_PATH_POSTS)
 
-    ref_keys = {
-        "author",
-        # "categories",
-        # "comments",
-        "date",
-        # "excerpt",
-        "image",
-        "lang",
-        "layout",
-        # "modified",
-        "published",
-        "redirect_from",
-        # "share",
-        "tags",
-        "title",
-    }
+    # ref_keys = {
+    #     "author",
+    #     # "categories",
+    #     # "comments",
+    #     "date",
+    #     # "excerpt",
+    #     "image",
+    #     "lang",
+    #     "layout",
+    #     # "modified",
+    #     "published",
+    #     "redirect_from",
+    #     # "share",
+    #     "tags",
+    #     "title",
+    # }
     # all_keys = ref_keys
     for file in files:
         fpath = f"{SOURCE_PATH_POSTS}{file}"
-        yaml_header = readyaml_header(fpath)
+        yaml_header, _ = readyaml_header(fpath)
         line_cnt = yaml_header.count("\n") + 1 + 1
         yaml_header = yaml.safe_load(yaml_header)
         keys = set(yaml_header.keys())
@@ -198,13 +214,20 @@ def copy_individual_files():
 
     dirs = os.listdir(f"{SOURCE_PATH}files/")
     dirs = [f"{SOURCE_PATH}files/{dir}" for dir in dirs if dir not in [".DS_Store"]]
-    dirs += [
+    for dir in dirs:
+        dest_path = f"{DEST_PATH}posts/{os.path.split(dir)[1]}"
+        shutil.copytree(dir, dest_path, dirs_exist_ok=True)
+    # raise SystemExit
+
+    dirs = [
         f"{SOURCE_PATH}enum",
         f"{SOURCE_PATH}radios",
         f"{SOURCE_PATH}scratchpad",
     ]
+    # pprint(dirs)
     for dir in dirs:
-        shutil.copytree(dir, f"{DEST_PATH}{dir}", dirs_exist_ok=True)
+        dest_path = f"{DEST_PATH}{os.path.split(dir)[1]}"
+        shutil.copytree(dir, dest_path, dirs_exist_ok=True)
     # pprint(dirs)
     # raise SystemExit
 
@@ -225,9 +248,29 @@ def create_nojekyll():
 
 def adapt_links(dest_file):
     """___"""
-
+    content = ""
     with open(dest_file, "rt", encoding="utf-8") as _f:
-        content = _f.read()
+        for line in _f:
+            pos1 = line.find("../../files")
+            if pos1 > -1:
+                pos2 = line.find(")", pos1)
+                link = line[pos1:pos2]
+                link = os.path.split(link)[-1]
+                new_line = line[:pos1] + "./docs/" + link + line[pos2:]
+                # print(link)
+                # print(line)
+                # print(new_line)
+                # print("#############\n\n\n\n\n")
+                line = new_line
+            content += line
+
+    with open(dest_file, "wt", encoding="utf-8") as _f:
+        _f.write(content)
+
+    return
+
+    # links = content.find()
+
     # fmt: off
     replacements = [
         ["/installer-raspian-stretch/"                                                                            , "2020-12-25-installer-pi-hole-sur-un-raspberry"],
@@ -259,8 +302,8 @@ def main():
         copy_posts_from_jekyll_to_qarto(source_file, dest_dir, dest_file)
         make_yaml_header_compliant(dest_file)
         extract_img_links_and_copy_img(dest_dir, dest_file)
-        extract_feature_img_links_and_copy_img(dest_dir, dest_file)
-        # adapt_links(dest_file)
+        # extract_feature_img_links_and_copy_img(dest_dir, dest_file)
+        adapt_links(dest_file)
 
 
 SOURCE_PATH = os.path.expanduser("~/Sites/ouilogique.com/")

@@ -1,11 +1,12 @@
 ---
+aliases:
+- /les-plus-belles-tables-ascii
 author: Nico
+categories: []
 date: 2022-08-10 12:00:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Les plus belles tables ASCII
 ---
 

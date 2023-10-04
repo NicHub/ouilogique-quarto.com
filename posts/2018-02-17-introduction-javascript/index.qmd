@@ -1,11 +1,12 @@
 ---
+aliases:
+- /introduction-javascript
 author: Nico
+categories: []
 date: 2018-02-17 12:00:00+01:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Introduction au langage JavaScript
 ---
 

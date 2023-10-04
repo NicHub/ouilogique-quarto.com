@@ -1,11 +1,12 @@
 ---
+aliases:
+- /humour-matplotlib
 author: Nico
+categories: []
 date: 2017-10-22 17:54:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Humour Matplotlib
 ---
 
@@ -39,12 +40,12 @@ Vous pouvez découvrir les techniques de base dans [le fichier de démo][demo].
 
 ## Références
 
--   [Mon aide mémoire Python](../../files/2017-10-22-humour-matplotlib/docs/python_aide-memoire.py)
+-   [Mon aide mémoire Python](./docs/python_aide-memoire.py)
 -   <http://www.diveintopython3.net/>
 -   <https://python.developpez.com/cours/plongez_au_coeur_de_python/?page=page1>
 
-[effet-des-pizzas-sur-ma-sante]: ../../files/2017-10-22-humour-matplotlib/docs/effet-des-pizzas-sur-ma-sante.py
-[demo]: ../../files/2017-10-22-humour-matplotlib/docs/demo.py
+[effet-des-pizzas-sur-ma-sante]: ./docs/effet-des-pizzas-sur-ma-sante.py
+[demo]: ./docs/demo.py
 
 ## Notes
 

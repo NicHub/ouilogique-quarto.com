@@ -1,11 +1,12 @@
 ---
+aliases:
+- /piezo-switch
 author: Nico
+categories: []
 date: 2017-09-30 12:54:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Bouton piézoélectrique sur Arduino
 ---
 

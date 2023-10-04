@@ -1,12 +1,13 @@
 ---
+aliases:
+- /plateforme-de-stewart-esp32
 author: Nico
+categories: []
 date: 2019-03-27 17:00:00+01:00
+draft: false
 image: ./images/2021-04-24-proto-plateforme-de-stewart_001.jpg
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Plateforme de Stewart pilotée avec un ESP32
 ---
 
@@ -31,7 +32,7 @@ Pour la quatrième version, je ne génère plus le PWM des servos avec l’ESP32
 
 [![Plateforme de Stewart — ouilogique.com][i8]{:style="width:100%;"}][i8]
 
-[i8]: ./images/./images/2021-04-24-proto-plateforme-de-stewart_001.jpg
+[i8]: ./images/2021-04-24-proto-plateforme-de-stewart_001.jpg
 
 [![Plateforme de Stewart — ouilogique.com][i9]{:style="width:100%;"}][i9]
 
@@ -119,7 +120,6 @@ Avec un joystick analogique, des biellettes en fil de fer et des clones de servo
 
 [i2b]: ./images/2019-03-21-proto-plateforme-de-stewart_002.jpg
 
----
 
 ## AIDE-MÉMOIRE
 

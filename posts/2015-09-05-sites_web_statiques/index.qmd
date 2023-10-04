@@ -1,18 +1,18 @@
 ---
+aliases:
+- /blog/sites_web_statiques/
+- /sites_web_statiques
 author: Nico
+categories: []
 date: 2015-09-05 13:53:00+01:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/sites_web_statiques/
-tags: []
 title: Générateurs de sites web statiques
 ---
 
 > Ouilogique.com est généré avec Jekyll.
 
----
 
 ## Simon Wood — Future Insights
 

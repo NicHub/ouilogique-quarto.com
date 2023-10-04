@@ -1,14 +1,14 @@
 ---
+aliases:
+- /Strinity_Sensors_Cobber
 author: Nico
+categories: []
 date: 2015-11-01 00:26:00+01:00
+draft: false
 image: ./images/Strinity_Sensors_Cobber_001.jpg
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
-title:
-    Mise en route d’un capteur de pression, température et humidité <em>Strinity
+title: Mise en route d’un capteur de pression, température et humidité <em>Strinity
     Sensors Cobber</em> I²C
 ---
 
@@ -62,8 +62,8 @@ Bon, j’ai décidé de m’y remettre après une semaine de pause et comme le c
 
 ## Liens
 
--   [BMP180 Digital pressure sensor — Bosch Sensortec](../../files/2015-11-01-Strinity_Sensors_Cobber/docs/BST-BMP180-DS000-09.pdf)
--   [TSL2560, TSL2561 Light-to-Digital Converter — TAOS](../../files/2015-11-01-Strinity_Sensors_Cobber/docs/TSL2561.pdf)
+-   [BMP180 Digital pressure sensor — Bosch Sensortec](./docs/BST-BMP180-DS000-09.pdf)
+-   [TSL2560, TSL2561 Light-to-Digital Converter — TAOS](./docs/TSL2561.pdf)
 -   Lien fourni sur page support Banggood ~~http://pan.baidu.com/s/1qWjYtqs~~
 
 [![ouilogique.com][img_1]][img_1]
@@ -72,4 +72,4 @@ Bon, j’ai décidé de m’y remettre après une semaine de pause et comme le c
 
 [![ouilogique.com][img_2]][img_2]
 
-[img_2]: ./images/./images/Strinity_Sensors_Cobber_001.jpg
+[img_2]: ./images/Strinity_Sensors_Cobber_001.jpg

@@ -1,11 +1,12 @@
 ---
+aliases:
+- /trucs-et-astuces-en-python
 author: Nico
+categories: []
 date: 2023-02-17 12:00:00+01:00
+draft: true
 lang: fr
 layout: page
-draft: true
-aliases: []
-tags: []
 title: Trucs et astuces en Python
 ---
 

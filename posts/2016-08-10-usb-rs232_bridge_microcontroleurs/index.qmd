@@ -1,11 +1,12 @@
 ---
+aliases:
+- /usb-rs232_bridge_microcontroleurs
 author: Nico
+categories: []
 date: 2016-08-10 10:34:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Utiliser des cartes à microcontrôleurs comme bridge USB&#8209;RS232
 ---
 
@@ -110,7 +111,6 @@ Encore une fois j’ai vérifié ça avec un analyseur logique.
 
 [img_8]: ./images/acquisition_esp8266-12E_115200.png
 
----
 
 ## Essai avec ESP8266-12E — Test 2
 

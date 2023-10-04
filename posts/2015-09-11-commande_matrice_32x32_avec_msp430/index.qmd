@@ -1,13 +1,14 @@
 ---
+aliases:
+- /blog/commande_matrice_32x32_avec_msp430/
+- /commande_matrice_32x32_avec_msp430
 author: Nico
+categories: []
 date: 2015-09-11 10:00:00+01:00
+draft: false
 image: ./images/msp430-mx32x32.jpg
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/commande_matrice_32x32_avec_msp430/
-tags: []
 title: Commande d’une matrice 32×32 avec un MSP430
 ---
 

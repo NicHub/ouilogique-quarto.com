@@ -1,13 +1,13 @@
 ---
+aliases:
+- /stm32-e407-blink
 author: Nico
+categories: []
 date: 2019-09-08 11:00:00+02:00
+draft: false
 lang: en
 layout: page
-draft: false
-aliases: []
-tags: []
-title:
-    Mise en route d’une carte <em>STM32&#8209;E407</em> sur <em>PlatformIO</em>
+title: Mise en route d’une carte <em>STM32&#8209;E407</em> sur <em>PlatformIO</em>
     avec le framework <em>Arduino</em>
 ---
 
@@ -17,7 +17,6 @@ L’article original est publié sur GitHub :
 
 -   <https://github.com/NicHub/STM32-E407-BLINK>
 
----
 
 ## STM32&#8209;E407 BLINK
 

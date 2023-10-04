@@ -1,11 +1,12 @@
 ---
+aliases:
+- /tests_batteries
 author: Nico
+categories: []
 date: 2016-10-05 09:23:58+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Test de décharge de batteries
 ---
 

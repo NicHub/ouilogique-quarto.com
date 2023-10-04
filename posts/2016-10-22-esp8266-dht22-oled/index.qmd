@@ -1,11 +1,12 @@
 ---
+aliases:
+- /esp8266-dht22-oled
 author: Nico
+categories: []
 date: 2016-10-22 17:01:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Température et humidité avec un capteur DHT22 sur ESP8266
 ---
 

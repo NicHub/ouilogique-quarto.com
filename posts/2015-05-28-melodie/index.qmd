@@ -1,16 +1,17 @@
 ---
+aliases:
+- /blog/melodie/
+- /melodie
 author: Nico
+categories:
+- Tune
+- mélodie
+- Arduino
+- Uno
 date: 2015-05-28 08:55:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/melodie/
-tags:
-    - Tune
-    - mélodie
-    - Arduino
-    - Uno
 title: Mélodies avec un Arduino&nbsp;UNO
 ---
 

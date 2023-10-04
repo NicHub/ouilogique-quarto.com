@@ -1,12 +1,13 @@
 ---
+aliases:
+- /blog/mooc_initiation_aux_microcontroleurs/
+- /mooc_initiation_aux_microcontroleurs
 author: Nico
+categories: []
 date: 2015-06-11 12:00:00+01:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases:
-    - /blog/mooc_initiation_aux_microcontroleurs/
-tags: []
 title: MOOC — Initiation aux microcontrôleurs
 ---
 

@@ -1,11 +1,12 @@
 ---
+aliases:
+- /servomoteur-basique
 author: Nico
+categories: []
 date: 2016-06-02 18:49:00+02:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Programme basique pour commander un servomoteur
 ---
 

@@ -1,11 +1,12 @@
 ---
+aliases:
+- /flasher-un-bootloader
 author: Nico
+categories: []
 date: 2023-05-30 12:00:00+01:00
+draft: false
 lang: fr
 layout: page
-draft: false
-aliases: []
-tags: []
 title: Flasher un bootloader
 ---
 
