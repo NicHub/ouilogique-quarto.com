@@ -4,10 +4,9 @@ aliases:
 - /melodie
 author: Nico
 categories:
-- Tune
-- mélodie
+- Mélodie
 - Arduino
-- Uno
+- UNO
 date: 2015-05-28 08:55:00+02:00
 draft: false
 lang: fr

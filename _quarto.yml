@@ -1,29 +1,33 @@
 project:
   type: website
-  # render:
-  #   - ./index.qmd
-  #   - posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
-  #   - posts/2017-04-14-relai-bistable-commande-tension/index.qmd
-  #   - posts/2016-10-22-esp8266-dht22-oled/index.qmd
+  render:
+    - /index.qmd
+    - ./posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
+    - ./posts/2017-04-14-relai-bistable-commande-tension/index.qmd
+    - ./posts/2016-10-22-esp8266-dht22-oled/index.qmd
+    - /404.qmd
 
 website:
   favicon: ./images/favicon.ico
   title: ""
   image: ./images/site-logo.png
   page-navigation: true
+  body-footer: "© ouilogique.com"
+  search: false
   navbar:
-    search: false
     right:
+      - text: "Accueil"
+        file: index.qmd
       - icon: github
         href: https://github.com/NicHub
-    logo: ./images/site-logo.png
-    logo-alt: ouilogique.com
+    # logo: ./images/site-logo.png
+    # logo-alt: ouilogique.com
     logo-href: /
     pinned: true
     background: "#1B1B1B"
+    collapse: false
 format:
   html:
     theme:
       - cyborg
       - custom.scss
-
