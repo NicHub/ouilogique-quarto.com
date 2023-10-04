@@ -262,6 +262,14 @@ def adapt_links(dest_file):
                 # print(new_line)
                 # print("#############\n\n\n\n\n")
                 line = new_line
+            line = line.replace("[Introduction au langage HTML]: ../introduction-html/", "[Introduction au langage HTML]: ../2018-02-15-introduction-html/")
+            line = line.replace("[Introduction au langage CSS]: ../introduction-css/", "[Introduction au langage CSS]: ../2018-02-16-introduction-css/")
+            line = line.replace("[Introduction au langage JavaScript]: ../introduction-javascript/", "[Introduction au langage JavaScript]: ../2018-02-17-introduction-javascript/")
+            line = line.replace("../pinouts/", "../2015-05-28-pinouts/")
+            line = line.replace("../installer-raspian-stretch/", "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/")
+            line = line.replace("../installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/", "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/")
+            # line = line.replace("", "")
+            # line = line.replace("", "")
             content += line
 
     with open(dest_file, "wt", encoding="utf-8") as _f:

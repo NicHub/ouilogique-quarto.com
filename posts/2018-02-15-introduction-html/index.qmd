@@ -641,11 +641,11 @@ Exemple avec du code JavaScript intégré dans le code HTML :
 
 [microclub-atelier-html-embarque.pdf]: https://raw.githubusercontent.com/wiki/NicHub/microclub-atelier-html-embarque/md2pdf/microclub-atelier-html-embarque.pdf
 
-[Introduction au langage HTML]: ../introduction-html/
+[Introduction au langage HTML]: ../2018-02-15-introduction-html/
 
-[Introduction au langage CSS]: ../introduction-css/
+[Introduction au langage CSS]: ../2018-02-16-introduction-css/
 
-[Introduction au langage JavaScript]: ../introduction-javascript/
+[Introduction au langage JavaScript]: ../2018-02-17-introduction-javascript/
 
 [Google HTML CSS Style Guide]: https://google.github.io/styleguide/htmlcssguide.html
 
