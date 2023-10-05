@@ -32,9 +32,14 @@ blockquote {
 }
 
 /* SIDEBAR */
-// nav#quarto-sidebar {
-//     display: none;
-// }
+nav#quarto-sidebar{
+    // display: none;
+}
+
+nav.page-navigation {
+    background-color: white;
+    color: grey;
+}
 
 /* ANIMATION DU LOGO */
 .cls-site-logo img:hover {

@@ -11,6 +11,7 @@ page-layout: full
 title-block-banner: true
 date-format: long
 lang: fr
+# license: "CC BY"
 ---
 
 [![][img_1]]{.cls-site-logo}
@@ -22,8 +23,13 @@ lang: fr
 
 Ce site me sert d’aide-mémoire pour mes projets sur Arduino et Raspberry Pi.
 
+
+Redirection a créer
+https://ouilogique.com/cours-html-embarque.html
+https://ouilogique.com/files/2018-02-17-html-embarque/microclub-atelier-html-embarque.pdf
+
+-->
+
 - [radios](/radios/)
 - [enum](/enum/)
 - [scratchpad](/scratchpad/)
-
--->

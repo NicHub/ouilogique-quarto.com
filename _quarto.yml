@@ -3,7 +3,6 @@ project:
   type: website
   render:
     - ./posts/
-    - ./radios/
     - ./index.qmd
   preview:
     port: 4200
@@ -18,6 +17,9 @@ project:
   post-render:
     - ./_scripts/fix_links.py
     - ./_scripts/copy_pages.py
+
+  resources:
+      - "./pages/radios/*"
 
 website:
   # reader-mode: true
@@ -41,14 +43,21 @@ website:
     collapse: false
 
   page-navigation: true
-  # sidebar:
-  #   # style: "floating"
-  #   search: true
-  #   contents: /
-  #   alignment: center
-  #   pinned: true
+  sidebar:
+    style: "floating"
+    # style: "docked"
+    search: true
+    contents: auto
+    alignment: "center" # "right" "left" # "center"
+    pinned: false
 
+  # cookie-consent:
+  #   type: express
+  #   style: headline
+  #   palette: dark
 
+  google-analytics:
+    tracking-id: "G-2JE1ZVYNWC"
 
 format:
   html:

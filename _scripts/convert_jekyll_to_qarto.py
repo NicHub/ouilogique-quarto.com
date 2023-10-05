@@ -10,7 +10,7 @@ import markdown_link_extractor
 import yaml
 
 
-def copy_posts_from_jekyll_to_qarto(source_file, dest_dir, dest_file):
+def copy_posts_from_jekyll_to_quarto(source_file, dest_dir, dest_file):
     """___"""
     os.makedirs(f"{dest_dir}", exist_ok=True)
     shutil.copyfile(source_file, dest_file)
@@ -340,7 +340,7 @@ def main():
         source_file = f"{SOURCE_PATH_POSTS}{file}"
         dest_dir = f"{DEST_PATH_POSTS}{dirname}/"
         dest_file = f"{dest_dir}index.qmd"
-        copy_posts_from_jekyll_to_qarto(source_file, dest_dir, dest_file)
+        copy_posts_from_jekyll_to_quarto(source_file, dest_dir, dest_file)
         make_yaml_header_compliant(dest_file)
         extract_img_links_and_copy_img(dest_dir, dest_file)
         extract_feature_img_links_and_copy_img(dest_dir, dest_file)
