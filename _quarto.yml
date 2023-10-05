@@ -1,11 +1,15 @@
 project:
+
+
   type: website
-  render:
-    - /index.qmd
-    - ./posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
-    - ./posts/2017-04-14-relai-bistable-commande-tension/index.qmd
-    - ./posts/2016-10-22-esp8266-dht22-oled/index.qmd
-    # - /cours-html-embarque.html
+  # render:
+  #   - /index.qmd
+  #   - ./posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
+  #   - ./posts/2017-04-14-relai-bistable-commande-tension/index.qmd
+  #   - ./posts/2016-10-22-esp8266-dht22-oled/index.qmd
+  #   - /cours-html-embarque.html
+  post-render:
+    - ./_scripts/fix-links.py
 
 website:
   # reader-mode: true
