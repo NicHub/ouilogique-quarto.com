@@ -32,17 +32,27 @@ blockquote {
 }
 
 /* SIDEBAR */
-nav#quarto-sidebar{
+nav#quarto-sidebar {
     // display: none;
 }
 
-nav.page-navigation {
-    background-color: white;
-    color: grey;
+.floating {
+    border: 1px solid red;
 }
 
+// nav.page-navigation {
+//     background-color: white;
+//     color: grey;
+// }
+
 /* ANIMATION DU LOGO */
-.cls-site-logo img:hover {
+.spin {
+    // color: #DDD;
+    display: inline-block;
+}
+
+.cls-site-logo img:hover,
+.spin:hover {
     transform: rotate(180deg);
     animation-duration: 1.0s;
     animation-timing-function: ease-in-out;
@@ -50,12 +60,16 @@ nav.page-navigation {
     cursor: none;
 }
 
-.cls-site-logo img {
+$final_angle: 90deg;
+
+.cls-site-logo img,
+.spin {
     animation-name: rotateImageOnPageLoad;
     animation-duration: 1.0s;
     animation-timing-function: ease-out;
     animation-iteration-count: 1;
     transition: transform 1s;
+    transform: rotate($final_angle);
 }
 
 @keyframes rotateImageOnPageLoad {
@@ -64,6 +78,6 @@ nav.page-navigation {
     }
 
     100% {
-        transform: rotate(0deg);
+        transform: rotate($final_angle);
     }
 }

@@ -1,5 +1,5 @@
 ---
-title: "OUILOGIQUE.COM"
+title: <span class="spin">OUI</span>LOGIQUE.COM
 listing:
   contents: posts
   sort: "date desc"
