@@ -56,8 +56,8 @@ website:
   #   style: headline
   #   palette: dark
 
-  google-analytics:
-    tracking-id: "G-2JE1ZVYNWC"
+  # google-analytics:
+  #   tracking-id: "G-2JE1ZVYNWC"
 
 format:
   html:
