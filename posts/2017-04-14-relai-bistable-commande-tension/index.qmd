@@ -5,7 +5,7 @@ author: Nico
 categories: []
 date: 2017-04-14 10:00:00+02:00
 draft: false
-image: ./images/relai-bistable-commande-tension-pcb-1490x745.jpg
+image: ./images/banner_2017-04-14-relai-bistable-commande-tension.jpg
 lang: fr
 layout: page
 title: Commande d’un relai bistable 240 V avec un Arduino Pro Mini

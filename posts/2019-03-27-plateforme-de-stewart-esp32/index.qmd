@@ -5,7 +5,7 @@ author: Nico
 categories: []
 date: 2019-03-27 17:00:00+01:00
 draft: false
-image: ./images/2021-04-24-proto-plateforme-de-stewart_001.jpg
+image: ./images/banner_2019-03-27-plateforme-de-stewart-esp32.jpg
 lang: fr
 layout: page
 title: Plateforme de Stewart pilotée avec un ESP32

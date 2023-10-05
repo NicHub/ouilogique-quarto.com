@@ -5,7 +5,7 @@ author: Nico
 categories: []
 date: 2015-11-16 14:51:00+01:00
 draft: false
-image: ./images/NodeMCU_esp8266_amica.jpg
+image: ./images/banner_2015-11-16-NodeMCU_esp8266_amica.jpg
 lang: fr
 layout: page
 title: Mise en route d’une carte <em>Amica</em> avec le firmware NodeMCU et un module

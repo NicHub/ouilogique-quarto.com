@@ -3,6 +3,7 @@
 """
 import os
 import shutil
+import traceback
 from pprint import pprint
 
 import markdown_link_extractor
@@ -73,9 +74,13 @@ def extract_img_links_and_copy_img(dest_dir, dest_file):
                 dest_dir_img = f"{dest_dir}images/"
                 os.makedirs(f"{dest_dir_img}", exist_ok=True)
                 dest_img_path = f"{dest_dir_img}{img_name}"
-                if not os.path.exists(source_img_path):
-                    raise SystemExit(f"{source_img_path} not found")
-                shutil.copyfile(source_img_path, dest_img_path)
+                # if not os.path.exists(source_img_path):
+                #     raise SystemExit(f"{source_img_path} not found")
+                if os.path.exists(source_img_path):
+                    shutil.copyfile(source_img_path, dest_img_path)
+                else:
+                    print(f"{source_img_path} not found")
+
                 # print(f"{COUNT_LINKS}. {source_img_path}")
                 # print(dest_img_path)
 
@@ -118,24 +123,33 @@ def extract_feature_img_links_and_copy_img(dest_dir, dest_file):
             raise KeyError(
                 "Le champ `image_/feature` n’existe pas dans le fichier YAML."
             )
-        feature_img_dir = os.path.expanduser("~/Sites/ouilogique.com/_site/images/")
+        feature_img_dir = os.path.expanduser("~/Sites/ouilogique.com/")
         feature_img_path = f"{feature_img_dir}{img_feature}"
-        if not os.path.exists(feature_img_path):
-            raise SystemExit(f"{feature_img_path} not found")
     except KeyError:
         pass
     except TypeError:
         pass
     else:
-        dest_img_dir = f"{dest_dir}images/"
+        dest_img_dir = f"{dest_dir}"
         os.makedirs(dest_img_dir, exist_ok=True)
         dest_img_path = f"{dest_img_dir}/{img_feature}"
-        # pprint(f"img_feature = {img_feature}")
-        shutil.copyfile(feature_img_path, dest_img_path)
-        with open(dest_file, "rt", encoding="utf-8") as _f:
-            content = _f.read().replace(img_feature, f"./images/{img_feature}")
-        with open(dest_file, "wt", encoding="utf-8") as _f:
-            _f.write(content)
+
+        if os.path.exists(feature_img_path):
+            # print("#######")
+            # print(f"feature_img_path = {feature_img_path}")
+            # print(f"dest_img_path = {dest_img_path}")
+            # print(f"dest_dir = {dest_dir}")
+            # print("#######")
+
+            shutil.copyfile(feature_img_path, dest_img_path)
+            # raise SystemExit(f"{feature_img_path} not found")
+            # with open(dest_file, "rt", encoding="utf-8") as _f:
+            #     content = _f.read().replace(img_feature, f"./toto/{img_feature}")
+            # with open(dest_file, "wt", encoding="utf-8") as _f:
+            #     _f.write(content)
+            # print(f"{feature_img_path} found")
+        else:
+            print(f"{feature_img_path} not found")
 
 
 def write_jekyll_yaml_header(file, yaml_header, line_cnt):
@@ -262,12 +276,27 @@ def adapt_links(dest_file):
                 # print(new_line)
                 # print("#############\n\n\n\n\n")
                 line = new_line
-            line = line.replace("[Introduction au langage HTML]: ../introduction-html/", "[Introduction au langage HTML]: ../2018-02-15-introduction-html/")
-            line = line.replace("[Introduction au langage CSS]: ../introduction-css/", "[Introduction au langage CSS]: ../2018-02-16-introduction-css/")
-            line = line.replace("[Introduction au langage JavaScript]: ../introduction-javascript/", "[Introduction au langage JavaScript]: ../2018-02-17-introduction-javascript/")
+            line = line.replace(
+                "[Introduction au langage HTML]: ../introduction-html/",
+                "[Introduction au langage HTML]: ../2018-02-15-introduction-html/",
+            )
+            line = line.replace(
+                "[Introduction au langage CSS]: ../introduction-css/",
+                "[Introduction au langage CSS]: ../2018-02-16-introduction-css/",
+            )
+            line = line.replace(
+                "[Introduction au langage JavaScript]: ../introduction-javascript/",
+                "[Introduction au langage JavaScript]: ../2018-02-17-introduction-javascript/",
+            )
             line = line.replace("../pinouts/", "../2015-05-28-pinouts/")
-            line = line.replace("../installer-raspian-stretch/", "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/")
-            line = line.replace("../installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/", "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/")
+            line = line.replace(
+                "../installer-raspian-stretch/",
+                "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/",
+            )
+            line = line.replace(
+                "../installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/",
+                "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/",
+            )
             # line = line.replace("", "")
             # line = line.replace("", "")
             content += line
@@ -310,7 +339,7 @@ def main():
         copy_posts_from_jekyll_to_qarto(source_file, dest_dir, dest_file)
         make_yaml_header_compliant(dest_file)
         extract_img_links_and_copy_img(dest_dir, dest_file)
-        # extract_feature_img_links_and_copy_img(dest_dir, dest_file)
+        extract_feature_img_links_and_copy_img(dest_dir, dest_file)
         adapt_links(dest_file)
 
 
@@ -334,5 +363,7 @@ if __name__ == "__main__":
     try:
         main()
     except SystemExit as _e:
-        print(_e)
+        pprint(_e)
+        traceback.print_exc()
+
     print("DONE")

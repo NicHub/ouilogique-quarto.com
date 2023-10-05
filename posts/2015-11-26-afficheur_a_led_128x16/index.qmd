@@ -5,7 +5,7 @@ author: Nico
 categories: []
 date: 2015-11-26 15:00:00+01:00
 draft: false
-image: ./images/2015-11-26-afficheur_a_led_128x16_010.jpg
+image: ./images/banner_2015-11-26-afficheur_a_led_128x16.jpg
 lang: fr
 layout: page
 title: Afficheur à LED 128×16

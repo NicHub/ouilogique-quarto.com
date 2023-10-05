@@ -6,7 +6,7 @@ author: Nico
 categories: []
 date: 2015-07-14 14:20:00+01:00
 draft: false
-image: ./images/TFT_screen_2.jpg
+image: ./images/banner_2015-08-14-2-4-in_TFT_Touch_screen.jpg
 lang: fr
 layout: page
 title: Test d’un écran TFT 2.4"

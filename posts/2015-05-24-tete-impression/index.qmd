@@ -7,7 +7,7 @@ categories:
 - Impression 3D
 date: 2015-05-24 12:00:00+02:00
 draft: false
-image: ./images/2015-02-23_microDelta_002.jpg
+image: ./images/banner_2015-05-24-tete-impression.jpg
 lang: fr
 layout: page
 title: Tête d’impression chinoise pour µDelta

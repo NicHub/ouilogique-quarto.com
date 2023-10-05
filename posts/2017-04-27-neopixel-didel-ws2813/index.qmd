@@ -5,7 +5,7 @@ author: Nico
 categories: []
 date: 2017-04-27 18:48:00+02:00
 draft: false
-image: ./images/2017-04-27-neopixel-didel-ws2813-000.jpg
+image: ./images/banner_2017-04-27-neopixel-didel-ws2813.jpg
 lang: fr
 layout: page
 title: Neopixel Didel WS2813

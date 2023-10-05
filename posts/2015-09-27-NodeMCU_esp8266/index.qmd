@@ -6,7 +6,7 @@ author: Nico
 categories: []
 date: 2015-09-27 14:36:00+01:00
 draft: false
-image: ./images/NodeMCU_esp8266.jpg
+image: ./images/banner_2015-09-27-NodeMCU_esp8266.jpg
 lang: fr
 layout: page
 title: Mise en route d’une carte <em>WeMos-LoLin</em> avec le firmware NodeMCU et

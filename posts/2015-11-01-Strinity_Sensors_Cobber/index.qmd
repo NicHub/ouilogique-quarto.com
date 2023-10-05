@@ -5,7 +5,7 @@ author: Nico
 categories: []
 date: 2015-11-01 00:26:00+01:00
 draft: false
-image: ./images/Strinity_Sensors_Cobber_001.jpg
+image: ./images/banner_2015-11-01-Strinity_Sensors_Cobber.jpg
 lang: fr
 layout: page
 title: Mise en route d’un capteur de pression, température et humidité <em>Strinity

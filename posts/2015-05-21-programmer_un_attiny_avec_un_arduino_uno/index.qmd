@@ -10,7 +10,6 @@ categories:
 - Flashage
 date: 2015-05-21 12:00:00+02:00
 draft: false
-image: ./images/2015-02-23_microDelta_002.jpg
 lang: fr
 layout: page
 title: Programmer un ATtiny25V avec un Arduino UNO comme programmateur
