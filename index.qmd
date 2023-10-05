@@ -21,4 +21,9 @@ lang: fr
 ## Bienvenue sur ouilogique.com
 
 Ce site me sert d’aide-mémoire pour mes projets sur Arduino et Raspberry Pi.
+
+- [radios](/radios/)
+- [enum](/enum/)
+- [scratchpad](/scratchpad/)
+
 -->
