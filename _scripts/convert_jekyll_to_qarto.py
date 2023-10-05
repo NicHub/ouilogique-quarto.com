@@ -297,6 +297,10 @@ def adapt_links(dest_file):
                 "../installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/",
                 "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/",
             )
+            line = line.replace(
+                "[../esp_commandes_at_utiles/](../esp_commandes_at_utiles/)",
+                "[../2016-08-13-esp_commandes_at_utiles/](../2016-08-13-esp_commandes_at_utiles/)",
+            )
             # line = line.replace("", "")
             # line = line.replace("", "")
             content += line
