@@ -240,7 +240,7 @@ def copy_individual_files():
     ]
     # pprint(dirs)
     for dir in dirs:
-        dest_path = f"{DEST_PATH}{os.path.split(dir)[1]}"
+        dest_path = f"{DEST_PATH}pages/{os.path.split(dir)[1]}"
         shutil.copytree(dir, dest_path, dirs_exist_ok=True)
     # pprint(dirs)
     # raise SystemExit

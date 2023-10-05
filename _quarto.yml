@@ -1,7 +1,14 @@
+
 project:
-
-
   type: website
+  render:
+    - ./posts/
+    - ./radios/
+    - ./index.qmd
+  preview:
+    port: 4200
+    browser: true
+
   # render:
   #   - /index.qmd
   #   - ./posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
@@ -9,7 +16,8 @@ project:
   #   - ./posts/2016-10-22-esp8266-dht22-oled/index.qmd
   #   - /cours-html-embarque.html
   post-render:
-    - ./_scripts/fix-links.py
+    - ./_scripts/fix_links.py
+    - ./_scripts/copy_pages.py
 
 website:
   # reader-mode: true
