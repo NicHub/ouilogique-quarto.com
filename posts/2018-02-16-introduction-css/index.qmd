@@ -659,4 +659,3 @@ Le site du W3C contient lui aussi beaucoup d’informations utiles : [CSS sur l
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

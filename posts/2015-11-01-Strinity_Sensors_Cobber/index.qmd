@@ -77,4 +77,3 @@ Bon, j’ai décidé de m’y remettre après une semaine de pause et comme le c
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

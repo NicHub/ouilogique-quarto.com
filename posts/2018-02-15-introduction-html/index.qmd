@@ -654,4 +654,3 @@ Exemple avec du code JavaScript intégré dans le code HTML :
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

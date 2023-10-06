@@ -89,4 +89,3 @@ Pour info, le hub vu de dessous
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

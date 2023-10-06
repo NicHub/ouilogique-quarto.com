@@ -109,4 +109,3 @@ norme C 99 ⇒ permet des déclarations spéciales de struct
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

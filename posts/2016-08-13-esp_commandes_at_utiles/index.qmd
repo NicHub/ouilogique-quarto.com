@@ -159,4 +159,3 @@ telnet 192.168.1.132:80
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

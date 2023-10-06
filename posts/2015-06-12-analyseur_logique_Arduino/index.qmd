@@ -47,4 +47,3 @@ Le format d’enregistrement des traces que j’utilise est le [VCD (Value Chang
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

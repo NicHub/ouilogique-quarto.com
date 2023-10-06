@@ -144,4 +144,3 @@ Comme le serveur bloque la ligne de commande, il est préférable de l’utilise
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

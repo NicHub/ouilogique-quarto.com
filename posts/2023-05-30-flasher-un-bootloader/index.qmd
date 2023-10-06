@@ -109,4 +109,3 @@ Pour programmer la cible en utilisant le programmateur, il faut :
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

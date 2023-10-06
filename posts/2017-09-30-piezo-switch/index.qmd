@@ -55,4 +55,3 @@ Cet interrupteur est étanche IP68 (6 = étanche à la poussière, 8 = résiste 
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

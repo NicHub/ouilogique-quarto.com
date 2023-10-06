@@ -56,4 +56,3 @@ Une police qui ressemble est _Graphite_. Adobe en propose une version payante ic
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

@@ -62,4 +62,3 @@ Je n’ai testé que le mode SPI (hardware) et pas le mode I²C et ça fonctionn
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

@@ -111,4 +111,3 @@ Voici ce que me retourne la commande `top`. On voit que le processus `python` co
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

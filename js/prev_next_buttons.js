@@ -1,5 +1,7 @@
 "use strict";
 
+const home_url = "../../";
+
 /**
  *
  */
@@ -37,7 +39,7 @@ function main() {
 
     const template_home = `
     <div class="nav-page nav-page-home">
-        <a href="/" class="pagination-link">
+        <a href=${home_url} class="pagination-link">
             ↑ <span class="nav-page-text">Retour à l’accueil</span>
         </a>
     </div>`;
@@ -52,10 +54,10 @@ function main() {
         </a>
         </div>`;
 
-        const template_next =
+    const template_next =
         prev_next_links[id]["next"].length === 0
-        ? template_home
-        : `
+            ? template_home
+            : `
         <div class="nav-page nav-page-next">
         <a href="${prev_next_links[id]["next"]}" class="pagination-link">
             <span class="nav-page-text">Suivant</span> →
@@ -109,7 +111,7 @@ function keyboardShortcutHandler(event) {
         window.location.href = prev_next_links[id]["next"];
     } else if (["ArrowUp"].includes(event.key)) {
         console.log("ArrowUp");
-        if (event.shiftKey) window.location.href = "/";
+        if (event.shiftKey) window.location.href = home_url;
     } else {
         return;
     }

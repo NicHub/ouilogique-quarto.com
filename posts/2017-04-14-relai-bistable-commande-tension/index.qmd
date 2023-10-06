@@ -139,4 +139,3 @@ Le tout premier prototype était basé sur un Arduino UNO avec deux relais _soli
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

@@ -112,4 +112,3 @@ SPK1 et SPK2 sont inversés suivant où l’on regarde.
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

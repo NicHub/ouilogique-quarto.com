@@ -119,7 +119,8 @@ def inject_js(dest_file):
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    """
+"""
+
     with open(dest_file, "wt", encoding="utf-8") as _f:
         _f.write(content)
 

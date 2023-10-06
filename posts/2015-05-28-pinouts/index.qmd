@@ -284,4 +284,3 @@ Fin du chapitre 2.2 (Pin Description)
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

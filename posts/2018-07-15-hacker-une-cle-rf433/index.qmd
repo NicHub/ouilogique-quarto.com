@@ -131,4 +131,3 @@ Et il ne reste plus qu’à flasher l’Arduino et faire un test.
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

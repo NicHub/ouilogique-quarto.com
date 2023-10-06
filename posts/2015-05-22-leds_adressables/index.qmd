@@ -84,4 +84,3 @@ Donc, même avec 10 Ω, la tension n’atteint pas les 4.5 V minimums de la sp
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    

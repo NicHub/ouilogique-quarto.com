@@ -46,4 +46,3 @@ Pour les connexions, j’ai utilisé des [Long 8-pin Headers][6] qui sont forts 
 <script src="/js/prev_next_links.js"></script>
 <script src="/js/prev_next_buttons.js"></script>
 
-    
