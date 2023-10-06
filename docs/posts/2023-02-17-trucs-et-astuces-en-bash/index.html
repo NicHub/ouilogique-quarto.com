@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nico">
+
+<title>Trucs et astuces en Bash</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../.././images/favicon.ico" rel="icon">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-regular fa-house" aria-label="house"></i></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NicHub" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Trucs et astuces en Bash</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nico </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">17 février 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="quelques-termes" class="level2">
+<h2 class="anchored" data-anchor-id="quelques-termes">Quelques termes</h2>
+<ul>
+<li>terminal</li>
+<li>shell</li>
+<li>ligne de commande</li>
+<li>console</li>
+</ul>
+<p>En informatique, quelle est la différence entre une console, un shell, un terminal ?</p>
+<p>Les termes “console”, “shell” et “terminal” sont souvent utilisés de manière interchangeable, mais il existe en réalité des différences subtiles entre ces concepts en informatique.</p>
+<pre><code>Une console fait référence à une interface utilisateur textuelle qui permet d'accéder à un système informatique, généralement sans interface graphique. Elle peut être située sur un ordinateur local ou être utilisée pour se connecter à distance à un système distant.
+
+Un shell (ou "interpréteur de commandes") est un programme qui fournit une interface en ligne de commande (CLI) à l'utilisateur pour interagir avec le système d'exploitation. Le shell peut être exécuté à l'intérieur d'une console ou d'un terminal, et il permet d'exécuter des commandes en tapant des instructions textuelles.
+
+Un terminal est un programme qui fournit une interface graphique à une console, permettant ainsi à l'utilisateur de visualiser et d'interagir avec le système d'exploitation de manière plus conviviale. Le terminal peut également exécuter un shell pour permettre à l'utilisateur d'exécuter des commandes en ligne de commande.</code></pre>
+<p>En résumé, une console est une interface utilisateur textuelle brute, un shell est un programme qui permet d’exécuter des commandes en ligne de commande, et un terminal est un programme qui fournit une interface graphique à une console pour permettre une interaction plus conviviale avec le système d’exploitation.</p>
+</section>
+<section id="utilité-de-tmux" class="level2">
+<h2 class="anchored" data-anchor-id="utilité-de-tmux">Utilité de tmux</h2>
+<p>crontab led <span class="citation" data-cites="reboot">@reboot</span> /usr/bin/python3 /home/pi/Desktop/led_chase_1.py</p>
+<p>https://linuxize.com/post/bash-check-if-file-exists/</p>
+<p>[ -r /home/pi/.bash_profile ] &amp;&amp; . /home/pi/.bash_profile [ -r /home/pi/.byobu/prompt ] &amp;&amp; . /home/pi/.byobu/prompt #byobu-prompt#</p>
+</section>
+<section id="update" class="level2">
+<h2 class="anchored" data-anchor-id="update">update</h2>
+<p>La commande Bash sudo apt-get update sert à mettre à jour la liste des paquets disponibles sur un système Ubuntu ou Debian.</p>
+<p>Plus précisément, cette commande va se connecter aux serveurs de packages du système d’exploitation et télécharger les informations les plus récentes sur les paquets disponibles, leurs dépendances et les mises à jour disponibles.</p>
+<p>Cela permet de maintenir le système à jour et de s’assurer que les dernières versions des logiciels et des correctifs de sécurité sont disponibles pour l’installation.</p>
+<p>Il est important de noter que cette commande ne met pas à jour les paquets eux-mêmes, mais seulement la liste des paquets disponibles. Pour installer les mises à jour disponibles, il faut utiliser la commande sudo apt-get upgrade.</p>
+</section>
+<section id="upgrade" class="level2">
+<h2 class="anchored" data-anchor-id="upgrade">upgrade</h2>
+<p>La commande Bash sudo apt-get upgrade sert à mettre à jour les paquets installés sur un système Ubuntu ou Debian.</p>
+<p>Plus précisément, cette commande va télécharger et installer les mises à jour disponibles pour les paquets installés sur le système. Cela permet de maintenir le système à jour en installant les dernières versions des logiciels et des correctifs de sécurité.</p>
+<p>Il est important de noter que la commande sudo apt-get upgrade ne va pas installer de nouveaux paquets, elle se contente de mettre à jour les paquets existants. Si vous souhaitez installer de nouveaux paquets, vous pouvez utiliser la commande sudo apt-get install suivie du nom du paquet que vous souhaitez installer.</p>
+<p>Il est recommandé de régulièrement exécuter la commande sudo apt-get update suivi de la commande sudo apt-get upgrade pour s’assurer que votre système est à jour et sécurisé.</p>
+</section>
+<section id="dist-upgrade" class="level2">
+<h2 class="anchored" data-anchor-id="dist-upgrade">dist-upgrade</h2>
+<p>La commande Bash sudo apt-get dist-upgrade sert à effectuer une mise à niveau complète du système d’exploitation Ubuntu ou Debian.</p>
+<p>Plus précisément, cette commande va mettre à jour tous les paquets installés sur le système, y compris ceux qui nécessitent des modifications importantes de dépendances ou qui nécessitent la suppression ou l’ajout de nouveaux paquets.</p>
+<p>La commande sudo apt-get dist-upgrade peut être utilisée pour effectuer une mise à niveau majeure du système, par exemple lorsqu’une nouvelle version majeure d’Ubuntu ou Debian est disponible.</p>
+<p>Il est important de noter que la commande sudo apt-get dist-upgrade est plus puissante que la commande sudo apt-get upgrade et peut entraîner la suppression ou l’ajout de paquets. Il est donc recommandé de bien vérifier les changements proposés avant de procéder à la mise à niveau.</p>
+<p>En général, il est recommandé de faire une sauvegarde complète du système avant de procéder à une mise à niveau majeure.</p>
+</section>
+<section id="apt-get-vs-apt" class="level2">
+<h2 class="anchored" data-anchor-id="apt-get-vs-apt">apt-get vs apt</h2>
+<p>Les commandes apt-get et apt sont toutes deux des outils de gestion de paquets pour les systèmes Ubuntu et Debian.</p>
+<p>La principale différence entre ces deux commandes est que apt est une version simplifiée et plus conviviale de apt-get avec des options plus intuitives et des messages d’erreur plus clairs.</p>
+<p>La commande apt offre une expérience utilisateur plus conviviale et plus facile à utiliser, en affichant des informations plus précises et en fournissant une sortie plus conviviale que apt-get.</p>
+<p>Cependant, apt-get est toujours largement utilisé et peut être plus flexible dans certains cas d’utilisation, car il offre un contrôle plus fin sur les options et les paramètres.</p>
+<p>En général, les deux commandes sont largement interchangeables et peuvent être utilisées selon les préférences personnelles de l’utilisateur.</p>
+</section>
+<section id="les-flux-standard-de-linux" class="level2">
+<h2 class="anchored" data-anchor-id="les-flux-standard-de-linux">Les flux standard de Linux</h2>
+<p>Source&nbsp;: https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/</p>
+<p>Sous Linux, les flux - comme presque tout le reste - sont traités comme des fichiers. Vous pouvez lire du texte à partir d’un fichier et vous pouvez écrire du texte dans un fichier. Ces deux actions impliquent un flux de données. Le concept de traitement d’un flux de données comme un fichier n’est donc pas si compliqué que cela.</p>
+<p>Il y a trois flux standard&nbsp;:</p>
+<ul>
+<li>stdin (standard in) est le flux d’entrée standard. Il accepte du texte en entrée.</li>
+<li>stdout (standard out) est le flux de sortie standard.</li>
+<li>stderr (standard error) permet de renvoyer des éventuelles erreurs.</li>
+</ul>
+<p>Sous Linux, les flux - comme presque tout le reste - sont traités comme des fichiers. Vous pouvez lire du texte à partir d’un fichier et vous pouvez écrire du texte dans un fichier. Ces deux actions impliquent un flux de données. Le concept de traitement d’un flux de données comme un fichier n’est donc pas si compliqué que cela.</p>
+<p>Chaque fichier associé à un processus se voit attribuer un numéro unique pour l’identifier. C’est ce qu’on appelle le descripteur de fichier. Chaque fois qu’une action doit être effectuée sur un fichier, le descripteur de fichier est utilisé pour identifier le fichier.</p>
+<p>Ces valeurs sont toujours utilisées pour stdin, stdout et stderr :</p>
+<pre><code>0: stdin
+1: stdout
+2: stderr</code></pre>
+</section>
+<section id="commandes-utiles" class="level2">
+<h2 class="anchored" data-anchor-id="commandes-utiles">Commandes utiles</h2>
+<p>grep # tout seul ou en pipe find ls rclone ps which man kill git md5 zip chmod alias sudo nano byobu cd ping wget curl apt-get arp -a echo printf</p>
+
+
+</section>
+
+<p>© ouilogique.com</p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

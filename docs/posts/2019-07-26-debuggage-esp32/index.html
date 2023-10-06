@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nico">
+
+<title>Débuggage sur ESP32 avec un ESP‑Prog et PIO&nbsp;Unified&nbsp;Debugger</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../.././images/favicon.ico" rel="icon">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-regular fa-house" aria-label="house"></i></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NicHub" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Débuggage sur ESP32 avec un <em>ESP‑Prog</em> et <em>PIO&nbsp;Unified&nbsp;Debugger</em></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nico </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">26 juillet 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p><a href="./images/esp-prog-board-close-up-lowres.jpg"><img src="./images/esp-prog-board-close-up-lowres.jpg" class="img-fluid" alt="ESP-Prog — ouilogique.com">{:style=“width:90%;”}</a></p>
+<p><a href="./images/esp-prog-board-close-up-back-lowres.jpg"><img src="./images/esp-prog-board-close-up-back-lowres.jpg" class="img-fluid" alt="ESP-Prog back — ouilogique.com">{:style=“width:90%;”}</a></p>
+<p>Cet article montre comment mettre en route un board <em>ESP‑Prog</em> et les outils intégrés à PlatformIO pour flasher et débugger un ESP32.</p>
+<p>Le board <em>ESP‑Prog</em> permet de faire deux choses distinctes&nbsp;:</p>
+<ul>
+<li>du débuggage en utilisant une interface JTAG (connecteur 10&nbsp;broches) (ESP32 uniquement)</li>
+<li>de flasher des programmes (ESP8266 &amp; ESP32)</li>
+</ul>
+<section id="documentation" class="level2">
+<h2 class="anchored" data-anchor-id="documentation">Documentation</h2>
+<ul>
+<li><em>PIO Unified Debugger</em> (intégré à PlatformIO)
+<ul>
+<li><a href="https://docs.platformio.org/en/latest/plus/debugging.html" class="uri">https://docs.platformio.org/en/latest/plus/debugging.html</a></li>
+</ul></li>
+<li><em>ESP-Prog</em>
+<ul>
+<li><a href="https://docs.platformio.org/en/latest/plus/debug-tools/esp-prog.html" class="uri">https://docs.platformio.org/en/latest/plus/debug-tools/esp-prog.html</a></li>
+<li><a href="https://github.com/espressif/esp-iot-solution/blob/master/documents/evaluation_boards/ESP-Prog_guide_en.md" class="uri">https://github.com/espressif/esp-iot-solution/blob/master/documents/evaluation_boards/ESP-Prog_guide_en.md</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="matériel-utilisé" class="level2">
+<h2 class="anchored" data-anchor-id="matériel-utilisé">Matériel utilisé</h2>
+<ul>
+<li><a href="https://www.banggood.com/Geekcreit-ESP32-WiFi-bluetooth-Development-Board-Ultra-Low-Power-Consumption-Dual-Core-ESP-32-ESP-32S-p-1175488.html">ESP32</a></li>
+<li><a href="https://fr.aliexpress.com/item/33022365662.html">ESP-Prog</a></li>
+<li><a href="https://fr.aliexpress.com/item/32981928255.html">Câble JTAG 2.54&nbsp;mm (2×5 broches)</a></li>
+</ul>
+</section>
+<section id="vidéo-dandreas-spiess" class="level2">
+<h2 class="anchored" data-anchor-id="vidéo-dandreas-spiess">Vidéo d’Andreas Spiess</h2>
+<p>Source d’inspiration de cet article. Merci Andreas.</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=psMqilqlrRQ" class="uri">https://www.youtube.com/watch?v=psMqilqlrRQ</a></li>
+</ul>
+</section>
+<section id="connexions-jtag" class="level2">
+<h2 class="anchored" data-anchor-id="connexions-jtag">Connexions JTAG</h2>
+<blockquote class="blockquote">
+<p>Le débuggage JTAG utilise les GPIO 12 à 15, ce qui veut dire que ces broches ne peuvent pas être utilisées par le programme en cours de test&nbsp;!</p>
+</blockquote>
+<p>Les couleurs sont indicatives et correspondent simplement aux fils que j’ai utilisés et que l’on peut voir sur la photo.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>       <span class="ex">ESP32</span>        PROG BOARD      <span class="kw">|</span>      <span class="ex">PROG</span> BOARD    ESP32</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">====================================</span><span class="kw">|</span><span class="ex">=================================</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">jaune</span>  3.3V      1. VDD             <span class="kw">|</span>   <span class="ex">2.</span> ESP_TMS       IO_14  vert</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">bleu</span>   GND       3. GND             <span class="kw">|</span>   <span class="ex">4.</span> ESP_TCK       IO_13  violet</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>       <span class="ex">-</span>         5. GND             <span class="kw">|</span>   <span class="ex">6.</span> ESP_TDO       IO_15  gris</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>       <span class="ex">-</span>         7. GND             <span class="kw">|</span>   <span class="ex">8.</span> ESP_TDI       IO_12  blanc</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>       <span class="ex">-</span>         9. GND             <span class="kw">|</span>  <span class="ex">10.</span> NC            <span class="at">-</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><a href="./images/esp-prog-board-lowres.jpg"><img src="./images/esp-prog-board-lowres.jpg" class="img-fluid" alt="Debuggage d’un ESP32 avec un ESP-Prog et PIO Unified Debugger — ouilogique.com">{:style=“width:90%;”}</a></p>
+</section>
+<section id="mise-en-route" class="level2">
+<h2 class="anchored" data-anchor-id="mise-en-route">Mise en route</h2>
+<ul>
+<li>S’assurer que les cavaliers sont configurés correctement (voir l’image ci-dessus).</li>
+<li>Connecter le câble JTAG comme indiqué dans le tableau ci-dessus.</li>
+<li>Ouvrir un projet PlatformIO existant ou en créer un nouveau.</li>
+<li>Ajouter les informations suivantes dans le fichier <code>platformio.ini</code>.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode ini code-with-copy"><code class="sourceCode ini"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">debug_tool </span><span class="ot">=</span><span class="st"> esp-prog</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="dt">upload_protocol </span><span class="ot">=</span><span class="st"> esp-prog</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">debug_init_break </span><span class="ot">=</span><span class="st"> tbreak setup</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Pour info, voici le fichier <code>platformio.ini</code> que j’ai utilisé&nbsp;:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode ini code-with-copy"><code class="sourceCode ini"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">[platformio]</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">default_envs </span><span class="ot">=</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="dt">    esp32doit-devkit-v1</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="kw">[env]</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="dt">monitor_speed </span><span class="ot">=</span><span class="st"> </span><span class="dv">115200</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="dt">build_flags </span><span class="ot">=</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="dt">    -D VERSION</span><span class="ot">=</span><span class="st">"0.1"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="dt">    -D BAUD_RATE</span><span class="ot">=</span><span class="st">${env.monitor_speed}</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">[env:esp32doit-devkit-v1]</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="dt">platform </span><span class="ot">=</span><span class="st"> espressif32</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="dt">board </span><span class="ot">=</span><span class="st"> esp32doit-devkit-v1</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="dt">framework </span><span class="ot">=</span><span class="st"> arduino</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="dt">debug_tool </span><span class="ot">=</span><span class="st"> esp-prog</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="dt">upload_protocol </span><span class="ot">=</span><span class="st"> esp-prog</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="dt">debug_init_break </span><span class="ot">=</span><span class="st"> tbreak setup</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Brancher le connecteurs USB de l’ESP‑Prog à l’ordinateur. L’ESP‑Prog utilise deux ports série. Il n’y a pas besoin de brancher le connecteur USB de l’ESP, mais ça peut être pratique pour accéder à l’interface série. L’ESP‑Prog a aussi une interface série que je n’ai pas testé.</li>
+<li>Sous Mac, il faut installer libusb avec <a href="https://brew.sh/">Homebrew</a> (<code>brew update &amp;&amp; brew upgrade &amp;&amp; brew install libusb</code>).</li>
+<li>Sous Windows, il faut modifier le pilote par défaut avec le logiciel <a href="https://zadig.akeo.ie">Zadig</a>. Voir <a href="https://youtu.be/psMqilqlrRQ?t=892">la procédure dans la vidéo d’Andreas Spiess à 14:52</a>.</li>
+<li>Uploader le programme avec la commande standard de PlatformIO (<code>ctrl alt u</code>).</li>
+<li>Placer quelques points d’arrêts dans le programme.</li>
+<li>Démarrer le débuggage (menu <code>Debug/Start Debugging F5</code>).</li>
+</ul>
+<p><a href="./images/pio-unified-debugger-001.jpg"><img src="./images/pio-unified-debugger-001.jpg" class="img-fluid" alt="Debuggage d’un ESP32 avec un ESP-Prog et PIO Unified Debugger — ouilogique.com">{:style=“width:90%;”}</a></p>
+<!--
+
+# ESP-Prog Board
+
+
+OpenOCD
+
+ESP-Prog
+
+
+
+
+
+## Mise en route pour macOS
+
+- Télécharger le pilote VCP (Virtual COM Port) (FTDIUSBSerialDriver_v2_4_2.dmg) <https://www.ftdichip.com/Drivers/VCP.htm>
+- Télécharger le pilote D2XX (direct access) (D2XX1.4.4.dmg) <https://www.ftdichip.com/Drivers/D2XX.htm>
+- Lors de l’installation, le pilote VCP demande des autorisations dans `Préférences système/Sécurité et confidentialité/Confidentialité`.
+-
+
+cd /usr/local/lib
+cp /Volumes/release/D2XX/libftd2xx.1.4.4.dylib .
+sudo ln -sf libftd2xx.1.4.4.dylib libftd2xx.dylib
+
+cd /Volumes/release/D2XX/Samples/
+
+
+
+cd /System/Library/Extensions
+ls AppleUSBFTDI.kext/
+drwxr-xr-x  6 root  wheel   192B 22 mai 15:31 Contents/
+
+sudo mv AppleUSBFTDI.kext/ AppleUSBFTDI.disabled/
+
+sudo kextunload –b com.apple.driver.AppleUSBFTDI
+
+ls /dev | grep usb
+
+cu.usbserial-141300
+cu.usbserial-141301
+tty.usbserial-141300
+tty.usbserial-141301
+
+
+
+
+violet
+bleu
+blanc
+vert
+
+
+
+
+## Ressources
+
+  - Documentation officielle
+    - <https://github.com/espressif/esp-iot-solution/blob/master/documents/evaluation_boards/ESP-Prog_guide_en.md>
+  - Installation du driver pour macOS
+    - <https://www.ftdichip.com/Support/Documents/AppNotes/AN_134_FTDI_Drivers_Installation_Guide_for_MAC_OSX.pdf>
+
+
+
+
+https://docs.platformio.org/en/latest/plus/debug-tools/esp-prog.html
+
+
+## libusb
+
+    brew install libusb
+    brew link libusb
+    brew link --overwrite libusb
+
+
+## Set up OpenOCD
+
+Download latest release archive with macos in its name, for example openocd-esp32-macos-0.10.0-esp32-20180418.tar.gz.
+
+https://github.com/espressif/openocd-esp32/releases
+
+    mkdir ~/esp
+    cd ~/esp
+    tar -xzf ~/Downloads/openocd-esp32-macos-0.10.0-esp32-20190708.tar.gz
+
+
+    cd ~/esp/openocd-esp32
+    bin/openocd -s share/openocd/scripts -f interface/ftdi/esp32_devkitj_v1.cfg -f board/esp-wroom-32.cfg
+
+
+
+Failed to launch GDB: .pioinit:11: Error in sourced command file:
+Undefined command: "tbreak_setup".  Try "help". (from interpreter-exec console "source .pioinit")
+
+
+
+sudo kextunload /Library/Extensions/FTDIUSBSerialDriver.kext
+
+
+-->
+
+
+</section>
+
+<p>© ouilogique.com</p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
