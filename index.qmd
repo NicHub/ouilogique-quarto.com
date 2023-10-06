@@ -30,6 +30,12 @@ https://ouilogique.com/files/2018-02-17-html-embarque/microclub-atelier-html-emb
 
 CNAME !
 
+robots.txt
+
+images look
+
+<title>
+
 -->
 
 - [radios](/radios/)
