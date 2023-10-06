@@ -101,3 +101,8 @@ La broche de données est la 18.
 [img_4]: ./images/2017-04-27-neopixel-didel-ws2813-004.jpg
 [neopixels-rpi]: https://learn.adafruit.com/neopixels-on-raspberry-pi/software
 [stress-test]: https://core-electronics.com.au/tutorials/stress-testing-your-raspberry-pi.html
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

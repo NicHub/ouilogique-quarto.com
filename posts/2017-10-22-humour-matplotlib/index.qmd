@@ -52,3 +52,8 @@ Vous pouvez découvrir les techniques de base dans [le fichier de démo][demo].
 La police utilisée par xkcd est _Humor Sans_ et peut être téléchargée ici : <https://github.com/shreyankg/xkcd-desktop>. Malheureusement, elle ne fonctionne que sous Gnome.
 
 Une police qui ressemble est _Graphite_. Adobe en propose une version payante ici : <https://fonts.adobe.com/fonts/graphite#fonts-section>. Mais on peut télécharger gratuitement une des fontes ici : <https://www.fontyukle.net/en/DownLoad-Graphite+Std.ttf> ou la famille entière ici : <https://www.wfonts.com/font/graphite-std>.
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

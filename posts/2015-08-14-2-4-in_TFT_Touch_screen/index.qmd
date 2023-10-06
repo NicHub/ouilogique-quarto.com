@@ -158,3 +158,8 @@ Datasheet traduite par Google ~~goo.gl/hKB7W1~~
 [2]: ./images/2-4-in_TFT_Touch_screen_ouilogique_com.jpg
 [3]: ./images/2-4-in_TFT_Touch_screen_back.jpg
 [4]: ./images/2-4-in_TFT_Touch_screen_ouilogique_TM74HC245_videoinverse.jpg
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

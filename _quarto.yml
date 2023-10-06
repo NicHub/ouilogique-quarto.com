@@ -4,16 +4,18 @@ project:
   render:
     - ./posts/
     - ./index.qmd
+    # - ./posts/2015-06-11-mooc_initiation_aux_microcontroleurs/index.qmd
+    # - ./posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
+    # - ./posts/2017-08-26-installer-raspian-stretch/index.qmd
+    # - ./posts/2015-09-05-sites_web_statiques/index.qmd
+    # - ./posts/2016-06-04-test_horloge_temps_reel_i2c/index.qmd
+
+
+    # - /cours-html-embarque.html
   preview:
     port: 4200
     browser: true
 
-  # render:
-  #   - /index.qmd
-  #   - ./posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
-  #   - ./posts/2017-04-14-relai-bistable-commande-tension/index.qmd
-  #   - ./posts/2016-10-22-esp8266-dht22-oled/index.qmd
-  #   - /cours-html-embarque.html
   post-render:
     - ./_scripts/fix_links.py
     - ./_scripts/copy_pages.py

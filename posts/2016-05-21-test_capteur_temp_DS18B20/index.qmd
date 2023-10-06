@@ -107,3 +107,8 @@ void loop()
   Serial.print( " degC\n" );
 }
 ```
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

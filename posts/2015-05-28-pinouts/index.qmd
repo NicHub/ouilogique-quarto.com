@@ -280,3 +280,8 @@ Fin du chapitre 2.2 (Pin Description)
 |          17          |           SD1           |           🚫 D1            |         🚫 SD1         |  —  |           SD2           |           🚫 D3            |         🚫 SD3         |
 |          18          |           SD0           |           🚫 D0            |         🚫 SD0         |  —  |           SD3           |           🚫 CMD           |         🚫 CMD         |
 |          19          |           CLK           |           🚫 CLK           |         🚫 SCK         |  —  |           CMD           |             5V             |           5V           |
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

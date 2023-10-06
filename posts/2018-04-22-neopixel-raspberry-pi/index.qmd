@@ -107,3 +107,8 @@ Voici ce que me retourne la commande `top`. On voit que le processus `python` co
 [anneau de 24 led ws2812 — neopixel]: https://www.banggood.com/CJMCU-24-Bit-WS2812-5050-RGB-LED-Driver-Development-Board-p-974188.html?p=0431091025639201412F)
 [logic level converter]: https://www.banggood.com/Logic-Level-Converter-Bi-Directional-IIC-4-Way-Level-Conversion-Module-p-938774.html?p=0431091025639201412F)
 [gnu screen sur ouilogique.com]: ../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/#gnu-screen
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

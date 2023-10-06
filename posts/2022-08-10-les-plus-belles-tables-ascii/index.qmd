@@ -23,3 +23,8 @@ Hier (9 août 2022), je suis tombé sur une table de caractères ASCII de toute 
 ## theasciicode.com.ar
 
 -   <https://theasciicode.com.ar/>
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

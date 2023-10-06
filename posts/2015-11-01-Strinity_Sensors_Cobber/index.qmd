@@ -73,3 +73,8 @@ Bon, j’ai décidé de m’y remettre après une semaine de pause et comme le c
 [![ouilogique.com][img_2]][img_2]
 
 [img_2]: ./images/Strinity_Sensors_Cobber_001.jpg
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

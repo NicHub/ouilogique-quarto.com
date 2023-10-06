@@ -103,3 +103,8 @@ Le chip Silabs CP2102 est 50 % plus rapide que le CH340G ! J’ai réalisé ce
 ## Drivers Silabs CP2102
 
 -   ~~https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx~~
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

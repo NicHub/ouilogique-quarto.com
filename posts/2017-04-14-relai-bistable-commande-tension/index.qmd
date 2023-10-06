@@ -135,3 +135,8 @@ Le tout premier prototype était basé sur un Arduino UNO avec deux relais _soli
 [2]: https://www.distrelec.ch/fr/relais-de-puissance-pour-circuits-imprimes-vdc-400-mw-panasonic-adw1203w/p/11030041
 [3]: https://www.distrelec.ch/fr/bloc-alimentation-decoupage-sortie-mean-well-irm-03/p/30051638
 [4]: ./docs/irm03_eng_tds.pdf
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

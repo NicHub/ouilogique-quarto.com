@@ -37,3 +37,8 @@ Les mesures sont envoyées sur le port série, sur un écran OLED et sur [dweet.
 [3]: http://s.click.aliexpress.com/e/ZvFYzNZFq
 
 https://portals.aliexpress.com/adcenter/generate_url.htm
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

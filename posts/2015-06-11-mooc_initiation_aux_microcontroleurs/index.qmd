@@ -24,3 +24,8 @@ Et voici le cours au format GitBook :
 [img_mooc]: ./images/Microcontroleurs-v1.0.jpg
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wCgJRtzTvmI" frameborder="0" allowfullscreen></iframe>
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

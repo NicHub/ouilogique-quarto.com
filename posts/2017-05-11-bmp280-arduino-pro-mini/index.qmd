@@ -58,3 +58,8 @@ Je n’ai testé que le mode SPI (hardware) et pas le mode I²C et ça fonctionn
 [5]: https://www.bosch-sensortec.com/bst/products/all_products/bmp280
 [6]: https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMP280-DS001-18.pdf
 [7]: http://www.ti.com/lit/ds/symlink/lp2951-n.pdf
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

@@ -118,3 +118,8 @@ void cadreEcran( void )
   display.drawRect( 0, 0, display.width()-2, display.height()-2, WHITE );
 }
 ```
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

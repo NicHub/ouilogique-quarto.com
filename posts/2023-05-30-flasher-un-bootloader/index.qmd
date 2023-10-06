@@ -105,3 +105,8 @@ Pour programmer la cible en utilisant le programmateur, il faut :
 > Si on essaie de programmer un microcontrôleur qui n’a pas de bootloader via le port série, l’upload échouera avec l’erreur `programmer is not responding`.
 
 > Si on programme le microcontrôleur avec un programmateur, il faut débrancher les éventuels composants qui seraient connectés aux broches ICSP.
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

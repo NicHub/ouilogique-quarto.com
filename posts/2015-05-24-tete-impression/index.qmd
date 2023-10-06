@@ -46,3 +46,8 @@ Petit souci cependant, l’étalonnage de Reprap-France ne fonctionne plus... Il
 [i6]: ./images/910737-Voronoi_Klein_Bottle_004.jpg
 
 [Voronoi Klein Bottle — Thingiverse 910737](https://www.thingiverse.com/thing:910737)
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

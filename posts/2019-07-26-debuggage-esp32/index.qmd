@@ -218,3 +218,8 @@ sudo kextunload /Library/Extensions/FTDIUSBSerialDriver.kext
 
 
 -->
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

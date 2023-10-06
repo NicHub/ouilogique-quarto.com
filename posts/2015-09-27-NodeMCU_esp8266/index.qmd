@@ -392,3 +392,8 @@ cd esptool
 -   [4 ways to eliminate ESP8266 resets](http://internetofhomethings.com/homethings/?p=396)
 -   [How To: Pick the right pins on the NodeMCU ESP8266 and ESP32
     ](https://www.youtube.com/watch?v=7h2bE2vNoaY) - <https://github.com/thehookup/ESP32_Ceiling_Light/blob/master/GPIO_Limitations_ESP32_NodeMCU.jpg> - <https://github.com/thehookup/Wireless_MQTT_Doorbell/blob/master/GPIO_Limitations_ESP8266_NodeMCU.jpg>
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

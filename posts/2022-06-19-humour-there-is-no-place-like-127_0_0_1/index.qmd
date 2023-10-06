@@ -15,3 +15,8 @@ Trop bien la pub [init7](https://www.init7.net/)
 [![There is no place like 127.0.0.1][img_1]][img_1]
 
 [img_1]: ./images/there-is-no-place-like-127_0_0_1.jpg
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

@@ -28,6 +28,8 @@ Redirection a créer
 https://ouilogique.com/cours-html-embarque.html
 https://ouilogique.com/files/2018-02-17-html-embarque/microclub-atelier-html-embarque.pdf
 
+CNAME !
+
 -->
 
 - [radios](/radios/)

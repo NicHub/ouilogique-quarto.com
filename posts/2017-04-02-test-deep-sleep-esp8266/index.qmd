@@ -158,3 +158,8 @@ void loop()
 
 -   <http://www.esp8266.com/viewtopic.php?f=13&t=8315>
 -   <https://www.youtube.com/watch?v=9G-nMGcELG8&index=11&list=PL3XBzmAj53Rlu3Byy_GkqG6b-nwEpWku0>
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    

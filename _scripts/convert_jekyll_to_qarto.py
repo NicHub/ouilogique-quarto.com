@@ -6,6 +6,7 @@ import shutil
 import traceback
 from pprint import pprint
 
+import json
 import markdown_link_extractor
 import yaml
 
@@ -110,6 +111,19 @@ def readyaml_header(file_path):
     return yaml_header, content
 
 
+def inject_js(dest_file):
+    """___"""
+    with open(dest_file, "rt", encoding="utf-8") as _f:
+        content = _f.read()
+    content += """
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+    """
+    with open(dest_file, "wt", encoding="utf-8") as _f:
+        _f.write(content)
+
+
 def extract_feature_img_links_and_copy_img(dest_dir, dest_file):
     """___"""
     yaml_header, _ = readyaml_header(dest_file)
@@ -177,7 +191,7 @@ def write_jekyll_yaml_header(file, yaml_header, line_cnt):
 
 def compare_jekyll_post_metadata():
     """___"""
-    files = os.listdir(SOURCE_PATH_POSTS)
+    files = sorted(os.listdir(SOURCE_PATH_POSTS))
 
     # ref_keys = {
     #     "author",
@@ -226,7 +240,7 @@ def compare_jekyll_post_metadata():
 def copy_individual_files():
     """___"""
 
-    dirs = os.listdir(f"{SOURCE_PATH}files/")
+    dirs = sorted(os.listdir(f"{SOURCE_PATH}files/"))
     dirs = [f"{SOURCE_PATH}files/{dir}" for dir in dirs if dir not in [".DS_Store"]]
     for dir in dirs:
         dest_path = f"{DEST_PATH}posts/{os.path.split(dir)[1]}"
@@ -331,10 +345,36 @@ def adapt_links(dest_file):
         _f.write(content)
 
 
+def create_prev_next_links_js():
+    """___"""
+    prev_next_links = []
+    for id, _file in enumerate(FILES):
+        _prev = f"../{FILES[id - 1]}" if id > 0 else ""
+        _next = f"../{FILES[id + 1]}" if id < len(FILES) - 1 else ""
+        _prev = _prev.replace(".md", "")
+        _next = _next.replace(".md", "")
+        _file = _file.replace(".md", "")
+        prev_next_links.append(
+            {
+                "curr": _file,
+                "prev": _prev,
+                "next": _next,
+            }
+        )
+
+    prev_next_links_json = json.dumps(prev_next_links, indent=4)
+
+    fpath = "../js/prev_next_links.js"
+    with open(fpath, "wt", encoding="utf-8") as _f:
+        _f.write("prev_next_links = ")
+        _f.write(prev_next_links_json)
+
+
 def main():
     """___"""
     copy_individual_files()
     create_nojekyll()
+    create_prev_next_links_js()
     for file in FILES:
         dirname = file.split(".")[0]
         source_file = f"{SOURCE_PATH_POSTS}{file}"
@@ -345,13 +385,14 @@ def main():
         extract_img_links_and_copy_img(dest_dir, dest_file)
         extract_feature_img_links_and_copy_img(dest_dir, dest_file)
         adapt_links(dest_file)
+        inject_js(dest_file)
 
 
 SOURCE_PATH = os.path.expanduser("~/Sites/ouilogique.com/")
 SOURCE_PATH_POSTS = os.path.expanduser("~/Sites/ouilogique.com/_posts/blog/")
 DEST_PATH = "../"
 DEST_PATH_POSTS = "../posts/"
-FILES = os.listdir(SOURCE_PATH_POSTS)
+FILES = sorted(os.listdir(SOURCE_PATH_POSTS))
 # FILES = [
 #     "2019-03-27-plateforme-de-stewart-esp32.md",
 # ]
