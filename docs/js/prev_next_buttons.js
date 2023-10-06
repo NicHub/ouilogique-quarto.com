@@ -37,16 +37,23 @@ function main() {
         return;
     }
 
-    const template_home = `
+    const template_home_prev = `
     <div class="nav-page nav-page-home">
         <a href=${home_url} class="pagination-link">
-            ↑ <span class="nav-page-text">Retour à l’accueil</span>
+            ← <span class="nav-page-text">Retour à l’accueil</span>
+        </a>
+    </div>`;
+
+    const template_home_next = `
+    <div class="nav-page nav-page-home">
+        <a href=${home_url} class="pagination-link">
+            <span class="nav-page-text">Retour à l’accueil</span> →
         </a>
     </div>`;
 
     const template_prev =
         prev_next_links[id]["prev"] === home_url
-            ? template_home
+            ? template_home_prev
             : `
     <div class="nav-page nav-page-previous">
         <a href="${prev_next_links[id]["prev"]}" class="pagination-link">
@@ -56,7 +63,7 @@ function main() {
 
     const template_next =
         prev_next_links[id]["next"] === home_url
-            ? template_home
+            ? template_home_next
             : `
         <div class="nav-page nav-page-next">
         <a href="${prev_next_links[id]["next"]}" class="pagination-link">
