@@ -10,8 +10,16 @@ called by `fontawesome.lua`.
 
 import os
 import logging
+import yaml
 
-FPATH = "./_site/site_libs/quarto-contrib/fontawesome6-0.1.0/all.css"
+pwd = os.path.abspath(os.curdir)
+prefix = "../" if "_scripts" in pwd else "./"
+
+with open(f"{prefix}_quarto.yml", "rt") as
+    quarto_yaml = yaml.safe_load(_f.read())
+
+
+FPATH = f'./{quarto_yaml["project"]["output-dir"]}/site_libs/quarto-contrib/fontawesome6-0.1.0/all.css'
 
 
 STR1 = "../../webfonts"
@@ -37,7 +45,7 @@ try:
     logging.basicConfig(
         format="%(levelno)s " "%(module)-11s " "%(lineno)3s. " "%(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
-        level=logging.INFO
+        level=logging.INFO,
     )
     main()
 except SystemExit as _e:

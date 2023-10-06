@@ -6,7 +6,17 @@
 import os
 import logging
 
-PATHS = [f"{os.path.abspath(os.curdir)}{os.path.sep}_site"]
+import yaml
+
+
+pwd = os.path.abspath(os.curdir)
+prefix = "../" if "_scripts" in pwd else "./"
+
+with open(f"{prefix}_quarto.yml", "rt") as
+    quarto_yaml = yaml.safe_load(_f.read())
+
+
+PATHS = [f'{os.path.abspath(os.curdir)}{os.path.sep}{quarto_yaml["project"]["output-dir"]}']
 
 
 def main():
