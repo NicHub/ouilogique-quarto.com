@@ -42,14 +42,14 @@ website:
     background: "#1B1B1B"
     collapse: false
 
-  # page-navigation: true
-  # sidebar:
-  #   style: "floating"
-  #   # style: "docked"
-  #   search: true
-  #   contents: auto
-  #   alignment: "center" # "right" "left" # "center"
-  #   pinned: false
+  page-navigation: true
+  sidebar:
+    style: "floating"
+    # style: "docked"
+    search: true
+    contents: auto
+    alignment: "center" # "right" "left" # "center"
+    pinned: false
 
   # cookie-consent:
   #   type: express
