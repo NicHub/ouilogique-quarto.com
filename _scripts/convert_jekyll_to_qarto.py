@@ -178,7 +178,7 @@ def write_jekyll_yaml_header(file, yaml_header, line_cnt):
 
 def compare_jekyll_post_metadata():
     """___"""
-    files = sorted(os.listdir(SOURCE_PATH_POSTS))
+    files = sorted(os.listdir(SOURCE_PATH_POSTS), reverse=True)
 
     # ref_keys = {
     #     "author",
@@ -227,7 +227,7 @@ def compare_jekyll_post_metadata():
 def copy_individual_files():
     """___"""
 
-    dirs = sorted(os.listdir(f"{SOURCE_PATH}files/"))
+    dirs = sorted(os.listdir(f"{SOURCE_PATH}files/"), reverse=True)
     dirs = [f"{SOURCE_PATH}files/{dir}" for dir in dirs if dir not in [".DS_Store"]]
     for dir in dirs:
         dest_path = f"{DEST_PATH}posts/{os.path.split(dir)[1]}"
@@ -366,19 +366,18 @@ def create_prev_next_links_js():
         if not yaml_header["draft"]:
             non_draft_files.append(dest_file)
 
-
     prev_next_links = []
+    home_url = "../../"
     for id, _file in enumerate(non_draft_files):
         inject_js(_file)
-
-        _prev = f"../{FILES[id - 1]}" if id > 0 else ""
-        _next = f"../{FILES[id + 1]}" if id < len(FILES) - 1 else ""
-        _prev = _prev.replace(".md", "")
-        _next = _next.replace(".md", "")
-        _file = _file.replace(".md", "")
+        _prev = f"../{non_draft_files[id - 1]}" if id > 0 else home_url
+        _next = f"../{non_draft_files[id + 1]}" if id < len(non_draft_files) - 1 else home_url
+        _prev = _prev.replace("/index.qmd", "").replace("../../posts/", "../")
+        _next = _next.replace("/index.qmd", "").replace("../../posts/", "../")
+        _file = os.path.split(os.path.split(_file)[0])[-1].replace(".md", "")
         prev_next_links.append(
             {
-                "curr": os.path.split(os.path.split(_file)[0])[-1],
+                "curr": _file,
                 "prev": _prev,
                 "next": _next,
             }
@@ -414,7 +413,7 @@ SOURCE_PATH = os.path.expanduser("~/Sites/ouilogique.com/")
 SOURCE_PATH_POSTS = os.path.expanduser("~/Sites/ouilogique.com/_posts/blog/")
 DEST_PATH = "../"
 DEST_PATH_POSTS = "../posts/"
-FILES = sorted(os.listdir(SOURCE_PATH_POSTS))
+FILES = sorted(os.listdir(SOURCE_PATH_POSTS), reverse=True)
 # FILES = [
 #     "2019-03-27-plateforme-de-stewart-esp32.md",
 # ]

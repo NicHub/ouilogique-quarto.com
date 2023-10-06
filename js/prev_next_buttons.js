@@ -45,7 +45,7 @@ function main() {
     </div>`;
 
     const template_prev =
-        prev_next_links[id]["prev"].length === 0
+        prev_next_links[id]["prev"] === home_url
             ? template_home
             : `
     <div class="nav-page nav-page-previous">
@@ -55,7 +55,7 @@ function main() {
         </div>`;
 
     const template_next =
-        prev_next_links[id]["next"].length === 0
+        prev_next_links[id]["next"] === home_url
             ? template_home
             : `
         <div class="nav-page nav-page-next">
