@@ -66,7 +66,7 @@ function main() {
 <nav class="page-navigation">
     ${template_prev}
     ${template_next}
-</nav>;`;
+</nav>`;
 
     console.log(template_prev_next);
     const quartoContent = document.getElementById("quarto-content");
