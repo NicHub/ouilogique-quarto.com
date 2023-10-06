@@ -225,113 +225,98 @@ prev_next_links = [
         "next": "../2017-08-26-installer-raspian-stretch"
     },
     {
-        "curr": "2017-08-26-installer-raspian-stretch",
+        "curr": "2017-08-27-installer-gphoto2",
         "prev": "../2017-06-18-mppt",
         "next": "../2017-08-27-installer-gphoto2"
     },
     {
-        "curr": "2017-08-27-installer-gphoto2",
+        "curr": "2017-09-18-mosquitto-mqtt-raspbery",
         "prev": "../2017-08-26-installer-raspian-stretch",
         "next": "../2017-09-18-mosquitto-mqtt-raspbery"
     },
     {
-        "curr": "2017-09-18-mosquitto-mqtt-raspbery",
+        "curr": "2017-09-30-piezo-switch",
         "prev": "../2017-08-27-installer-gphoto2",
         "next": "../2017-09-30-piezo-switch"
     },
     {
-        "curr": "2017-09-30-piezo-switch",
+        "curr": "2017-10-22-humour-matplotlib",
         "prev": "../2017-09-18-mosquitto-mqtt-raspbery",
         "next": "../2017-10-22-humour-matplotlib"
     },
     {
-        "curr": "2017-10-22-humour-matplotlib",
+        "curr": "2018-02-15-introduction-html",
         "prev": "../2017-09-30-piezo-switch",
         "next": "../2018-02-15-introduction-html"
     },
     {
-        "curr": "2018-02-15-introduction-html",
+        "curr": "2018-02-16-introduction-css",
         "prev": "../2017-10-22-humour-matplotlib",
         "next": "../2018-02-16-introduction-css"
     },
     {
-        "curr": "2018-02-16-introduction-css",
+        "curr": "2018-02-17-introduction-javascript",
         "prev": "../2018-02-15-introduction-html",
         "next": "../2018-02-17-introduction-javascript"
     },
     {
-        "curr": "2018-02-17-introduction-javascript",
+        "curr": "2018-04-22-neopixel-raspberry-pi",
         "prev": "../2018-02-16-introduction-css",
         "next": "../2018-04-22-neopixel-raspberry-pi"
     },
     {
-        "curr": "2018-04-22-neopixel-raspberry-pi",
+        "curr": "2018-07-15-hacker-une-cle-rf433",
         "prev": "../2018-02-17-introduction-javascript",
         "next": "../2018-07-15-hacker-une-cle-rf433"
     },
     {
-        "curr": "2018-07-15-hacker-une-cle-rf433",
+        "curr": "2019-03-27-plateforme-de-stewart-esp32",
         "prev": "../2018-04-22-neopixel-raspberry-pi",
         "next": "../2019-03-27-plateforme-de-stewart-esp32"
     },
     {
-        "curr": "2019-03-27-plateforme-de-stewart-esp32",
+        "curr": "2019-07-26-debuggage-esp32",
         "prev": "../2018-07-15-hacker-une-cle-rf433",
         "next": "../2019-07-26-debuggage-esp32"
     },
     {
-        "curr": "2019-07-26-debuggage-esp32",
+        "curr": "2019-09-08-stm32-e407-blink",
         "prev": "../2019-03-27-plateforme-de-stewart-esp32",
         "next": "../2019-09-08-stm32-e407-blink"
     },
     {
-        "curr": "2019-09-08-stm32-e407-blink",
+        "curr": "2019-10-19-livres",
         "prev": "../2019-07-26-debuggage-esp32",
         "next": "../2019-10-19-livres"
     },
     {
-        "curr": "2019-10-19-livres",
+        "curr": "2020-05-25-humour-magic-word",
         "prev": "../2019-09-08-stm32-e407-blink",
         "next": "../2020-05-25-humour-magic-word"
     },
     {
-        "curr": "2020-05-25-humour-magic-word",
+        "curr": "2020-12-25-installer-pi-hole-sur-un-raspberry",
         "prev": "../2019-10-19-livres",
         "next": "../2020-12-25-installer-pi-hole-sur-un-raspberry"
     },
     {
-        "curr": "2020-12-25-installer-pi-hole-sur-un-raspberry",
+        "curr": "2022-06-19-humour-there-is-no-place-like-127_0_0_1",
         "prev": "../2020-05-25-humour-magic-word",
         "next": "../2022-06-19-humour-there-is-no-place-like-127_0_0_1"
     },
     {
-        "curr": "2022-06-19-humour-there-is-no-place-like-127_0_0_1",
+        "curr": "2022-08-10-les-plus-belles-tables-ascii",
         "prev": "../2020-12-25-installer-pi-hole-sur-un-raspberry",
         "next": "../2022-08-10-les-plus-belles-tables-ascii"
     },
     {
-        "curr": "2022-08-10-les-plus-belles-tables-ascii",
+        "curr": "2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran",
         "prev": "../2022-06-19-humour-there-is-no-place-like-127_0_0_1",
         "next": "../2023-02-17-trucs-et-astuces-en-bash"
     },
     {
-        "curr": "2023-02-17-trucs-et-astuces-en-bash",
+        "curr": "2023-05-30-flasher-un-bootloader",
         "prev": "../2022-08-10-les-plus-belles-tables-ascii",
         "next": "../2023-02-17-trucs-et-astuces-en-python"
-    },
-    {
-        "curr": "2023-02-17-trucs-et-astuces-en-python",
-        "prev": "../2023-02-17-trucs-et-astuces-en-bash",
-        "next": "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran"
-    },
-    {
-        "curr": "2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran",
-        "prev": "../2023-02-17-trucs-et-astuces-en-python",
-        "next": "../2023-05-30-flasher-un-bootloader"
-    },
-    {
-        "curr": "2023-05-30-flasher-un-bootloader",
-        "prev": "../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran",
-        "next": ""
     }
 ]

@@ -111,20 +111,6 @@ def readyaml_header(file_path):
     return yaml_header, content
 
 
-def inject_js(dest_file):
-    """___"""
-    with open(dest_file, "rt", encoding="utf-8") as _f:
-        content = _f.read()
-    content += """
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-
-"""
-
-    with open(dest_file, "wt", encoding="utf-8") as _f:
-        _f.write(content)
-
-
 def extract_feature_img_links_and_copy_img(dest_dir, dest_file):
     """___"""
     yaml_header, _ = readyaml_header(dest_file)
@@ -346,10 +332,45 @@ def adapt_links(dest_file):
         _f.write(content)
 
 
+def inject_js(dest_file):
+    """___"""
+    # print(dest_file)
+    if not os.path.exists(dest_file):
+        print(f"{dest_file} does not exists")
+        return
+
+    with open(dest_file, "rt", encoding="utf-8") as _f:
+        content = _f.read()
+    content += """
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+
+"""
+
+    with open(dest_file, "wt", encoding="utf-8") as _f:
+        _f.write(content)
+
+
 def create_prev_next_links_js():
     """___"""
+
+    non_draft_files = []
+    for file in FILES:
+        dirname = file.split(".")[0]
+        dest_dir = f"{DEST_PATH_POSTS}{dirname}/"
+        dest_file = f"{dest_dir}index.qmd"
+        if not os.path.exists(dest_file):
+            raise SystemExit(f"{dest_file} does not exists")
+        yaml_header, _ = readyaml_header(dest_file)
+        yaml_header = yaml.safe_load(yaml_header)
+        if not yaml_header["draft"]:
+            non_draft_files.append(dest_file)
+
+
     prev_next_links = []
-    for id, _file in enumerate(FILES):
+    for id, _file in enumerate(non_draft_files):
+        inject_js(_file)
+
         _prev = f"../{FILES[id - 1]}" if id > 0 else ""
         _next = f"../{FILES[id + 1]}" if id < len(FILES) - 1 else ""
         _prev = _prev.replace(".md", "")
@@ -357,7 +378,7 @@ def create_prev_next_links_js():
         _file = _file.replace(".md", "")
         prev_next_links.append(
             {
-                "curr": _file,
+                "curr": os.path.split(os.path.split(_file)[0])[-1],
                 "prev": _prev,
                 "next": _next,
             }
@@ -375,7 +396,6 @@ def main():
     """___"""
     copy_individual_files()
     create_nojekyll()
-    create_prev_next_links_js()
     for file in FILES:
         dirname = file.split(".")[0]
         source_file = f"{SOURCE_PATH_POSTS}{file}"
@@ -386,7 +406,8 @@ def main():
         extract_img_links_and_copy_img(dest_dir, dest_file)
         extract_feature_img_links_and_copy_img(dest_dir, dest_file)
         adapt_links(dest_file)
-        inject_js(dest_file)
+
+    create_prev_next_links_js()
 
 
 SOURCE_PATH = os.path.expanduser("~/Sites/ouilogique.com/")
