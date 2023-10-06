@@ -10,7 +10,6 @@ import yaml
 
 pwd = os.path.abspath(os.curdir)
 prefix = "../" if "_scripts" in pwd else "./"
-
 with open(f"{prefix}_quarto.yml", "rt") as _f:
     quarto_yaml = yaml.safe_load(_f.read())
 
