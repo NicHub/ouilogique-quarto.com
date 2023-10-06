@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nico">
+
+<title>Programmer un ATtiny25V avec un Arduino UNO comme programmateur</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../.././images/favicon.ico" rel="icon">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-regular fa-house" aria-label="house"></i></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NicHub" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Programmer un ATtiny25V avec un Arduino UNO comme programmateur</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ATtiny</div>
+    <div class="quarto-category">ISP</div>
+    <div class="quarto-category">UNO</div>
+    <div class="quarto-category">Flashage</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nico </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">21 mai 2015</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="matériel-requis" class="level2">
+<h2 class="anchored" data-anchor-id="matériel-requis">Matériel requis</h2>
+<ul>
+<li>Un ordinateur sur OS X Yosemite (10.10)</li>
+<li>Un Arduino UNO</li>
+<li>Un ATtiny25V</li>
+<li>Un breadboard</li>
+<li>4 LED</li>
+<li>4 résistances de 220&nbsp;Ω</li>
+</ul>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<blockquote class="blockquote">
+<p>Source principale</p>
+</blockquote>
+<ul>
+<li><a href="https://www.didel.com/diduino/ProgrammerUnAtTiny.pdf" class="uri">https://www.didel.com/diduino/ProgrammerUnAtTiny.pdf</a></li>
+</ul>
+<blockquote class="blockquote">
+<p>Autres sources</p>
+</blockquote>
+<ul>
+<li><a href="https://arduino.cc/en/Tutorial/ArduinoISP" class="uri">https://arduino.cc/en/Tutorial/ArduinoISP</a></li>
+<li><a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" class="uri">https://ww1.microchip.com/downloads/en/devicedoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf</a></li>
+</ul>
+<blockquote class="blockquote">
+<p>À voir aussi</p>
+</blockquote>
+<ul>
+<li><a href="https://arduino.cc/en/Main/Standalone" class="uri">https://arduino.cc/en/Main/Standalone</a></li>
+<li><a href="https://arduino.cc/en/Tutorial/ArduinoToBreadboard" class="uri">https://arduino.cc/en/Tutorial/ArduinoToBreadboard</a></li>
+<li><a href="https://codeandlife.com/2012/03/21/using-arduino-uno-as-isp/" class="uri">https://codeandlife.com/2012/03/21/using-arduino-uno-as-isp/</a></li>
+</ul>
+</section>
+<section id="préambule" class="level2">
+<h2 class="anchored" data-anchor-id="préambule">Préambule</h2>
+<p>Le but de ce document est de présenter la programmation d’un microcontrôleur ATtiny25V à l’aide d’un Arduino UNO. Ce mode de programmation s’appelle en anglais <em>AVR ISP (in-system programmer)</em>. L’IDE Arduino utilisé pendant les tests était la version 1.5.8 bêta Java&nbsp;6.</p>
+</section>
+<section id="préparation-matérielle" class="level2">
+<h2 class="anchored" data-anchor-id="préparation-matérielle">Préparation matérielle</h2>
+<p>Câbler la plaque d’essai selon le schéma ci-dessous. Les trois premières LED, verte, rouge et orange, servent à afficher le statut lors de la programmation&nbsp;:</p>
+<ul>
+<li>pin 9: Heartbeat - shows the programmer is running</li>
+<li>pin 8: Error - Lights up if something goes wrong (use red if that makes sense)</li>
+<li>pin 7: Programming - In communication with the slave</li>
+</ul>
+<p>et la quatrième LED, bleue, sert à vérifier que l’ATtiny a effectivement été programmé avec le programme <code>tinyblinky.ino</code>. À noter que les LED sont optionnelles.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./images/programmer_un_attiny25v.svg"><img src="./images/programmer_un_attiny25v.svg" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">ouilogique.com</figcaption>
+</figure>
+</div>
+</section>
+<section id="préparation-logicielle-ide-1.6.4" class="level2">
+<h2 class="anchored" data-anchor-id="préparation-logicielle-ide-1.6.4">Préparation logicielle (IDE &lt; 1.6.4)</h2>
+<blockquote class="blockquote">
+<p>!! Édit 2016-07-03 Ceci est valable pour les version de l’IDE Arduino qui n’avaient pas le gestionnaire de carte. À partir de la version 1.6.4, suivre la procédure du chapitre suivant.</p>
+</blockquote>
+<ul>
+<li>Télécharger les librairies (<em>Core Libraries</em>) de la famille ATtiny de <a href="https://code.google.com/p/arduino-tiny/" class="uri">https://code.google.com/p/arduino-tiny/</a> en prenant garde de choisir la version correspondante à l’IDE Arduino qui va être utilisé par la suite.</li>
+<li>Décompresser le fichier zip et déplacer le répertoire <code>tiny</code> dans <code>~/Documents/Arduino/hardware/</code>.</li>
+<li>Copier le fichier <code>tiny/avr/Prospective Boards.txt</code> vers <code>tiny/avr/boards.txt</code>.</li>
+<li>Le fichier <code>boards.txt</code> peut optionnellement être modifié, par exemple pour enlever des définitions de microcontrôleurs inutiles. Ce fichier complète celui de l’IDE qui se trouve à <code>/Applications/Arduino.app/Contents/Resources/Java/hardware/arduino/avr/boards.txt</code> et qui peut lui aussi être édité.</li>
+<li>Redémarrer l’IDE. Le menu <code>Outils/Type de carte</code> doit afficher la liste des ATtiny installés ci-dessus.</li>
+</ul>
+</section>
+<section id="préparation-logicielle-ide-1.6.4-1" class="level2">
+<h2 class="anchored" data-anchor-id="préparation-logicielle-ide-1.6.4-1">Préparation logicielle (IDE &gt;= 1.6.4)</h2>
+<blockquote class="blockquote">
+<p>!! Édit 2016-07-03</p>
+</blockquote>
+<ul>
+<li>Ouvrir les préférences de l’IDE Arduino</li>
+<li>Ajouter l’URL <code>https://raw.githubusercontent.com/damellis/attiny/ide-1.6.x-boards-manager/package_damellis_attiny_index.json</code> dans <em>URL de gestionnaire de cartes supplémentaires</em>.</li>
+<li>Aller dans le menu <code>Outils/Type de cartes/Gestionnaire de cartes</code> et rechercher <code>ATtiny</code>.</li>
+<li>Installer les gestionnaire de David A.&nbsp;Mellis pour l’ATtiny.</li>
+</ul>
+</section>
+<section id="configurer-larduino-uno-comme-un-programmateur" class="level2">
+<h2 class="anchored" data-anchor-id="configurer-larduino-uno-comme-un-programmateur">Configurer l’Arduino UNO comme un programmateur</h2>
+<ul>
+<li>Ouvrir le croquis <code>ArduinoISP.ino</code> qui se trouve dans le menu <code>Fichier/Exemples</code> en onzième position.</li>
+<li>Vérifier que la cible est l’Arduino UNO&nbsp;:
+<ul>
+<li><code>Outils/Type de carte/Arduino UNO</code></li>
+<li><code>Outils/Port</code>&nbsp;: <em>Sélectionner le port du UNO</em></li>
+<li><code>Outils/Programmateur/AVRISP mkII</code></li>
+</ul></li>
+<li>Téléverser le croquis <code>ArduinoISP.ino</code> sur le UNO.</li>
+</ul>
+</section>
+<section id="charger-le-bootloader-dans-lattiny" class="level2">
+<h2 class="anchored" data-anchor-id="charger-le-bootloader-dans-lattiny">Charger le <em>bootloader</em> dans l’ATtiny</h2>
+<blockquote class="blockquote">
+<p>Normalement cette étape n’est pas nécessaire quand on programme en mode ISP. Le bootloader est justement là pour palier l’absence de programmateur. Comme je n’ai pas encore vérifié cette info, je laisse ce texte pour l’instant. De toute façon une chose est sûre&nbsp;: ça fonctionne comme ça.</p>
+</blockquote>
+<p>Cette opération est nécessaire pour les microcontrôleurs qui n’ont jamais été programmés. Elle ne doit être effectuée qu’une fois.</p>
+<ul>
+<li>Changer la cible pour programmer l’ATtiny25V&nbsp;:
+<ul>
+<li><code>Outils/Type de carte/ATtiny25 @ 1 MHz</code></li>
+<li><code>Outils/Port</code>&nbsp;: <em>Sélectionner le port du UNO</em></li>
+<li><code>Outils/Programmateur/Arduino as ISP</code></li>
+</ul></li>
+<li>Charger le bootloader&nbsp;:
+<ul>
+<li><code>Outils/Graver la séquence d’initialisation</code></li>
+</ul></li>
+</ul>
+<p>D’après <a href="https://www.didel.com/diduino/ProgrammerUnAtTiny.pdf">Didel</a>, ce n’est pas vraiment un <em>bootloader</em> qui est chargé, mais une configuration des fusibles qui est réalisée.</p>
+</section>
+<section id="programmer-lattiny" class="level2">
+<h2 class="anchored" data-anchor-id="programmer-lattiny">Programmer l’ATtiny</h2>
+<ul>
+<li>Vérifier que la cible est effectivement l’ATtiny comme à l’étape précédente.</li>
+<li>Téléverser le croquis suivant&nbsp;:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">    tinyblinky.ino</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Programme pour tester la programmation en mode ISP d’un ATtiny25V</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    Fait clignoter une LED sur PB4, pin 3</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">*/</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;avr/io.h&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">#define LedPin </span>PORTB4</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="pp">#define LedToggle </span>PORTB<span class="pp"> </span><span class="op">^=</span><span class="pp"> </span><span class="op">(</span><span class="pp"> </span><span class="dv">1</span><span class="op">&lt;&lt;</span>LedPin<span class="pp"> </span><span class="op">)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="pp">#define delay1 </span><span class="dv">250</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">#define delay2 </span><span class="dv">500</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="dt">void</span> wait<span class="op">(</span> <span class="dt">int</span> delay_ms <span class="op">)</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span><span class="op">(</span> <span class="at">volatile</span> <span class="dt">int</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i<span class="op">&lt;</span>delay_ms<span class="op">;</span> i<span class="op">++</span> <span class="op">)</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span><span class="op">(</span> <span class="at">volatile</span> <span class="dt">int</span> j<span class="op">=</span><span class="dv">0</span><span class="op">;</span> j<span class="op">&lt;</span><span class="dv">50</span><span class="op">;</span> j<span class="op">++</span> <span class="op">)</span> <span class="op">{}</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    DDRB <span class="op">|=</span> <span class="op">(</span> <span class="dv">1</span><span class="op">&lt;&lt;</span>LedPin <span class="op">);</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span><span class="op">(</span> <span class="kw">true</span> <span class="op">)</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        LedToggle<span class="op">;</span>  wait<span class="op">(</span> delay1 <span class="op">);</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        LedToggle<span class="op">;</span>  wait<span class="op">(</span> delay2 <span class="op">);</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="résolution-de-problèmes" class="level2">
+<h2 class="anchored" data-anchor-id="résolution-de-problèmes">Résolution de problèmes</h2>
+<p>Certaines cartes UNO requièrent l’ajout d’un condensateur de 10 µF entre la pin <code>RESET</code> et la pin <code>GND</code>. Voir à ce sujet <a href="https://forum.arduino.cc/index.php?topic=104435.0" class="uri">https://forum.arduino.cc/index.php?topic=104435.0</a>. Pour moi, ça a fonctionné sans ce condensateur.</p>
+</section>
+<section id="programmation-des-fusibles" class="level2">
+<h2 class="anchored" data-anchor-id="programmation-des-fusibles">Programmation des fusibles</h2>
+<blockquote class="blockquote">
+<p>Les infos de ce chapitres m’ont été gracieusement transmises par Richard <del>(www.fablab-chene20.ch)</del>.</p>
+</blockquote>
+<p>Les fusibles (<em>fuses</em> en anglais) sont des paramètres intégrés aux microcontrôleurs d’Atmel et que l’on peut modifier à l’aide du programme <a href="https://www.nongnu.org/avrdude/user-manual/avrdude.html"><code>avrdude</code></a>. C’est ce même programme qui est utilisé par l’IDE Arduino pour envoyer les fichiers compilés sur le microcontrôleur. On peut d’ailleurs voir ce qu’il fait de la manière suivante&nbsp;:</p>
+<ul>
+<li>Ouvrir les préférences de l’IDE Arduino</li>
+<li>Cliquer sur le lien en bas de la fenêtre pour ouvrir le dossier contenant les préférences. Alternativement on peut directement éditer le fichier avec la commande <code>open ~/Library/Arduino15/preferences.txt</code></li>
+<li>Fermer l’IDE Arduino, car il écrase le fichier des préférences lorsqu’on le quitte</li>
+<li>Changer la ligne <code>upload.verbose=false</code> en <code>upload.verbose=true</code></li>
+<li>Redémarrer l’IDE</li>
+<li>Téléverser le croquis <code>tinyblinky.ino</code></li>
+<li>Copier le contenu de la console et le coller dans un éditeur de texte</li>
+<li>Chercher la chaîne de caractère <code>avrdude</code></li>
+<li>La première occurrence nous montre un message similaire à</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/bin/avrdude</span> <span class="at">-C</span>/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf <span class="at">-v</span> <span class="at">-v</span> <span class="at">-v</span> <span class="at">-v</span> <span class="at">-pattiny25</span> <span class="at">-cstk500v1</span> <span class="at">-P</span>/dev/tty.usbmodem1421 <span class="at">-b19200</span> <span class="at">-Uflash:w:</span>/var/folders/3l/c6_nv3414rb_sxjkb8z9z1fr0000gn/T/build2612095162045447463.tmp/tinyblinky.cpp.hex:i</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="configuration-davrdude" class="level3">
+<h3 class="anchored" data-anchor-id="configuration-davrdude">Configuration d’<code>avrdude</code></h3>
+<p>Pour utiliser <code>avrdude</code>, le plus simple est d’ajouter les deux lignes suivantes à la fin du fichier <code>~/.bash_profile</code> et de redémarrer le terminal</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="va">PATH</span><span class="op">=</span><span class="va">$PATH</span>:/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/bin</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="va">AVRDUDECONF</span><span class="op">=</span>/Applications/Arduino.app/Contents/Resources/Java/hardware/tools/avr/etc/avrdude.conf</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="lectures-des-fusibles" class="level3">
+<h3 class="anchored" data-anchor-id="lectures-des-fusibles">Lectures des fusibles</h3>
+<p>La commande utilisée par l’IDE Arduino nous donne toutes les informations de configuration pour envoyer nos propres commandes. La première chose à faire est de lire la configuration actuelle. Adaptez la commande suivante à votre configuration&nbsp;:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">avrdude</span>                      <span class="dt">\</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">-C</span> <span class="va">$AVRDUDECONF</span>          <span class="dt">\</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span>                       <span class="dt">\</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">-p</span> attiny25              <span class="dt">\</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">-c</span> stk500v1              <span class="dt">\</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">-P</span> /dev/tty.usbmodem1421 <span class="dt">\</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">-b</span> 19200                 <span class="dt">\</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> lfuse:r:-:i           <span class="dt">\</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> hfuse:r:-:i           <span class="dt">\</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> efuse:r:-:i           <span class="dt">\</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">-n</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>avrdude</code> renvoie une longue réponse qui se termine par&nbsp;:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">avrdude:</span> safemode: lfuse reads as 62</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">avrdude:</span> safemode: hfuse reads as D7</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">avrdude:</span> safemode: efuse reads as FF</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="ex">avrdude:</span> safemode: Fuses OK <span class="er">(</span><span class="ex">H:FF,</span> E:D7, L:62<span class="kw">)</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<p>On constate que cette version d’<code>avrdude</code> a un bug&nbsp;: La dernière ligne indique les fusibles dans l’ordre <code>H, E, L</code> alors qu’en fait il s’agit de l’ordre <code>E, H, L</code>. Il faut donc faire attention et ne tenir compte que des trois premières lignes. La version d’<code>avrdude</code> utilisée pour ce test est&nbsp;: <code>Version 6.0.1, compiled on Apr  3 2014 at 22:00:33</code></p>
+</blockquote>
+</section>
+<section id="écriture-des-fusibles" class="level3">
+<h3 class="anchored" data-anchor-id="écriture-des-fusibles">Écriture des fusibles</h3>
+<p>Pour configurer les fusibles, il est conseillé d’utiliser un outil de configuration, comme <a href="https://www.engbedded.com/fusecalc/" class="uri">https://www.engbedded.com/fusecalc/</a> ou de lire le chapitre <em>20. Memory Programming</em> de la spécification <a href="https://ww1.microchip.com/downloads/en/devicedoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf" class="uri">https://ww1.microchip.com/downloads/en/devicedoc/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf</a>. La vidéo <a href="https://www.youtube.com/watch?v=jP1NTgs-a-s" class="uri">https://www.youtube.com/watch?v=jP1NTgs-a-s</a> donne une bonne introduction en anglais.</p>
+<p>Dans notre cas, nous allons simplement utiliser les valeurs données par l’utilitaire <em>fusecalc</em> ci-dessus pour enlever la division par 8 de la fréquence d’horloge. La seule valeur que nous changeons est</p>
+<pre><code>Divide clock by 8 internally; [CKDIV8=0]</code></pre>
+<p>Ce qui modifie la valeur du <code>Low Byte</code> qui passe de <code>62</code> à <code>e2</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">avrdude</span>                      <span class="dt">\</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">-C</span> <span class="va">$AVRDUDECONF</span>          <span class="dt">\</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span>                       <span class="dt">\</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">-p</span> attiny25              <span class="dt">\</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">-c</span> stk500v1              <span class="dt">\</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">-P</span> /dev/tty.usbmodem1421 <span class="dt">\</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">-b</span> 19200                 <span class="dt">\</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> lfuse:w:0xe2:m        <span class="dt">\</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> hfuse:w:0xd7:m        <span class="dt">\</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> efuse:w:0xff:m</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Après l’exécution de la commande ci-dessus, on constate que le croquis <code>tinyblinky.ino</code> est exécuté 8&nbsp;fois plus rapidement.</p>
+<p>Si on veut retrouver les fusibles d’origine&nbsp;:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">avrdude</span>                      <span class="dt">\</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">-C</span> <span class="va">$AVRDUDECONF</span>          <span class="dt">\</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">-v</span>                       <span class="dt">\</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">-p</span> attiny25              <span class="dt">\</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">-c</span> stk500v1              <span class="dt">\</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">-P</span> /dev/tty.usbmodem1421 <span class="dt">\</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">-b</span> 19200                 <span class="dt">\</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> lfuse:w:0x62:m        <span class="dt">\</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> hfuse:w:0xd7:m        <span class="dt">\</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">-U</span> efuse:w:0xff:m</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+</section>
+
+<p>© ouilogique.com</p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

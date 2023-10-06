@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nico">
+
+<title>Plateforme de Stewart pilotée avec un ESP32</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../.././images/favicon.ico" rel="icon">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-regular fa-house" aria-label="house"></i></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/NicHub" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Plateforme de Stewart pilotée avec un ESP32</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nico </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">27 mars 2019</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p><a href="./images/stewart-plateform-ouilogique.jpg"><img src="./images/stewart-plateform-ouilogique.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%;”}</a></p>
+<p>Premiers prototypes d’une plateforme de Stewart que je construis dans le cadre du projet&nbsp;2019 (P19) du <a href="https://microclub.ch">Microclub</a>.</p>
+<section id="code-source" class="level2">
+<h2 class="anchored" data-anchor-id="code-source">Code source</h2>
+<p><strong>Le code source et quelques détails sur GitHub</strong></p>
+<ul>
+<li><a href="https://github.com/NicHub/stewart-platform-esp32" class="uri">https://github.com/NicHub/stewart-platform-esp32</a></li>
+</ul>
+</section>
+<section id="quatrième-version" class="level2">
+<h2 class="anchored" data-anchor-id="quatrième-version">Quatrième version</h2>
+<p>Pour la quatrième version, je ne génère plus le PWM des servos avec l’ESP32, mais avec un <a href="https://www.mouser.ch/ProductDetail/Adafruit/3416?qs=F5EMLAvA7ICYzX4Av%252BhRHw%3D%3D&amp;countrycode=CH&amp;currencycode=CHF">driver I²C PCA9685</a>.</p>
+<p><a href="./images/2021-04-24-proto-plateforme-de-stewart_001.jpg"><img src="./images/2021-04-24-proto-plateforme-de-stewart_001.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:100%;”}</a></p>
+<p><a href="./images/2021-04-24-proto-plateforme-de-stewart_002.jpg"><img src="./images/2021-04-24-proto-plateforme-de-stewart_002.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:100%;”}</a></p>
+<div style="display:block; margin-bottom:50px;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1ll8JVwJC50" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+<blockquote class="blockquote">
+<p>Changement de bande adhésive pour tenir le câble du Nunshunk. Le fil rouge à gauche du breadboard ne sert à rien.</p>
+</blockquote>
+<p><a href="./images/2023-01-30-proto-plateforme-de-stewart_001.jpg"><img src="./images/2023-01-30-proto-plateforme-de-stewart_001.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:100%;”}</a></p>
+<p><a href="./images/2023-01-30-proto-plateforme-de-stewart_002.jpg"><img src="./images/2023-01-30-proto-plateforme-de-stewart_002.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:100%;”}</a></p>
+<!-- Layout 2×2 -->
+<p><a href="./images/2023-01-30-proto-plateforme-de-stewart_003.jpg"><img src="./images/2023-01-30-proto-plateforme-de-stewart_003.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left”}</a></p>
+<p><a href="./images/2023-01-30-proto-plateforme-de-stewart_004.jpg"><img src="./images/2023-01-30-proto-plateforme-de-stewart_004.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left”}</a></p>
+<p><a href="./images/2023-01-30-proto-plateforme-de-stewart_005.jpg"><img src="./images/2023-01-30-proto-plateforme-de-stewart_005.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left”}</a></p>
+<p><a href="./images/2023-01-30-proto-plateforme-de-stewart_006.jpg"><img src="./images/2023-01-30-proto-plateforme-de-stewart_006.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left; clear:right; margin-bottom:200px;”}</a></p>
+</section>
+<section id="troisième-version" class="level2">
+<h2 class="anchored" data-anchor-id="troisième-version">Troisième version</h2>
+<p>Avec un clone de Nunchuck (joystick I²C de la console Wii), des vraie biellettes et des clones de servos Tower Pro MG90s. J’ai abandonné les clones de servos Tower Pro MG996R qui ne fonctionnent vraiment pas bien, car ils sont beaucoup trop lents et consomment trop de courant.</p>
+<div style="display:block; margin-bottom:50px;">
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/1uQ3CkhVr-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+<p><a href="./images/2019-05-31-proto-plateforme-de-stewart_001.jpg"><img src="./images/2019-05-31-proto-plateforme-de-stewart_001.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; margin-bottom:100px”}</a></p>
+</section>
+<section id="deuxième-version" class="level2">
+<h2 class="anchored" data-anchor-id="deuxième-version">Deuxième version</h2>
+<p>Avec un clone de Nunchuck (joystick I²C de la console Wii), des vraie biellettes et des clones de servos Tower Pro MG996R.</p>
+<p><a href="./images/2019-05-03-proto-plateforme-de-stewart_001.jpg"><img src="./images/2019-05-03-proto-plateforme-de-stewart_001.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left”}</a></p>
+<p><a href="./images/2019-05-03-proto-plateforme-de-stewart_002.jpg"><img src="./images/2019-05-03-proto-plateforme-de-stewart_002.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left”}</a></p>
+<p><a href="./images/2019-05-03-proto-plateforme-de-stewart_003.jpg"><img src="./images/2019-05-03-proto-plateforme-de-stewart_003.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left”}</a></p>
+<p><a href="./images/2019-05-03-proto-plateforme-de-stewart_004.jpg"><img src="./images/2019-05-03-proto-plateforme-de-stewart_004.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left; clear:right; margin-bottom:200px;”}</a></p>
+</section>
+<section id="première-version" class="level2">
+<h2 class="anchored" data-anchor-id="première-version">Première version</h2>
+<p>Avec un joystick analogique, des biellettes en fil de fer et des clones de servos Tower Pro MG90s.</p>
+<div style="display:block; margin-bottom:50px;">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qbQuXtnF4H4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+</iframe>
+</div>
+<p><a href="./images/2019-03-21-proto-plateforme-de-stewart_001.jpg"><img src="./images/2019-03-21-proto-plateforme-de-stewart_001.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left”}</a></p>
+<p><a href="./images/2019-03-21-proto-plateforme-de-stewart_002.jpg"><img src="./images/2019-03-21-proto-plateforme-de-stewart_002.jpg" class="img-fluid" alt="Plateforme de Stewart — ouilogique.com">{:style=“width:50%; float:left; clear:right; margin-bottom:100px”}</a></p>
+</section>
+<section id="aide-mémoire" class="level2">
+<h2 class="anchored" data-anchor-id="aide-mémoire">AIDE-MÉMOIRE</h2>
+<p>Article Wikipedia</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Stewart_platform" class="uri">https://en.wikipedia.org/wiki/Stewart_platform</a></li>
+</ul>
+<p>Vidéo qui m’a donné envie de réaliser une plateforme de Stewart San-José State University</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=j4OmVLc_oDw" class="uri">https://www.youtube.com/watch?v=j4OmVLc_oDw</a></li>
+</ul>
+<p>Malheureusement, ils ont fermé leur site fullmotiondynamics.com.</p>
+<p>California Polytechnic University of Pomona — Mechanical Engineering Department — Controls Class Final Project</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=7Jw8m4pbTYI" class="uri">https://www.youtube.com/watch?v=7Jw8m4pbTYI</a></li>
+</ul>
+<p>MIPT, Department of Radio Engineering and Cybernetics 2 degrés de liberté + code Arduino</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=p65XPP53rLo" class="uri">https://www.youtube.com/watch?v=p65XPP53rLo</a></li>
+</ul>
+<p>Vidéo où l’on voit bien les imperfections métrologiques</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=QdKo9PYwGaU" class="uri">https://www.youtube.com/watch?v=QdKo9PYwGaU</a></li>
+<li>Ils utilisent ce controleur de servos <a href="https://www.phidgets.com/?tier=3&amp;catid=21&amp;pcid=18&amp;prodid=1032" class="uri">https://www.phidgets.com/?tier=3&amp;catid=21&amp;pcid=18&amp;prodid=1032</a></li>
+</ul>
+<p>Athus Vieira</p>
+<ul>
+<li><a href="https://www.linkedin.com/pulse/ball-plate-system-robotic-pid-control-athus-vieira/" class="uri">https://www.linkedin.com/pulse/ball-plate-system-robotic-pid-control-athus-vieira/</a></li>
+<li><a href="https://www.youtube.com/watch?v=9XhcSSrA4Yc" class="uri">https://www.youtube.com/watch?v=9XhcSSrA4Yc</a></li>
+<li>PID tuning <a href="http://emanual.robotis.com/docs/en/platform/openmanipulator/" class="uri">http://emanual.robotis.com/docs/en/platform/openmanipulator/</a></li>
+</ul>
+<p>Instructables by moosenee (avec gros plan sur le touch screen) <strong>😃 Avec du code Arduino&nbsp;!</strong></p>
+<ul>
+<li><a href="https://www.instructables.com/id/PID-Controlled-Ball-Balancing-Stewart-Platform/" class="uri">https://www.instructables.com/id/PID-Controlled-Ball-Balancing-Stewart-Platform/</a></li>
+<li><a href="https://github.com/a6guerre/Ball-balanced-on-Stewart-Platform" class="uri">https://github.com/a6guerre/Ball-balanced-on-Stewart-Platform</a></li>
+<li><a href="https://github.com/a6guerre/Ball-balanced-on-Stewart-Platform/blob/master/Readme.pdf" class="uri">https://github.com/a6guerre/Ball-balanced-on-Stewart-Platform/blob/master/Readme.pdf</a></li>
+</ul>
+<p>Instructables by ThomasKNR <strong>😃 Avec du code Arduino&nbsp;!</strong></p>
+<ul>
+<li><a href="https://www.instructables.com/id/Arduino-controlled-Rotary-Stewart-Platform/" class="uri">https://www.instructables.com/id/Arduino-controlled-Rotary-Stewart-Platform/</a></li>
+<li><a href="https://github.com/ThomasKNR/RotaryStewartPlatform" class="uri">https://github.com/ThomasKNR/RotaryStewartPlatform</a></li>
+</ul>
+<p>xoxota99/stewy GitHub <strong>😃 Avec du code Arduino&nbsp;!</strong></p>
+<ul>
+<li><a href="https://github.com/xoxota99/stewy" class="uri">https://github.com/xoxota99/stewy</a></li>
+</ul>
+<p>Chaine YouTube avec une collection d’une vingtaine de vidéos</p>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PLVNyl3oDY7lsYDQMKvguyPkpJ0Eaqb9z_" class="uri">https://www.youtube.com/playlist?list=PLVNyl3oDY7lsYDQMKvguyPkpJ0Eaqb9z_</a></li>
+</ul>
+<p>Blender</p>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=uNKHX5B011E" class="uri">https://www.youtube.com/watch?v=uNKHX5B011E</a></li>
+</ul>
+<p>Webots</p>
+<ul>
+<li><a href="https://cyberbotics.com/" class="uri">https://cyberbotics.com/</a></li>
+<li><a href="https://www.youtube.com/watch?v=ddrtiwjKAaY" class="uri">https://www.youtube.com/watch?v=ddrtiwjKAaY</a></li>
+</ul>
+<p>Projet memememememememe <strong>😃 Avec un simulateur fonctionnel en Processing et le code pour RPi&nbsp;!</strong></p>
+<ul>
+<li><a href="https://memememememememe.me/post/stewart-platform-math/" class="uri">https://memememememememe.me/post/stewart-platform-math/</a></li>
+<li><a href="https://github.com/thiagohersan/memememe" class="uri">https://github.com/thiagohersan/memememe</a></li>
+</ul>
+<p><strong>😃 Autres codes Arduino&nbsp;!</strong></p>
+<ul>
+<li><a href="https://www.marginallyclever.com/product/rotary-stewart-platform-v2/" class="uri">https://www.marginallyclever.com/product/rotary-stewart-platform-v2/</a></li>
+<li><a href="https://github.com/MarginallyClever/RotaryStewartPlatform/blob/master/RSPv1/RSPv1.ino" class="uri">https://github.com/MarginallyClever/RotaryStewartPlatform/blob/master/RSPv1/RSPv1.ino</a></li>
+</ul>
+<p>Robots à chaînes exotiques, Jean-Pierre Merlet, INRIA Sophia-Antipolis</p>
+<ul>
+<li><a href="https://www-sop.inria.fr/members/Jean-Pierre.Merlet/Archi/node17.html" class="uri">https://www-sop.inria.fr/members/Jean-Pierre.Merlet/Archi/node17.html</a></li>
+</ul>
+</section>
+<section id="plateforme-de-stewart-avec-3-degrés-de-liberté" class="level2">
+<h2 class="anchored" data-anchor-id="plateforme-de-stewart-avec-3-degrés-de-liberté">PLATEFORME DE STEWART AVEC 3 DEGRÉS DE LIBERTÉ</h2>
+
+<!-- - <https://www.instructables.com/id/Ball-Balancing-PID-System/> -->
+<ul>
+<li><a href="https://www.instructables.com/id/3DOF-Ball-on-Plate-Using-Closed-Loop-Stepper-Motor/" class="uri">https://www.instructables.com/id/3DOF-Ball-on-Plate-Using-Closed-Loop-Stepper-Motor/</a></li>
+<li><a href="https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/index.html#HLD" class="uri">https://people.ece.cornell.edu/land/courses/ece4760/FinalProjects/f2017/psl58_aw698_eb645/psl58_aw698_eb645/index.html#HLD</a></li>
+<li><a href="https://youtu.be/2i5qN2XWZLk" class="uri">https://youtu.be/2i5qN2XWZLk</a></li>
+</ul>
+</section>
+<section id="meccad-ball-and-plate" class="level2">
+<h2 class="anchored" data-anchor-id="meccad-ball-and-plate">MECCAD Ball and plate</h2>
+<p>https://youtu.be/bEM5AywnzKg</p>
+</section>
+<section id="sprk-a-low-cost-stewart-platform-for-motion-study-in-surgical-robotics" class="level2">
+<h2 class="anchored" data-anchor-id="sprk-a-low-cost-stewart-platform-for-motion-study-in-surgical-robotics">SPRK: A Low-Cost Stewart Platform For Motion Study In Surgical Robotics</h2>
+<ul>
+<li><a href="https://goldberg.berkeley.edu/pubs/2018_ISMR_stewart_design.pdf" class="uri">https://goldberg.berkeley.edu/pubs/2018_ISMR_stewart_design.pdf</a></li>
+<li><a href="https://github.com/BerkeleyAutomation/sprk" class="uri">https://github.com/BerkeleyAutomation/sprk</a></li>
+</ul>
+</section>
+<section id="plateforme-de-stewart-avec-retour-de-force" class="level2">
+<h2 class="anchored" data-anchor-id="plateforme-de-stewart-avec-retour-de-force">PLATEFORME DE STEWART AVEC RETOUR DE FORCE</h2>
+<p>Dynamixel motor</p>
+<ul>
+<li><a href="http://www.robotis.us/dynamixel/" class="uri">http://www.robotis.us/dynamixel/</a></li>
+</ul>
+<p>Avec GUI Processing [Arun Dayal Udai]</p>
+<ul>
+<li><a href="https://youtu.be/LFpyIZx2QGU?t=221" class="uri">https://youtu.be/LFpyIZx2QGU?t=221</a></li>
+<li><a href="https://www.youtube.com/watch?v=rD4kTW_khXQ" class="uri">https://www.youtube.com/watch?v=rD4kTW_khXQ</a></li>
+<li><a href="https://www.youtube.com/watch?v=RqUcHulonHk" class="uri">https://www.youtube.com/watch?v=RqUcHulonHk</a></li>
+</ul>
+<p>Felix Ros <strong>😃 Avec du code Processing et Arduino&nbsp;!</strong></p>
+<ul>
+<li><a href="http://www.felixros.com/" class="uri">http://www.felixros.com/</a></li>
+<li><a href="https://github.com/felixros2401/Stewart-Platform" class="uri">https://github.com/felixros2401/Stewart-Platform</a></li>
+<li><a href="https://www.instructables.com/id/Controlling-a-Stewart-Platform/" class="uri">https://www.instructables.com/id/Controlling-a-Stewart-Platform/</a></li>
+</ul>
+</section>
+<section id="plateforme-de-stewart-à-base-circulaire-rotopod" class="level2">
+<h2 class="anchored" data-anchor-id="plateforme-de-stewart-à-base-circulaire-rotopod">PLATEFORME DE STEWART À BASE CIRCULAIRE (ROTOPOD)</h2>
+<p>Un rotopod permet de faire une rotation complète sans ajouter un 7e moteur.</p>
+<p>Version de Circular-Base-Stewart-Platform</p>
+<p><strong>😃 Il montre un logiciel de tunning des PID dans le 2e lien</strong></p>
+<ul>
+<li><a href="https://www.youtube.com/channel/UCgm1PM2V9BgfP7Qaze1teAw" class="uri">https://www.youtube.com/channel/UCgm1PM2V9BgfP7Qaze1teAw</a></li>
+<li><a href="https://youtu.be/zna9Hw_Ei58?t=482" class="uri">https://youtu.be/zna9Hw_Ei58?t=482</a></li>
+</ul>
+<p>Version commerciale de Mikrolar</p>
+<ul>
+<li><a href="http://mikrolar.com/r3000.html" class="uri">http://mikrolar.com/r3000.html</a></li>
+</ul>
+</section>
+<section id="versions-commerciales" class="level2">
+<h2 class="anchored" data-anchor-id="versions-commerciales">Versions commerciales</h2>
+<ul>
+<li><a href="https://motionsystems.eu/products/" class="uri">https://motionsystems.eu/products/</a></li>
+</ul>
+</section>
+<section id="modelling-and-simulation-of-a-6dof-motion-platform-with-permanent-magnet-linear-actuators-for-testing-in-wind-tunnel" class="level2">
+<h2 class="anchored" data-anchor-id="modelling-and-simulation-of-a-6dof-motion-platform-with-permanent-magnet-linear-actuators-for-testing-in-wind-tunnel">Modelling and Simulation of a 6DOF Motion Platform with Permanent Magnet Linear Actuators for Testing in Wind Tunnel</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=AZjgcrV642c" class="uri">https://www.youtube.com/watch?v=AZjgcrV642c</a></li>
+</ul>
+</section>
+<section id="simulateur-sur-mathematica" class="level2">
+<h2 class="anchored" data-anchor-id="simulateur-sur-mathematica">SIMULATEUR SUR MATHEMATICA</h2>
+<ul>
+<li><a href="https://www.wolfram.com/training/videos/ENG032/" class="uri">https://www.wolfram.com/training/videos/ENG032/</a></li>
+</ul>
+</section>
+<section id="matlab-forward-kinematics-solver" class="level2">
+<h2 class="anchored" data-anchor-id="matlab-forward-kinematics-solver">MATLAB FORWARD KINEMATICS SOLVER</h2>
+<p><strong>😃 Avec du code Matlab&nbsp;!</strong></p>
+<ul>
+<li><a href="https://github.com/jotux/Steward-Platform-Forward-Kinematics-Solver" class="uri">https://github.com/jotux/Steward-Platform-Forward-Kinematics-Solver</a></li>
+</ul>
+<p>PDF à trouver&nbsp;:</p>
+<blockquote class="blockquote">
+<p>Forward kinematics of the general 6-6 Stewart platform using algebraic elimination. Authors: Tae-Young Lee, Jae-Kyung Shim Department of Mechanical Engineering, Korea University, 5-Ka Anam-Dong Sungbuk-Ku, Seoul, 136-701, South Korea. 36th issue of Mechanism and Machine Theory magazine (2001, 1073-1085).</p>
+</blockquote>
+</section>
+<section id="applications-microclub" class="level2">
+<h2 class="anchored" data-anchor-id="applications-microclub">APPLICATIONS MICROCLUB</h2>
+<section id="application-1-labyrinthe" class="level3">
+<h3 class="anchored" data-anchor-id="application-1-labyrinthe">Application 1&nbsp;: Labyrinthe</h3>
+<ul>
+<li>Concours de vitesse de sortie du labyrinthe
+<ul>
+<li>plusieurs robots s’affrontent en mode auto</li>
+<li>plusieurs utilisateurs s’affrontent en mode manuel</li>
+</ul></li>
+</ul>
+</section>
+<section id="application-2-système-de-stabilisation-pour-appareil-photo" class="level3">
+<h3 class="anchored" data-anchor-id="application-2-système-de-stabilisation-pour-appareil-photo">Application 2&nbsp;: Système de stabilisation pour appareil photo</h3>
+<ul>
+<li>Besoin d’un 7e axe pour augmenter l’angle de rotation autour de l’axe Z.</li>
+</ul>
+</section>
+<section id="application-3-ball-bouncing" class="level3">
+<h3 class="anchored" data-anchor-id="application-3-ball-bouncing">Application 3 : Ball bouncing</h3>
+<ul>
+<li><del>poe.olin.edu/2017/Bounce/</del></li>
+<li><a href="https://github.com/TShapinsky/Bounce" class="uri">https://github.com/TShapinsky/Bounce</a></li>
+</ul>
+</section>
+</section>
+<section id="implémentation" class="level2">
+<h2 class="anchored" data-anchor-id="implémentation">IMPLÉMENTATION</h2>
+<section id="inputs" class="level3">
+<h3 class="anchored" data-anchor-id="inputs">inputs</h3>
+<ul>
+<li>Mesure de la position de la bille par tapis résistif</li>
+<li>Commande depuis navigateur web</li>
+<li>Commande depuis Blender</li>
+<li>BLE via smartphone</li>
+<li>Joystick cablé (Wii Nunchuck)</li>
+</ul>
+</section>
+<section id="outputs" class="level3">
+<h3 class="anchored" data-anchor-id="outputs">outputs</h3>
+<ul>
+<li>Mouvements du robot (6 ou 7 axes)</li>
+<li>Retour visuel sur navigateur web</li>
+<li>Retour visuel sur Blender</li>
+</ul>
+</section>
+</section>
+<section id="matériel" class="level2">
+<h2 class="anchored" data-anchor-id="matériel">MATÉRIEL</h2>
+<section id="servomoteurs" class="level3">
+<h3 class="anchored" data-anchor-id="servomoteurs">Servomoteurs</h3>
+<ul>
+<li>Tower Pro MG90s Servos
+<ul>
+<li><a href="https://www.banggood.com/6X-Towerpro-MG90S-Metal-Gear-RC-Micro-Servo-p-1072260.html" class="uri">https://www.banggood.com/6X-Towerpro-MG90S-Metal-Gear-RC-Micro-Servo-p-1072260.html</a></li>
+<li><a href="https://www.towerpro.com.tw/product/mg90s-3/" class="uri">https://www.towerpro.com.tw/product/mg90s-3/</a></li>
+<li><a href="https://www.youtube.com/watch?v=iHPGoKHgzHo" class="uri">https://www.youtube.com/watch?v=iHPGoKHgzHo</a></li>
+</ul></li>
+<li><a href="https://servodatabase.com/" class="uri">https://servodatabase.com/</a></li>
+<li>KST DS115MG servos</li>
+<li>GWS Micro 2BBMG servo (<a href="https://www.youtube.com/watch?v=TgqJbneXZI8" class="uri">https://www.youtube.com/watch?v=TgqJbneXZI8</a>)</li>
+<li>HS5485HB (<a href="https://github.com/a6guerre/Ball-balanced-on-Stewart-Platform/blob/master/Readme.pdf" class="uri">https://github.com/a6guerre/Ball-balanced-on-Stewart-Platform/blob/master/Readme.pdf</a>)</li>
+<li><a href="http://www.robotis.us/dynamixel-mx-64t/" class="uri">http://www.robotis.us/dynamixel-mx-64t/</a> (Utilisé par Arun Dayal Udai)</li>
+<li>MG995 (<a href="https://www.banggood.com/MG995-High-Torgue-Mental-Gear-Analog-Servo-p-73885.html" class="uri">https://www.banggood.com/MG995-High-Torgue-Mental-Gear-Analog-Servo-p-73885.html</a>) (Rolf)</li>
+<li>Tower Pro SG-5010 servos <del>(01.org/developerjourney/recipe/building-stewart-platform)</del></li>
+<li>Hitec HS-5625MG (utilisé par <a href="https://github.com/xoxota99/stewy" class="uri">https://github.com/xoxota99/stewy</a>)</li>
+<li>MG996R <a href="https://fr.aliexpress.com/item//32636102294.html" class="uri">https://fr.aliexpress.com/item//32636102294.html</a></li>
+<li>Parallax 900-00005 (utilisé par fullmotiondynamics) <a href="https://www.parallax.com/product/900-00005" class="uri">https://www.parallax.com/product/900-00005</a></li>
+</ul>
+</section>
+<section id="fonctionnement-des-servos" class="level3">
+<h3 class="anchored" data-anchor-id="fonctionnement-des-servos">Fonctionnement des servos</h3>
+<ul>
+<li>Analogiques <a href="https://www.youtube.com/watch?v=LXURLvga8bQ" class="uri">https://www.youtube.com/watch?v=LXURLvga8bQ</a></li>
+<li><a href="https://learn.sparkfun.com/tutorials/hobby-servo-tutorial/all" class="uri">https://learn.sparkfun.com/tutorials/hobby-servo-tutorial/all</a></li>
+</ul>
+</section>
+<section id="driver-de-servos" class="level3">
+<h3 class="anchored" data-anchor-id="driver-de-servos">Driver de servos</h3>
+<ul>
+<li>PCA9685 (16 servos, I²C) <a href="https://aliexpress.com/af/32718274859.html" class="uri">https://aliexpress.com/af/32718274859.html</a></li>
+</ul>
+</section>
+<section id="rotules-tiges" class="level3">
+<h3 class="anchored" data-anchor-id="rotules-tiges">Rotules + tiges</h3>
+<ul>
+<li>M3x100mm <a href="https://aliexpress.com/af/32775630549.html" class="uri">https://aliexpress.com/af/32775630549.html</a></li>
+<li>En M2 <a href="https://aliexpress.com/af/32704692789.html" class="uri">https://aliexpress.com/af/32704692789.html</a></li>
+<li>rotule <a href="https://aliexpress.com/af/32887391192.html" class="uri">https://aliexpress.com/af/32887391192.html</a></li>
+<li>tige <a href="https://aliexpress.com/af/32468820900.html" class="uri">https://aliexpress.com/af/32468820900.html</a></li>
+<li>tige + rotule <a href="https://aliexpress.com/af/32904104171.html" class="uri">https://aliexpress.com/af/32904104171.html</a></li>
+<li>magnétique <a href="https://aliexpress.com/af/32818135577.html" class="uri">https://aliexpress.com/af/32818135577.html</a></li>
+<li>complète <a href="https://aliexpress.com/af/32894390128.html" class="uri">https://aliexpress.com/af/32894390128.html</a></li>
+</ul>
+</section>
+<section id="alim-5v" class="level3">
+<h3 class="anchored" data-anchor-id="alim-5v">Alim 5V</h3>
+<ul>
+<li>Courant 10A <a href="https://aliexpress.com/af/32810906485.html" class="uri">https://aliexpress.com/af/32810906485.html</a></li>
+</ul>
+</section>
+<section id="levier-de-servo-servo-horn-arm" class="level3">
+<h3 class="anchored" data-anchor-id="levier-de-servo-servo-horn-arm">Levier de servo (Servo horn arm)</h3>
+<ul>
+<li>couleur tritanium <a href="https://aliexpress.com/af/32843432977.html" class="uri">https://aliexpress.com/af/32843432977.html</a></li>
+<li><a href="https://aliexpress.com/af/32811563669.html" class="uri">https://aliexpress.com/af/32811563669.html</a></li>
+</ul>
+</section>
+<section id="liste-complète-de-matériel" class="level3">
+<h3 class="anchored" data-anchor-id="liste-complète-de-matériel">Liste complète de matériel</h3>
+<ul>
+<li><del>01.org/developerjourney/recipe/building-stewart-platform</del></li>
+</ul>
+</section>
+<section id="touch-screen" class="level3">
+<h3 class="anchored" data-anchor-id="touch-screen">Touch screen</h3>
+<ul>
+<li>Digikey 360-3520-ND <del>www.digikey.ch/short/pj85db</del> (utilisé par <a href="https://github.com/xoxota99/stewy" class="uri">https://github.com/xoxota99/stewy</a>)</li>
+<li><a href="https://aliexpress.com/af/32809597549.html" class="uri">https://aliexpress.com/af/32809597549.html</a></li>
+</ul>
+</section>
+<section id="esp32" class="level3">
+<h3 class="anchored" data-anchor-id="esp32">ESP32</h3>
+<ul>
+<li>WeMos ESP32 WROOM
+<ul>
+<li><a href="https://www.banggood.com/fr/WeMos-ESP32-WiFi-Bluetooth-Development-Board-Ultra-Low-Power-Consumption-Dual-Core-ESP-32-ESP-32S-p-1175488.html" class="uri">https://www.banggood.com/fr/WeMos-ESP32-WiFi-Bluetooth-Development-Board-Ultra-Low-Power-Consumption-Dual-Core-ESP-32-ESP-32S-p-1175488.html</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="joystick" class="level3">
+<h3 class="anchored" data-anchor-id="joystick">Joystick</h3>
+<ul>
+<li>Wii Nunchuck <a href="https://aliexpress.com/af/32827461737.html" class="uri">https://aliexpress.com/af/32827461737.html</a></li>
+</ul>
+</section>
+<section id="calculs" class="level3">
+<h3 class="anchored" data-anchor-id="calculs">Calculs</h3>
+<ul>
+<li><a href="https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry/transforming-points-and-vectors" class="uri">https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/geometry/transforming-points-and-vectors</a></li>
+</ul>
+</section>
+<section id="pcb" class="level3">
+<h3 class="anchored" data-anchor-id="pcb">PCB</h3>
+<ul>
+<li><a href="https://jlcpcb.com" class="uri">https://jlcpcb.com</a></li>
+</ul>
+</section>
+<section id="système-complet-avec-caméra-swiftflying-store" class="level3">
+<h3 class="anchored" data-anchor-id="système-complet-avec-caméra-swiftflying-store">Système complet avec caméra <a href="https://swiftflying.fr.aliexpress.com/store/3246059">Swiftflying Store</a></h3>
+<ul>
+<li>Le lien ne fonctionne plus&nbsp;: fr.aliexpress.com/item/32957141466.html</li>
+</ul>
+</section>
+</section>
+<section id="pinout" class="level2">
+<h2 class="anchored" data-anchor-id="pinout">PINOUT</h2>
+<p>31 DIRA GPIO14 34 TC5 GPIO13 TC4 GPIO15 STPA STPB 28 DIRB GPIO25</p>
+</section>
+<section id="delta-robot-one-robot-delta-arduino" class="level2">
+<h2 class="anchored" data-anchor-id="delta-robot-one-robot-delta-arduino">DELTA-ROBOT ONE — Robot Delta Arduino</h2>
+<ul>
+<li><a href="https://www.hackster.io/deltarobotone/delta-robot-one-8386a1?utm_campaign=new_projects&amp;utm_content=2&amp;utm_medium=email&amp;utm_source=hackster&amp;utm_term=project_name" class="uri">https://www.hackster.io/deltarobotone/delta-robot-one-8386a1?utm_campaign=new_projects&amp;utm_content=2&amp;utm_medium=email&amp;utm_source=hackster&amp;utm_term=project_name</a></li>
+</ul>
+</section>
+<section id="calcul-de-la-cinématique-inverse" class="level2">
+<h2 class="anchored" data-anchor-id="calcul-de-la-cinématique-inverse">Calcul de la cinématique inverse</h2>
+<p>Cinématique inverse avec servomoteurs <strong>😃 Meilleure source pour les calculs pour l’instant&nbsp;!</strong></p>
+<blockquote class="blockquote">
+<p>Méthode de calcul de la cinématique inverse utilisée par le projet memememememememe. C’est la seule méthode qui inclu des servomoteurs en rotation. Les autres proposent systématiquement des actuateurs linéaires.</p>
+</blockquote>
+<ul>
+<li><a href="https://memememememememe.me/assets/posts/stewart-platform-math/MathsOfStewartPlatformV5.pdf" class="uri">https://memememememememe.me/assets/posts/stewart-platform-math/MathsOfStewartPlatformV5.pdf</a></li>
+</ul>
+<p>Analyse vectorielle des lieux de singularité de la plate-forme de Gough-Stewart</p>
+<ul>
+<li><del>corpus.ulaval.ca/jspui/bitstream/20.500.11794/23444/1/28962.pdf</del></li>
+<li><a href="https://stringfixer.com/fr/Stewart_platform" class="uri">https://stringfixer.com/fr/Stewart_platform</a></li>
+<li><a href="https://fr.lambdageeks.com/parallel-robot-kinematics/" class="uri">https://fr.lambdageeks.com/parallel-robot-kinematics/</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Reymond_Clavel" class="uri">https://fr.wikipedia.org/wiki/Reymond_Clavel</a></li>
+<li><a href="https://fr.wikipedia.org/wiki/Robot_Delta" class="uri">https://fr.wikipedia.org/wiki/Robot_Delta</a></li>
+<li><a href="https://vimeo.com/129643275" class="uri">https://vimeo.com/129643275</a></li>
+<li><a href="https://www.ni.com/fr-ch/shop/software/products/6-dof-stewart-platform-control-library.html" class="uri">https://www.ni.com/fr-ch/shop/software/products/6-dof-stewart-platform-control-library.html</a></li>
+<li><a href="https://www.ni.com/fr-ch/shop/software/products/stewart-platform-trainer-toolkit.html" class="uri">https://www.ni.com/fr-ch/shop/software/products/stewart-platform-trainer-toolkit.html</a></li>
+<li><a href="https://www.xarg.org/paper/inverse-kinematics-of-a-stewart-platform/" class="uri">https://www.xarg.org/paper/inverse-kinematics-of-a-stewart-platform/</a></li>
+<li><a href="https://youtu.be/1jrP3_1ML9M" class="uri">https://youtu.be/1jrP3_1ML9M</a></li>
+</ul>
+</section>
+<section id="divers" class="level2">
+<h2 class="anchored" data-anchor-id="divers">Divers</h2>
+<ul>
+<li><a href="https://youtu.be/S-_VvNg_4cE" class="uri">https://youtu.be/S-_VvNg_4cE</a></li>
+<li><a href="https://youtu.be/N1g_KwHqew8" class="uri">https://youtu.be/N1g_KwHqew8</a></li>
+</ul>
+<p>Stewart’s Platform. Microcontrollers: ATMega 1284PA, ATMega 8. Servos: TowerPro MG995</p>
+<ul>
+<li><a href="https://grabcad.com/oleksandr.stepanenko-1/models" class="uri">https://grabcad.com/oleksandr.stepanenko-1/models</a></li>
+<li><a href="https://youtu.be/eXULfD94gho" class="uri">https://youtu.be/eXULfD94gho</a></li>
+<li><a href="https://youtu.be/Bf_1pUyjNiM" class="uri">https://youtu.be/Bf_1pUyjNiM</a></li>
+<li><a href="https://youtu.be/c1oxyk2IIOQ" class="uri">https://youtu.be/c1oxyk2IIOQ</a></li>
+<li><a href="https://youtu.be/vlCH4zhIqmM" class="uri">https://youtu.be/vlCH4zhIqmM</a></li>
+<li><a href="https://acrome.net/product/stewart-platform" class="uri">https://acrome.net/product/stewart-platform</a></li>
+<li><a href="https://youtu.be/5wCK6XGC3ig" class="uri">https://youtu.be/5wCK6XGC3ig</a></li>
+<li><a href="https://motionsystems.eu/product-category/motion-platforms/" class="uri">https://motionsystems.eu/product-category/motion-platforms/</a></li>
+<li><a href="https://youtu.be/VeD4_FghKhQ" class="uri">https://youtu.be/VeD4_FghKhQ</a></li>
+<li><a href="https://youtu.be/PzOGIeGEyHY" class="uri">https://youtu.be/PzOGIeGEyHY</a></li>
+<li><a href="https://upcommons.upc.edu/bitstream/handle/2117/101560/Memoria_TFG_Aitor_Ramirez.pdf?sequence=1&amp;isAllowed=y" class="uri">https://upcommons.upc.edu/bitstream/handle/2117/101560/Memoria_TFG_Aitor_Ramirez.pdf?sequence=1&amp;isAllowed=y</a></li>
+</ul>
+<p><a href="https://youtu.be/hkoTRNfivbU">Fast Programming of 6-DOF Hexapod 6-Axis Motion Stewart Platform: Software, Mechanics, Controller</a></p>
+<p><a href="https://youtu.be/fDgqAfzSy0c">Stewart Platform Joystick</a></p>
+<p><a href="https://youtu.be/v4F-cGDGiEw">I Built a Ball Balancing Robot</a></p>
+
+
+</section>
+
+<p>© ouilogique.com</p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

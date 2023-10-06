@@ -10,6 +10,42 @@ blockquote {
     }
 }
 
+
+/**
+ * NOM DE L’AUTEUR ET DATE DES BILLETS.
+ */
+
+.quarto-title-meta-heading {
+    visibility: hidden;
+}
+
+.quarto-title-meta-contents {
+    font-style: italic;
+}
+
+
+/**
+ * SIDEBAR
+ */
+
+// nav#quarto-sidebar {
+//     display: none;
+// }
+
+// .floating {
+//     border: 1px solid red;
+// }
+
+// nav.page-navigation {
+//     background-color: white;
+//     color: grey;
+// }
+
+
+/**
+ * ANIMATION DU LOGO
+ */
+
 .cls-site-logo {
     display: block;
     margin: 50px auto 100px;
@@ -23,29 +59,6 @@ blockquote {
     }
 }
 
-.quarto-title-meta-heading {
-    visibility: hidden;
-}
-
-.quarto-title-meta-contents {
-    font-style: italic;
-}
-
-/* SIDEBAR */
-nav#quarto-sidebar {
-    // display: none;
-}
-
-.floating {
-    border: 1px solid red;
-}
-
-// nav.page-navigation {
-//     background-color: white;
-//     color: grey;
-// }
-
-/* ANIMATION DU LOGO */
 .spin {
     // color: #DDD;
     display: inline-block;
