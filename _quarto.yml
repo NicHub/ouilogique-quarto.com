@@ -3,6 +3,7 @@ project:
   type: website
   output-dir: docs
   render:
+    # - ./pages/
     - ./posts/
     - ./index.qmd
     # - ./posts/2015-06-11-mooc_initiation_aux_microcontroleurs/index.qmd
@@ -10,8 +11,6 @@ project:
     # - ./posts/2017-08-26-installer-raspian-stretch/index.qmd
     # - ./posts/2015-09-05-sites_web_statiques/index.qmd
     # - ./posts/2016-06-04-test_horloge_temps_reel_i2c/index.qmd
-
-
     # - /cours-html-embarque.html
   preview:
     port: 4200

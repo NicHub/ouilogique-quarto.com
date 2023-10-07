@@ -9,7 +9,13 @@ image: ./images/banner_2019-03-27-plateforme-de-stewart-esp32.jpg
 lang: fr
 layout: page
 title: Plateforme de Stewart pilotée avec un ESP32
+filters:
+   - lightbox
+   - prev_next_navigation
+lightbox: auto
 ---
+
+{{< fa regular house >}}
 
 [![Plateforme de Stewart — ouilogique.com][i1]{:style="width:50%;"}][i1]
 
@@ -445,7 +451,3 @@ Servos: TowerPro MG995
 [Stewart Platform Joystick](https://youtu.be/fDgqAfzSy0c)
 
 [I Built a Ball Balancing Robot](https://youtu.be/v4F-cGDGiEw)
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

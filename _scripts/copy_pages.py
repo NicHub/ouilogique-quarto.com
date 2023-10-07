@@ -1,5 +1,5 @@
 """
-
+Copy static pages
 """
 
 import logging
@@ -28,9 +28,9 @@ def main():
             continue
         source_path = f"{SOURCE_PATH}{dir}"
         dest_path = f"{DEST_PATH}{os.path.split(dir)[1]}"
-        print(source_path)
-        print(dest_path)
-        print()
+        logging.info(source_path)
+        logging.info(dest_path)
+        print("")
         shutil.copytree(source_path, dest_path, dirs_exist_ok=True)
 
 
