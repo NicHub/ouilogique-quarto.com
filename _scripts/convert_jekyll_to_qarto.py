@@ -368,10 +368,14 @@ def create_prev_next_links_js():
 
     prev_next_links = []
     home_url = "../../"
-    for id, _file in enumerate(non_draft_files):
+    for id, _file in enumerate(sorted(non_draft_files, reverse=True)):
         inject_js(_file)
-        _prev = f"../{non_draft_files[id - 1]}" if id > 0 else home_url
-        _next = f"../{non_draft_files[id + 1]}" if id < len(non_draft_files) - 1 else home_url
+        _next = f"../{non_draft_files[id - 1]}" if id > 0 else home_url
+        _prev = (
+            f"../{non_draft_files[id + 1]}"
+            if id < len(non_draft_files) - 1
+            else home_url
+        )
         _prev = _prev.replace("/index.qmd", "").replace("../../posts/", "../")
         _next = _next.replace("/index.qmd", "").replace("../../posts/", "../")
         _file = os.path.split(os.path.split(_file)[0])[-1].replace(".md", "")

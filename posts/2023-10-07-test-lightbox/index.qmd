@@ -1,0 +1,86 @@
+---
+aliases:
+- /test-lightbox
+author: Nico
+categories: []
+date: 2023-10-07 12:00:00+01:00
+draft: false
+lang: fr
+layout: page
+title: Simple Lightbox Example
+---
+
+<https://biati-digital.github.io/glightbox/>
+
+
+![An Elephant](https://quarto.org/docs/authoring/images/html-figure.png){#fig-elephant}
+
+This is illustrated well by @fig-elephant.
+
+
+
+
+![Plateforme de Stewart — ouilogique.com][i1]
+
+[i1]: ./docs/stewart-plateform-ouilogique.jpg
+
+![Plateforme de Stewart — ouilogique.com][i8]
+
+[i8]: ./docs/2021-04-24-proto-plateforme-de-stewart_001.jpg
+
+![Plateforme de Stewart — ouilogique.com][i9]
+
+[i9]: ./docs/2021-04-24-proto-plateforme-de-stewart_002.jpg
+
+![Plateforme de Stewart — ouilogique.com][i10]
+
+[i10]: ./docs/2023-01-30-proto-plateforme-de-stewart_001.jpg
+
+![Plateforme de Stewart — ouilogique.com][i12]
+
+[i12]: ./docs/2023-01-30-proto-plateforme-de-stewart_003.jpg
+
+![Plateforme de Stewart — ouilogique.com][i13]
+
+[i13]: ./docs/2023-01-30-proto-plateforme-de-stewart_004.jpg
+
+![Plateforme de Stewart — ouilogique.com][i14]
+
+[i14]: ./docs/2023-01-30-proto-plateforme-de-stewart_005.jpg
+
+![Plateforme de Stewart — ouilogique.com][i15]
+
+[i15]: ./docs/2023-01-30-proto-plateforme-de-stewart_006.jpg
+
+![Plateforme de Stewart — ouilogique.com][i7]
+
+[i7]: ./docs/2019-05-31-proto-plateforme-de-stewart_001.jpg
+
+![Plateforme de Stewart — ouilogique.com][i3]
+
+[i3]: ./docs/2019-05-03-proto-plateforme-de-stewart_001.jpg
+
+![Plateforme de Stewart — ouilogique.com][i4]
+
+[i4]: ./docs/2019-05-03-proto-plateforme-de-stewart_002.jpg
+
+![Plateforme de Stewart — ouilogique.com][i5]
+
+[i5]: ./docs/2019-05-03-proto-plateforme-de-stewart_003.jpg
+
+![Plateforme de Stewart — ouilogique.com][i6]
+
+[i6]: ./docs/2019-05-03-proto-plateforme-de-stewart_004.jpg
+
+![Plateforme de Stewart — ouilogique.com][i2]
+
+[i2]: ./docs/2019-03-21-proto-plateforme-de-stewart_001.jpg
+
+![Plateforme de Stewart — ouilogique.com][i2b]
+
+[i2b]: ./docs/2019-03-21-proto-plateforme-de-stewart_002.jpg
+
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+

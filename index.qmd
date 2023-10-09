@@ -36,6 +36,10 @@ images look
 
 <title>
 
+https://groups.google.com/g/pandoc-discuss/c/x9SDcHJ5vMI
+
+https://quarto.org/docs/extensions/starter-templates.html
+
 -->
 
 - [radios](/radios/)

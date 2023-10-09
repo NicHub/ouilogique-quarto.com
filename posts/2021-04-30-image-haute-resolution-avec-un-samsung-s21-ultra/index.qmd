@@ -1,0 +1,35 @@
+---
+aliases:
+- /image-haute-resolution-avec-un-samsung-s21-ultra
+author: Nico
+categories: []
+date: 2021-04-30 09:52:54+01:00
+draft: false
+lang: fr
+layout: page
+title: Une image haute résolution avec un Samsung S21 Ultra
+---
+
+Voici une photo haute résolution que j’ai prise avec un téléphone Samsung S21 Ultra.
+
+Je me tenais à environ 1.5 m de la machine que l’on voit sur la photo.
+
+L’image a une dimension de 12 000 × 9000 = 108 Mpx.
+
+La taille du fichier est de 27 386 678 octets (~26 [Mio][préfixes SI]).
+
+Au centre, le PCB fait environ 30 cm de large et ce qui est absolument bluffant, c’est que si on zoome sur lui, on découvre que les textes minuscules sont lisibles.
+
+[préfixes SI]: https://fr.wikipedia.org/wiki/Pr%C3%A9fixes_du_Syst%C3%A8me_international_d%27unit%C3%A9s
+
+[![Une image haute résolution avec un Samsung S21 Ultra][img_1]][img_1]
+
+[img_1]: ./images/20210430_095254.jpg
+
+[![Détail de l’image haute résolution avec un Samsung S21 Ultra][img_2]][img_2]
+
+[img_2]: ./images/20210430_095254_detail_1.jpg
+
+<script src="/js/prev_next_links.js"></script>
+<script src="/js/prev_next_buttons.js"></script>
+

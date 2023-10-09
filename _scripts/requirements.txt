@@ -1,0 +1,10 @@
+# python3 -m pip install --upgrade pip
+# python3 -m pip install -r requirements.txt
+# See: https://learnpython.com/blog/python-requirements-file/
+# python3 -m pip freeze
+# python3 -m pip list --outdated
+# python3 -m pip  install pipupgrade
+# python3 -m pipupgrade --verbose --latest --yes
+
+markdown-it-py
+markdown_link_extractor
