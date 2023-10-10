@@ -24,24 +24,6 @@ blockquote {
 }
 
 
-/*
- * SIDEBAR
- */
-
-// nav#quarto-sidebar {
-//     display: none;
-// }
-
-// .floating {
-//     border: 1px solid red;
-// }
-
-// nav.page-navigation {
-//     background-color: white;
-//     color: grey;
-// }
-
-
 /**
  * ANIMATION DU LOGO
  */
@@ -60,8 +42,7 @@ blockquote {
 }
 
 
-.spin {
-    // color: #DDD;
+span.spin {
     display: inline-block;
 }
 
@@ -76,7 +57,6 @@ blockquote {
 
 $final_angle: 90deg;
 
-.cls-site-logo img,
 .spin {
     animation-name: rotateImageOnPageLoad;
     animation-duration: 1.0s;
@@ -93,5 +73,28 @@ $final_angle: 90deg;
 
     100% {
         transform: rotate($final_angle);
+    }
+}
+
+
+//
+
+.cls-site-logo img,
+{
+    animation-name: rotateImageOnPageLoadImg;
+    animation-duration: 1.0s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+    transition: transform 1s;
+    transform: rotate(0deg);
+}
+
+@keyframes rotateImageOnPageLoadImg {
+    0% {
+        transform: rotate(-360deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }

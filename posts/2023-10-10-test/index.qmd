@@ -8,7 +8,10 @@ draft: false
 lang: fr
 layout: page
 title: Test
+title-block-banner: true
 ---
+
+
 
 <https://biati-digital.github.io/glightbox/>
 

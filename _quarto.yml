@@ -70,8 +70,9 @@ format:
       - text: |
           <script src="/js/file_list.js"></script>
           <script src="/js/prev_next_buttons.js"></script>
-
-
     theme:
       - cyborg
       - custom.scss
+    template: ./_templates/template.html
+    template-partials:
+      - ./_templates/metadata.html
