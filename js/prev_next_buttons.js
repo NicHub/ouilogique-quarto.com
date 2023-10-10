@@ -1,86 +1,74 @@
 "use strict";
 
-const home_url = "../../";
+const home_url = "/";
 
-/**
- *
- */
-function findIdOfCurrentURL(prev_next_links, url) {
-    for (let id = 0; id < prev_next_links.length; id++) {
-        if (url.includes(prev_next_links[id]["curr"])) {
-            return id;
-        }
-    }
-    return -1;
-}
-// prev_next_links is declared in `prev_next_links.js`.
-const url = window.location.href;
-const id = findIdOfCurrentURL(prev_next_links, url);
+// file_list is declared in `file_list.js`.
+const url = new URL(window.location.href);
+const id = file_list[url.pathname];
+let next_link = "";
+let prev_link = "";
+const texts = ["Retour à l’accueil", "Suivant", "Précédent"];
+
 main();
 
 /**
  *
  */
 function main() {
-    if (id === -1) {
+    if (id === void 0) {
         console.log("Unknown URL");
         return;
     }
 
-    if (
-        !(
-            prev_next_links[id]["prev"].length > 0 ||
-            prev_next_links[id]["next"].length > 0
-        )
-    ) {
-        console.log("No prev nor next");
-        return;
+    const file_list_keys = Object.keys(file_list);
+    const file_count = Object.keys(file_list).length;
+    const prev_id = (id + 1) % file_count;
+    const next_id = (id - 1) % file_count;
+    let prev_link_desc;
+    let next_link_desc;
+
+    // Prepare link to previous post.
+    if (id === file_count - 1) {
+        prev_link = home_url;
+        prev_link_desc = texts[0];
+    } else {
+        prev_link = file_list_keys[prev_id];
+        prev_link_desc = texts[2];
     }
-
-    const template_home_prev = `
+    const template_prev = `
     <div class="nav-page nav-page-home">
-        <a href=${home_url} class="pagination-link">
-            ← <span class="nav-page-text">Retour à l’accueil</span>
+        <a href=${prev_link} class="pagination-link">
+            ← <span class="nav-page-text">${prev_link_desc}</span>
         </a>
     </div>`;
 
-    const template_home_next = `
-    <div class="nav-page nav-page-home">
-        <a href=${home_url} class="pagination-link">
-            <span class="nav-page-text">Retour à l’accueil</span> →
+    // Prepare link to next post.
+    if (id === 0) {
+        next_link = home_url;
+        next_link_desc = texts[0];
+    } else {
+        next_link = file_list_keys[next_id];
+        next_link_desc = texts[1];
+    }
+    let template_next = `
+    <div class="nav-page nav-page-next">
+        <a href="${next_link}" class="pagination-link">
+            <span class="nav-page-text">${next_link_desc}</span> →
         </a>
     </div>`;
 
-    const template_prev =
-        prev_next_links[id]["prev"] === home_url
-            ? template_home_prev
-            : `
-    <div class="nav-page nav-page-previous">
-        <a href="${prev_next_links[id]["prev"]}" class="pagination-link">
-            ← <span class="nav-page-text">Précédent</span>
-        </a>
-        </div>`;
-
-    const template_next =
-        prev_next_links[id]["next"] === home_url
-            ? template_home_next
-            : `
-        <div class="nav-page nav-page-next">
-        <a href="${prev_next_links[id]["next"]}" class="pagination-link">
-            <span class="nav-page-text">Suivant</span> →
-        </a>
-    </div>`;
-
-    const template_prev_next = `
+    // Bundle next and prev links.
+    let template_prev_next = `
 <nav class="page-navigation">
     ${template_prev}
     ${template_next}
 </nav>`;
 
-    console.log(template_prev_next);
+    // Display links.
     const quartoContent = document.getElementById("quarto-content");
     quartoContent.innerHTML += template_prev_next;
 
+    // Prepare keyboard shortcuts.
     document
         .getElementsByTagName("body")[0]
         .addEventListener("keyup", keyboardShortcutHandler);
@@ -90,14 +78,6 @@ function main() {
  *
  */
 function keyboardShortcutHandler(event) {
-    // console.log("");
-    // console.log(event);
-    // console.log(event.key);
-    // console.log(!isNaN(parseInt(event.key)));
-    // console.log(parseInt(event.key));
-    // console.log(parseFloat(event.key));
-    // console.log(parseFloat(event.keyCode));
-
     if (event.repeat) {
         return;
     }
@@ -111,13 +91,10 @@ function keyboardShortcutHandler(event) {
         event.preventDefault();
     }
     if (["ArrowLeft"].includes(event.key)) {
-        console.log("ArrowLeft");
-        window.location.href = prev_next_links[id]["prev"];
+        window.location.href = prev_link;
     } else if (["ArrowRight"].includes(event.key)) {
-        console.log("ArrowRight");
-        window.location.href = prev_next_links[id]["next"];
+        window.location.href = next_link;
     } else if (["ArrowUp"].includes(event.key)) {
-        console.log("ArrowUp");
         if (event.shiftKey) window.location.href = home_url;
     } else {
         return;

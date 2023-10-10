@@ -58,7 +58,3 @@ La version pour l’ESP8266 synchronise l’heure de horloge temps réel DS1307 
 ### Code source
 
 -   <https://github.com/NicHub/ouilogique-ESP8266-Arduino/tree/master/horloge-cycles-ultradiens-esp8266>
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

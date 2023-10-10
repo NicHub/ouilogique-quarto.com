@@ -14,9 +14,12 @@ with open(f"{prefix}_quarto.yml", "rt") as _f:
     quarto_yaml = yaml.safe_load(_f.read())
 
 
-PATHS = [f'{os.path.abspath(os.curdir)}{os.path.sep}..{os.path.sep}{quarto_yaml["project"]["output-dir"]}']
+PATHS = [
+    f'{os.path.abspath(os.curdir)}{os.path.sep}..{os.path.sep}{quarto_yaml["project"]["output-dir"]}'
+]
 print(PATHS)
 print(quarto_yaml["project"]["output-dir"])
+
 
 def main():
     """___"""

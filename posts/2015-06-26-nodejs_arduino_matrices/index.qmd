@@ -33,7 +33,3 @@ La communication se passe de la façon suivante :
 [![ouilogique.com][img_2]][img_2]
 
 [img_2]: ./images/2015-05-30_boutons.jpg
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

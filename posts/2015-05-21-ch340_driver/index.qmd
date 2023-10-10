@@ -97,7 +97,3 @@ system_profiler SPUSBDataType
 [![ouilogique.com][img_2]][img_2]
 
 [img_2]: ./images/CH430G_002.jpg
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

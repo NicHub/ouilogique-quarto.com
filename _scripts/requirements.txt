@@ -8,3 +8,5 @@
 
 markdown-it-py
 markdown_link_extractor
+PyYAML
+beautifulsoup4

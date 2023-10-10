@@ -1,0 +1,18 @@
+---
+aliases:
+- /test-lightbox
+author: Nico
+categories: []
+date: 2023-10-10 12:00:00+01:00
+draft: false
+lang: fr
+layout: page
+title: Test
+---
+
+<https://biati-digital.github.io/glightbox/>
+
+
+![An Elephant](https://quarto.org/docs/authoring/images/html-figure.png){#fig-elephant}
+
+This is illustrated well by @fig-elephant.

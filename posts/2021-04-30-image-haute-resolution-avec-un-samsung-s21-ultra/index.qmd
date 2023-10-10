@@ -29,7 +29,3 @@ Au centre, le PCB fait environ 30 cm de large et ce qui est absolument bluffant
 [![Détail de l’image haute résolution avec un Samsung S21 Ultra][img_2]][img_2]
 
 [img_2]: ./images/20210430_095254_detail_1.jpg
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

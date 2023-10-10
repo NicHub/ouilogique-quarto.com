@@ -20,6 +20,7 @@ project:
   post-render:
     - ./_scripts/fix_links.py
     - ./_scripts/copy_pages.py
+    - ./_scripts/create_prev_next_buttons.py
 
   resources:
       - "./pages/radios/*"
@@ -67,7 +68,7 @@ format:
     # template: templates/default.html
     include-after-body:
       - text: |
-          <script src="/js/prev_next_links.js"></script>
+          <script src="/js/file_list.js"></script>
           <script src="/js/prev_next_buttons.js"></script>
 
 

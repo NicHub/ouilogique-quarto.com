@@ -35,7 +35,3 @@ title: Test de décharge de batteries
 [2]: http://www.lepetitvapoteur.com/fr/accus/1876-accu-mxjo-imr-18650-3000-ma-35-a-.html
 [3]: https://www.infinitypv.com/images/HeLi-on_manual_v1.pdf
 [4]: https://www.youtube.com/watch?v=NL6nySngGtU
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

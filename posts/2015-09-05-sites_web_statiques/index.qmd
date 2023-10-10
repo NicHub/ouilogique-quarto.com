@@ -169,7 +169,3 @@ WP ⇒ Wp-Super Cache
 -   <https://organizationdemo.wordpress.com/>
 -   <https://ampersanddemo.wordpress.com/>
 -   <https://motifdemo.wordpress.com/>
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

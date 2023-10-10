@@ -208,7 +208,3 @@ Voir aussi le [brochage de l’ESP8266 12-E](../2015-05-28-pinouts/#pinout-carte
 -   <https://github.com/TMRh20/RF24/issues/125>
 
 [1]: http://www.nordicsemi.com/eng/Products/2.4GHz-RF/nRF24L01
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

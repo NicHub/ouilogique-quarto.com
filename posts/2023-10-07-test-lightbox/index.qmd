@@ -80,7 +80,3 @@ This is illustrated well by @fig-elephant.
 
 [i2b]: ./docs/2019-03-21-proto-plateforme-de-stewart_002.jpg
 
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

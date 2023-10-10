@@ -445,7 +445,3 @@ Servos: TowerPro MG995
 [Stewart Platform Joystick](https://youtu.be/fDgqAfzSy0c)
 
 [I Built a Ball Balancing Robot](https://youtu.be/v4F-cGDGiEw)
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

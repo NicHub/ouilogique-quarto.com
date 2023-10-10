@@ -42,7 +42,3 @@ Pour les connexions, j’ai utilisé des [Long 8-pin Headers][6] qui sont forts 
 [4c]: https://ouilogique.com/tests_nRF24L01+/#nrf24l01-sur-esp8266
 [5]: https://www.banggood.com/DHT11-Single-Bus-Digital-Temperature-Humidity-Sensor-Shield-For-WeMos-D1-Mini-p-1050049.html?p=0431091025639201412F
 [6]: https://fr.aliexpress.com/item/Free-shipping-60Pcs-lot-2-54MM-6Pin-8Pin-10Pin-10MM-Long-Needle-Female-Pin-Header-Strip/32684334510.html
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

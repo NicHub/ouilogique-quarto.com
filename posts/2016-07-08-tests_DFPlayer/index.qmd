@@ -108,7 +108,3 @@ Les fiches techniques disponibles ont des erreurs :
 SPK1 et SPK2 sont inversés suivant où l’on regarde.
 
 -   <https://github.com/NicHub/ouilogique-Arduino/commit/a6653da674c18434d6784aeaf6c92e0cf681c2e0#r32497731>
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

@@ -550,7 +550,3 @@ console.log( "Le chiffre vaut " + 7 );
 [Introduction au langage CSS]: ../2018-02-16-introduction-css/
 
 [Introduction au langage JavaScript]: ../2018-02-17-introduction-javascript/
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

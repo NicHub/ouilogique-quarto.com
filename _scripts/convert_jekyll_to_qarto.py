@@ -38,7 +38,7 @@ def make_yaml_header_compliant(fpath):
     del yaml_header["redirect_from"]
 
     yaml_header = (
-        f"---\n{yaml.safe_dump(yaml_header,allow_unicode=True, indent=4, width=4)}---\n"
+        f"---\n{yaml.safe_dump(yaml_header, allow_unicode=True, indent=4, width=4)}---\n"
     )
     content = yaml_header + content
     # print(content)
@@ -410,7 +410,7 @@ def main():
         extract_feature_img_links_and_copy_img(dest_dir, dest_file)
         adapt_links(dest_file)
 
-    create_prev_next_links_js()
+    # create_prev_next_links_js()
 
 
 SOURCE_PATH = os.path.expanduser("~/Sites/ouilogique.com/")

@@ -155,7 +155,3 @@ To read Serial6, you need to connect an UART Serial Bridge to pin 2 (GND) and 3 
     -   <https://docs.platformio.org/en/latest/boards/ststm32/black_f407zg.html>
 -   dfu-util
     -   <http://dfu-util.sourceforge.net>
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

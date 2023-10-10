@@ -51,7 +51,3 @@ Cet interrupteur est étanche IP68 (6 = étanche à la poussière, 8 = résiste 
 
 [1]: https://github.com/NicHub/ouilogique-Arduino/tree/master/piezo-switch
 [2]: https://fr.aliexpress.com/item/ONPOW-16mm-piezo-commutateur-IP68-CE-RoHS-PS165Z10YNT1/32670308839.html
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

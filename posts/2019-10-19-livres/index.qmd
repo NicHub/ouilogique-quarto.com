@@ -42,7 +42,3 @@ La bible de la robotique.
 [img_2]: ./images/SpringerHandbookOfRobotics.jpg
 
 [Springer Handbook of Robotics — springer.com](https://www.springer.com/gp/book/9783540303015)
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

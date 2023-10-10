@@ -13,7 +13,3 @@ title: Humour Magic Word
 [![sudo is the magic word][img_1]][img_1]
 
 [img_1]: ./images/magic-word.jpg
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

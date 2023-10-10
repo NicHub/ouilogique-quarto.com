@@ -267,7 +267,3 @@ La norme de ce genre de connecteurs s’appelle EIAJ et il me semble que celui d
 ### Conclusion
 
 Un connecteur jack de diamètres 5.5/2.1 mm et d’une longueur de 11 ou 12 mm ferait mieux l’affaire.
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

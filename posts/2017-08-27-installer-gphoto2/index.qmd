@@ -140,7 +140,3 @@ Comme le serveur bloque la ligne de commande, il est préférable de l’utilise
 
 [1]: ../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/
 [2]: ../2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/#gnu-screen
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

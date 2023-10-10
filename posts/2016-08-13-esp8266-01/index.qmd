@@ -251,7 +251,3 @@ Voir [ouilogique.com — Mise à jour du firmware](/NodeMCU_esp8266/#mise--jour-
 [13]: https://www.arduino.cc/en/Main/OldSoftwareReleases#previous
 [14]: /NodeMCU_esp8266_amica/
 [15]: http://nodemcu.com/index_en.html
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-

@@ -693,8 +693,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Ok ok, I know, the bit math is a bit funny. So I’ll be nice and explain it. When we XOR ( ^ ) the PORTB register with the portbhistory register we will get a 0’s on the bits that are the same, and 1’s in the bits that are different (yes a practical use for the XOR operation). In the IF statements we AND ( &amp; ) the operation with a bitmask that we created using the bit shift register (1 &lt;&lt; PBx) in order to isolate specific bit. Lastly, notice how I defined porthistory as volatile? Like I said before, if you want to pass a global variable to an Interrupt make it volatile so that it doesn’t cause obsolete data due to compiler optimization.</p>
 <p>Now finally, what if you wanted to put both together? Well I got to leave a bit of fun for you guys.</p>
 <p>Cheers Q</p>
-<script src="../../js/prev_next_links.js"></script>
-<script src="../../js/prev_next_buttons.js"></script>
 
 
 </section>
@@ -935,7 +933,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
-<script src="../../js/prev_next_links.js"></script>
+<script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
 
 

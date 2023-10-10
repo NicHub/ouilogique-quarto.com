@@ -133,7 +133,3 @@ Pour vérifier que les ESP ne démarrent pas, j’ai chargé le programme blink.
 ### Résultats
 
 Idem que pour le test 1.
-
-<script src="/js/prev_next_links.js"></script>
-<script src="/js/prev_next_buttons.js"></script>
-
