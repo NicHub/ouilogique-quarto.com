@@ -11,7 +11,7 @@ let id = 0;
 for (id = 0; id < file_list.length; id++) {
     console.log(`file_list[id] = ${file_list[id]}`);
 
-    if (url.pathname.search(file_list[id]) > -1) {
+    if (url.pathname.indexOf(file_list[id]) > -1) {
         found = true;
         break;
     }
