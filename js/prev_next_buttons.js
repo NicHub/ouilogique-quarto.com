@@ -15,6 +15,9 @@ main();
  *
  */
 function main() {
+
+    console.log("prev_next_buttons.js START");
+
     if (id === void 0) {
         console.log("Unknown URL");
         return;
@@ -67,6 +70,7 @@ function main() {
     // Display links.
     const quartoContent = document.getElementById("quarto-content");
     quartoContent.innerHTML += template_prev_next;
+    console.log(template_prev_next);
 
     // Prepare keyboard shortcuts.
     document
