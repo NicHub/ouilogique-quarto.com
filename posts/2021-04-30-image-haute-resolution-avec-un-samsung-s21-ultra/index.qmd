@@ -8,7 +8,7 @@ draft: false
 lang: fr
 layout: page
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
-title: Une image haute résolution avec un Samsung S21 Ultra
+title: Une image haute résolution avec un Samsung S21 Ultra
 ---
 
 Voici une photo haute résolution que j’ai prise avec un téléphone Samsung S21 Ultra.
