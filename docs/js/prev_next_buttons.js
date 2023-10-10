@@ -49,9 +49,10 @@ function main() {
         prev_link = file_list[prev_id];
         prev_link_desc = texts[2];
     }
+    prev_link = `../..${prev_link}`
     const template_prev = `
     <div class="nav-page nav-page-home">
-        <a href="../..${prev_link}" class="pagination-link">
+        <a href="${prev_link}" class="pagination-link">
             ← <span class="nav-page-text">${prev_link_desc}</span>
         </a>
     </div>`;
@@ -64,9 +65,10 @@ function main() {
         next_link = file_list[next_id];
         next_link_desc = texts[1];
     }
+    next_link = `../..${next_link}`
     let template_next = `
     <div class="nav-page nav-page-next">
-        <a href="../..${next_link}" class="pagination-link">
+        <a href="${next_link}" class="pagination-link">
             <span class="nav-page-text">${next_link_desc}</span> →
         </a>
     </div>`;
