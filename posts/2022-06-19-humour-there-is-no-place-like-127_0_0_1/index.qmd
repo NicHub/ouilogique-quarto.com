@@ -7,6 +7,7 @@ date: 2022-06-19 12:00:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Humour There is no place like 127.0.0.1
 ---
 

@@ -12,6 +12,7 @@ date: 2015-05-21 12:00:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Programmer un ATtiny25V avec un Arduino UNO comme programmateur
 ---
 

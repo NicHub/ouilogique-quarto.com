@@ -8,6 +8,7 @@ date: 2017-08-27 01:00:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Installer GPHOTO2
 ---
 

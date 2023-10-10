@@ -9,6 +9,7 @@ date: 2015-05-21 10:50:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Utiliser un chip CH340G au lieu d’un FTDI
 ---
 

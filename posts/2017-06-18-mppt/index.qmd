@@ -7,6 +7,7 @@ date: 2017-06-18 17:40:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: MPPT — Maximum Power Point Tracking
 ---
 

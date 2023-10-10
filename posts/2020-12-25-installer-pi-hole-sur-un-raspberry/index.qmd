@@ -7,6 +7,7 @@ date: 2020-12-25 13:19:00+01:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Installer Pi-hole sur un Raspberry
 ---
 

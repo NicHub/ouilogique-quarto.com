@@ -8,6 +8,7 @@ draft: false
 image: ./images/banner_2015-11-16-NodeMCU_esp8266_amica.jpg
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Mise en route d’une carte <em>Amica</em> avec le firmware NodeMCU et un module
     WiFi ESP8266
 ---

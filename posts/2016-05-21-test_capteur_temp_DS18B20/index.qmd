@@ -7,6 +7,7 @@ date: 2016-05-21 19:00:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Test du capteur de température DS18B20 avec le protocole OneWire
 ---
 

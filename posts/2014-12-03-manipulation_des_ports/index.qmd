@@ -12,6 +12,7 @@ date: 2014-12-03 12:00:00+01:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: La manipulation des entrées-sorties à l’aide des registres de port
 ---
 

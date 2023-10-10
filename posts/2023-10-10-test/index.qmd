@@ -7,10 +7,10 @@ date: 2023-10-10 12:00:00+01:00
 draft: false
 lang: fr
 layout: page
-title: Test
+title: Teste-moi
+pagetitle: "{{< meta title >}} &#8211; ouilogique.com"
 title-block-banner: true
 ---
-
 
 
 <https://biati-digital.github.io/glightbox/>
@@ -19,3 +19,5 @@ title-block-banner: true
 ![An Elephant](https://quarto.org/docs/authoring/images/html-figure.png){#fig-elephant}
 
 This is illustrated well by @fig-elephant.
+
+

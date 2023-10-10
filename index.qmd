@@ -40,6 +40,9 @@ https://groups.google.com/g/pandoc-discuss/c/x9SDcHJ5vMI
 
 https://quarto.org/docs/extensions/starter-templates.html
 
+
+https://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/html/pandoc
+
 -->
 
 - [radios](/radios/)

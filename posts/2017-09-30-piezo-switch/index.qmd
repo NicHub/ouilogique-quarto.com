@@ -7,6 +7,7 @@ date: 2017-09-30 12:54:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Bouton piézoélectrique sur Arduino
 ---
 

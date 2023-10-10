@@ -7,6 +7,7 @@ date: 2016-11-14 16:00:00+01:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Mise en route d’un Arduino Pro Mini 3.3 V
 ---
 

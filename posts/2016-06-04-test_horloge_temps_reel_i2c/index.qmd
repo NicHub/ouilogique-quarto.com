@@ -7,6 +7,7 @@ date: 2016-06-04 14:29:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Test d’une horloge temps réel DS1307 I²C
 ---
 

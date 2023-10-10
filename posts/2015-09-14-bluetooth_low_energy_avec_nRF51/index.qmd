@@ -9,6 +9,7 @@ draft: false
 image: ./images/banner_2015-09-14-bluetooth_low_energy_avec_nRF51.jpg
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Découverte du Bluetooth Low Energy avec la carte Nordic Semiconductor nRF51
 ---
 

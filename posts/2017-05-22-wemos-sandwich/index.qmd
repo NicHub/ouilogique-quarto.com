@@ -7,6 +7,7 @@ date: 2017-05-22 11:57:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Sandwich de WEMOS
 ---
 

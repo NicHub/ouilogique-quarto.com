@@ -29,7 +29,7 @@ website:
   # reader-mode: true
   # site-path: "/posts/"
   favicon: ./images/favicon.ico
-  title: ""
+  # title: "OUIOUI"
   image: ./images/site-logo.png
   body-footer: "© ouilogique.com"
   search: false

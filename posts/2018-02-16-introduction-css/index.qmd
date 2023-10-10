@@ -7,6 +7,7 @@ date: 2018-02-16 12:00:00+01:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Introduction au langage CSS
 ---
 

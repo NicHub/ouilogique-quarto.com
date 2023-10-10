@@ -8,7 +8,7 @@
 
 <meta name="author" content="Nico">
 
-<title>Flasher un bootloader</title>
+<title>Flasher un bootloader – ouilogique.com</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,6 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 </header>
+
 
 <p>Un de mes Arduino Nano refusait de se faire flasher et retournait systématiquement une erreur du genre <code>not in sync</code>. En googlant, j’ai trouvé que plusieurs personnes ont résolu ce problème en changeant le type de bootloader en <code>ATmega328p (Old Bootloader)</code> dans le menu <code>Tools/Processor: "ATmega328p"/</code> de l’IDE Arduino. Mais pour moi, ça n’a pas marché. Du coup, j’ai décidé de reflasher le bootloader en utilisant un Arduino UNO comme programmateur. Cette façon de faire s’appelle “ICSP” ou <em>In Circuit Serial Programming</em>.</p>
 <blockquote class="blockquote">
@@ -514,6 +515,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
+
 
 
 

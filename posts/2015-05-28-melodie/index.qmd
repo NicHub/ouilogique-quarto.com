@@ -11,6 +11,7 @@ date: 2015-05-28 08:55:00+02:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Mélodies avec un Arduino&nbsp;UNO
 ---
 

@@ -7,6 +7,7 @@ date: 2021-04-30 09:52:54+01:00
 draft: false
 lang: fr
 layout: page
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Une image haute résolution avec un Samsung S21 Ultra
 ---
 
