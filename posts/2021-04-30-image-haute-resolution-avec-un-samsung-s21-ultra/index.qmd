@@ -11,7 +11,7 @@ pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Une image haute résolution avec un Samsung S21 Ultra
 ---
 
-Voici une photo haute résolution que j’ai prise avec un téléphone Samsung S21 Ultra.
+Voici une photo haute résolution que j’ai prise avec un téléphone Samsung S21 Ultra.
 
 Je me tenais à environ 1.5 m de la machine que l’on voit sur la photo.
 

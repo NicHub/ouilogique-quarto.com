@@ -7,10 +7,9 @@ date: 2018-04-22 12:33:00+02:00
 draft: false
 lang: fr
 layout: page
-pagetitle: '{{< meta title >}} – ouilogique.com'
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: NeoPixel sur Raspberry Pi
 ---
-
 
 Voici comment configurer un Raspberry Pi pour l’utiliser avec des LED NeoPixel WS281x. Je présente la version Python, mais d’autres langages sont supportés.
 

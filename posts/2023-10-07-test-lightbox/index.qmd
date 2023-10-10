@@ -13,13 +13,9 @@ title: Simple Lightbox Example
 
 <https://biati-digital.github.io/glightbox/>
 
-
 ![An Elephant](https://quarto.org/docs/authoring/images/html-figure.png){#fig-elephant}
 
 This is illustrated well by @fig-elephant.
-
-
-
 
 ![Plateforme de Stewart — ouilogique.com][i1]
 
@@ -80,4 +76,3 @@ This is illustrated well by @fig-elephant.
 ![Plateforme de Stewart — ouilogique.com][i2b]
 
 [i2b]: ../2019-03-27-plateforme-de-stewart-esp32/images/2019-03-21-proto-plateforme-de-stewart_002.jpg
-
