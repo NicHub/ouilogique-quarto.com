@@ -1,5 +1,5 @@
 "use strict";
-
+const prefix = "../.."
 let next_link = "";
 let prev_link = "";
 const texts = ["Retour à l’accueil", "Suivant", "Précédent"];
@@ -17,7 +17,7 @@ for (id = 0; id < file_list.length; id++) {
     }
 }
 
-const home_url = "/"
+const home_url = `/`
 
 console.log(`url.pathname = ${url.pathname}`);
 console.log(`home_url = ${home_url}`);
@@ -49,7 +49,7 @@ function main() {
         prev_link = file_list[prev_id];
         prev_link_desc = texts[2];
     }
-    prev_link = `../..${prev_link}`
+    prev_link = `${prefix}${prev_link}`
     const template_prev = `
     <div class="nav-page nav-page-home">
         <a href="${prev_link}" class="pagination-link">
@@ -65,7 +65,7 @@ function main() {
         next_link = file_list[next_id];
         next_link_desc = texts[1];
     }
-    next_link = `../..${next_link}`
+    next_link = `${prefix}${next_link}`
     let template_next = `
     <div class="nav-page nav-page-next">
         <a href="${next_link}" class="pagination-link">
@@ -112,7 +112,7 @@ function keyboardShortcutHandler(event) {
     } else if (["ArrowRight"].includes(event.key)) {
         window.location.href = next_link;
     } else if (["ArrowUp"].includes(event.key)) {
-        if (event.shiftKey) window.location.href = home_url;
+        if (event.shiftKey) window.location.href =`${prefix}${home_url}`;
     } else {
         return;
     }
