@@ -88,10 +88,10 @@ for file in FILES:
 
 fpath = "./js/file_list.js"
 with open(fpath, "wt", encoding="utf-8") as _f:
-    _f.write("file_list = {\n")
+    _f.write("file_list = [\n")
     for id, file in enumerate(sorted(FILES_NO_DRAFT, reverse=True)):
-        _f.write(f'"{file}": {id},\n')
-    _f.write("}\n")
+        _f.write(f'"{file}",\n')
+    _f.write("]\n")
 
 try:
     pass

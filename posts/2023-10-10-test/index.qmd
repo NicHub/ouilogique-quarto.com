@@ -20,5 +20,3 @@ BLAH
 ![An Elephant](https://quarto.org/docs/authoring/images/html-figure.png){#fig-elephant}
 
 This is illustrated well by @fig-elephant.
-
-

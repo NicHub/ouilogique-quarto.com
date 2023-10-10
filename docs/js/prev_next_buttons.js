@@ -1,13 +1,26 @@
 "use strict";
 
-const home_url = "/";
-
-// file_list is declared in `file_list.js`.
-const url = new URL(window.location.href);
-const id = file_list[url.pathname];
 let next_link = "";
 let prev_link = "";
 const texts = ["Retour à l’accueil", "Suivant", "Précédent"];
+
+// file_list is declared in `file_list.js`.
+const url = new URL(window.location.href);
+let found = false;
+let id = 0;
+for (id = 0; id < file_list.length; id++) {
+    console.log(`file_list[id] = ${file_list[id]}`);
+
+    if (url.pathname.search(file_list[id]) > -1) {
+        found = true;
+        break;
+    }
+}
+
+const home_url = "/"
+
+console.log(`url.pathname = ${url.pathname}`);
+console.log(`home_url = ${home_url}`);
 
 main();
 
@@ -15,29 +28,30 @@ main();
  *
  */
 function main() {
-    if (id === void 0) {
+    console.log("prev_next_buttons.js START");
+
+    console.log(`id = ${id}`);
+    if (!found) {
         console.log("Unknown URL");
         return;
     }
 
-    const file_list_keys = Object.keys(file_list);
-    const file_count = Object.keys(file_list).length;
-    const prev_id = (id + 1) % file_count;
-    const next_id = (id - 1) % file_count;
+    const prev_id = (id + 1) % file_list.length;
+    const next_id = (id - 1) % file_list.length;
     let prev_link_desc;
     let next_link_desc;
 
     // Prepare link to previous post.
-    if (id === file_count - 1) {
+    if (id === file_list.length - 1) {
         prev_link = home_url;
         prev_link_desc = texts[0];
     } else {
-        prev_link = file_list_keys[prev_id];
+        prev_link = file_list[prev_id];
         prev_link_desc = texts[2];
     }
     const template_prev = `
     <div class="nav-page nav-page-home">
-        <a href=${prev_link} class="pagination-link">
+        <a href="../..${prev_link}" class="pagination-link">
             ← <span class="nav-page-text">${prev_link_desc}</span>
         </a>
     </div>`;
@@ -47,12 +61,12 @@ function main() {
         next_link = home_url;
         next_link_desc = texts[0];
     } else {
-        next_link = file_list_keys[next_id];
+        next_link = file_list[next_id];
         next_link_desc = texts[1];
     }
     let template_next = `
     <div class="nav-page nav-page-next">
-        <a href="${next_link}" class="pagination-link">
+        <a href="../..${next_link}" class="pagination-link">
             <span class="nav-page-text">${next_link_desc}</span> →
         </a>
     </div>`;
@@ -67,6 +81,7 @@ function main() {
     // Display links.
     const quartoContent = document.getElementById("quarto-content");
     quartoContent.innerHTML += template_prev_next;
+    console.log(template_prev_next);
 
     // Prepare keyboard shortcuts.
     document
