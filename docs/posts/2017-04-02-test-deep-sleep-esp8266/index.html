@@ -104,11 +104,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../index.html" rel="" target="">
  <span class="menu-text"><i class="fa-regular fa-house" aria-label="house"></i></span></a>
   </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/NicHub" rel="" target=""><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
 </ul>
           <div class="quarto-navbar-tools">
 </div>
@@ -254,13 +249,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>Note&nbsp;: 273.70&nbsp;µs correspond à 21896&nbsp;cycles d’horloge à 80&nbsp;MHz (= 80E+6 * 273.7E-6).</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-montage-1.jpg" class="lightbox" title="Deep Sleep ESP8266 — Test 1" data-gallery="quarto-lightbox-gallery-1"><img src="./images/2017-04-02-test-deep-sleep-esp8266-montage-1.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-montage-1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Deep Sleep ESP8266 — Test 1"><img src="./images/2017-04-02-test-deep-sleep-esp8266-montage-1.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Deep Sleep ESP8266 — Test 1</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-signal-DO-reset.jpg" class="lightbox" title="Deep Sleep ESP8266 — Signal de reset sur D0" data-gallery="quarto-lightbox-gallery-2"><img src="./images/2017-04-02-test-deep-sleep-esp8266-signal-DO-reset.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-signal-DO-reset.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Deep Sleep ESP8266 — Signal de reset sur D0"><img src="./images/2017-04-02-test-deep-sleep-esp8266-signal-DO-reset.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Deep Sleep ESP8266 — Signal de reset sur D0</figcaption>
 </figure>
 </div>
@@ -270,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>L’ESP sort du <em>deep sleep</em> lorsque le bouton connecté en <em>pull-up</em> est pressé. Problème garanti avec ce montage parce que l’ESP sera <em>reseté</em> autant de fois que le bouton sera pressé, y compris lors des rebonds du bouton. Une solution serait d’utiliser une bascule en entrée (<a href="https://github.com/esp8266/Arduino/issues/1488" class="uri">https://github.com/esp8266/Arduino/issues/1488</a>).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-montage-2.jpg" class="lightbox" title="Deep Sleep ESP8266 — Test 2" data-gallery="quarto-lightbox-gallery-3"><img src="./images/2017-04-02-test-deep-sleep-esp8266-montage-2.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-montage-2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Deep Sleep ESP8266 — Test 2"><img src="./images/2017-04-02-test-deep-sleep-esp8266-montage-2.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Deep Sleep ESP8266 — Test 2</figcaption>
 </figure>
 </div>
@@ -619,7 +614,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </footer>
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom","descPosition":"bottom"});</script>
+<script src="../../js/target_blank.js"></script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom"});</script>
 
 
 
