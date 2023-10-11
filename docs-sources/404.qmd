@@ -1,5 +1,7 @@
 ---
-title: "404"
+lang: fr
+layout: page
+pagetitle: "404 &#8211; ouilogique.com"
 ---
 
 ![](./images/404.svg)

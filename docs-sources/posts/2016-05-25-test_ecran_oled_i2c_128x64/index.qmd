@@ -10,7 +10,7 @@ filters:
 lang: fr
 layout: page
 lightbox: auto
-pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
+pagetitle: "{{< meta title >}} &#8211; ouilogique.com"
 title: Test d’un écran OLED 128×64 I²C
 ---
 

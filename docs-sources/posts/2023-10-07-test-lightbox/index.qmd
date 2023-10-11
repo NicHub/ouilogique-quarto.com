@@ -10,7 +10,7 @@ filters:
 lang: fr
 layout: page
 lightbox: auto
-pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
+pagetitle: "{{< meta title >}} &#8211; ouilogique.com"
 title: Simple Lightbox Example
 ---
 
@@ -102,10 +102,6 @@ license](https://unsplash.com/license), view originals below:
 #|   group: r-graph
 #|   description: This is 1 to 10 plot
 plot(1:10, rnorm(10))
-```
-
-```{python}
-1 + 1
 ```
 
 https://vscode.dev/github/NicHub/ouilogique-quarto.com/blob/gh-pages/posts/2023-10-07-test-lightbox/index.qmd

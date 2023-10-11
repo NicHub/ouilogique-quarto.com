@@ -11,7 +11,7 @@ image: ./images/banner_2017-04-27-neopixel-didel-ws2813.jpg
 lang: fr
 layout: page
 lightbox: auto
-pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
+pagetitle: "{{< meta title >}} &#8211; ouilogique.com"
 title: Neopixel Didel WS2813
 ---
 

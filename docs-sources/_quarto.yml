@@ -41,13 +41,10 @@ website:
         file: index.qmd
       - icon: github
         href: https://github.com/NicHub
-
   navbar:
     right:
       - text: "{{< fa regular house >}}"
         file: index.qmd
-      - icon: github
-        href: https://github.com/NicHub
     # logo: ./images/site-logo.png
     # logo-alt: ouilogique.com
     logo-href: /
@@ -79,7 +76,7 @@ format:
       - text: |
           <script src="/js/file_list.js"></script>
           <script src="/js/prev_next_buttons.js"></script>
-      # <script src="/js/target_blank.js"></script>
+          <script src="/js/target_blank.js"></script>
     theme:
       - cyborg
       - custom.scss
