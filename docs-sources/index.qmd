@@ -18,15 +18,29 @@ lang: fr
 
 [img_1]: ./images/site-logo.png
 
-<!--
 ## Bienvenue sur ouilogique.com
 
-Ce site me sert d’aide-mémoire pour mes projets sur Arduino et Raspberry Pi.
+Ce blog me sert d’aide-mémoire pour mes projets IoT sur Arduino et Raspberry Pi.
+
+Bonne visite.
+
+<div style="margin-top: 100px;"></div>
+
+<!--
+
+- [radios](/radios/)
+- [enum](/enum/)
+- [scratchpad](/scratchpad/)
+- [cours-html-embarque](/cours-html-embarque/)
+
+
 
 
 Redirection a créer
 https://ouilogique.com/cours-html-embarque.html
 https://ouilogique.com/files/2018-02-17-html-embarque/microclub-atelier-html-embarque.pdf
+https://ouilogique.com/accueil/
+
 
 CNAME !
 
@@ -43,8 +57,8 @@ https://quarto.org/docs/extensions/starter-templates.html
 
 https://github.com/quarto-dev/quarto-cli/tree/main/src/resources/formats/html/pandoc
 
--->
 
-- [radios](/radios/)
-- [enum](/enum/)
-- [scratchpad](/scratchpad/)
+Is it possible to specify render source files to have a custom output path / url? #6561
+https://github.com/quarto-dev/quarto-cli/discussions/6561
+
+-->

@@ -1,7 +1,8 @@
 
 project:
   type: website
-  output-dir: docs
+  output-dir: ../docs/
+  # execute-dir: project
 
   render:
     # - ./pages/
@@ -30,9 +31,16 @@ website:
   # site-path: "/posts/"
   favicon: favicon.ico
   # title: "OUIOUI"
+  search: false
   image: ./images/site-logo.png
   body-footer: "© ouilogique.com"
-  search: false
+  page-footer:
+    center:
+      - text: "{{< fa regular house >}}"
+        file: index.qmd
+      - icon: github
+        href: https://github.com/NicHub
+
   navbar:
     right:
       - text: "{{< fa regular house >}}"
