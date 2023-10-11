@@ -14,15 +14,15 @@ pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Test de décharge de batteries
 ---
 
-[![batterie noname ouverte][img_1]][img_1]
+![batterie noname ouverte][img_1]
 
 [img_1]: ./images/batterie_noname+boitier_lowres.jpg
 
-[![Test batterie noname][img_2]][img_2]
+![Test batterie noname][img_2]
 
 [img_2]: ./images/test_batterie_18650_noname_lowres.jpg
 
-[![Test batterie Infinity PV][img_3]][img_3]
+![Test batterie Infinity PV][img_3]
 
 [img_3]: ./images/test_batterie_infinityPV_lowres.jpg
 

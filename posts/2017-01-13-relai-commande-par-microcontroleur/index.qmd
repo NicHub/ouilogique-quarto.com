@@ -14,7 +14,7 @@ pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Relai commandé par microcontrôleur
 ---
 
-[![Relai][img_1]][img_1]
+![Relai][img_1]
 
 [img_1]: ./images/relai-commande-par-microcontroleur-001_lowres.jpg
 

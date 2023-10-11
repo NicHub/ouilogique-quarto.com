@@ -30,10 +30,10 @@ La communication se passe de la façon suivante :
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/b8a_t5Tyg44" frameborder="0" allowfullscreen></iframe>
 
-[![ouilogique.com][img_1]][img_1]
+![ouilogique.com][img_1]
 
 [img_1]: ./images/2015-05-29_platine.jpg
 
-[![ouilogique.com][img_2]][img_2]
+![ouilogique.com][img_2]
 
 [img_2]: ./images/2015-05-30_boutons.jpg

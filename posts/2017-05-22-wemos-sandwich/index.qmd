@@ -32,9 +32,9 @@ Pour les connexions, j’ai utilisé des [Long 8-pin Headers][6] qui sont forts 
 
 ## Images
 
-[![WEMOS Sandwich][img_1]][img_1]
+![WEMOS Sandwich][img_1]
 
-[![WEMOS Sandwich][img_2]][img_2]
+![WEMOS Sandwich][img_2]
 
 [img_1]: ./images/wemos-sandwich-001.jpg
 [img_2]: ./images/wemos-sandwich-002.jpg

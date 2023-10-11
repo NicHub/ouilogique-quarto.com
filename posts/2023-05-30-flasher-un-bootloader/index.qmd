@@ -22,7 +22,7 @@ Cette façon de faire s’appelle “ICSP” ou _In Circuit Serial Programming_.
 
 > Source : La plupart des informations proviennent de cette page : <https://docs.arduino.cc/built-in-examples/arduino-isp/ArduinoISP>
 
-[![Flasher un bootloader — ouilogique.com][img_1]][img_1]
+![Flasher un bootloader — ouilogique.com][img_1]
 
 [img_1]: ./images/2023-05-30-flasher-un-bootloader-001_lowres.jpg
 

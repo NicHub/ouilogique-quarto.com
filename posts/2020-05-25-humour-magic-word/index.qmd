@@ -14,6 +14,6 @@ pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Humour Magic Word
 ---
 
-[![sudo is the magic word][img_1]][img_1]
+![sudo is the magic word][img_1]
 
 [img_1]: ./images/magic-word.jpg

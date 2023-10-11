@@ -20,7 +20,7 @@ Hier (9 août 2022), je suis tombé sur une table de caractères ASCII de toute 
 
 -   <https://github.com/tomgibara/ascii-table>
 
-[![ASCII table 1.1 Tom Gibara][img_1]][img_1]
+![ASCII table 1.1 Tom Gibara][img_1]
 
 [img_1]: ./images/ascii-table-1.1-tom-gibara.svg
 

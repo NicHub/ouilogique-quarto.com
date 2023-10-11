@@ -70,6 +70,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -174,13 +177,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La configuration que j’ai utilisée est la suivante&nbsp;:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/config_MiniCore.png"><img src="./images/config_MiniCore.png" class="img-fluid figure-img"></a></p>
+<p><a href="./images/config_MiniCore.png" class="lightbox" title="Configuration MiniCore programmation d’Arduino Pro Mini" data-gallery="quarto-lightbox-gallery-1"><img src="./images/config_MiniCore.png" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Configuration MiniCore programmation d’Arduino Pro Mini</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/arduino-pro-mini-arduino-uno_lowres.jpg"><img src="./images/arduino-pro-mini-arduino-uno_lowres.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/arduino-pro-mini-arduino-uno_lowres.jpg" class="lightbox" title="Programmation d’Arduino Pro Mini" data-gallery="quarto-lightbox-gallery-2"><img src="./images/arduino-pro-mini-arduino-uno_lowres.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Programmation d’Arduino Pro Mini</figcaption>
 </figure>
 </div>
@@ -228,7 +231,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>J’ai testé cette solution 6&nbsp;mois plus tard que celle avec l’Arduino UNO, mais c’est le même principe dans les deux cas. Donc voici la photo du montage&nbsp;:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/arduino-pro-mini-as-isp_lowres.jpg"><img src="./images/arduino-pro-mini-as-isp_lowres.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/arduino-pro-mini-as-isp_lowres.jpg" class="lightbox" title="Arduino Pro Mini programmation ISP" data-gallery="quarto-lightbox-gallery-3"><img src="./images/arduino-pro-mini-as-isp_lowres.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Arduino Pro Mini programmation ISP</figcaption>
 </figure>
 </div>
@@ -243,25 +246,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>⚠ Les broches CTS et GND sont permutées sur l’Arduino Pro Mini et sur le convertisseur. Curieusement, il semble que CTS soit en fait connecté à GND, parce que ça marche quand même avec la permutation.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/usb-serial-converter_lowres.jpg"><img src="./images/usb-serial-converter_lowres.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/usb-serial-converter_lowres.jpg" class="lightbox" title="convertisseur USB-série" data-gallery="quarto-lightbox-gallery-4"><img src="./images/usb-serial-converter_lowres.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">convertisseur USB-série</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/arduino-pro-mini_lowres.jpg"><img src="./images/arduino-pro-mini_lowres.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/arduino-pro-mini_lowres.jpg" class="lightbox" title="Arduino Pro Mini" data-gallery="quarto-lightbox-gallery-5"><img src="./images/arduino-pro-mini_lowres.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Arduino Pro Mini</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/arduino-pro-mini-back.jpg"><img src="./images/arduino-pro-mini-back.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/arduino-pro-mini-back.jpg" class="lightbox" title="Arduino Pro Mini Back" data-gallery="quarto-lightbox-gallery-6"><img src="./images/arduino-pro-mini-back.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Arduino Pro Mini Back</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/arduino-pro-mini-usb-serial_lowres.jpg"><img src="./images/arduino-pro-mini-usb-serial_lowres.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/arduino-pro-mini-usb-serial_lowres.jpg" class="lightbox" title="Arduino Pro Mini + convertisseur USB-série" data-gallery="quarto-lightbox-gallery-7"><img src="./images/arduino-pro-mini-usb-serial_lowres.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Arduino Pro Mini + convertisseur USB-série</figcaption>
 </figure>
 </div>
@@ -542,6 +545,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
 <script src="../../js/target_blank.js"></script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
 
 
 

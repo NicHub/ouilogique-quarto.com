@@ -40,9 +40,7 @@ def make_yaml_header_compliant(fpath):
     yaml_header["filters"] = ["lightbox"]
     yaml_header["lightbox"] = "auto"
 
-    yaml_header = (
-        f"---\n{yaml.safe_dump(yaml_header, allow_unicode=True, indent=4, width=4)}---\n"
-    )
+    yaml_header = f"---\n{yaml.safe_dump(yaml_header, allow_unicode=True, indent=4, width=4)}---\n"
     content = yaml_header + content
     # print(content)
     # raise SystemExit
@@ -50,19 +48,42 @@ def make_yaml_header_compliant(fpath):
         _f.write(content)
 
 
-def remove_style_from_img(dest_dir, dest_file):
+def remove_style_from_img(dest_file):
     """___"""
     content = ""
     with open(dest_file, "rt", encoding="utf-8") as _f:
         for line in _f.readlines():
-            pos1 = line.find('{:')
+            pos1 = line.find("{:")
             if pos1 > -1:
-                pos2 = line.find('}', pos1)
+                pos2 = line.find("}", pos1)
                 if pos2 > -1:
-                    new_line = line[:pos1] + line[pos2+1:] + "\n"
-                    print(line)
-                    print(new_line)
-                    print(line[pos1:pos2+1])
+                    new_line = line[:pos1] + line[pos2 + 1 :]
+                    # new_line += "\n"
+                    # print(line)
+                    # print(new_line)
+                    # print(line[pos1:pos2+1])
+                    content += new_line
+            else:
+                content += line
+
+    with open(dest_file, "wt", encoding="utf-8") as _f:
+        _f.write(content)
+
+
+def remove_outer_link_from_img(dest_file):
+    """___"""
+    content = ""
+    with open(dest_file, "rt", encoding="utf-8") as _f:
+        for line in _f.readlines():
+            pos1 = line.find("[![")
+            if pos1 > -1:
+                pos2 = line.rfind("][")
+                if pos2 > -1:
+                    new_line = line[pos1 + 1 : pos2]
+                    new_line += "\n"
+                    # print(line.strip())
+                    # print(new_line)
+                    # print("")
                     content += new_line
             else:
                 content += line
@@ -431,9 +452,10 @@ def main():
         copy_posts_from_jekyll_to_quarto(source_file, dest_dir, dest_file)
         make_yaml_header_compliant(dest_file)
         extract_img_links_and_copy_img(dest_dir, dest_file)
-        remove_style_from_img(dest_dir, dest_file)
+        remove_style_from_img(dest_file)
         extract_feature_img_links_and_copy_img(dest_dir, dest_file)
         adapt_links(dest_file)
+        remove_outer_link_from_img(dest_file)
 
     # create_prev_next_links_js()
 

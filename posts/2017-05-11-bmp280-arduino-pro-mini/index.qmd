@@ -45,7 +45,7 @@ Ce capteur peut être utilisé sur le bus I²C ou le bus SPI. Les dénominations
 
 Je n’ai testé que le mode SPI (hardware) et pas le mode I²C et ça fonctionne bien.
 
-[![BMP280 + Arduino Pro Mini][img_1]][img_1]
+![BMP280 + Arduino Pro Mini][img_1]
 
 [img_1]: ./images/2017-05-11-bmp280-arduino-pro-mini-001.jpg
 

@@ -14,15 +14,15 @@ pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Test d’une horloge temps réel DS1307 I²C
 ---
 
-[![ouilogique.com][img_1]][img_1]
+![ouilogique.com][img_1]
 
 [img_1]: ./images/2016-06-04-test_horloge_temps_reel_i2c_001_lowres.jpg
 
-[![ouilogique.com][img_2]][img_2]
+![ouilogique.com][img_2]
 
 [img_2]: ./images/2016-06-04-test_horloge_temps_reel_i2c_002_lowres.jpg
 
-[![ouilogique.com][img_3]][img_3]
+![ouilogique.com][img_3]
 
 [img_3]: ./images/2016-06-04-test_horloge_temps_reel_i2c_003_lowres.jpg
 

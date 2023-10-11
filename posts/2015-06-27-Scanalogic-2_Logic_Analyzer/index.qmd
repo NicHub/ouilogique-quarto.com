@@ -19,10 +19,10 @@ Mise en route de l’analyseur logique Scanalogic-2 ~~(www.ikalogic.com/ikalogic
 
 Ça fonctionne bien, même sur Mac.
 
-[![ouilogique.com – Scanalogic-2_Logic_Analyzer][img_1]][img_1]
+![ouilogique.com – Scanalogic-2_Logic_Analyzer][img_1]
 
 [img_1]: ./images/Scanalogic-2_Logic_Analyzer_001.jpg
 
-[![ouilogique.com – Scanalogic-2_Logic_Analyzer][img_2]][img_2]
+![ouilogique.com – Scanalogic-2_Logic_Analyzer][img_2]
 
 [img_2]: ./images/Scanalogic-2_Logic_Analyzer_002.jpg

@@ -60,8 +60,7 @@ Cette commande à relai est utilisée pour alimenter un lit électrique avec com
 
 ## Schéma électrique
 
-[![Schéma électrique relai bistable Arduino Prp Mini][i1]][i1]
-
+![Schéma électrique relai bistable Arduino Prp Mini][i1]
 
 [i1]: ./images/relai-bistable-commande-tension.sch.svg
 
@@ -69,33 +68,27 @@ Cette commande à relai est utilisée pour alimenter un lit électrique avec com
 
 J’ai designé le PCB sur KiCad et je l’ai fait fabriquer chez [SeeedStudio](https://www.seeedstudio.com/fusion_pcb.html).
 
-[![PCB commande relai bistable avec Arduino Pro Mini][i9]][i9]
-
+![PCB commande relai bistable avec Arduino Pro Mini][i9]
 
 [i9]: ./images/relai-bistable-commande-tension-007.jpg
 
-[![commande relai bistable avec Arduino Pro Mini][i10]][i10]
-
+![commande relai bistable avec Arduino Pro Mini][i10]
 
 [i10]: ./images/relai-bistable-commande-tension-008.jpg
 
-[![commande relai bistable avec Arduino Pro Mini][i11]][i11]
-
+![commande relai bistable avec Arduino Pro Mini][i11]
 
 [i11]: ./images/relai-bistable-commande-tension-009.jpg
 
-[![commande relai bistable avec Arduino Pro Mini][i12]][i12]
-
+![commande relai bistable avec Arduino Pro Mini][i12]
 
 [i12]: ./images/relai-bistable-commande-tension-010.jpg
 
-[![commande relai bistable avec Arduino Pro Mini][i13]][i13]
-
+![commande relai bistable avec Arduino Pro Mini][i13]
 
 [i13]: ./images/relai-bistable-commande-tension-011.jpg
 
-[![Montage final commande relai bistable avec Arduino Pro Mini][i14]][i14]
-
+![Montage final commande relai bistable avec Arduino Pro Mini][i14]
 
 [i14]: ./images/relai-bistable-commande-tension-012.jpg
 
@@ -107,23 +100,23 @@ J’ai designé le PCB sur KiCad et je l’ai fait fabriquer chez [SeeedStudio](
 
 > Les broches du [relai Panasonic ADW1203W][2] ne sont pas au pas de 2.54 mm. J’ai dû souder des fils aux broches et les plier pour pouvoir souder le tout sur le veroboard.
 
-[![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i3]][i3]
+![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i3]
 
 [i3]: ./images/relai-bistable-commande-tension-002.jpg
 
-[![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i4]][i4]
+![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i4]
 
 [i4]: ./images/relai-bistable-commande-tension-003.jpg
 
-[![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i5]][i5]
+![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i5]
 
 [i5]: ./images/relai-bistable-commande-tension-004.jpg
 
-[![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i6]][i6]
+![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i6]
 
 [i6]: ./images/relai-bistable-commande-tension-005.png
 
-[![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i7]][i7]
+![Prototype sur veroboard commande relai bistable avec Arduino Pro Mini][i7]
 
 [i7]: ./images/relai-bistable-commande-tension-006.jpg
 
@@ -131,7 +124,7 @@ J’ai designé le PCB sur KiCad et je l’ai fait fabriquer chez [SeeedStudio](
 
 Avec un relai bistable au lieu des relais _solid state_.
 
-[![Prototype sur breadboard commande relai bistable avec Arduino Pro Mini][i2]][i2]
+![Prototype sur breadboard commande relai bistable avec Arduino Pro Mini][i2]
 
 [i2]: ./images/relai-bistable-commande-tension-001.jpg
 
@@ -139,7 +132,7 @@ Avec un relai bistable au lieu des relais _solid state_.
 
 Le tout premier prototype était basé sur un Arduino UNO avec deux relais _solid state_, un pour la phase et l’autre pour le neutre. J’ai préféré la solution avec relai bistable pour le deuxième proto (ci-dessus), pour assurer la séparation galvanique. Le relai bistable a aussi l’avantage de ne consommer que lors des commutations. Comme il ne commute que la phase, j’ai utilisé un cordon 240 V avec une prise à 3 broches pour être sûr que c’est la phase qui est connectée au relai (et pas le neutre).
 
-[![Prototype sur veroboard commande relai solid state avec Arduino UNO][i8]][i8]
+![Prototype sur veroboard commande relai solid state avec Arduino UNO][i8]
 
 [i8]: ./images/relai-bistable-commande-tension-000.jpg
 [1]: https://fr.aliexpress.com/item/Free-shippin-10pcs-lot-SFH620A-DIP-DIP-4-new-original/32553455903.html?spm=2114.13010608.0.0.H1VvjL

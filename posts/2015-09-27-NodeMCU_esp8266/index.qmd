@@ -19,7 +19,7 @@ title: Mise en route d’une carte <em>WeMos-LoLin</em> avec le firmware NodeMCU
 
 > Voir aussi [l’article sur l’ESP8266 Amica](/NodeMCU_esp8266_amica/)
 
-[![ouilogique.com][img_1]][img_1]
+![ouilogique.com][img_1]
 
 [img_1]: ./images/NodeMCU_esp8266_001.jpg
 
@@ -37,7 +37,7 @@ title: Mise en route d’une carte <em>WeMos-LoLin</em> avec le firmware NodeMCU
 
 ## Référence fabricant
 
-[![ouilogique.com][img_2]][img_2]
+![ouilogique.com][img_2]
 
 [img_2]: ./images/NodeMCU_esp8266_002_lowres.jpg
 
@@ -109,7 +109,7 @@ esptool.py           \
 
 ## Pinout
 
-[![ouilogique.com][img_3]][img_3]
+![ouilogique.com][img_3]
 
 [img_3]: ./images/NodeMCU_esp8266_lolin_pinout.jpg
 
@@ -153,7 +153,7 @@ La bibliothèque est installée au chemin suivant :
 
 Dans le menu `Outils`
 
-[![ouilogique.com][img_4]][img_4]
+![ouilogique.com][img_4]
 
 [img_4]: ./images/esp8266-configuration-arduino-c.png
 

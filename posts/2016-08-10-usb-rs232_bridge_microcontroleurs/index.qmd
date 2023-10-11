@@ -51,7 +51,7 @@ void loop()
 -   GND connecté à GND.
 -   Les cavaliers RXD et TXD connectés horizontalement (mode `HW UART` selon le pictogramme à côté des cavaliers).
 
-[![Branchement des Launchpad][img_1]][img_1]
+![Branchement des Launchpad][img_1]
 
 [img_1]: ./images/branchement_launchpad_lowres.jpg
 
@@ -63,15 +63,15 @@ J’ai vérifié ça avec un analyseur logique.
 
 [3]: http://freeware.the-meiers.org/
 
-[![CoolTerm Launchpad 1][img_2]][img_2]
+![CoolTerm Launchpad 1][img_2]
 
 [img_2]: ./images/coolterm_launchpad_1.png
 
-[![CoolTerm Launchpad 2][img_3]][img_3]
+![CoolTerm Launchpad 2][img_3]
 
 [img_3]: ./images/coolterm_launchpad_2.png
 
-[![Scanalogic entre les Launchpad][img_4]][img_4]
+![Scanalogic entre les Launchpad][img_4]
 
 [img_4]: ./images/acquisition_launchpad.png
 
@@ -79,7 +79,7 @@ J’ai vérifié ça avec un analyseur logique.
 
 Et ça fonctionne aussi sans le microcontrôleur.
 
-[![Branchement des Launchpad sans MSP430][img_5]][img_5]
+![Branchement des Launchpad sans MSP430][img_5]
 
 [img_5]: ./images/branchement_launchpad_sans_msp430_lowres.jpg
 
@@ -93,7 +93,7 @@ Idem que pour les Launchpad (programme serial_end.ino)
 
 -   Deux ESP8266-12E avec RX connecté à TX et inversement TX à RX.
 
-[![Branchement des ESP8266-12E][img_6]][img_6]
+![Branchement des ESP8266-12E][img_6]
 
 [img_6]: ./images/branchement_esp8266-12E_test1_lowres.jpg
 
@@ -105,13 +105,13 @@ Encore une fois j’ai vérifié ça avec un analyseur logique.
 
 #### 9600 bauds
 
-[![Scanalogic entre les ESP8266-12E 9600 bauds][img_7]][img_7]
+![Scanalogic entre les ESP8266-12E 9600 bauds][img_7]
 
 [img_7]: ./images/acquisition_esp8266-12E_9600.png
 
 #### 115200 bauds
 
-[![Scanalogic entre les ESP8266-12E 115200 bauds][img_8]][img_8]
+![Scanalogic entre les ESP8266-12E 115200 bauds][img_8]
 
 [img_8]: ./images/acquisition_esp8266-12E_115200.png
 
@@ -130,7 +130,7 @@ Pour vérifier que les ESP ne démarrent pas, j’ai chargé le programme blink.
 -   Deux ESP8266-12E avec RX connecté à TX et inversement TX à RX.
 -   RST connecté à GND
 
-[![Branchement des ESP8266-12E][img_9]][img_9]
+![Branchement des ESP8266-12E][img_9]
 
 [img_9]: ./images/branchement_esp8266-12E_test2_lowres.jpg
 

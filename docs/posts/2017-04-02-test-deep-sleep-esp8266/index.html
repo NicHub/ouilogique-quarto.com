@@ -70,6 +70,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
@@ -251,13 +254,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>Note&nbsp;: 273.70&nbsp;µs correspond à 21896&nbsp;cycles d’horloge à 80&nbsp;MHz (= 80E+6 * 273.7E-6).</em></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-montage-1.jpg"><img src="./images/2017-04-02-test-deep-sleep-esp8266-montage-1.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-montage-1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Deep Sleep ESP8266 — Test 1"><img src="./images/2017-04-02-test-deep-sleep-esp8266-montage-1.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Deep Sleep ESP8266 — Test 1</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-signal-DO-reset.jpg"><img src="./images/2017-04-02-test-deep-sleep-esp8266-signal-DO-reset.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-signal-DO-reset.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Deep Sleep ESP8266 — Signal de reset sur D0"><img src="./images/2017-04-02-test-deep-sleep-esp8266-signal-DO-reset.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Deep Sleep ESP8266 — Signal de reset sur D0</figcaption>
 </figure>
 </div>
@@ -267,7 +270,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>L’ESP sort du <em>deep sleep</em> lorsque le bouton connecté en <em>pull-up</em> est pressé. Problème garanti avec ce montage parce que l’ESP sera <em>reseté</em> autant de fois que le bouton sera pressé, y compris lors des rebonds du bouton. Une solution serait d’utiliser une bascule en entrée (<a href="https://github.com/esp8266/Arduino/issues/1488" class="uri">https://github.com/esp8266/Arduino/issues/1488</a>).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-montage-2.jpg"><img src="./images/2017-04-02-test-deep-sleep-esp8266-montage-2.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2017-04-02-test-deep-sleep-esp8266-montage-2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Deep Sleep ESP8266 — Test 2"><img src="./images/2017-04-02-test-deep-sleep-esp8266-montage-2.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">Deep Sleep ESP8266 — Test 2</figcaption>
 </figure>
 </div>
@@ -594,6 +597,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
 <script src="../../js/target_blank.js"></script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 

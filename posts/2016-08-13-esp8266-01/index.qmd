@@ -16,7 +16,7 @@ title: Mise en route d’un ESP8266-01
 
 > L’ESP-01 présenté ici, m’a été transmis par [Didel][0]. Donc merci à Jean-Daniel Nicoud.
 
-[![ESP8266-01][img_1]][img_1]
+![ESP8266-01][img_1]
 
 [img_1]: ./images/esp8266-01.jpg
 
@@ -68,14 +68,13 @@ On voit que le TX de l’ESP-12E doit être connecté au TX de l’ESP-01 et inv
 
 ### Câblage sur breadboard
 
-[![ESP8266-01 brochage][img_2]][img_2]
-
+![ESP8266-01 brochage][img_2]
 
 [img_2]: ./images/esp8266-01_pinout.jpg
 
 Note : Les LED rouge et verte ne sont pas connectées.
 
-[![ESP8266-01 brochage][img_3]][img_3]
+![ESP8266-01 brochage][img_3]
 
 [img_3]: ./images/esp8266-01_montage_commandes_AT_lowres.jpg
 
@@ -97,7 +96,7 @@ Ensuite on peut envoyer un _reset_
 
 et l’ESP répond
 
-[![ESP8266-01 réponse commande AT+RST][img_4]][img_4]
+![ESP8266-01 réponse commande AT+RST][img_4]
 
 [img_4]: ./images/coolterm-esp01_1.png
 
@@ -117,11 +116,11 @@ Sur mon ESP, la réponse est
 
 À la place de CoolTerm, on peut utiliser n’importe quel autre logiciel, comme le moniteur série de l’IDE Arduino ou [ESPlorer][12]
 
-[![Moniteur série de l’IDE Arduino][img_5]][img_5]
+![Moniteur série de l’IDE Arduino][img_5]
 
 [img_5]: ./images/moniteur_serie_ide_arduino.png
 
-[![ESPlorer][img_6]][img_6]
+![ESPlorer][img_6]
 
 [img_6]: ./images/esplorer.png
 
@@ -159,7 +158,7 @@ J’ai utilisé [la version 1.6.9 de l’IDE Arduino][13] pour ces tests.
 
 Les réglages de l’IDE sont les suivants :
 
-[![Paramètres de l’IDE Arduino pour la programmation de l’ESP8266-01][img_7]][img_7]
+![Paramètres de l’IDE Arduino pour la programmation de l’ESP8266-01][img_7]
 
 [img_7]: ./images/esp8266-01_parametres_ide_arduino.png
 
@@ -172,7 +171,7 @@ Deux paramètres sont spécialement importants :
 
 Lors de la programmation, GPIO 0 doit être tiré à la masse. Par mesure de précaution, il est préférable de mettre une résistance de 330 Ω en série qui évitera des dégâts si d’aventure GPIO 0 venait à prendre un état logique haut lors de la programmation. Sur l’image ci-dessous, on voit que le fil bleu peut être déplacé en mode programmation vers la résistance de 330 Ω (colonne 39 du breadboard) ou en mode utilisation vers la LED rouge (colonne 41). La broche RST peut être mise à la masse à l’aide du fil blanc, ce qui permet de redémarrer l’ESP. Toutes les autres connexions sont identiques que pour la programmation AT.
 
-[![Montage programmation ESP8266-01][img_8]][img_8]
+![Montage programmation ESP8266-01][img_8]
 
 [img_8]: ./images/esp8266-01_montage_programmation_lowres.jpg
 
@@ -226,7 +225,7 @@ ligne 7 de `websocket.js`, indiquer `var ESP_MODULE_TYPE = 'ESP-01'`
 
 Et si tout à fonctionné, voici ce que le navigateur doit montrer :
 
-[![Capture d’écran simple-websocket.ino][img_9]][img_9]
+![Capture d’écran simple-websocket.ino][img_9]
 
 [img_9]: https://github.com/NicHub/ouilogique-ESP8266-Arduino/raw/master/simple-websocket/images/simple-websocket-screenshot-01.png
 

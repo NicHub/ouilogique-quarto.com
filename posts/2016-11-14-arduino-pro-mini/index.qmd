@@ -41,11 +41,11 @@ La procédure d’utilisation est très bien détaillée sur la page GitHub de M
 
 La configuration que j’ai utilisée est la suivante :
 
-[![Configuration MiniCore programmation d’Arduino Pro Mini][img_1]][img_1]
+![Configuration MiniCore programmation d’Arduino Pro Mini][img_1]
 
 [img_1]: ./images/config_MiniCore.png
 
-[![Programmation d’Arduino Pro Mini][img_2]][img_2]
+![Programmation d’Arduino Pro Mini][img_2]
 
 [img_2]: ./images/arduino-pro-mini-arduino-uno_lowres.jpg
 
@@ -68,7 +68,7 @@ L6_a programmation ISP fonctionne nickel, mais je n’arrive pas à [utiliser l�
 
 J’ai testé cette solution 6 mois plus tard que celle avec l’Arduino UNO, mais c’est le même principe dans les deux cas. Donc voici la photo du montage :
 
-[![Arduino Pro Mini programmation ISP][img_7]][img_7]
+![Arduino Pro Mini programmation ISP][img_7]
 
 [img_7]: ./images/arduino-pro-mini-as-isp_lowres.jpg
 
@@ -84,19 +84,19 @@ J’ai également fait un test de programmation avec [un convertisseur USB-séri
 
 ⚠ Les broches CTS et GND sont permutées sur l’Arduino Pro Mini et sur le convertisseur. Curieusement, il semble que CTS soit en fait connecté à GND, parce que ça marche quand même avec la permutation.
 
-[![convertisseur USB-série][img_3]][img_3]
+![convertisseur USB-série][img_3]
 
 [img_3]: ./images/usb-serial-converter_lowres.jpg
 
-[![Arduino Pro Mini][img_4]][img_4]
+![Arduino Pro Mini][img_4]
 
 [img_4]: ./images/arduino-pro-mini_lowres.jpg
 
-[![Arduino Pro Mini Back][img_5]][img_5]
+![Arduino Pro Mini Back][img_5]
 
 [img_5]: ./images/arduino-pro-mini-back.jpg
 
-[![Arduino Pro Mini + convertisseur USB-série][img_6]][img_6]
+![Arduino Pro Mini + convertisseur USB-série][img_6]
 
 [img_6]: ./images/arduino-pro-mini-usb-serial_lowres.jpg
 

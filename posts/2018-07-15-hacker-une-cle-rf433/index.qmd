@@ -63,7 +63,7 @@ sudo pip3 install .
 
 -   Connecter l’adaptateur SDR.
 
-[![Raspberry Pi avec dongle SDR][img_1]][img_1]
+![Raspberry Pi avec dongle SDR][img_1]
 
 -   Dans l’interface graphique de Raspbian, ouvrir un terminal et taper la commande `urh`.
 -   Dans la fenêtre qui s’ouvre, aller dans le menu `File/Record Signal...`.
@@ -71,7 +71,7 @@ sudo pip3 install .
 -   Cliquer sur la flèche arrondie en regard de `Device Identifier`. L’identifiant de l’adaptateur doit d’afficher, par exemple : `Realtek RTL2838UHIDIR (SN: 00000001)`.
 -   Laisser les autres options par défaut.
 
-[![Enregistrement d’un signal RF433 avec URH][img_2]][img_2]
+![Enregistrement d’un signal RF433 avec URH][img_2]
 
 -   Cliquer sur le bouton `Start`.
 -   Appuyer sur le bouton de la clé RF433.
@@ -89,7 +89,7 @@ sudo pip3 install .
 -   Maintenant, on a les bits du signal (97 bits dans mon cas). Mais il faut encore évaluer combien de bits sont dans l’intervalle sans signal. Dans mon cas, il y en a 31, donc une période complète comprend 97 + 31 = 128 bits.
 -   Il faut également ajouter les zéros au code copié. Dans mon cas, il y en a 31.
 
-[![Enregistrement d’un signal RF433 avec URH][img_3]][img_3]
+![Enregistrement d’un signal RF433 avec URH][img_3]
 
 ## Tester le code copié
 
@@ -99,7 +99,7 @@ L’émetteur RF433 est connecté à la broche 7.
 
 Les boutons sont connectés aux broches 8, 9 et 10. Pour un premier test, un seul bouton suffit.
 
-[![Enregistrement d’un signal RF433 avec URH][img_4]][img_4]
+![Enregistrement d’un signal RF433 avec URH][img_4]
 
 Le code de test se trouve ici : [rf433-spoof sur GitHub][rf433-spoof sur github].
 

@@ -79,20 +79,20 @@ void setup()
 void loop(){}
 ```
 
-[![Module nRF24L01+ avec antenne PCB][img_1]][img_1]
+![Module nRF24L01+ avec antenne PCB][img_1]
 
 [img_1]: ./images/2016-06-27-tests_nRF24L01+_002_lowres.jpg
 
 _D’après le programme `printDetails.ino`, [ce module acheté chez AliExpress est un nRF24L01+](http://fr.aliexpress.com/item/10PCS-NRF24L01-Wireless-Transceiver-Module-2-4GHz-For-AVR-ARM-Arduino-MCU/658370933.html)._
 
-[![Module nRF24L01+ sur Arduino UNO][img_2]][img_2]
+![Module nRF24L01+ sur Arduino UNO][img_2]
 
 [img_2]: ./images/2016-06-27-tests_nRF24L01+_001_lowres.jpg
 
 _Le bouton sur les shields est connecté à la broche `A0`. Le brochage du nRF24 est disponible dans le tableau ci-dessous._
 _Il faut connecter un condensateur électrolytique de 3.3 µF à 10 µF en parallèle sur l’alim (pas visible sur l’image)._
 
-[![Module nRF24L01+ brochage][img_3]][img_3]
+![Module nRF24L01+ brochage][img_3]
 
 [img_3]: ./images/nRF24L01+_pinout.jpg
 
@@ -175,7 +175,7 @@ J’ai fait un test rapide sur Launchpad MSP430 et ça fonctionne.
 -   [Launchpad MSP430 — Bibliothèque nRF24](https://github.com/spirilis/msprf24)
 -   [Launchpad MSP430 — Tuto nRF24](https://battomicro.wordpress.com/2013/03/27/tutorial-le-nrf24l01-larduino-et-le-msp-430/)
 
-[![Module nRF24L01+ sur Launchpad MSP430][img_4]][img_4]
+![Module nRF24L01+ sur Launchpad MSP430][img_4]
 
 [img_4]: ./images/2016-06-27-tests_nRF24L01+_003_lowres.jpg
 

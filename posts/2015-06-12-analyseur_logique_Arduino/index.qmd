@@ -26,15 +26,15 @@ Il y a un article sur le site de Mouser qui en parle aussi : <https://www.mouse
 
 Et voilà ce que ça donne en action :
 
-[![ouilogique.com][img_1]][img_1]
+![ouilogique.com][img_1]
 
 [img_1]: ./images/2015-04-22_analyseur_logique.png
 
-[![ouilogique.com][img_2]][img_2]
+![ouilogique.com][img_2]
 
 [img_2]: ./images/2015-04-22_RF433_proto_1.jpg
 
-[![ouilogique.com][img_3]][img_3]
+![ouilogique.com][img_3]
 
 [img_3]: ./images/2015-04-22_RF433_proto_2.jpg
 

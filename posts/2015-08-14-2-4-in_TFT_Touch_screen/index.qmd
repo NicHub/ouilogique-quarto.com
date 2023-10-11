@@ -24,7 +24,7 @@ C’est un écran tactile résistif avec un lecteur de carte micro SD intégré.
 
 > Avant de faire quoi que ce soit, il semble que ça soit une bonne idée d’isoler le connecteur USB de l’Arduino UNO avec de l’adhésif Kapton par exemple.
 
-[![mcufriend LCD touch screen][1]][1]
+![mcufriend LCD touch screen][1]
 
 Pour arriver à ce résultat, il faut tout d’abord télécharger trois librairies d’Adafruit :
 
@@ -98,7 +98,7 @@ p.x = map(p.x, TS_MINX, TS_MAXX, 0, tft.width());
 ```
 
 
-[![mcufriend LCD touch screen][2]][2]
+![mcufriend LCD touch screen][2]
 
 ## Spécifications
 
@@ -113,7 +113,7 @@ p.x = map(p.x, TS_MINX, TS_MAXX, 0, tft.width());
 
 ### Pinout
 
-[![mcufriend LCD touch screen][3]][3]
+![mcufriend LCD touch screen][3]
 
 | ARDUINO PIN | LCD SHIELD PIN    | USE                      |
 | :---------- | :---------------- | :----------------------- |
@@ -156,7 +156,7 @@ Les deux drivers LCD sont des TM74HC245.
 [Datasheet en chinois](https://www.szjdf.net/Private/ProductFiles/595775de665f4acba6a1.pdf)
 Datasheet traduite par Google ~~goo.gl/hKB7W1~~
 
-[![TM74HC245][4]][4]
+![TM74HC245][4]
 
 [1]: ./images/2-4-in_TFT_Touch_screen_front.jpg
 [2]: ./images/2-4-in_TFT_Touch_screen_ouilogique_com.jpg
