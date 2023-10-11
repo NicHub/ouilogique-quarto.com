@@ -5,8 +5,11 @@ author: Nico
 categories: []
 date: 2017-06-18 17:40:00+02:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: MPPT — Maximum Power Point Tracking
 ---

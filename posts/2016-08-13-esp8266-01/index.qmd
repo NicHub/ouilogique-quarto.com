@@ -5,8 +5,11 @@ author: Nico
 categories: []
 date: 2016-08-13 09:23:00+02:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Mise en route d’un ESP8266-01
 ---
@@ -65,7 +68,8 @@ On voit que le TX de l’ESP-12E doit être connecté au TX de l’ESP-01 et inv
 
 ### Câblage sur breadboard
 
-[![ESP8266-01 brochage][img_2]{:style="width:400px;}][img_2]
+[![ESP8266-01 brochage][img_2]][img_2]
+
 
 [img_2]: ./images/esp8266-01_pinout.jpg
 
@@ -149,7 +153,7 @@ Comme la programmation avec l’IDE Arduino va écraser le firmware NodeMCU pré
 
 La procédure pour préparer l’IDE Arduino à la programmation d’un ESP-01 est la même que pour un ESP-12E :
 
-[ouilogique.com — Programmation de l’ESP8266 en Arduino C](/NodeMCU_esp8266/#programmation-en-arduino-c)
+[ouilogique.com — Programmation de l’ESP8266 en Arduino C](/NodeMCU_esp8266/#programmation-de-lesp8266-en-arduino-c)
 
 J’ai utilisé [la version 1.6.9 de l’IDE Arduino][13] pour ces tests.
 

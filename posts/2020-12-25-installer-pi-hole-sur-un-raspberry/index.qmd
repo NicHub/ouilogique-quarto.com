@@ -5,8 +5,11 @@ author: Nico
 categories: []
 date: 2020-12-25 13:19:00+01:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Installer Pi-hole sur un Raspberry
 ---

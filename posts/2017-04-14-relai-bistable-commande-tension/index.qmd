@@ -5,9 +5,12 @@ author: Nico
 categories: []
 date: 2017-04-14 10:00:00+02:00
 draft: false
+filters:
+- lightbox
 image: ./images/banner_2017-04-14-relai-bistable-commande-tension.jpg
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Commande d’un relai bistable 240 V avec un Arduino Pro Mini
 ---
@@ -57,7 +60,8 @@ Cette commande à relai est utilisée pour alimenter un lit électrique avec com
 
 ## Schéma électrique
 
-[![Schéma électrique relai bistable Arduino Prp Mini][i1]{: width="90%" }][i1]
+[![Schéma électrique relai bistable Arduino Prp Mini][i1]][i1]
+
 
 [i1]: ./images/relai-bistable-commande-tension.sch.svg
 
@@ -65,27 +69,33 @@ Cette commande à relai est utilisée pour alimenter un lit électrique avec com
 
 J’ai designé le PCB sur KiCad et je l’ai fait fabriquer chez [SeeedStudio](https://www.seeedstudio.com/fusion_pcb.html).
 
-[![PCB commande relai bistable avec Arduino Pro Mini][i9]{:style="width:60%;"}][i9]
+[![PCB commande relai bistable avec Arduino Pro Mini][i9]][i9]
+
 
 [i9]: ./images/relai-bistable-commande-tension-007.jpg
 
-[![commande relai bistable avec Arduino Pro Mini][i10]{:style="width:50%; float:left"}][i10]
+[![commande relai bistable avec Arduino Pro Mini][i10]][i10]
+
 
 [i10]: ./images/relai-bistable-commande-tension-008.jpg
 
-[![commande relai bistable avec Arduino Pro Mini][i11]{:style="width:50%; float:left"}][i11]
+[![commande relai bistable avec Arduino Pro Mini][i11]][i11]
+
 
 [i11]: ./images/relai-bistable-commande-tension-009.jpg
 
-[![commande relai bistable avec Arduino Pro Mini][i12]{:style="width:50%; float:left"}][i12]
+[![commande relai bistable avec Arduino Pro Mini][i12]][i12]
+
 
 [i12]: ./images/relai-bistable-commande-tension-010.jpg
 
-[![commande relai bistable avec Arduino Pro Mini][i13]{:style="width:50%"}][i13]
+[![commande relai bistable avec Arduino Pro Mini][i13]][i13]
+
 
 [i13]: ./images/relai-bistable-commande-tension-011.jpg
 
-[![Montage final commande relai bistable avec Arduino Pro Mini][i14]{:style="width:100%; margin-top: 50px;"}][i14]
+[![Montage final commande relai bistable avec Arduino Pro Mini][i14]][i14]
+
 
 [i14]: ./images/relai-bistable-commande-tension-012.jpg
 

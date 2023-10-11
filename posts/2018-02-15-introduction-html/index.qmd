@@ -5,8 +5,11 @@ author: Nico
 categories: []
 date: 2018-02-15 12:00:00+01:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Introduction au langage HTML
 ---

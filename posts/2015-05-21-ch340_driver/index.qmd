@@ -7,8 +7,11 @@ categories:
 - CH340
 date: 2015-05-21 10:50:00+02:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Utiliser un chip CH340G au lieu d’un FTDI
 ---
@@ -30,14 +33,9 @@ Par contre pour la communication USB, ils ne sont pas équipés de puces FTDI ma
 
 Le pilote se télécharge ici :
 
-<!--
-<a href="https://www.wch.cn/download/CH341SER_MAC_ZIP.html"
-target="_blank">https://www.wch.cn/download/CH341SER_MAC_ZIP.html</a>
--->
+[Pour Mac OS X 10.10](https://www.wch.cn/download/CH341SER_MAC_ZIP.html)
 
-[Pour Mac OS X 10.10](https://www.wch.cn/download/CH341SER_MAC_ZIP.html){:target="\_blank"}
-
-[Pour Windows 10](https://www.wch.cn/download/CH341SER_EXE.html){:target="\_blank"}
+[Pour Windows 10](https://www.wch.cn/download/CH341SER_EXE.html)
 
 La doc en anglais se trouve ici :
 

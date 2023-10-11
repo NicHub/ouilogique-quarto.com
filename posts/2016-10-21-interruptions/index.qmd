@@ -5,8 +5,11 @@ author: Nico
 categories: []
 date: 2016-10-21 12:31:00+02:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: External interrupts on the ATmega168/328
 ---

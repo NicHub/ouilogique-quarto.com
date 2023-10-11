@@ -5,8 +5,11 @@ author: Nico
 categories: []
 date: 2016-08-10 10:34:00+02:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Utiliser des cartes à microcontrôleurs comme bridge USB&#8209;RS232
 ---

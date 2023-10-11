@@ -1,4 +1,12 @@
 "use strict";
+
+/**
+ * Adds previous and next buttons for navigation between posts.
+ * Also add keyboard shorcuts:
+ *    - previous   ←
+ *    - next       →
+ *    - home       shift ↑
+ */
 const prefix = "../.."
 let next_link = "";
 let prev_link = "";
@@ -9,7 +17,7 @@ const url = new URL(window.location.href);
 let found = false;
 let id = 0;
 for (id = 0; id < file_list.length; id++) {
-    console.log(`file_list[id] = ${file_list[id]}`);
+    // console.log(`file_list[id] = ${file_list[id]}`);
 
     if (url.pathname.indexOf(file_list[id]) > -1) {
         found = true;
@@ -19,20 +27,24 @@ for (id = 0; id < file_list.length; id++) {
 
 const home_url = `/`
 
-console.log(`url.pathname = ${url.pathname}`);
-console.log(`home_url = ${home_url}`);
+// console.log(`url.pathname = ${url.pathname}`);
+// console.log(`home_url = ${home_url}`);
 
-main();
+
+document.addEventListener("DOMContentLoaded", () => {
+    main();
+});
+
 
 /**
  *
  */
 function main() {
-    console.log("prev_next_buttons.js START");
+    // console.log("prev_next_buttons.js START");
 
-    console.log(`id = ${id}`);
+    // console.log(`id = ${id}`);
     if (!found) {
-        console.log("Unknown URL");
+        // console.log("Unknown URL");
         return;
     }
 
@@ -83,7 +95,7 @@ function main() {
     // Display links.
     const quartoContent = document.getElementById("quarto-content");
     quartoContent.innerHTML += template_prev_next;
-    console.log(template_prev_next);
+    // console.log(template_prev_next);
 
     // Prepare keyboard shortcuts.
     document

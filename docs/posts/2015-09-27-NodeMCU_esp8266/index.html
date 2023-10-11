@@ -253,18 +253,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="programmation-de-lesp8266">Programmation de l’ESP8266</h2>
 <p>L’ESP8266 peut être programmé de plusieurs façons&nbsp;:</p>
 <ul>
-<li><a href="#programmation-en-arduino-c">En Arduino C (voir ci-dessous)</a></li>
-<li>En C, avec <a href="http://bbs.espressif.com">le SDK d’Espressif</a></li>
+<li><a href="#programmation-de-lesp8266-en-arduino-c">En Arduino C (voir ci-dessous)</a></li>
+<li>En C, avec le SDK d’Espressif <del>http://bbs.espressif.com</del></li>
 <li>En C, avec <a href="https://github.com/SmingHub/Sming">Sming</a></li>
-<li><a href="#programmation-en-lua">En Lua (voir ci-dessous)</a></li>
+<li><a href="#programmation-de-lesp8266-en-lua">En Lua (voir ci-dessous)</a></li>
 <li>En JavaScript, avec le firmware <a href="http://www.espruino.com/">Espruino</a></li>
 <li>En <a href="https://micropython.org">MicroPython</a></li>
 <li>En <a href="http://www.esp8266basic.com">BASIC</a></li>
 </ul>
-<p>{: #programmation-en-arduino-c }</p>
 </section>
 <section id="programmation-de-lesp8266-en-arduino-c" class="level2">
-<h2 class="anchored" data-anchor-id="programmation-de-lesp8266-en-arduino-c">Programmation de l’ESP8266 en&nbsp;Arduino C</h2>
+<h2 class="anchored" data-anchor-id="programmation-de-lesp8266-en-arduino-c">Programmation de l’ESP8266 en Arduino C</h2>
 <p>Les informations d’origine se trouvent ici&nbsp;: <a href="https://github.com/esp8266/Arduino/" class="uri">https://github.com/esp8266/Arduino/</a></p>
 <section id="configuration-de-lide-arduino" class="level3">
 <h3 class="anchored" data-anchor-id="configuration-de-lide-arduino">Configuration de l’IDE Arduino</h3>
@@ -301,7 +300,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>L’ESP8266 peut être overclocké à 160&nbsp;MHz. J’ai observé que la librairie <code>Tone.h</code> n’aime pas ça…</p>
 </blockquote>
-<p>{: #compilation-et-telechargement }</p>
 </section>
 <section id="compilation-et-téléchargement-des-programmes" class="level3">
 <h3 class="anchored" data-anchor-id="compilation-et-téléchargement-des-programmes">Compilation et téléchargement des programmes</h3>
@@ -318,7 +316,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="http://esp8266.github.io/Arduino/versions/2.0.0/doc/filesystem.html#uploading-files-to-file-system" class="uri">http://esp8266.github.io/Arduino/versions/2.0.0/doc/filesystem.html#uploading-files-to-file-system</a></li>
 </ul>
 <blockquote class="blockquote">
-<p>Ce gestionnaire de téléchargement ne sert pas à programmer l’ESP8266 (voir <a href="#compilation-et-telechargement"><em>Compilation et téléchargement</em></a> pour cette fonctionnalité), mais à télécharger des fichiers annexes, typiquement des fichiers qui seront servis par une interface web (HTML, images…) ou des fichiers de configuration.</p>
+<p>Ce gestionnaire de téléchargement ne sert pas à programmer l’ESP8266 (voir <a href="#compilation-et-téléchargement-des-programmes"><em>Compilation et téléchargement</em></a> pour cette fonctionnalité), mais à télécharger des fichiers annexes, typiquement des fichiers qui seront servis par une interface web (HTML, images…) ou des fichiers de configuration.</p>
 </blockquote>
 <p>L’utilisation est très simple&nbsp;:</p>
 <ul>
@@ -340,11 +338,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Sur OSX, les bibliothèques sont installées dans le répertoire <code>~/Library/Arduino15/packages/</code>.</li>
 <li>Quelques variables utiles sont définies dans le fichier <code>~/Library/Arduino15/packages/esp8266/hardware/esp8266/2.2.0/variants/nodemcu/pins_arduino.h</code>.</li>
 </ul>
-<p>{: #programmation-en-lua }</p>
 </section>
 </section>
 <section id="programmation-de-lesp8266-en-lua" class="level2">
-<h2 class="anchored" data-anchor-id="programmation-de-lesp8266-en-lua">Programmation de l’ESP8266 en&nbsp;Lua</h2>
+<h2 class="anchored" data-anchor-id="programmation-de-lesp8266-en-lua">Programmation de l’ESP8266 en Lua</h2>
 <p>Les scripts Lua peuvent être interprétés ou compilés avec le firmware <a href="http://nodemcu.com/index_en.html">NodeMCU</a>.</p>
 <p>On trouve quantité de programmes sur le web pour charger les scripts Lua sur l’ESP8266. J’ai testé les suivants&nbsp;:</p>
 <ul>
@@ -766,6 +763,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
+<script src="../../js/target_blank.js"></script>
 
 
 

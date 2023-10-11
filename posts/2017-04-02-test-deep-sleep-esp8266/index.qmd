@@ -5,8 +5,11 @@ author: Nico
 categories: []
 date: 2017-04-02 18:30:00+02:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Test du deep sleep de l’ESP8266
 ---

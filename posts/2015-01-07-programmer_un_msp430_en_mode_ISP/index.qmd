@@ -8,8 +8,11 @@ categories:
 - ISP
 date: 2015-01-07 12:00:00+01:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Programmer un MSP430 en mode ISP
 ---
@@ -36,11 +39,13 @@ Voilà le résultat final :
 
 [img_2]: ./images/blink_noel_v2_021.jpg
 
-[![ouilogique.com][i3]{:style="width:50%; float:left"}][i3]
+[![ouilogique.com][i3]][i3]
+
 
 [i3]: ./images/adafruit_perma-proto_pt_129.jpg
 
-[![ouilogique.com][i4]{:style="width:50%; float:left"}][i4]
+[![ouilogique.com][i4]][i4]
+
 
 [i4]: ./images/adafruit_perma-proto_pt_131-1.jpg
 
@@ -57,19 +62,23 @@ Voilà le résultat final :
     J’étais tributaire des horaires d’ouverture du FabLab Chêne 20 ~~(www.fablab-chene20.ch)~~ et ça a été la course permanente pour réaliser ce montage.
     Notez que j’ai réalisé deux autres versions : une qui ne sera jamais utilisée et une autre que j’ai offerte à Noël, mais qui ne contient pas le montage électronique, c’est donc un simple photophore pour y placer une bougie et il a une forme différente de celui que je présente ici.
 
-[![ouilogique.com][img_903]{:style="width:50%; float:left"}][img_903]
+[![ouilogique.com][img_903]][img_903]
+
 
 [img_903]: ./images/blink_noel_v2_018.jpg
 
-[![ouilogique.com][img_904]{:style="width:50%; float:left"}][img_904]
+[![ouilogique.com][img_904]][img_904]
+
 
 [img_904]: ./images/blink_noel_v2_001.jpg
 
-[![ouilogique.com][img_905]{:style="width:50%; float:left"}][img_905]
+[![ouilogique.com][img_905]][img_905]
+
 
 [img_905]: ./images/blink_noel_v2_006.jpg
 
-[![ouilogique.com][img_906]{:style="width:50%; float:left; clear:right; margin-bottom:200px;"}][img_906]
+[![ouilogique.com][img_906]][img_906]
+
 
 [img_906]: ./images/blink_noel_v2_008.jpg
 

@@ -5,10 +5,13 @@ author: Nico
 categories: []
 date: 2021-04-30 09:52:54+01:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
-title: Une image haute résolution avec un Samsung S21 Ultra
+title: Une image haute résolution avec un Samsung S21 Ultra
 ---
 
 Voici une photo haute résolution que j’ai prise avec un téléphone Samsung S21 Ultra.

@@ -7,9 +7,12 @@ categories:
 - Impression 3D
 date: 2015-05-24 12:00:00+02:00
 draft: false
+filters:
+- lightbox
 image: ./images/banner_2015-05-24-tete-impression.jpg
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Tête d’impression chinoise pour µDelta
 ---
@@ -30,19 +33,23 @@ Petit souci cependant, l’étalonnage de Reprap-France ne fonctionne plus... Il
 
 [img_3]: ./images/FirmwareEEPROMSettings_2.png
 
-[![ouilogique.com][i3]{:style="width:50%; float:left"}][i3]
+[![ouilogique.com][i3]][i3]
+
 
 [i3]: ./images/910737-Voronoi_Klein_Bottle_001.jpg
 
-[![ouilogique.com][i4]{:style="width:50%; float:left"}][i4]
+[![ouilogique.com][i4]][i4]
+
 
 [i4]: ./images/910737-Voronoi_Klein_Bottle_002.jpg
 
-[![ouilogique.com][i5]{:style="width:50%; float:left"}][i5]
+[![ouilogique.com][i5]][i5]
+
 
 [i5]: ./images/910737-Voronoi_Klein_Bottle_003.jpg
 
-[![ouilogique.com][i6]{:style="width:50%; float:left; clear:right; margin-bottom:200px;"}][i6]
+[![ouilogique.com][i6]][i6]
+
 
 [i6]: ./images/910737-Voronoi_Klein_Bottle_004.jpg
 

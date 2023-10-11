@@ -5,8 +5,11 @@ author: Nico
 categories: []
 date: 2019-10-19 12:00:00+02:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Livres
 ---
@@ -20,7 +23,8 @@ Une sélection de livres intéressants. En anglais uniquement pour l’instant.
 
 Ce livre est publié avec une licence open source CC-BY.
 
-[![Book Cover Elements of Robotics — Ben-Ari, Mondada — ouilogique.com][img_1]{:style="width:50%;"}][img_1]
+[![Book Cover Elements of Robotics — Ben-Ari, Mondada — ouilogique.com][img_1]][img_1]
+
 
 [img_1]: ./images/2018_Book_ElementsOfRobotics.jpg
 
@@ -38,7 +42,8 @@ Ce livre est publié avec une licence open source CC-BY.
 
 La bible de la robotique.
 
-[![Springer Handbook of Robotics — Siciliano, Khatib — ouilogique.com][img_2]{:style="width:50%;"}][img_2]
+[![Springer Handbook of Robotics — Siciliano, Khatib — ouilogique.com][img_2]][img_2]
+
 
 [img_2]: ./images/SpringerHandbookOfRobotics.jpg
 

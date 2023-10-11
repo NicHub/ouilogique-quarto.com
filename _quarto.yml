@@ -70,6 +70,7 @@ format:
       - text: |
           <script src="/js/file_list.js"></script>
           <script src="/js/prev_next_buttons.js"></script>
+          <script src="/js/target_blank.js"></script>
     theme:
       - cyborg
       - custom.scss

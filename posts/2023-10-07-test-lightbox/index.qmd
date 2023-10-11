@@ -5,74 +5,157 @@ author: Nico
 categories: []
 date: 2023-10-07 12:00:00+01:00
 draft: false
+filters:
+- lightbox
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Simple Lightbox Example
 ---
 
-<https://biati-digital.github.io/glightbox/>
 
-![An Elephant](https://quarto.org/docs/authoring/images/html-figure.png){#fig-elephant}
+## Chilmark
+
+Here is a simple image with a description. This also overrides the
+description position and places it to the left of the image.
+
+![Beach in
+Chilmark](https://raw.githubusercontent.com/quarto-ext/lightbox/main/images/mv-0.jpg){description="Chilmark has a reputation as having some of the best beaches on Martha's Vineyard. Chilmark beaches are resident only in the summer, so be sure to have your proof of residency ready if you'd like to visit one of these special places. _credit:_ [Chilmark Beach](https://unsplash.com/photos/VBDJGOMCwps)"
+desc-position="left"}
+
+## Elsewhere
+
+The below demonstrates placing more than one image in a gallery. Note
+the usage of the `layout-ncol` which arranges the images on the page
+side by date. Adding the `group` attribute to the markdown images places
+the images in a gallery grouped together based upon the group name
+provided.
+
+::: {layout="[[1, 1], [1]]"}
+![Aquinnah](https://raw.githubusercontent.com/quarto-ext/lightbox/main/images/mv-1.jpg){group="elsewhere"
+description="The waves break off the coast of Aquinnah on a beautiful summer day."}
+
+![Oak Bluffs](https://raw.githubusercontent.com/quarto-ext/lightbox/main/images/mv-2.jpg){group="elsewhere"
+description="Oak Bluffs is famous for its Gingerbread cottages, busy town center, and party like atmosphere."}
+
+![Vineyard lighthouse](https://raw.githubusercontent.com/quarto-ext/lightbox/main/images/mv-3.jpg){group="elsewhere"
+description="The Edgartown Lighthouse is a short walk from downtown and has beautiful views over the entrance to Edgartown Harbor."}
+:::
+
+## With computation code chunks
+
+Options for lightbox can be passed using chunk options.
+
+```{r}
+#| fig-cap: Simple demo R plot
+#| lightbox:
+#|   group: r-graph
+#|   description: This is 1 to 10 plot
+plot(1:10, rnorm(10))
+```
+
+```{r}
+#| fig-cap: Plot about cars data
+#| lightbox:
+#|   group: r-graph
+#|   description: We see our cars data above
+plot(cars)
+```
+
+It is possible to create several plots, and group them in a lightbox gallery. Use list in YAML for options when you have several plots, on per plot.
+
+```{r}
+#| fig-cap:
+#|   - Caption for first plot
+#|   - Caption for second plot
+#| lightbox:
+#|   group: cars
+#|   description:
+#|     - This is the decription for first graph
+#|     - This is the decription for second graph
+plot(mtcars)
+plot(cars)
+```
+
+When `lightbox: auto` in main YAML config, you can opt-out lightbox on a plot by setting `lightbox: false`
+
+```{r}
+#| fig-cap: mtcars
+#| lightbox: false
+plot(mtcars)
+```
+
+## Credits
+
+The images in this example were used under the [Unsplash
+license](https://unsplash.com/license), view originals below:
+
+-   [Chilmark Beach](https://unsplash.com/photos/VBDJGOMCwps)
+-   [Aquinnah](https://unsplash.com/photos/2iQnDPLIXwU)
+-   [Gingerbread House](https://unsplash.com/photos/HQEtvlNzUyA)
+-   [Edgartown Light](https://unsplash.com/photos/f59MyOfLpi8)
+-   [Edgartown Sailboat](https://unsplash.com/photos/IiLiz7XpQpI)
+
+```{r}
+#| fig-cap: Simple demo R plot
+#| lightbox:
+#|   group: r-graph
+#|   description: This is 1 to 10 plot
+plot(1:10, rnorm(10))
+```
+
+```{python}
+1 + 1
+```
+
+https://vscode.dev/github/NicHub/ouilogique-quarto.com/blob/gh-pages/posts/2023-10-07-test-lightbox/index.qmd
+
+[test](https://biati-digital.github.io/glightbox/){#test}
+
+![An Elephant](https://quarto.org/docs/authoring/images/html-figure.png){#fig-elephant width=20% .lightbox}
+
+![An Elephant](https://quarto.org/docs/authoring/images/html-figure.png){style="width:10%;border:10px solid red;"}
+
+![An Elephant]
+
+[An Elephant]: https://quarto.org/docs/authoring/images/html-figure.png {style="width:10%;border:10px solid red;"}
 
 This is illustrated well by @fig-elephant.
 
-![Plateforme de Stewart — ouilogique.com][i1]
+Link to test @test
 
-[i1]: ../2019-03-27-plateforme-de-stewart-esp32/images/stewart-plateform-ouilogique.jpg
+::: {#fig-stew layout-ncol=4}
 
-![Plateforme de Stewart — ouilogique.com][i8]
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/stewart-plateform-ouilogique.jpg){group="my-gallery"}
 
-[i8]: ../2019-03-27-plateforme-de-stewart-esp32/images/2021-04-24-proto-plateforme-de-stewart_001.jpg
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2021-04-24-proto-plateforme-de-stewart_001.jpg){group="my-gallery"}
 
-![Plateforme de Stewart — ouilogique.com][i9]
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2021-04-24-proto-plateforme-de-stewart_002.jpg){group="my-gallery"}
 
-[i9]: ../2019-03-27-plateforme-de-stewart-esp32/images/2021-04-24-proto-plateforme-de-stewart_002.jpg
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_001.jpg){group="my-gallery"}
 
-![Plateforme de Stewart — ouilogique.com][i10]
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_003.jpg){group="my-gallery"}
 
-[i10]: ../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_001.jpg
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_004.jpg){group="my-gallery"}
 
-![Plateforme de Stewart — ouilogique.com][i12]
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_005.jpg){group="my-gallery"}
 
-[i12]: ../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_003.jpg
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_006.jpg){group="my-gallery"}
 
-![Plateforme de Stewart — ouilogique.com][i13]
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-31-proto-plateforme-de-stewart_001.jpg){group="my-gallery"}
 
-[i13]: ../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_004.jpg
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-03-proto-plateforme-de-stewart_001.jpg){group="my-gallery"}
 
-![Plateforme de Stewart — ouilogique.com][i14]
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-03-proto-plateforme-de-stewart_002.jpg){group="my-gallery"}
 
-[i14]: ../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_005.jpg
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-03-proto-plateforme-de-stewart_003.jpg){group="my-gallery"}
 
-![Plateforme de Stewart — ouilogique.com][i15]
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-03-proto-plateforme-de-stewart_004.jpg){group="my-gallery"}
 
-[i15]: ../2019-03-27-plateforme-de-stewart-esp32/images/2023-01-30-proto-plateforme-de-stewart_006.jpg
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2019-03-21-proto-plateforme-de-stewart_001.jpg){group="my-gallery"}
 
-![Plateforme de Stewart — ouilogique.com][i7]
+![Plateforme de Stewart --- ouilogique.com](../2019-03-27-plateforme-de-stewart-esp32/images/2019-03-21-proto-plateforme-de-stewart_002.jpg){group="my-gallery"}
 
-[i7]: ../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-31-proto-plateforme-de-stewart_001.jpg
-
-![Plateforme de Stewart — ouilogique.com][i3]
-
-[i3]: ../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-03-proto-plateforme-de-stewart_001.jpg
-
-![Plateforme de Stewart — ouilogique.com][i4]
-
-[i4]: ../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-03-proto-plateforme-de-stewart_002.jpg
-
-![Plateforme de Stewart — ouilogique.com][i5]
-
-[i5]: ../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-03-proto-plateforme-de-stewart_003.jpg
-
-![Plateforme de Stewart — ouilogique.com][i6]
-
-[i6]: ../2019-03-27-plateforme-de-stewart-esp32/images/2019-05-03-proto-plateforme-de-stewart_004.jpg
-
-![Plateforme de Stewart — ouilogique.com][i2]
-
-[i2]: ../2019-03-27-plateforme-de-stewart-esp32/images/2019-03-21-proto-plateforme-de-stewart_001.jpg
-
-![Plateforme de Stewart — ouilogique.com][i2b]
-
-[i2b]: ../2019-03-27-plateforme-de-stewart-esp32/images/2019-03-21-proto-plateforme-de-stewart_002.jpg
+Famous Elephants
+:::

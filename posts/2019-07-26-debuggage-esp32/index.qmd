@@ -5,18 +5,23 @@ author: Nico
 categories: []
 date: 2019-07-26 14:00:00+02:00
 draft: false
+filters:
+- lightbox
 image: ./images/banner_2019-07-26-debuggage-esp32.jpg
 lang: fr
 layout: page
+lightbox: auto
 pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Débuggage sur ESP32 avec un <em>ESP&#8209;Prog</em> et <em>PIO Unified Debugger</em>
 ---
 
-[![ESP-Prog — ouilogique.com][img_3]{:style="width:90%;"}][img_3]
+[![ESP-Prog — ouilogique.com][img_3]][img_3]
+
 
 [img_3]: ./images/esp-prog-board-close-up-lowres.jpg
 
-[![ESP-Prog back — ouilogique.com][img_4]{:style="width:90%;"}][img_4]
+[![ESP-Prog back — ouilogique.com][img_4]][img_4]
+
 
 [img_4]: ./images/esp-prog-board-close-up-back-lowres.jpg
 
@@ -63,7 +68,8 @@ bleu   GND       3. GND             |   4. ESP_TCK       IO_13  violet
        -         9. GND             |  10. NC            -
 ```
 
-[![Debuggage d’un ESP32 avec un ESP-Prog et PIO Unified Debugger — ouilogique.com][img_1]{:style="width:90%;"}][img_1]
+[![Debuggage d’un ESP32 avec un ESP-Prog et PIO Unified Debugger — ouilogique.com][img_1]][img_1]
+
 
 [img_1]: ./images/esp-prog-board-lowres.jpg
 
@@ -116,7 +122,8 @@ debug_init_break = tbreak setup
 [zadig]: https://zadig.akeo.ie
 [homebrew]: https://brew.sh/
 
-[![Debuggage d’un ESP32 avec un ESP-Prog et PIO Unified Debugger — ouilogique.com][img_2]{:style="width:90%;"}][img_2]
+[![Debuggage d’un ESP32 avec un ESP-Prog et PIO Unified Debugger — ouilogique.com][img_2]][img_2]
+
 
 [img_2]: ./images/pio-unified-debugger-001.jpg
 
