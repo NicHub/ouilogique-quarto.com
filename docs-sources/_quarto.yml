@@ -8,6 +8,7 @@ project:
     # - ./pages/
     - ./posts/
     - ./index.qmd
+    - ./404.qmd
     # - ./posts/2015-06-11-mooc_initiation_aux_microcontroleurs/index.qmd
     # - ./posts/2017-04-02-test-deep-sleep-esp8266/index.qmd
     # - ./posts/2017-08-26-installer-raspian-stretch/index.qmd
