@@ -4,7 +4,6 @@ file_list = [
 "/posts/2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/",
 "/posts/2022-08-10-les-plus-belles-tables-ascii/",
 "/posts/2022-06-19-humour-there-is-no-place-like-127_0_0_1/",
-"/posts/2021-04-30-image-haute-resolution-avec-un-samsung-s21-ultra/",
 "/posts/2020-12-25-installer-pi-hole-sur-un-raspberry/",
 "/posts/2020-05-25-humour-magic-word/",
 "/posts/2019-10-19-livres/",

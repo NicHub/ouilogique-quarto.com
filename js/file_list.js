@@ -1,4 +1,5 @@
 file_list = [
+"/posts/2023-10-07-test-lightbox/",
 "/posts/2023-05-30-flasher-un-bootloader/",
 "/posts/2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/",
 "/posts/2022-08-10-les-plus-belles-tables-ascii/",

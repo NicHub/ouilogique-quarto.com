@@ -18,6 +18,11 @@ SOURCE_PATH = f"{prefix}pages/"
 DEST_PATH = f'{prefix}{quarto_yaml["project"]["output-dir"]}/'
 
 
+def copy_favicon():
+    """___"""
+    shutil.copyfile("./images/favicon.ico", f"{DEST_PATH}favicon.ico")
+
+
 def main():
     """___"""
     if not os.path.exists(SOURCE_PATH):
@@ -41,6 +46,7 @@ try:
         level=logging.INFO,
     )
     main()
+    copy_favicon()
 except SystemExit as _e:
     logging.error(_e)
 else:

@@ -28,7 +28,7 @@ project:
 website:
   # reader-mode: true
   # site-path: "/posts/"
-  favicon: ./images/favicon.ico
+  favicon: favicon.ico
   # title: "OUIOUI"
   image: ./images/site-logo.png
   body-footer: "© ouilogique.com"
@@ -70,7 +70,7 @@ format:
       - text: |
           <script src="/js/file_list.js"></script>
           <script src="/js/prev_next_buttons.js"></script>
-          <script src="/js/target_blank.js"></script>
+      # <script src="/js/target_blank.js"></script>
     theme:
       - cyborg
       - custom.scss
