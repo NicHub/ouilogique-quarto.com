@@ -266,12 +266,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Si l’option n’est pas visible, il faut</span></span>
 <span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># installer VNC au préalable avec la commande&nbsp;:</span></span>
 <span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get install realvnc-vnc-server realvnc-vnc-viewer</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Télécharger un client VNC pour se connecter au serveur VNC du rPi. Par exemple RealVNC&nbsp;:</p>
+<p>Télécharger un client VNC pour se connecter au serveur VNC du RPi. Par exemple RealVNC&nbsp;:</p>
 <ul>
 <li><a href="https://www.realvnc.com/download/viewer/" class="uri">https://www.realvnc.com/download/viewer/</a>.</li>
 </ul>
 <blockquote class="blockquote">
-<p>N.&nbsp;B. Le client VNC installé par défaut sur macOS ne fonctionne pas pour se connecter au serveur VNC du rPI. L’erreur retournée est<br><em>Le logiciel de l’ordinateur distant semble ne pas être compatible avec cette version de Partage d’écran.</em><br><code>bash /System/Library/CoreServices/Applications/Screen\ Sharing.app</code></p>
+<p>N.&nbsp;B. Le client VNC installé par défaut sur macOS ne fonctionne pas pour se connecter au serveur VNC du RPi. L’erreur retournée est<br><em>Le logiciel de l’ordinateur distant semble ne pas être compatible avec cette version de Partage d’écran.</em><br><code>bash /System/Library/CoreServices/Applications/Screen\ Sharing.app</code></p>
 </blockquote>
 </section>
 <section id="enlever-les-programmes-inutiles" class="level2">
@@ -393,7 +393,7 @@ public = no</code></pre>
 <section id="installer-une-autre-version-de-python-3" class="level3">
 <h3 class="anchored" data-anchor-id="installer-une-autre-version-de-python-3">Installer une autre version de Python&nbsp;3</h3>
 <blockquote class="blockquote">
-<p>Les informations de ce chapitre sont passablement obsolètes car les dernières versions de l’OS du rPi intègrent des versions de Python supérieures à 3.6. Donc avant d’installer une nouvelle version de Python&nbsp;3, il est prudent de vérifier la version installée sur le Raspberry avec la commande</p>
+<p>Les informations de ce chapitre sont passablement obsolètes car les dernières versions de l’OS du RPi intègrent des versions de Python supérieures à 3.6. Donc avant d’installer une nouvelle version de Python&nbsp;3, il est prudent de vérifier la version installée sur le Raspberry avec la commande</p>
 </blockquote>
 <div class="sourceCode" id="cb25"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python3</span> <span class="at">--version</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <blockquote class="blockquote">
@@ -439,7 +439,7 @@ public = no</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt-get <span class="at">--assume-yes</span> install picocom</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="ex">picocom</span> <span class="at">-b</span> 115200 <span class="at">-p</span> 1 <span class="at">-c</span> /dev/tty</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Pour pouvoir l’utiliser sans être sudoer, il faut que l’utilisateur courant fasse partie du groupe dialout (et peut-être des groupes plugdev et input, je ne suis plus sûr). Il faut redémarrer le rPi pour que le changement soit pris en compte.</p>
+<p>Pour pouvoir l’utiliser sans être sudoer, il faut que l’utilisateur courant fasse partie du groupe dialout (et peut-être des groupes plugdev et input, je ne suis plus sûr). Il faut redémarrer le RPi pour que le changement soit pris en compte.</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-a</span> <span class="at">-G</span> dialout <span class="va">$USER</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-a</span> <span class="at">-G</span> plugdev <span class="va">$USER</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> usermod <span class="at">-a</span> <span class="at">-G</span> input <span class="va">$USER</span></span>
