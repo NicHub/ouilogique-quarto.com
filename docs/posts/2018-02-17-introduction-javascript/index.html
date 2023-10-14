@@ -147,7 +147,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Ce document fait partie du <a href="https://github.com/NicHub/microclub-atelier-html-embarque/wiki">cours sur le HTML embarqué</a> que j’ai donné au <a href="https://microclub.ch/">Microclub</a> en janvier et février 2018 à l’EPFL.</p>
 <section id="les-documents-du-cours" class="level2">
-<h2 class="anchored" data-anchor-id="les-documents-du-cours">LES DOCUMENTS DU COURS</h2>
+<h2 class="anchored" data-anchor-id="les-documents-du-cours">Les documents du cours</h2>
 <ul>
 <li><a href="../2018-02-15-introduction-html/">Introduction au langage HTML</a></li>
 <li><a href="../2018-02-16-introduction-css/">Introduction au langage CSS</a></li>
@@ -156,11 +156,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">INTRODUCTION</h2>
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>Nous avons vu que le langage HTML permet de définir la structure du contenu d’un document et que le langage CSS permet de mettre en forme ce contenu. Nous allons maintenant voir comment utiliser le langage JavaScript pour rendre ce contenu interactif.</p>
 </section>
 <section id="lorigine-du-nom-javascript" class="level2">
-<h2 class="anchored" data-anchor-id="lorigine-du-nom-javascript">L’ORIGINE DU NOM JAVASCRIPT</h2>
+<h2 class="anchored" data-anchor-id="lorigine-du-nom-javascript">L’origine du nom JavaScript</h2>
 <p>JavaScript aurait dû s’appeler LiveScript, mais a été renommé par une décision marketing dans le but de capitaliser sur la popularité du langage Java de Sun Microsystems, malgré le fait qu’ils n’aient que très peu en commun. Cela a toujours été une grande source de confusion.</p>
 <p>JavaScript est normalisé par l’Ecma International (curieusement en Europe) sous la norme ECMA-262 et sous le nom de langage ECMAScript. Les noms ECMAScript et JavaScript sont donc souvent considérés comme interchangeables. Cependant, il faut noter que d’autres langages suivent aussi la norme ECMA-262, comme Flash&nbsp;5 ActionScript d’Adobe ou JScript de Microsoft.</p>
 <section id="pour-en-savoir-plus" class="level3">
@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="utilisation-de-javascript" class="level2">
-<h2 class="anchored" data-anchor-id="utilisation-de-javascript">UTILISATION DE JAVASCRIPT</h2>
+<h2 class="anchored" data-anchor-id="utilisation-de-javascript">Utilisation de JavaScript</h2>
 <p>JavaScript est principalement utilisé dans les navigateurs web, mais on le trouve aussi dans d’autres environnements tels que Node.js, Apache CouchDB voire Adobe Acrobat.</p>
 <p>JavaScript permet d’automatiser certaines tâches qui rendront les pages web interactives. Dans le contexte de ce cours, l’utilisation de JavaScript sera limitée aux applications dans des navigateurs web utilisés par des humains.</p>
 <p>Exemples d’utilisation&nbsp;:</p>
@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="versions" class="level2">
-<h2 class="anchored" data-anchor-id="versions">VERSIONS</h2>
+<h2 class="anchored" data-anchor-id="versions">Versions</h2>
 <p>Curieusement, il est difficile de déterminer la version JavaScript utilisée par les navigateurs web. Chose incroyable, le langage n’offre pas de moyen d’obtenir cette information par programmation. On trouve des <em>hacks</em> sur internet, mais aucune solution officielle.</p>
 <p>En utilisant <a href="http://jsfiddle.net/Ac6CT/">un de ces <em>hacks</em></a>, j’ai trouvé les résultats suivants (6 janvier 2018)&nbsp;:</p>
 <table class="table">
@@ -278,16 +278,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 </section>
 <section id="position-des-scripts" class="level2">
-<h2 class="anchored" data-anchor-id="position-des-scripts">POSITION DES SCRIPTS</h2>
+<h2 class="anchored" data-anchor-id="position-des-scripts">Position des scripts</h2>
 <p>À l’instar des feuilles de style CSS, le code JavaScript peut être défini dans 3 endroits différents&nbsp;:</p>
 <ol type="1">
 <li>Dans un ou plusieurs fichiers externes.</li>
 <li>Dans une ou plusieurs balises <code>&lt;script&gt;</code> qui peuvent se trouver dans la balise <code>&lt;head&gt;</code> ou dans la balise <code>&lt;body&gt;</code>.</li>
 <li>Dans certains attributs de certains éléments HTML, comme <code>&lt;body onload&gt;</code> ou <code>&lt;img onerror&gt;</code>.</li>
 </ol>
-<section id="js-externe-au-fichier-html" class="level3">
-<h3 class="anchored" data-anchor-id="js-externe-au-fichier-html">JS externe au fichier HTML</h3>
-<p>Les avantages de placer le code JS dans un ou plusieurs fichiers externes sont les mêmes que pour les fichiers CSS, c’est-à-dire que les informations ne seront téléchargées qu’une fois et mises en cache par les agents utilisateurs. De plus, plusieurs fichiers peuvent être regroupés en un seul pour minimiser le nombre de requêtes HTTP.</p>
+<section id="javascript-externe-au-fichier-html" class="level3">
+<h3 class="anchored" data-anchor-id="javascript-externe-au-fichier-html">JavaScript externe au fichier HTML</h3>
+<p>Les avantages de placer le code JavaScript dans un ou plusieurs fichiers externes sont les mêmes que pour les fichiers CSS, c’est-à-dire que les informations ne seront téléchargées qu’une fois et mises en cache par les agents utilisateurs. De plus, plusieurs fichiers peuvent être regroupés en un seul pour minimiser le nombre de requêtes HTTP.</p>
 <p>Voici un exemple de fichier JS&nbsp;:</p>
 <!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">"use strict"</span><span class="op">;</span></span>
@@ -305,9 +305,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- prettier-ignore-end -->
 <p>Le plus souvent, on l’inclura juste avant la fermeture de la balise <code>&lt;/body&gt;</code> car ceci a l’avantage de nous assurer que l’agent utilisateur a connaissance de toute la structure du fichier avant d’exécuter le script. Cependant, il est possible d’intégrer la balise <code>&lt;script&gt;</code> presque n’importe où dans le fichier et on la trouve souvent dans la balise <code>&lt;head&gt;</code>.</p>
 </section>
-<section id="js-interne-au-fichier-html-dans-la-balise-script" class="level3">
-<h3 class="anchored" data-anchor-id="js-interne-au-fichier-html-dans-la-balise-script">JS interne au fichier HTML, dans la balise <code>&lt;script&gt;</code></h3>
-<p>Les avantages de placer le code JS dans un fichier qui contient les instructions JS et HTML sont les mêmes que pour le CSS (<a href="https://github.com/NicHub/microclub-atelier-html-embarque/wiki/cours-1-css#css-interne-au-fichier-html-dans-la-balise-style">s’y référer pour plus de détails</a>).</p>
+<section id="javascript-interne-au-fichier-html-dans-la-balise-script" class="level3">
+<h3 class="anchored" data-anchor-id="javascript-interne-au-fichier-html-dans-la-balise-script">JavaScript interne au fichier HTML, dans la balise <code>&lt;script&gt;</code></h3>
+<p>Les avantages de placer le code dans un fichier qui contient les instructions JavaScript et HTML sont les mêmes que pour le CSS (<a href="https://github.com/NicHub/microclub-atelier-html-embarque/wiki/cours-1-css#css-interne-au-fichier-html-dans-la-balise-style">s’y référer pour plus de détails</a>).</p>
 <p>Voici un exemple de balises <code>&lt;script&gt;</code> intégrées au fichier HTML. On peut observer que ces balises peuvent être placées indifféremment dans la section <code>head</code> ou <code>body</code> et que la variable <code>now</code> et la fonction <code>main</code> définies dans le premier script sont globales et peuvent donc être réutilisées dans les scripts suivants.</p>
 <!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
@@ -336,18 +336,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- prettier-ignore-end -->
 <p>De la même manière si une fonction ou une variable sont définies dans un fichier externe, on peut y accéder dans un script de la page HTML.</p>
 <blockquote class="blockquote">
-<p>On remarque également que c’est la même balise <code>&lt;script&gt;</code> qui est utilisée que le code JS soit externe ou interne à la page HTML. Par contraste, CSS utilise la balise <code>&lt;style&gt;</code> pour le code interne et la balise <code>&lt;link&gt;</code> pour le code externe.</p>
+<p>On remarque également que c’est la même balise <code>&lt;script&gt;</code> qui est utilisée que le code JavaScript soit externe ou interne à la page HTML. Par contraste, CSS utilise la balise <code>&lt;style&gt;</code> pour le code interne et la balise <code>&lt;link&gt;</code> pour le code externe.</p>
 </blockquote>
 </section>
-<section id="js-interne-au-fichier-html-dans-les-attributs-dun-élément-html" class="level3">
-<h3 class="anchored" data-anchor-id="js-interne-au-fichier-html-dans-les-attributs-dun-élément-html">JS interne au fichier HTML, dans les attributs d’un élément HTML</h3>
+<section id="javascript-interne-au-fichier-html-dans-les-attributs-dun-élément-html" class="level3">
+<h3 class="anchored" data-anchor-id="javascript-interne-au-fichier-html-dans-les-attributs-dun-élément-html">JavaScript interne au fichier HTML, dans les attributs d’un élément HTML</h3>
 <p>Certains éléments HTML possèdent des attributs qui acceptent du code JavaScript. Par exemple, dans le code ci-dessous, on voit que les éléments <code>&lt;html&gt;</code> et <code>&lt;body&gt;</code> ont respectivement leurs attributs <code>onclick</code> et <code>onload</code> qui contiennent du code JavaScript.</p>
 <ul>
 <li><code>html onclick</code> ⇒ est exécuté lorsque l’élément <code>&lt;html&gt;</code> est cliqué.</li>
 <li><code>body onload</code> ⇒ est exécuté lorsque l’élément <code>&lt;body&gt;</code> est chargé.</li>
 </ul>
 <p>On voit aussi qu’un script externe est appelé (<code>&lt;script src="index.js"&gt;&lt;/script&gt;</code>) et que la fonction <code>main()</code> qui y est définie est utilisée par l’attribut <code>onload</code>.</p>
-<p>De la même manière, la variable <code>cpt</code> définie dans le script à la fin de l’élément <code>&lt;head&gt;</code> peut être utilisée par le JS de l’attribut <code>onclick</code> car elle est globale. À priori, c’est une mauvaise idée de déclarer une variable globale après qu’elle soit utilisée comme dans cet exemple, mais l’évènement <code>onclick</code> ne sera disponible qu’une fois la page complètement chargée, donc dans ce cas, ça n’a pas d’incidence.</p>
+<p>De la même manière, la variable <code>cpt</code> définie dans le script à la fin de l’élément <code>&lt;head&gt;</code> peut être utilisée par le JavaScript de l’attribut <code>onclick</code> car elle est globale. À priori, c’est une mauvaise idée de déclarer une variable globale après qu’elle soit utilisée comme dans cet exemple, mais l’évènement <code>onclick</code> ne sera disponible qu’une fois la page complètement chargée, donc dans ce cas, ça n’a pas d’incidence.</p>
 <blockquote class="blockquote">
 <p>À noter que le préfixe <code>javascript:</code> est optionnel, sauf lorsqu’on utilise du JavaScript dans un attribut <code>href</code>.</p>
 </blockquote>
@@ -359,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="st">               console.log('html onclick ' + cpt);"</span><span class="kw">&gt;</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">"utf-8"</span> <span class="kw">/&gt;</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>JS dans les attributs HTML<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;title&gt;</span>JavaScriptdans les attributs HTML<span class="kw">&lt;/title&gt;</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"index.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;script&gt;</span></span>
 <span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>        <span class="st">"use strict"</span><span class="op">;</span></span>
@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="les-bases-du-langage" class="level2">
-<h2 class="anchored" data-anchor-id="les-bases-du-langage">LES BASES DU LANGAGE</h2>
+<h2 class="anchored" data-anchor-id="les-bases-du-langage">Les bases du langage</h2>
 <section id="casse" class="level3">
 <h3 class="anchored" data-anchor-id="casse">Casse</h3>
 <p>Le langage JavaScript est sensible à la casse, ce qui veut dire que les majuscules et les minuscules ne sont pas équivalentes.</p>
@@ -678,7 +678,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="les-librairies" class="level2">
-<h2 class="anchored" data-anchor-id="les-librairies">LES LIBRAIRIES</h2>
+<h2 class="anchored" data-anchor-id="les-librairies">Les librairies</h2>
 <ul>
 <li><a href="https://www.jqwidgets.com/" class="uri">https://www.jqwidgets.com/</a></li>
 <li><a href="http://dashing.io/" class="uri">http://dashing.io/</a></li>
