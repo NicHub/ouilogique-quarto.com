@@ -3,7 +3,7 @@
 """
 import os
 import shutil
-import traceback
+# import traceback
 from pprint import pprint
 
 import json
@@ -53,7 +53,7 @@ def remove_style_from_img(dest_file):
     content = ""
     with open(dest_file, "rt", encoding="utf-8") as _f:
         for line in _f.readlines():
-            pos1 = line.find("{:")
+            pos1 = line.find("{:style")
             if pos1 > -1:
                 pos2 = line.find("}", pos1)
                 if pos2 > -1:
@@ -115,7 +115,7 @@ def extract_img_links_and_copy_img(dest_dir, dest_file):
                 img_name = os.path.split(link)[-1]
                 content = content.replace(link, f"./images/{img_name}")
                 source_img_path = link.replace(
-                    "../../", os.path.expanduser("~/Sites/ouilogique.com/")
+                    "../../", os.path.expanduser(SOURCE_PATH)
                 )
                 dest_dir_img = f"{dest_dir}images/"
                 os.makedirs(f"{dest_dir_img}", exist_ok=True)
@@ -169,7 +169,7 @@ def extract_feature_img_links_and_copy_img(dest_dir, dest_file):
             raise KeyError(
                 "Le champ `image_/feature` n’existe pas dans le fichier YAML."
             )
-        feature_img_dir = os.path.expanduser("~/Sites/ouilogique.com/")
+        feature_img_dir = os.path.expanduser(SOURCE_PATH)
         feature_img_path = f"{feature_img_dir}{img_feature}"
     except KeyError:
         pass
@@ -274,6 +274,7 @@ def copy_individual_files():
 
     dirs = sorted(os.listdir(f"{SOURCE_PATH}files/"), reverse=True)
     dirs = [f"{SOURCE_PATH}files/{dir}" for dir in dirs if dir not in [".DS_Store"]]
+    # pprint(dirs)
     for dir in dirs:
         dest_path = f"{DEST_PATH}posts/{os.path.split(dir)[1]}"
         shutil.copytree(dir, dest_path, dirs_exist_ok=True)
@@ -284,7 +285,6 @@ def copy_individual_files():
         f"{SOURCE_PATH}radios",
         f"{SOURCE_PATH}scratchpad",
     ]
-    # pprint(dirs)
     for dir in dirs:
         dest_path = f"{DEST_PATH}pages/{os.path.split(dir)[1]}"
         shutil.copytree(dir, dest_path, dirs_exist_ok=True)
@@ -311,6 +311,10 @@ def adapt_links(dest_file):
     content = ""
     with open(dest_file, "rt", encoding="utf-8") as _f:
         for line in _f:
+            line = line.replace(
+                "{:rel",
+                "{rel",
+            )
             pos1 = line.find("../../files")
             if pos1 > -1:
                 pos2 = line.find(")", pos1)
@@ -347,6 +351,7 @@ def adapt_links(dest_file):
                 "[../esp_commandes_at_utiles/](../esp_commandes_at_utiles/)",
                 "[../2016-08-13-esp_commandes_at_utiles/](../2016-08-13-esp_commandes_at_utiles/)",
             )
+
             # line = line.replace("", "")
             # line = line.replace("", "")
             content += line
@@ -460,8 +465,9 @@ def main():
     # create_prev_next_links_js()
 
 
-SOURCE_PATH = os.path.expanduser("~/Sites/ouilogique.com/")
-SOURCE_PATH_POSTS = os.path.expanduser("~/Sites/ouilogique.com/_posts/blog/")
+SOURCE_PATH = os.path.expanduser("~/kdnicomac/sites/ouilogique.com/")
+# SOURCE_PATH_POSTS = os.path.expanduser("~/Sites/ouilogique.com/_posts/blog/")
+SOURCE_PATH_POSTS = os.path.expanduser("~/kdnicomac/sites/ouilogique.com/_posts/blog/")
 DEST_PATH = "../"
 DEST_PATH_POSTS = "../posts/"
 FILES = sorted(os.listdir(SOURCE_PATH_POSTS), reverse=True)
@@ -481,6 +487,6 @@ if __name__ == "__main__":
         main()
     except SystemExit as _e:
         pprint(_e)
-        traceback.print_exc()
+        # traceback.print_exc()
 
     print("DONE")

@@ -160,7 +160,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="firmware-nodemcu" class="level2">
 <h2 class="anchored" data-anchor-id="firmware-nodemcu">Firmware NodeMCU</h2>
 <ul>
-<li><a href="http://nodemcu.com/index_en.html" class="uri">http://nodemcu.com/index_en.html</a></li>
+<li><a href="http://nodemcu.com/index_en.html" rel="nofollow">http://nodemcu.com/index_en.html</a></li>
 </ul>
 </section>
 <section id="référence-de-la-carte-chez-banggood" class="level2">
@@ -182,17 +182,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>La carte est donc une <em>LoLin</em> du fabricant <a href="http://www.wemos.cc/">WeMos</a></p>
-<p>La page de la carte en question&nbsp;: <a href="http://www.wemos.cc/wiki/">www.wemos.cc/wiki/</a></p>
+<p>La page de la carte en question&nbsp;: <a href="http://www.wemos.cc/wiki/" rel="nofollow">www.wemos.cc/wiki/</a></p>
 <blockquote class="blockquote">
-<p>L’ESP8266 a été développé par <a href="http://espressif.com">Espressif</a>. D’après <a href="http://www.allaboutcircuits.com/projects/guts-of-the-iot-part-1-building-nodemcu-from-source-for-the-esp8266/">cet article</a>, il semblerait que l’ESP8266 a d’abord été vendu comme une passerelle UART pour les microcontrôleurs, mais qu’en fait il contient <a href="http://ip.cadence.com/uploads/pdf/LX3.pdf">un processeur 32-bit Tensilica Xtensa LX106 à 80&nbsp;MHz avec un “full WiFi stack”</a>.</p>
+<p>L’ESP8266 a été développé par <a href="http://espressif.com">Espressif</a>. D’après <a href="http://www.allaboutcircuits.com/projects/guts-of-the-iot-part-1-building-nodemcu-from-source-for-the-esp8266/">cet article</a>, il semblerait que l’ESP8266 a d’abord été vendu comme une passerelle UART pour les microcontrôleurs, mais qu’en fait il contient <a href="http://ip.cadence.com/uploads/pdf/LX3.pdf" rel="nofollow">un processeur 32-bit Tensilica Xtensa LX106 à 80&nbsp;MHz avec un “full WiFi stack”</a>.</p>
 </blockquote>
 </section>
 <section id="communication-usb" class="level2">
 <h2 class="anchored" data-anchor-id="communication-usb">Communication USB</h2>
 <p>⚠ Cette carte utilise une puce CH340G pour la communication USB. Pour l’installation du pilote sur OSX, voir l’article <a href="../../ch340_driver/"><em>Utiliser un chip CH340G au lieu d’un FTDI</em></a>.</p>
 <p>Sur le site du fabricant, il y a deux drivers pour Mac&nbsp;:</p>
-<p><a href="http://66.175.219.73/downloads/ch340/CH341SER_MAC66972.ZIP">Mac (old) ⇒ MD5 = 505487fe1033a9485f2e3fb0520718e8</a></p>
-<p><a href="http://www.wemos.cc/wiki/uploads/Tutorial/ch341ser_mac_new.zip">Mac (new) ⇒ MD5 = f2c61b093909d6d54f6a466e7e367a39</a></p>
+<p><a href="http://66.175.219.73/downloads/ch340/CH341SER_MAC66972.ZIP" rel="nofollow">Mac (old) ⇒ MD5 = 505487fe1033a9485f2e3fb0520718e8</a></p>
+<p><a href="http://www.wemos.cc/wiki/uploads/Tutorial/ch341ser_mac_new.zip" rel="nofollow">Mac (new) ⇒ MD5 = f2c61b093909d6d54f6a466e7e367a39</a></p>
 <p>La version “old” a le même MD5 que celle disponible à <a href="http://www.wch.cn/download/CH341SER_MAC_ZIP.html" class="uri">http://www.wch.cn/download/CH341SER_MAC_ZIP.html</a>.</p>
 <p>Il me semble que la version “new” ne nécessite pas d’enlever la protection d’OSX contre les pilotes non signés ⇒ à vérifier.</p>
 <section id="adresse-de-la-carte" class="level3">
@@ -200,7 +200,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Sur mon MacBook Pro, l’adresse de la carte est <code>/dev/tty.wchusbserial1410</code> sur le port USB de gauche ou <code>/dev/tty.wchusbserial1420</code> sur le port USB de droite.</p>
 <blockquote class="blockquote">
 <p>À noter que je ne branche jamais de cartes de développement sur mon clavier externe, car ce clavier est un hub sans alimentation qui consomme donc du courant sur le port USB. Quand on connecte une carte, il y a le risque que le Mac fasse un <em>reboot</em> comme si on lui avait enlevé l’alimentation et comme ça m’est déjà arrivé, je ne recommence plus.</p>
-<p>D’ailleurs, les ports USB sous-alimentés du Raspberry Π ne supportent pas ce clavier pour la même raison&nbsp;: il consomme trop <a href="http://www.banggood.com/USB-Detector-Current-Voltage-Tester-Double-USB-Row-Shows-p-973712.html?p=0431091025639201412F">(50&nbsp;mA mesuré)</a>.</p>
+<p>D’ailleurs, les ports USB sous-alimentés du Raspberry Π ne supportent pas ce clavier pour la même raison&nbsp;: il consomme trop <a href="http://www.banggood.com/USB-Detector-Current-Voltage-Tester-Double-USB-Row-Shows-p-973712.html?p=0431091025639201412F" rel="nofollow">(50&nbsp;mA mesuré)</a>.</p>
 </blockquote>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> /dev <span class="kw">|</span> <span class="fu">grep</span> tty.wchusbserial <span class="co"># retourne par ex&nbsp;: tty.wchusbserial1410</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ls</span> /dev/tty.wchusbserial1410 <span class="co"># adresse OK si cette commande retourne quelque chose</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Par défaut la carte est livrée avec le firmware floating point La dernière version (nodemcu_float_0.9.6-dev_20150704.bin) fonctionne pour moi.</p>
 </blockquote>
 <ul>
-<li><a href="http://www.wemos.cc/wiki/Tutorial/Downloads#firmware" class="uri">http://www.wemos.cc/wiki/Tutorial/Downloads#firmware</a></li>
+<li><a href="http://www.wemos.cc/wiki/Tutorial/Downloads#firmware" rel="nofollow">http://www.wemos.cc/wiki/Tutorial/Downloads#firmware</a></li>
 </ul>
 </section>
 <section id="flasher-le-firmware" class="level3">
@@ -252,7 +252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>L’ESP8266 peut être programmé de plusieurs façons&nbsp;:</p>
 <ul>
 <li><a href="#programmation-de-lesp8266-en-arduino-c">En Arduino C (voir ci-dessous)</a></li>
-<li>En C, avec le SDK d’Espressif <del>http://bbs.espressif.com</del></li>
+<li>En C, avec le SDK d’Espressif <a href="http://bbs.espressif.com" rel="nofollow">http://bbs.espressif.com</a></li>
 <li>En C, avec <a href="https://github.com/SmingHub/Sming">Sming</a></li>
 <li><a href="#programmation-de-lesp8266-en-lua">En Lua (voir ci-dessous)</a></li>
 <li>En JavaScript, avec le firmware <a href="http://www.espruino.com/">Espruino</a></li>
@@ -280,7 +280,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>La bibliothèque est installée au chemin suivant&nbsp;:</p>
 <pre><code>~/Library/Arduino15/packages/esp8266/hardware/esp8266/</code></pre>
 <blockquote class="blockquote">
-<p>Note&nbsp;: Adafruit et LoLin proposent d’autres gestionnaires. J’ai choisi la version de la communauté qui maintient le site <a href="http://www.esp8266.com">esp8266.com</a>. <a href="https://github.com/adafruit/ESP8266-Arduino">La version d’Adafruit</a> est un <em>fork</em> de celle d’<em>esp8266.com</em>.</p>
+<p>Note&nbsp;: Adafruit et LoLin proposent d’autres gestionnaires. J’ai choisi la version de la communauté qui maintient le site <a href="http://www.esp8266.com">esp8266.com</a>. <a href="https://github.com/adafruit/ESP8266-Arduino" rel="nofollow">La version d’Adafruit</a> est un <em>fork</em> de celle d’<em>esp8266.com</em>.</p>
 </blockquote>
 </section>
 <section id="configuration-de-la-carte-dans-lide" class="level3">
@@ -301,7 +301,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="compilation-et-téléchargement-des-programmes" class="level3">
 <h3 class="anchored" data-anchor-id="compilation-et-téléchargement-des-programmes">Compilation et téléchargement des programmes</h3>
-<p>La compilation et le téléchargement se font exactement comme pour une carte Arduino. Pour la programmation, il peut y avoir quelques différences de fonctionnalité liées aux différences du hardware et à l’implémentation des bibliothèques. Il y a <a href="https://github.com/esp8266/Arduino/blob/master/doc/libraries.md">quelques informations sur le GitHub d’ESP8266</a> et Adafruit a aussi documenté quelques différences sur <a href="https://github.com/adafruit/ESP8266-Arduino">leur <em>fork</em></a>.</p>
+<p>La compilation et le téléchargement se font exactement comme pour une carte Arduino. Pour la programmation, il peut y avoir quelques différences de fonctionnalité liées aux différences du hardware et à l’implémentation des bibliothèques. Il y a <a href="https://github.com/esp8266/Arduino/blob/master/doc/libraries.md" rel="nofollow">quelques informations sur le GitHub d’ESP8266</a> et Adafruit a aussi documenté quelques différences sur <a href="https://github.com/adafruit/ESP8266-Arduino" rel="nofollow">leur <em>fork</em></a>.</p>
 </section>
 <section id="gestionnaire-de-téléchargement-esp8266fs" class="level3">
 <h3 class="anchored" data-anchor-id="gestionnaire-de-téléchargement-esp8266fs">Gestionnaire de téléchargement <em>esp8266fs</em></h3>
@@ -340,7 +340,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="programmation-de-lesp8266-en-lua" class="level2">
 <h2 class="anchored" data-anchor-id="programmation-de-lesp8266-en-lua">Programmation de l’ESP8266 en Lua</h2>
-<p>Les scripts Lua peuvent être interprétés ou compilés avec le firmware <a href="http://nodemcu.com/index_en.html">NodeMCU</a>.</p>
+<p>Les scripts Lua peuvent être interprétés ou compilés avec le firmware <a href="http://nodemcu.com/index_en.html" rel="nofollow">NodeMCU</a>.</p>
 <p>On trouve quantité de programmes sur le web pour charger les scripts Lua sur l’ESP8266. J’ai testé les suivants&nbsp;:</p>
 <ul>
 <li><a href="#esplorer">esplorer</a></li>
@@ -420,7 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="à-la-main" class="level3">
 <h3 class="anchored" data-anchor-id="à-la-main">À la main</h3>
 <blockquote class="blockquote">
-<p>On peut aussi envoyer le fichier ligne par ligne à la main avec des logiciels comme <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/screen.1.html">screen</a> ou <a href="http://freeware.the-meiers.org">CoolTerm</a></p>
+<p>On peut aussi envoyer le fichier ligne par ligne à la main avec des logiciels comme <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/screen.1.html" rel="nofollow">screen</a> ou <a href="http://freeware.the-meiers.org">CoolTerm</a></p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Par défaut la vitesse de communication est de 9600 bits/s. Avec luatool, on ne peut aller qu’à cette vitesse. Avec nodemcu-uploader on peut aller plus haut. J’ai testé à 115200 bits/s et ça fonctionne, mais la commnunication se bloque de temps en temps. Il me semble qu’il est plus sage de travailler uniquement à 9600 bits/s.</p>
@@ -467,7 +467,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://dweet.io">dweet.io</a></li>
 <li><a href="https://github.com/mlk/nodemcu-http-client">dweet + NodeMCU</a></li>
 <li><a href="https://github.com/Freeboard/freeboard">Freeboard</a></li>
-<li><a href="https://www.openhomeautomation.net/internet-of-things-dashboard/" class="uri">https://www.openhomeautomation.net/internet-of-things-dashboard/</a></li>
+<li><a href="https://www.openhomeautomation.net/internet-of-things-dashboard/" rel="nofollow">https://www.openhomeautomation.net/internet-of-things-dashboard/</a></li>
 </ul>
 <!--
 # ESPTOOL
@@ -502,9 +502,9 @@ cd esptool
 <li><a href="https://github.com/nodemcu/nodemcu-firmware/wiki/nodemcu_api_en">NodeMCU API sur GitHub</a></li>
 <li><a href="http://www.nodemcu.com/docs/">NodeMCU API sur nodemcu.com</a></li>
 <li><a href="https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout?view=all" class="uri">https://learn.adafruit.com/adafruit-huzzah-esp8266-breakout?view=all</a></li>
-<li><a href="http://neilkolban.com/tech/esp8266/" class="uri">http://neilkolban.com/tech/esp8266/</a></li>
+<li><a href="http://neilkolban.com/tech/esp8266/" rel="nofollow">http://neilkolban.com/tech/esp8266/</a></li>
 <li><a href="http://randomnerdtutorials.com/home-automation-using-esp8266/" class="uri">http://randomnerdtutorials.com/home-automation-using-esp8266/</a></li>
-<li><a href="https://www.hackster.io/rayburne/esp8266-01-using-arduino-ide" class="uri">https://www.hackster.io/rayburne/esp8266-01-using-arduino-ide</a></li>
+<li><a href="https://www.hackster.io/rayburne/esp8266-01-using-arduino-ide" rel="nofollow">https://www.hackster.io/rayburne/esp8266-01-using-arduino-ide</a></li>
 <li><a href="http://www.esp8266.com" class="uri">http://www.esp8266.com</a></li>
 <li><a href="http://frightanic.com" class="uri">http://frightanic.com</a></li>
 <li><a href="http://frightanic.com/iot/comparison-of-esp8266-nodemcu-development-boards/">Comparison of ESP8266 NodeMCU development boards</a></li>
@@ -785,7 +785,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
 <script src="../../js/target_blank.js"></script>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 

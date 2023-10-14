@@ -289,6 +289,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="js-externe-au-fichier-html">JS externe au fichier HTML</h3>
 <p>Les avantages de placer le code JS dans un ou plusieurs fichiers externes sont les mêmes que pour les fichiers CSS, c’est-à-dire que les informations ne seront téléchargées qu’une fois et mises en cache par les agents utilisateurs. De plus, plusieurs fichiers peuvent être regroupés en un seul pour minimiser le nombre de requêtes HTTP.</p>
 <p>Voici un exemple de fichier JS&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="st">"use strict"</span><span class="op">;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">main</span>(source)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>{</span>
@@ -297,14 +298,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                <span class="st">"</span><span class="sc">\n</span><span class="st">source = "</span> <span class="op">+</span> source)<span class="op">;</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">main</span>(<span class="st">"index.js"</span>)<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Pour faire appel à ce script, il faut inclure la balise <code>&lt;script&gt;</code> ci-dessous dans le fichier HTML&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"index.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Le plus souvent, on l’inclura juste avant la fermeture de la balise <code>&lt;/body&gt;</code> car ceci a l’avantage de nous assurer que l’agent utilisateur a connaissance de toute la structure du fichier avant d’exécuter le script. Cependant, il est possible d’intégrer la balise <code>&lt;script&gt;</code> presque n’importe où dans le fichier et on la trouve souvent dans la balise <code>&lt;head&gt;</code>.</p>
 </section>
 <section id="js-interne-au-fichier-html-dans-la-balise-script" class="level3">
 <h3 class="anchored" data-anchor-id="js-interne-au-fichier-html-dans-la-balise-script">JS interne au fichier HTML, dans la balise <code>&lt;script&gt;</code></h3>
 <p>Les avantages de placer le code JS dans un fichier qui contient les instructions JS et HTML sont les mêmes que pour le CSS (<a href="https://github.com/NicHub/microclub-atelier-html-embarque/wiki/cours-1-css#css-interne-au-fichier-html-dans-la-balise-style">s’y référer pour plus de détails</a>).</p>
 <p>Voici un exemple de balises <code>&lt;script&gt;</code> intégrées au fichier HTML. On peut observer que ces balises peuvent être placées indifféremment dans la section <code>head</code> ou <code>body</code> et que la variable <code>now</code> et la fonction <code>main</code> définies dans le premier script sont globales et peuvent donc être réutilisées dans les scripts suivants.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span></span>
@@ -328,6 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>        <span class="kw">&lt;/script&gt;</span></span>
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>De la même manière si une fonction ou une variable sont définies dans un fichier externe, on peut y accéder dans un script de la page HTML.</p>
 <blockquote class="blockquote">
 <p>On remarque également que c’est la même balise <code>&lt;script&gt;</code> qui est utilisée que le code JS soit externe ou interne à la page HTML. Par contraste, CSS utilise la balise <code>&lt;style&gt;</code> pour le code interne et la balise <code>&lt;link&gt;</code> pour le code externe.</p>
@@ -345,6 +351,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>À noter que le préfixe <code>javascript:</code> est optionnel, sauf lorsqu’on utilise du JavaScript dans un attribut <code>href</code>.</p>
 </blockquote>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span> <span class="er">onclick</span><span class="ot">=</span><span class="st">"javascript:</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">               'use strict';</span></span>
@@ -364,6 +371,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="st">              main('body onload');"</span><span class="kw">&gt;</span></span>
 <span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
 <span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 </section>
 <section id="les-bases-du-langage" class="level2">
@@ -372,8 +380,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="casse">Casse</h3>
 <p>Le langage JavaScript est sensible à la casse, ce qui veut dire que les majuscules et les minuscules ne sont pas équivalentes.</p>
 <p>Par exemple&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb5"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(id)<span class="op">;</span> <span class="co">// correct</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ELEMENT <span class="op">=</span> DOCUMENT<span class="op">.</span><span class="fu">GETELEMENTBYID</span>(ID)<span class="op">;</span> <span class="co">// incorrect</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="fin-dinstructions" class="level3">
 <h3 class="anchored" data-anchor-id="fin-dinstructions">Fin d’instructions</h3>
@@ -381,23 +391,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="la-directive-use-strict" class="level3">
 <h3 class="anchored" data-anchor-id="la-directive-use-strict">La directive <code>use strict</code></h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="st">"use strict"</span><span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>La directive <code>"use strict";</code> se place au début d’un script et indique qu’il doit être exécuté en mode “strict” qui permet au navigateur d’exécuter le script plus rapidement. Avec <code>"use strict";</code>, la déclaration des variables est obligatoire comme nous allons le voir ci-dessous.</p>
 <p>Pour les détails voir&nbsp;: <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Strict_mode">le mode scrict (MDN, fr)</a>.</p>
 </section>
 <section id="déclaration-des-variables" class="level3">
 <h3 class="anchored" data-anchor-id="déclaration-des-variables">Déclaration des variables</h3>
 <p>Lorsqu’on utilise le mode strict, les variables doivent être déclarées et ceci ce fait généralement avec le mot clé <code>var</code>.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( a )<span class="op">;</span> <span class="co">// Uncaught ReferenceError: a is not defined</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> a<span class="op">;</span>            <span class="co">// Déclaration de la variable a</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( a )<span class="op">;</span> <span class="co">// a = Undefined</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">3.14</span><span class="op">;</span></span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( a )<span class="op">;</span> <span class="co">// a = 3.14</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>On peut aussi déclarer les variables avec <code>let</code> et <code>const</code>. La portée de <code>let</code> est plus réduite que celle de <code>var</code>. <code>const</code> n’est pas supporté par tous les agents utilisateurs, pour l’instant je vous conseille d’éviter de l’utiliser. La plupart du temps, c’est le mot clé <code>var</code> que l’on utilisera.</p>
 <p><a href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/let">Instruction let (MDN, fr)</a></p>
 </section>
 <section id="portée-dune-variable" class="level3">
 <h3 class="anchored" data-anchor-id="portée-dune-variable">Portée d’une variable</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb8"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> x <span class="op">=</span> <span class="dv">1</span><span class="op">;</span>        <span class="co">// x est global</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"1. x = "</span> <span class="op">+</span> x )<span class="op">;</span> <span class="co">// x est disponible à l’extérieur de la fonction</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -414,9 +429,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"6. y = "</span> <span class="op">+</span> y )<span class="op">;</span> <span class="co">// x est disponible à l’intérieur de la fonction</span></span>
 <span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co">// Les variables définies dans la fonction ne sont plus accessibles à l’extérieur.</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="modification-dune-variable-avec-des-opérateurs-arithmétiques" class="level3">
 <h3 class="anchored" data-anchor-id="modification-dune-variable-avec-des-opérateurs-arithmétiques">Modification d’une variable avec des opérateurs arithmétiques</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>i <span class="op">+=</span> <span class="dv">2</span><span class="op">;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( i )<span class="op">;</span> <span class="co">// 2</span></span>
@@ -436,10 +453,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( i )<span class="op">;</span> <span class="co">// -1.2</span></span>
 <span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="op">--</span>i</span>
 <span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( i )<span class="op">;</span> <span class="co">// -2.2</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Pour la division entière, voir <a href="http://stackoverflow.com/a/17218003/3057377" class="uri">http://stackoverflow.com/a/17218003/3057377</a></p>
 </section>
 <section id="test-if-then-else" class="level3">
 <h3 class="anchored" data-anchor-id="test-if-then-else">Test <code>if-then-else</code></h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">La structure “if-then-else” emprunte la syntaxe du C.</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">Si une condition ne comporte qu’une expression, les accolades sont optionnelles.</span></span>
@@ -460,9 +479,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"C’est..."</span> )<span class="op">;</span></span>
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"..faux"</span> )<span class="op">;</span></span>
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="comparaison-faible-vs-stricte" class="level3">
 <h3 class="anchored" data-anchor-id="comparaison-faible-vs-stricte">Comparaison faible vs stricte</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb11"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">Comparaison faible vs stricte</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">== ⇒ Comparaison “faible” ⇒ pas de vérification du type</span></span>
@@ -488,9 +509,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"=== OK"</span> )<span class="op">;</span></span>
 <span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span></span>
 <span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"=== NOT OK"</span> )<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="boucle-while" class="level3">
 <h3 class="anchored" data-anchor-id="boucle-while">Boucle <code>while</code></h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb12"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">// La structure “while” emprunte la syntaxe du C.</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">// Si elle ne comporte qu’une expression, les accolades sont optionnelles.</span></span>
@@ -514,9 +537,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="co">// Ici “compteur” vaut 10. Les modifications apportées à la variables déclarée</span></span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a><span class="co">// avec “let” dans le bloc ne sont pas visbles à l’extérieur du bloc.</span></span>
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"compteur (après bloc) = "</span><span class="op">,</span> compteur )<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="quitter-une-boucle-avec-break" class="level3">
 <h3 class="anchored" data-anchor-id="quitter-une-boucle-avec-break">Quitter une boucle avec <code>break</code></h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb13"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">// On peut quitter une boucle “while” avec un “break”</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>compteur <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>( compteur <span class="op">&lt;</span> <span class="dv">10</span> )</span>
@@ -524,16 +549,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"compteur = "</span><span class="op">,</span> compteur<span class="op">++</span> )<span class="op">;</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>( compteur <span class="op">&gt;</span> <span class="dv">5</span> ) <span class="cf">break</span><span class="op">;</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="la-boucle-do...while" class="level3">
 <h3 class="anchored" data-anchor-id="la-boucle-do...while">La boucle <code>do...while</code></h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb14"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>compteur <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"compteur = "</span><span class="op">,</span> compteur<span class="op">++</span> )<span class="op">;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>( compteur <span class="op">&lt;</span> <span class="dv">10</span> )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="incrémentation" class="level3">
 <h3 class="anchored" data-anchor-id="incrémentation">Incrémentation</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb15"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">// POST INCRÉMENTATION “X++”</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">// Si l’opérateur est utilisé en suffixe (par exemple : x++),</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">// il renvoie la valeur avant l’incrémentation.</span></span>
@@ -551,9 +580,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co">// Ça marche aussi pour la décrémentation “--”</span></span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">// plus de détails ici&nbsp;:</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co">// https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Op%C3%A9rateurs/Op%C3%A9rateurs_arithm%C3%A9tiques</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="la-boucle-for" class="level3">
 <h3 class="anchored" data-anchor-id="la-boucle-for">La boucle <code>for</code></h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb16"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">// BOUCLE “FOR” AVEC VAR</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>( <span class="kw">var</span> cpt<span class="op">=</span><span class="dv">1</span><span class="op">;</span> cpt<span class="op">&lt;=</span><span class="dv">5</span><span class="op">;</span> cpt<span class="op">++</span> ) <span class="co">// “++cpt” ou “cpt++” sont équivalents ici.</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"cpt = "</span><span class="op">,</span> cpt )<span class="op">;</span></span>
@@ -573,9 +604,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">break</span><span class="op">;</span></span>
 <span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="les-fonctions" class="level3">
 <h3 class="anchored" data-anchor-id="les-fonctions">Les fonctions</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"</span><span class="sc">\n\n\n</span><span class="st"># APPEL DE FONCTIONS"</span> )<span class="op">;</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">// On peut appeler une fonction avant qu’elle ne soit définie dans le fichier.</span></span>
@@ -585,9 +618,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"Bonjour 1&nbsp;!"</span> )<span class="op">;</span></span>
 <span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">direBonjour</span>()<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="valeur-de-sortie-des-fonctions-et-portée-des-variables" class="level3">
 <h3 class="anchored" data-anchor-id="valeur-de-sortie-des-fonctions-et-portée-des-variables">Valeur de sortie des fonctions et portée des variables</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb18"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">// Une fonction ne peut retourner qu’une seule valeur</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">// les variables définies dans les fonctions ne sont pas visibles à l’extérieur</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">direBonjour2</span>()</span>
@@ -598,9 +633,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="kw">var</span> resultat <span class="op">=</span> <span class="fu">direBonjour2</span>()<span class="op">;</span></span>
 <span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( resultat )<span class="op">;</span></span>
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="kw">typeof</span>( message ) )<span class="op">;</span> <span class="co">// typeof( message ) = undefined</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="paramètres-des-fonctions" class="level3">
 <h3 class="anchored" data-anchor-id="paramètres-des-fonctions">Paramètres des fonctions</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb19"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> <span class="fu">direBonjour</span>( prenom1<span class="op">,</span> prenom2 )</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">var</span> message <span class="op">=</span> <span class="st">"Bonjour, "</span> <span class="op">+</span> prenom1 <span class="op">+</span> <span class="st">" et "</span> <span class="op">+</span> prenom2 <span class="op">+</span> <span class="st">" !"</span><span class="op">;</span></span>
@@ -609,9 +646,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="fu">direBonjour</span>( <span class="st">"Baptiste"</span> ) )<span class="op">;</span></span>
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="fu">direBonjour</span>( <span class="st">"Baptiste"</span><span class="op">,</span> <span class="st">"Sophie"</span> ) )<span class="op">;</span></span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="fu">direBonjour</span>( <span class="st">"Baptiste"</span><span class="op">,</span> <span class="st">"Sophie"</span><span class="op">,</span> <span class="st">"Toto"</span> ) )<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="les-chaînes-de-caractères-string" class="level3">
 <h3 class="anchored" data-anchor-id="les-chaînes-de-caractères-string">Les chaînes de caractères (<em>string</em>)</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb20"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"</span><span class="sc">\n\n\n</span><span class="st"># LES CHAÎNES DE CARACTÈRES (STRING)"</span> )<span class="op">;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">/*</span></span>
@@ -622,6 +661,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"guillemets doubles "</span> )<span class="op">;</span></span>
 <span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">'"guillemets" </span><span class="sc">\'</span><span class="st">simples</span><span class="sc">\'</span><span class="st"> '</span> )<span class="op">;</span></span>
 <span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"'guillemets' </span><span class="sc">\"</span><span class="st">doubles</span><span class="sc">\"</span><span class="st"> "</span> )<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <blockquote class="blockquote">
 <p>Attention en JSON, seuls les guillemets doubles sont valables&nbsp;!</p>
 </blockquote>
@@ -631,8 +671,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="concaténation-de-chaînes-de-caractères" class="level3">
 <h3 class="anchored" data-anchor-id="concaténation-de-chaînes-de-caractères">Concaténation de chaînes de caractères</h3>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb21"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"Bonjour "</span> <span class="op">+</span> <span class="st">"à vous&nbsp;!"</span> )<span class="op">;</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>( <span class="st">"Le chiffre vaut "</span> <span class="op">+</span> <span class="dv">7</span> )<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 </section>
 <section id="les-librairies" class="level2">

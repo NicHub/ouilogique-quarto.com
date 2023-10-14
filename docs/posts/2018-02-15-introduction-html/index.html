@@ -176,6 +176,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="la-structure-minimale-dune-page-html" class="level2">
 <h2 class="anchored" data-anchor-id="la-structure-minimale-dune-page-html">LA STRUCTURE MINIMALE D’UNE PAGE HTML</h2>
 <p>Voici la structure minimale pour qu’un document soit considéré comme un document HTML par tous les agents utilisateurs.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;head&gt;</span></span>
@@ -185,13 +186,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;body&gt;</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/body&gt;</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>On voit dans cet exemple que le code HTML est composé de balises. Les balises absolument obligatoires pour qu’un document soit considéré comme un document HTML sont&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>1. <span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>2. <span class="kw">&lt;html&gt;&lt;/html&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>3. <span class="kw">&lt;head&gt;&lt;/head&gt;</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>4. <span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">utf-8</span> <span class="kw">/&gt;</span></span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>5. <span class="kw">&lt;title&gt;&lt;/title&gt;</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>6. <span class="kw">&lt;body&gt;&lt;/body&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Nous aurons besoin d’autres balises pour étoffer nos documents HTML, mais les 6 ci-dessus doivent toujours être présentes.</p>
 <p>Sans entrer dans les détails, voici à quoi servent ces premiers éléments&nbsp;:</p>
 <p><strong>1. <code>&lt;!DOCTYPE html&gt;</code></strong> Définit que le document suit la norme HTML&nbsp;5.</p>
@@ -206,7 +210,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="structure-des-éléments-html" class="level3">
 <h3 class="anchored" data-anchor-id="structure-des-éléments-html">Structure des éléments HTML</h3>
 <p>Un élément HTML est formé de balises, ou <em>tag</em> en anglais. Par exemple&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;&lt;/p&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Pour la balise ouvrante, la structure est&nbsp;:</p>
 <ul>
 <li>chevron ouvrant (<code>&lt;</code>)</li>
@@ -232,15 +238,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="éléments-html-vides">Éléments HTML vides</h3>
 <p>Certains éléments HTML sont toujours vides, c’est-à-dire qu’ils n’ont jamais de contenu entre leur balise ouvrante et leur balise fermante. On les appelle “éléments vides” (<em>empty elements</em> ou <em>void elements</em> en anglais). Dans ce cas, il est obligatoire d’utiliser une notation compacte avec la barre oblique avant le chevron fermant, que l’on nomme “balise autofermante”.</p>
 <p>Donc ceci est valide&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br</span> <span class="kw">/&gt;</span> <span class="co">&lt;!-- Line break = retour à la ligne --&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="kw">/&gt;</span> <span class="co">&lt;!-- Image --&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="kw">/&gt;</span> <span class="co">&lt;!-- Meta-donnée --&gt;</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="kw">/&gt;</span> <span class="co">&lt;!-- lien vers une feuille CSS --&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Alors que ceci n’est pas valide&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb5"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;&lt;/br&gt;</span> <span class="co">&lt;!-- Line break = retour à la ligne --&gt;</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img&gt;&lt;/img&gt;</span> <span class="co">&lt;!-- Image --&gt;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta&gt;&lt;/meta&gt;</span> <span class="co">&lt;!-- Meta-donnée --&gt;</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link&gt;&lt;/link&gt;</span> <span class="co">&lt;!-- lien vers une feuille CSS --&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <blockquote class="blockquote">
 <p>Dans une balise autofermante, l’espace avant la barre oblique est optionnel.</p>
 </blockquote>
@@ -250,13 +260,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="éléments-html-non-vides">Éléments HTML non vides</h3>
 <p>Si un élément peut avoir un contenu (<em>non-void HTML element</em> en anglais), mais que ce contenu est simplement vide dans un contexte donné, il n’est pas valide d’utiliser la notation compacte.</p>
 <p>Donc ceci est valide&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;&lt;/p&gt;</span> <span class="co">&lt;!-- Paragraphe --&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li&gt;&lt;/li&gt;</span> <span class="co">&lt;!-- Élément de liste --&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1&gt;&lt;/h1&gt;</span> <span class="co">&lt;!-- Titre de niveau 1 --&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Alors que ceci n’est pas valide&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb7"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="kw">/&gt;</span> <span class="co">&lt;!-- Paragraphe --&gt;</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;li</span> <span class="kw">/&gt;</span> <span class="co">&lt;!-- Élément de liste --&gt;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;h1</span> <span class="kw">/&gt;</span> <span class="co">&lt;!-- Titre de niveau 1 --&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <blockquote class="blockquote">
 <p>La grande majorité des éléments HTML sont non vides.</p>
 </blockquote>
@@ -269,6 +283,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Pour définir un script interne au fichier HTML.</li>
 </ul>
 <p>Dans le cas de l’appel du script externe, cet élément est toujours vide. Il serait donc légitime de penser qu’on peut utiliser la balise autofermante. Mais comme cet élément peut avoir un contenu dans sa deuxième utilisation, on doit toujours utiliser la notation avec une balise ouvrante et une balise fermante.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb8"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Lien vers un fichier JavaScript (JS) externe. --&gt;</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"scripts.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -279,7 +294,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
 <span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hello Microclub&nbsp;!"</span>)</span>
 <span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Notons au passage que les feuilles de style CSS peuvent aussi être internes ou externes au fichier HTML. Mais dans ce cas, les balises utilisées sont différentes&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb9"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!--</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">    Lien vers une feuille de style CSS externe.</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Comme la balise &lt;link&gt; est toujours vide, elle doit être autofermée.</span></span>
@@ -290,6 +307,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span><span class="kw">&gt;</span></span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* commentaire CSS */</span></span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/style&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Pour résumer&nbsp;:</p>
 <p>CSS externe : <code>&lt;link /&gt;</code> CSS interne : <code>&lt;style&gt;&lt;/style&gt;</code> JS externe : <code>&lt;script&gt;&lt;/script&gt;</code> JS interne : <code>&lt;script&gt;&lt;/script&gt;</code></p>
 </section>
@@ -297,17 +315,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="imbrication-déléments">Imbrication d’éléments</h3>
 <p>Lorsque les éléments sont imbriqués (<em>nested</em> en anglais), il est important de fermer les balises “enfants” avant les balises “parents”.</p>
 <p>Ceci est correct&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;strong&gt;</span>...<span class="kw">&lt;/strong&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/p&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Ceci ne l’est pas&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;strong&gt;</span>...<span class="kw">&lt;/p&gt;</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/strong&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="quelques-éléments-courants" class="level3">
 <h3 class="anchored" data-anchor-id="quelques-éléments-courants">Quelques éléments courants</h3>
 <p>Voici une liste non exhaustive d’éléments courants&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb12"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>Ceci est un paragraphe.</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>Les retours à la ligne doivent y</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>être explicitement indiqués avec la balise <span class="kw">&lt;br</span> <span class="kw">/&gt;</span></span>
@@ -335,6 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span>
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://ouilogique.com/images/site-logo.png"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"image de démo"</span> <span class="kw">/&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="liste-des-balises-html" class="level3">
 <h3 class="anchored" data-anchor-id="liste-des-balises-html">Liste des balises HTML</h3>
@@ -357,15 +381,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="les-attributs">LES ATTRIBUTS</h2>
 <p>Toutes les balises acceptent des attributs, certains étant obligatoires d’autres optionnels.</p>
 <p>Par exemple, la balise <code>&lt;img&gt;</code> qui sert à insérer une image a deux attributs obligatoires&nbsp;: <code>src</code> et <code>alt</code>. À noter que l’attribut <code>alt</code> est souvent omis dans les pages web que vous rencontrerez. Il est pourtant fortement conseillé, car il s’agit du texte qui remplacera l’image si celle-ci ne peut pas être affichée. Cet attribut est aussi utilisé par les systèmes de lecture pour les malvoyants.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb13"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://ouilogique.com/images/site-logo.png"</span> <span class="er">alt</span><span class="ot">=</span><span class="st">"image de démo"</span> <span class="kw">/&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/Img">Voir les attributs possibles de la balise <code>&lt;img /&gt;</code> sur le site MDN.</a></p>
 <p>Les attributs peuvent être mis à ligne pour faciliter la lecture&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb14"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;img</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ot">    src=</span><span class="st">"https://ouilogique.com/images/site-logo.png"</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ot">    alt=</span><span class="st">"image de démo"</span> <span class="kw">/&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <section id="les-attributs-personnalisés" class="level3">
 <h3 class="anchored" data-anchor-id="les-attributs-personnalisés">Les attributs personnalisés</h3>
 <p>HTML5 permet à l’utilisateur de définir ses propres attributs ce qui peut être fort utile lorsqu’on désire rendre le document interactif avec JavaScript. Ces attributs personnalisés s’appellent “attributs de données” et doivent obligatoirement commencer par le préfix <code>data-</code>.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb15"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;article</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ot">  id=</span><span class="st">"voitureelectrique"</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="ot">  data-columns=</span><span class="st">"3"</span></span>
@@ -373,18 +402,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="ot">  data-parent=</span><span class="st">"voitures"</span><span class="kw">&gt;</span></span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/article&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p><a href="https://developer.mozilla.org/fr/Apprendre/HTML/Comment/Utiliser_attributs_donnes">Voir les attributs de données sur MDN</a></p>
 </section>
 </section>
 <section id="le-doctype" class="level2">
 <h2 class="anchored" data-anchor-id="le-doctype">LE DOCTYPE</h2>
 <p>Le doctype est une chaine de caractère présente au début du fichier et qui définit explicitement la version de la norme HTML utilisée dans le document. Le mot <em>doctype</em> est un mot-valise tiré de la locution anglaise <em>Document Type Declaration</em>. Le seul doctype que nous utiliserons dans le cadre de ce cours est le doctype HTML&nbsp;5 qui se déclare de la manière suivante&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb16"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Si on ne spécifie pas de doctype, alors les agents utilisateurs utiliseront le <em>mode quirks</em>, c’est-à-dire que le moteur de disposition émule le comportement non standard de Netscape Navigator 4 et d’Internet Explorer 5. Ce mode permet de prendre en charge les sites web rédigés avant l’adoption généralisée des standards web.</p>
 <p>Si on spécifie un doctype, alors les agents utilisateurs utilisent le mode standard total ou éventuellement le mode quasi standard (qui a priori n’existe plus).</p>
 <p>Si vous désirez plus d’informations sur ces différents modes, vous pouvez vous référer aux liens ci-dessous. Je vous conseille de toute façon de ne pas jouer avec le feu et de toujours spécifier le doctype HTML&nbsp;5 (<code>&lt;!DOCTYPE html&gt;</code>).</p>
 <p>Pour déterminer si un agent utilisateur est en mode standard ou au contraire en mode quirks, vous pouvez utiliser le JavaScript suivant&nbsp;:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">document</span><span class="op">.</span><span class="at">compatMode</span> <span class="op">===</span> <span class="st">"CSS1Compat"</span> <span class="op">?</span> <span class="st">"standard"</span> <span class="op">:</span> <span class="st">"quirks"</span>)<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-start -->
+<div class="sourceCode" id="cb17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="bu">document</span><span class="op">.</span><span class="at">compatMode</span> <span class="op">===</span> <span class="st">"CSS1Compat"</span> <span class="op">?</span> <span class="st">"standard"</span> <span class="op">:</span> <span class="st">"quirks"</span>)<span class="op">;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Historiquement, de nombreux doctype ont eu cours et il est fort probable que vous en rencontriez d’autres.</p>
 <p>Le doctype est un élément à part dans la grammaire HTML dans le sens où sa balise ouvrante ne doit jamais être fermée.</p>
 <section id="pour-en-savoir-plus-2" class="level3">
@@ -394,7 +428,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://en.wikipedia.org/wiki/Document_type_declaration">Document type declaration (Wikipedia en)</a></li>
 <li><a href="https://fr.wikipedia.org/wiki/Doctype">Doctype (Wikipedia fr)</a></li>
 <li><a href="https://developer.mozilla.org/fr/docs/Web/HTML/Quirks_Mode_and_Standards_Mode">Mode quirks de Mozilla (MDN fr)</a></li>
-<li><a href="https://developer.mozilla.org/fr/docs/Mozilla/Mode_presque_standard_de_Gecko">Mode presque standard de Gecko (MDN fr)</a></li>
 <li><a href="http://alistapart.com/article/doctype">Fix Your Site With the Right DOCTYPE!</a></li>
 </ul>
 </section>
@@ -402,9 +435,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="lespace-de-nom" class="level2">
 <h2 class="anchored" data-anchor-id="lespace-de-nom">L’ESPACE DE NOM</h2>
 <p>Certains validateurs comme celui de l’éditeur <a href="https://www.oxygenxml.com/"><em>Oxygen XML Editor</em></a> imposent que l’espace de nom soit spécifié et ceci se fait dans l’attribut <code>xmlns</code> de la balise <code>&lt;html&gt;</code> ouvrante&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb18"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span> <span class="er">xmlns</span><span class="ot">=</span><span class="st">"http://www.w3.org/1999/xhtml"</span><span class="kw">&gt;</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>...</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="les-éditeurs-de-code-html" class="level2">
 <h2 class="anchored" data-anchor-id="les-éditeurs-de-code-html">LES ÉDITEURS DE CODE HTML</h2>
@@ -443,11 +478,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="quelques-entités">Quelques entités</h3>
 <table class="table">
 <colgroup>
-<col style="width: 16%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
-<col style="width: 20%">
+<col style="width: 32%">
+<col style="width: 8%">
+<col style="width: 19%">
+<col style="width: 17%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -522,19 +557,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>La différence la plus notable est que la syntaxe HTML autorise que certaines balises ne soient pas fermées&nbsp;:</p>
 <p>en HTML, ceci est valide&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb19"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">"utf-8"</span><span class="kw">&gt;</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>...</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ul&gt;</span></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;</span>...</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;</span>...</span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/ul&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>alors qu’en XHTML, toutes les balises doivent être fermées&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb20"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;meta</span> <span class="er">charset</span><span class="ot">=</span><span class="st">"utf-8"</span> <span class="kw">/&gt;</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p&gt;</span>...<span class="kw">&lt;/p&gt;</span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;ul&gt;</span></span>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;</span>...<span class="kw">&lt;/li&gt;</span></span>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;li&gt;</span>...<span class="kw">&lt;/li&gt;</span></span>
 <span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/ul&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <blockquote class="blockquote">
 <p>La syntaxe XHTML a l’immense avantage d’être logique et facile à appliquer lorsque l’on génère le code à la main. De plus elle permet d’utiliser les outils prévus pour les fichiers XML, comme les langages XPath, XSLT et XQuery.</p>
 <p>La syntaxe HTML permet quand à elle d’économiser quelques octets puisque le nombre de balises nécessaires est moindre. Certaines personnes, dont je ne fais pas partie, la trouvent aussi plus facile à lire puisque moins verbeuse.</p>
@@ -613,7 +652,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="modification-de-la-valeur-par-défaut" class="level3">
 <h3 class="anchored" data-anchor-id="modification-de-la-valeur-par-défaut">Modification de la valeur par défaut</h3>
 <p>On peut modifier la valeur de l’attribut <code>white-space</code> par défaut avec l’instruction CSS&nbsp;suivante&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb21"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>p.pre-line { white-space: pre-line; }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="pour-en-savoir-plus-4" class="level3">
 <h3 class="anchored" data-anchor-id="pour-en-savoir-plus-4">Pour en savoir plus</h3>
@@ -626,17 +667,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="les-commentaires" class="level2">
 <h2 class="anchored" data-anchor-id="les-commentaires">LES COMMENTAIRES</h2>
 <p>Si l’on veut commenter une portion de code HTML, il faut utiliser la notation suivante&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb22"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Commentaire --&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Par contre, il faut utiliser les marques de commentaire natives des langages que l’on intègre&nbsp;:</p>
 <p>Exemple avec du code CSS intégré dans le code HTML&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb23"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;style</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span><span class="kw">&gt;</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* commentaire CSS */</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/style&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Exemple avec du code JavaScript intégré dans le code HTML&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb24"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script&gt;</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">/* commentaire JS */</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Commentaire JS</span></span>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/script&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 
 
 </section>

@@ -11,7 +11,7 @@ image: ./images/banner_2015-11-16-NodeMCU_esp8266_amica.jpg
 lang: fr
 layout: page
 lightbox: auto
-pagetitle: "{{< meta title >}} &#8211; ouilogique.com"
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Mise en route d’une carte <em>Amica</em> avec le firmware NodeMCU et un module
     WiFi ESP8266
 ---
@@ -20,11 +20,11 @@ title: Mise en route d’une carte <em>Amica</em> avec le firmware NodeMCU et un
 
 ## Référence AliExpress
 
--   ~~http://fr.aliexpress.com/item/V2-4M-4FLASH-NodeMcu-Lua-WIFI-Networking-development-board-Based-ESP8266/32448694790.html~~
+-   <http://fr.aliexpress.com/item/V2-4M-4FLASH-NodeMcu-Lua-WIFI-Networking-development-board-Based-ESP8266/32448694790.html>{rel="nofollow"}
 
 ## Installation du pilote pour le Silabs CP2102
 
--   ~~https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx~~
+-   <https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx>{rel="nofollow"}
 
 La version _4.x.13 - August 31_, 2016 fonctionne sous macOS Sierra.
 
@@ -106,4 +106,4 @@ Le chip Silabs CP2102 est 50 % plus rapide que le CH340G ! J’ai réalisé ce
 
 ## Drivers Silabs CP2102
 
--   ~~https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx~~
+-   <https://www.silabs.com/products/mcu/Pages/USBtoUARTBridgeVCPDrivers.aspx>{rel="nofollow"}

@@ -213,10 +213,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>L’avantage du fichier CSS externe est qu’il permet de réunir toutes les informations de style en un seul fichier qui pourra être utilisé par toutes les pages HTML d’un site, aussi grand soit-il. Ceci permet de minimiser la bande passante et d’accélérer le rendu puisque les agents utilisateurs peuvent garder la feuille de style en cache.</p>
 <p>Avec des fichiers CSS externes, il est également plus facile de gérer des scénarios de transformation différents.</p>
 <p>Voici un exemple de fichier CSS (style.css)&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>p {</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">firebrick</span><span class="op">;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Pour faire appel à ce fichier, il faut inclure la balise <code>&lt;link&gt;</code> dans le document HTML, généralement à l’intérieur de la balise <code>&lt;head&gt;</code>, mais la norme HTML&nbsp;5 permet de positionner cette balise dans l’élément <code>&lt;body&gt;</code> également.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
@@ -228,12 +231,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>Hello Microclub&nbsp;!<span class="kw">&lt;/p&gt;</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="css-interne-au-fichier-html-dans-la-balise-style" class="level3">
 <h3 class="anchored" data-anchor-id="css-interne-au-fichier-html-dans-la-balise-style">CSS interne au fichier HTML, dans la balise <code>&lt;style&gt;</code></h3>
 <p>Si on désire ne servir qu’un seul fichier qui contient à la fois les instructions HTML et CSS, comme c’est souvent le cas dans le monde de l’IoT, il est possible de placer les instructions CSS dans une ou plusieurs balises <code>&lt;style&gt;</code> qui doivent se trouver dans la balise <code>&lt;head&gt;</code> du fichier HTML.</p>
 <p>On peut aussi utiliser cette méthode pour créer des exceptions pour une page donnée dans un site web contenant plusieurs pages.</p>
 <p>C’est aussi un moyen de forcer les agents utilisateurs à ne pas réutiliser les informations de leur cache.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
@@ -249,6 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p&gt;</span>Hello Microclub&nbsp;!<span class="kw">&lt;/p&gt;</span></span>
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="css-interne-au-fichier-html-dans-lattribut-style-dun-élément-html" class="level3">
 <h3 class="anchored" data-anchor-id="css-interne-au-fichier-html-dans-lattribut-style-dun-élément-html">CSS interne au fichier HTML, dans l’attribut <code>style</code> d’un élément HTML</h3>
@@ -256,6 +262,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Elle doit être utilisée le moins souvent possible, car elle augmente considérablement la taille des fichiers et diminue la lisibilité. Google pénalise aussi cette pratique lors de l’indexation si on en croit leur outil <a href="https://developers.google.com/speed/pagespeed/insights/?hl=fr">PageSpeed Insights</a>.</p>
 <p>Elle a également le désavantage d’empêcher la gestion de scénarios de transformation.</p>
 <p>Cela dit, c’est un bon moyen de créer une exception pour un élément donné.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
@@ -266,12 +273,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">"color: blueviolet"</span><span class="kw">&gt;</span>Hello Microclub&nbsp;!<span class="kw">&lt;/p&gt;</span></span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
 <span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 </section>
 <section id="la-syntaxe" class="level2">
 <h2 class="anchored" data-anchor-id="la-syntaxe">LA SYNTAXE</h2>
-<p>Pour apprendre les bases de la syntaxe CSS, nous allons utiliser l’exemple ci-dessous (<a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe">adapté de l’exemple sur MDN</a>).</p>
+<p>Pour apprendre les bases de la syntaxe CSS, nous allons utiliser l’exemple ci-dessous (<a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe">adapté de l’exemple sur MDN</a>{rel=“nofollow”}).</p>
 <p>fichier <code>syntaxe.css</code></p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb5"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>body {</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font</span>: <span class="dv">1</span><span class="dt">em</span>/<span class="dv">150</span><span class="dt">%</span> <span class="st">"Helvetica Neue"</span><span class="op">,</span> Arial<span class="op">,</span> <span class="dv">monospace</span><span class="op">;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
@@ -302,7 +311,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>div p <span class="op">+</span> p {</span>
 <span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-top</span>: <span class="dv">0</span><span class="op">;</span></span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>fichier <code>syntaxe.html</code></p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb6"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
@@ -332,18 +343,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;/div&gt;</span></span>
 <span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
 <span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <section id="anatomie-dune-règle-css" class="level3">
 <h3 class="anchored" data-anchor-id="anatomie-dune-règle-css">Anatomie d’une règle CSS</h3>
 <p>Une règle CSS se présente sous la forme suivante&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>sélecteur1<span class="op">,</span> sélecteur2 {</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    propriété1<span class="in">: valeur1</span>;</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    propriété2<span class="in">: valeur2</span>;</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Voici un exemple réel de règle&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb8"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>div p<span class="op">,</span> <span class="pp">#id</span><span class="in">:first-line</span> {</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">antiquewhite</span><span class="op">;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">cadetblue</span><span class="op">;</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>On voit qu’une règle est composée de la manière suivante&nbsp;:</p>
 <ul>
 <li>Un ou plusieurs <strong>sélecteurs</strong> séparés par des virgules, ici <code>div p</code> et <code>#id:first-line</code>.</li>
@@ -362,6 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="commentaires" class="level3">
 <h3 class="anchored" data-anchor-id="commentaires">Commentaires</h3>
 <p>Il est possible de commenter le code CSS de la manière suivante&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb9"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>body {</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">font</span>: <span class="dv">1</span><span class="dt">em</span>/<span class="dv">150</span><span class="dt">%</span> <span class="st">"Helvetica Neue"</span><span class="op">,</span> Arial<span class="op">,</span> <span class="dv">monospace</span><span class="op">;</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
@@ -376,6 +393,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">    max-width: 33em;</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">    */</span></span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <blockquote class="blockquote">
 <p>CSS ne permet pas de commenter ligne par ligne, comme il est possible de le faire en JavaScript avec les symboles <code>//</code>.</p>
 </blockquote>
@@ -390,14 +408,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="pour-en-savoir-plus-1" class="level3">
 <h3 class="anchored" data-anchor-id="pour-en-savoir-plus-1">Pour en savoir plus</h3>
 <ul>
-<li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe#Les_d%C3%A9clarations_CSS">Les déclarations CSS MDN</a></li>
-<li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe#Les_blocs_CSS">Les blocs CSS MDN</a></li>
-<li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe#Les_r%C3%A8gles_CSS">Les règles CSS MDN</a></li>
+<li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe#Les_d%C3%A9clarations_CSS">Les déclarations CSS MDN</a>{rel=“nofollow”}</li>
+<li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe#Les_blocs_CSS">Les blocs CSS MDN</a>{rel=“nofollow”}</li>
+<li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe#Les_r%C3%A8gles_CSS">Les règles CSS MDN</a>{rel=“nofollow”}</li>
 </ul>
 </section>
 <section id="les-instructions-css" class="level3">
 <h3 class="anchored" data-anchor-id="les-instructions-css">Les instructions CSS</h3>
-<p><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe#Les_r%C3%A8gles_CSS">Les instructions CSS MDN</a></p>
+<p><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_syntaxe#Les_r%C3%A8gles_CSS">Les instructions CSS MDN</a>{rel=“nofollow”}</p>
 </section>
 </section>
 <section id="les-sélecteurs" class="level2">
@@ -420,7 +438,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Les pseudo-éléments</li>
 <li>Les combinateurs</li>
 </ul>
-<p>Pour découvrir les sélecteurs, rendez-vous sur la page <a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/Les_s%C3%A9lecteurs">des sélecteurs de MDN</a>.</p>
+<p>Pour découvrir les sélecteurs, rendez-vous sur la page <a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/Les_s%C3%A9lecteurs">des sélecteurs de MDN</a>{rel=“nofollow”}.</p>
 </section>
 <section id="la-cascade" class="level2">
 <h2 class="anchored" data-anchor-id="la-cascade">LA CASCADE</h2>
@@ -434,6 +452,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Attribut <code>style</code> de l’élément <code>&lt;p&gt;</code> ⇒ <em>blueviolet</em></li>
 </ol>
 <p>Les règles de cascade imposent que, si des règles sont en concurrence, ce soit la dernière qui est appliquée. Donc dans l’exemple ci-dessous, la couleur du texte sera <em>blueviolet</em>.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb10"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html&gt;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
@@ -462,6 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>    <span class="kw">&lt;p</span> <span class="er">style</span><span class="ot">=</span><span class="st">"color: blueviolet"</span><span class="kw">&gt;</span>Hello Microclub&nbsp;!<span class="kw">&lt;/p&gt;</span></span>
 <span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
 <span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="la-pondération" class="level2">
 <h2 class="anchored" data-anchor-id="la-pondération">LA PONDÉRATION</h2>
@@ -479,8 +499,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Enfin, si les sélecteurs ont le même poids, ce sera l’ordre des règles dans le fichier source qui importera&nbsp;: la règle la plus basse dans le fichier l’emportera sur une règle déclarée avant.</li>
 </ul>
 <p>Prenons ce fragment de HTML par exemple&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;p</span> <span class="er">id</span><span class="ot">=</span><span class="st">"cookie"</span> <span class="er">class</span><span class="ot">=</span><span class="st">"crispy"</span><span class="kw">&gt;</span>Ce cookie est <span class="kw">&lt;span&gt;</span>délicieux !<span class="kw">&lt;/span&gt;&lt;/p&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Cette feuille de style illustre ce qui se passe lorsqu’un sélecteur de niveau 1 entre en conflit avec d’autres sélecteurs&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb12"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Ce sélecteur est composé d’un sélecteur de niveau 1</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">   Poids&nbsp;: 1 | 0 | 0 */</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="pp">#cookie</span> {</span>
@@ -496,25 +519,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co">/* 1|0|0 &gt; 0|2|0&nbsp;: La première règle s’applique et le texte</span></span>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="co">   est vert. Un seul sélecteur de niveau 1 sera toujours</span></span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a><span class="co">   prioritaire par rapport à X sélecteurs de niveau 2. */</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <section id="pour-en-savoir-plus-2" class="level3">
 <h3 class="anchored" data-anchor-id="pour-en-savoir-plus-2">Pour en savoir plus</h3>
 <ul>
-<li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_cascade_et_l_h%C3%A9ritage#Le_poids_des_s%C3%A9lecteurs">Pondération MDN</a></li>
+<li><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_cascade_et_l_h%C3%A9ritage#Le_poids_des_s%C3%A9lecteurs">Pondération MDN</a>{rel=“nofollow”}</li>
 </ul>
 </section>
 </section>
 <section id="lhéritage" class="level2">
 <h2 class="anchored" data-anchor-id="lhéritage">L’HÉRITAGE</h2>
-<p><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_cascade_et_l_h%C3%A9ritage#L'h%C3%A9ritage">Héritage MDN</a></p>
+<p><a href="https://developer.mozilla.org/fr/Apprendre/CSS/Introduction_%C3%A0_CSS/La_cascade_et_l_h%C3%A9ritage#L'h%C3%A9ritage">Héritage MDN</a>{rel=“nofollow”}</p>
 </section>
 <section id="les-media-queries" class="level2">
 <h2 class="anchored" data-anchor-id="les-media-queries">LES <em>MEDIA QUERIES</em></h2>
 <p>Les <em>media queries</em>, ou requêtes media en français, sont des instructions CSS qui permettent d’appliquer des règles CSS différentes en fonction de l’appareil utilisé et ceci sans modification du code HTML. Elles sont à la base de ce qu’on appelle le <em>responsive design</em> ou design adaptatif en français et c’est ce qui permet à un site web de s’afficher lisiblement à la fois sur un écran de bureau 27” et sur l’écran d’un téléphone.</p>
 <p>On peut spécifier le média cible à deux endroits différents&nbsp;:</p>
 <p>Dans l’attribut <code>media</code> de la balise <code>&lt;link&gt;</code> qui appelle le code CSS&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb13"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">media</span><span class="ot">=</span><span class="st">"screen"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"style-screen.css"</span> <span class="kw">/&gt;</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">media</span><span class="ot">=</span><span class="st">"print"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"style-print.css"</span> <span class="kw">/&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Ou dans le CSS lui-même&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb14"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>body</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>{</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span>: <span class="cn">lime</span><span class="op">;</span></span>
@@ -535,6 +562,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="cn">lime</span><span class="op">;</span></span>
 <span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>  }</span>
 <span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <section id="pour-en-savoir-plus-3" class="level3">
 <h3 class="anchored" data-anchor-id="pour-en-savoir-plus-3">Pour en savoir plus</h3>
 <ul>
@@ -545,6 +573,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="les-couleurs" class="level2">
 <h2 class="anchored" data-anchor-id="les-couleurs">LES COULEURS</h2>
 <p>Les couleurs peuvent être définies de plusieurs façons différentes. Tous les exemples ci-dessous définissent la même couleur <span style="color: white; background-color:firebrick">firebrick</span>.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb15"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">/* Par nom&nbsp;: */</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>body { <span class="kw">background-color</span>: <span class="cn">firebrick</span><span class="op">;</span> }</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -562,10 +591,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="co">/* Par code decimal HSL avec gestion de la transparence&nbsp;: */</span></span>
 <span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>body { <span class="kw">background-color</span>: <span class="fu">hsla(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">68</span><span class="dt">%</span><span class="op">,</span> <span class="dv">42</span><span class="dt">%</span><span class="op">,</span> <span class="dv">0.5</span><span class="fu">)</span><span class="op">;</span> }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <section id="notation-courte" class="level3">
 <h3 class="anchored" data-anchor-id="notation-courte">Notation courte</h3>
 <p>Il existe aussi une notation courte sur 3 chiffres au lieu de&nbsp;6. Par exemple, <code>#B22</code> est équivalent à <code>#BB2222</code>, ce qui est très proche de <code>#B22222</code> de notre exemple ci-dessus.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>body { <span class="kw">background-color</span>: <span class="cn">#B22</span><span class="op">;</span> }</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 </section>
 <section id="nombre-de-couleurs" class="level3">
 <h3 class="anchored" data-anchor-id="nombre-de-couleurs">Nombre de couleurs</h3>
@@ -583,9 +615,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="frameworks">FRAMEWORKS</h2>
 <p>Mettre en forme des pages HTML peut vite devenir une tâche complexe, particulièrement quand on veut l’afficher sur des écrans de tailles très différentes. Pour cela, il est fortement conseillé de ne pas réinventer la roue et d’utiliser un <em>framework</em>, c’est-à-dire une collection d’outils prête à l’emploi.</p>
 <p>Dans le monde du CSS, le <em>framework</em> <a href="https://getbootstrap.com/">Bootstrap</a> est très populaire en ce moment. Il est basé sur un système de grille à 12 colonnes qui sont utilisées pour l’alignement des éléments visuels.</p>
-<p>Un désavantage de Bootstrap est que le fichier CSS de base (bootstrap.min.css) pèse 118&nbsp;ko, ce qui est relativement conséquent quand on veut travailler avec un <a href="https://ouilogique.com/NodeMCU_esp8266/">ESP8266</a>. Mais j’ai essayé et ça fonctionne. Si la topologie du projet le permet, il est de toute façon préférable de charger Bootstrap depuis un CDN et pas depuis le site web ou l’appareil IoT de l’application en utilisant le code suivant&nbsp;:</p>
+<p>Un désavantage de Bootstrap est que le fichier CSS de base (bootstrap.min.css) pèse 118&nbsp;ko, ce qui est relativement conséquent quand on veut travailler avec un <a href="../../NodeMCU_esp8266/">ESP8266</a>. Mais j’ai essayé et ça fonctionne. Si la topologie du projet le permet, il est de toute façon préférable de charger Bootstrap depuis un CDN et pas depuis le site web ou l’appareil IoT de l’application en utilisant le code suivant&nbsp;:</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb17"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;link</span> <span class="er">rel</span><span class="ot">=</span><span class="st">"stylesheet"</span> <span class="er">href</span><span class="ot">=</span><span class="st">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"</span> <span class="er">integrity</span><span class="ot">=</span><span class="st">"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"</span> <span class="er">crossorigin</span><span class="ot">=</span><span class="st">"anonymous"</span> <span class="kw">/&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Voici un canevas pour bien commencer avec Bootstrap. Il est assez complet, donc dans la plupart des cas, il conviendra d’enlever les éléments inutilisés.</p>
+<!-- prettier-ignore-start -->
 <div class="sourceCode" id="cb18"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;html</span> <span class="er">lang</span><span class="ot">=</span><span class="st">"fr"</span><span class="kw">&gt;</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;head&gt;</span></span>
@@ -619,6 +654,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>  <span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://maxcdn.bootstrapcdn.com/js/ie10-viewport-bug-workaround.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span>
 <span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/body&gt;</span></span>
 <span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/html&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- prettier-ignore-end -->
 <p>Il existe d’autres <em>frameworks</em>, comme <a href="https://foundation.zurb.com/">Foundation</a> qui est aussi très populaire.</p>
 <section id="pour-en-savoir-plus-5" class="level3">
 <h3 class="anchored" data-anchor-id="pour-en-savoir-plus-5">Pour en savoir plus</h3>

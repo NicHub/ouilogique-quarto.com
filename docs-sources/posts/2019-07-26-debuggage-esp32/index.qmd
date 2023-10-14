@@ -11,7 +11,7 @@ image: ./images/banner_2019-07-26-debuggage-esp32.jpg
 lang: fr
 layout: page
 lightbox: auto
-pagetitle: "{{< meta title >}} &#8211; ouilogique.com"
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Débuggage sur ESP32 avec un <em>ESP&#8209;Prog</em> et <em>PIO Unified Debugger</em>
 ---
 
@@ -36,7 +36,7 @@ Le board _ESP&#8209;Prog_ permet de faire deux choses distinctes :
     -   <https://docs.platformio.org/en/latest/plus/debugging.html>
 -   _ESP-Prog_
     -   <https://docs.platformio.org/en/latest/plus/debug-tools/esp-prog.html>
-    -   <https://github.com/espressif/esp-iot-solution/blob/master/documents/evaluation_boards/ESP-Prog_guide_en.md>
+    -   <https://github.com/espressif/esp-iot-solution/blob/master/documents/evaluation_boards/ESP-Prog_guide_en.md>{rel="nofollow"}
 
 ## Matériel utilisé
 

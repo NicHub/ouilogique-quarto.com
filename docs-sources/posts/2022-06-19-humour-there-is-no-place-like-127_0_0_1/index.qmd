@@ -10,7 +10,7 @@ filters:
 lang: fr
 layout: page
 lightbox: auto
-pagetitle: "{{< meta title >}} &#8211; ouilogique.com"
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Humour There is no place like 127.0.0.1
 ---
 

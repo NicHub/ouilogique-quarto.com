@@ -152,13 +152,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><a href="https://www.banggood.com/UNO-R3-ATmega328P-Board-2_4-Inch-TFT-LCD-Screen-Module-For-Arduino-p-945755.html?p=0431091025639201412F" class="uri">https://www.banggood.com/UNO-R3-ATmega328P-Board-2_4-Inch-TFT-LCD-Screen-Module-For-Arduino-p-945755.html?p=0431091025639201412F</a></li>
 </ul>
-<p>C’est un écran tactile résistif avec un lecteur de carte micro SD intégré. Le PCB indique <a href="https://www.mcufriend.com">www.mcufriend.com</a>, mais ce site ne répondait pas au moment où j’ai essayé. Je me suis donc armé de patience et après quelques heures et quelques dizaines de recherches sur Google, j’ai réussi à en faire quelque chose.</p>
+<p>C’est un écran tactile résistif avec un lecteur de carte micro SD intégré. Le PCB indique <a href="https://www.mcufriend.com" rel="nofollow">www.mcufriend.com</a>, mais ce site ne répondait pas au moment où j’ai essayé. Je me suis donc armé de patience et après quelques heures et quelques dizaines de recherches sur Google, j’ai réussi à en faire quelque chose.</p>
 <blockquote class="blockquote">
 <p>Avant de faire quoi que ce soit, il semble que ça soit une bonne idée d’isoler le connecteur USB de l’Arduino UNO avec de l’adhésif Kapton par exemple.</p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2-4-in_TFT_Touch_screen_front.jpg" class="lightbox" title="mcufriend LCD touch screen" data-gallery="quarto-lightbox-gallery-1"><img src="./images/2-4-in_TFT_Touch_screen_front.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2-4-in_TFT_Touch_screen_front.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="mcufriend LCD touch screen"><img src="./images/2-4-in_TFT_Touch_screen_front.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">mcufriend LCD touch screen</figcaption>
 </figure>
 </div>
@@ -175,7 +175,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/adafruit/Touch-Screen-Library.git</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Il faut redémarrer l’IDE Arduino pour utiliser les librairies.</p>
 <p>La librairie <code>TFTLCD-Library</code> contient un dossier <code>exemples</code> que vous pouvez copier pour faire des modifications et un dossier <code>bitmaps</code>. Les bitmaps peuvent être copiées à la racine d’une carte Micro SD. Celle-ci fonctionne bien pour moi&nbsp;:</p>
-<p><del>www.banggood.com/8GB-Micro-SDTF-Memory-Card-For-Cell-Phone-PDA-MP3-Player-p-926928.html?p=0431091025639201412F</del></p>
+<p><a href="https://www.banggood.com/8GB-Micro-SDTF-Memory-Card-For-Cell-Phone-PDA-MP3-Player-p-926928.html?p=0431091025639201412F" rel="nofollow">https://www.banggood.com/8GB-Micro-SDTF-Memory-Card-For-Cell-Phone-PDA-MP3-Player-p-926928.html?p=0431091025639201412F</a></p>
 <blockquote class="blockquote">
 <p>L’écran fonctionne aussi sans carte micro SD. Elle est juste utile pour stocker des bitmaps.</p>
 </blockquote>
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb7"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>p<span class="op">.</span>x <span class="op">=</span> map<span class="op">(</span>p<span class="op">.</span>x<span class="op">,</span> TS_MINX<span class="op">,</span> TS_MAXX<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> tft<span class="op">.</span>width<span class="op">());</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2-4-in_TFT_Touch_screen_ouilogique_com.jpg" class="lightbox" title="mcufriend LCD touch screen" data-gallery="quarto-lightbox-gallery-2"><img src="./images/2-4-in_TFT_Touch_screen_ouilogique_com.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2-4-in_TFT_Touch_screen_ouilogique_com.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="mcufriend LCD touch screen"><img src="./images/2-4-in_TFT_Touch_screen_ouilogique_com.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">mcufriend LCD touch screen</figcaption>
 </figure>
 </div>
@@ -212,7 +212,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="spécifications" class="level2">
 <h2 class="anchored" data-anchor-id="spécifications">Spécifications</h2>
 <blockquote class="blockquote">
-<p>Source&nbsp;: <del>www.smokeandwires.co.nz/blog/a-2-4-tft-touchscreen-shield-for-arduino/</del></p>
+<p>Source&nbsp;: <a href="https://www.smokeandwires.co.nz/blog/a-2-4-tft-touchscreen-shield-for-arduino/" rel="nofollow">https://www.smokeandwires.co.nz/blog/a-2-4-tft-touchscreen-shield-for-arduino/</a></p>
 </blockquote>
 <p>Screen Size | 2.4 inch |<br>
 Resolution | 240 x 320 |<br>
@@ -224,7 +224,7 @@ Touchscreen | 4 Wire Resistive Touchscreen |</p>
 <h3 class="anchored" data-anchor-id="pinout">Pinout</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2-4-in_TFT_Touch_screen_back.jpg" class="lightbox" title="mcufriend LCD touch screen" data-gallery="quarto-lightbox-gallery-3"><img src="./images/2-4-in_TFT_Touch_screen_back.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2-4-in_TFT_Touch_screen_back.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="mcufriend LCD touch screen"><img src="./images/2-4-in_TFT_Touch_screen_back.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">mcufriend LCD touch screen</figcaption>
 </figure>
 </div>
@@ -367,10 +367,10 @@ Touchscreen | 4 Wire Resistive Touchscreen |</p>
 <section id="lcd-drivers" class="level2">
 <h2 class="anchored" data-anchor-id="lcd-drivers">LCD Drivers</h2>
 <p>Les deux drivers LCD sont des TM74HC245.</p>
-<p><a href="https://www.szjdf.net/Private/ProductFiles/595775de665f4acba6a1.pdf">Datasheet en chinois</a> Datasheet traduite par Google <del>goo.gl/hKB7W1</del></p>
+<p><a href="https://www.szjdf.net/Private/ProductFiles/595775de665f4acba6a1.pdf" rel="nofollow">Datasheet en chinois</a> Datasheet traduite par Google <a href="https://goo.gl/hKB7W1" rel="nofollow">https://goo.gl/hKB7W1</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2-4-in_TFT_Touch_screen_ouilogique_TM74HC245_videoinverse.jpg" class="lightbox" title="TM74HC245" data-gallery="quarto-lightbox-gallery-4"><img src="./images/2-4-in_TFT_Touch_screen_ouilogique_TM74HC245_videoinverse.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/2-4-in_TFT_Touch_screen_ouilogique_TM74HC245_videoinverse.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="TM74HC245"><img src="./images/2-4-in_TFT_Touch_screen_ouilogique_TM74HC245_videoinverse.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">TM74HC245</figcaption>
 </figure>
 </div>
@@ -639,7 +639,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
 <script src="../../js/target_blank.js"></script>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});</script>
 
 
 

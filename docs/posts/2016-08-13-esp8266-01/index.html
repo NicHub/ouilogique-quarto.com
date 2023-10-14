@@ -164,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#programmation-avec-descommandesat">En lui envoyant des commandes AT sur son port RS232 avec un ordinateur ou un microcontrôleur.</a></li>
 <li><a href="#programmation-du-microcontrleur-de-lesp-01-en-arduinoc">En programmant directement son microcontrôleur interne en Arduino&nbsp;C.</a></li>
 </ul>
-<p>Pour la première partie sur les commandes AT, <a href="http://nodemcu.com/index_en.html">le firmware NodeMCU</a> doit être installé sur l’ESP. C’est en général le cas pour les ESP neufs.</p>
+<p>Pour la première partie sur les commandes AT, <a href="http://nodemcu.com/index_en.html">le firmware NodeMCU</a>{rel=“nofollow”} doit être installé sur l’ESP. C’est en général le cas pour les ESP neufs.</p>
 <p>Lorsque l’ESP est programmé en Arduino&nbsp;C, cela écrase le firmware NodeMCU, mais rien n’est perdu, <a href="#revenir--nodemcu">on peut le flasher à nouveau</a>.</p>
 <p>À noter encore que NodeMCU ne permet pas seulement d’utiliser les commandes AT, mais permet également de programmer l’ESP dans le langage Lua, mais ce n’est pas l’objet de ce tuto.</p>
 </section>
@@ -174,7 +174,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>Les commandes&nbsp;AT peuvent vite être très limitantes car il faudra prévoir toutes les réponses possibles et le programme deviendra donc vite très complexe. En plus ces commandes évoluent avec les versions des firmwares. Donc la compatibilité n’est pas assurée.</p>
 </blockquote>
-<p>L’idée est d’utiliser un ordi avec <a href="http://freeware.the-meiers.org/">CoolTerm</a> pour envoyer quelques commandes&nbsp;AT à l’ESP-01. Comme je n’ai pas de bridge USB-RS232, j’utilise <a href="../../NodeMCU_esp8266_amica/">un module ESP-12E Amica</a> sur lequel j’ai connecté la broche RST au GND pour que l’ESP-12E ne démarre pas. Ainsi les commandes envoyées de l’ordi se retrouvent directement sur les broches TX et RX de l’ESP-12E. Ce montage peut être schématiquement représenté de la façon suivante&nbsp;:</p>
+<p>L’idée est d’utiliser un ordi avec <a href="http://freeware.the-meiers.org/">CoolTerm</a> pour envoyer quelques commandes&nbsp;AT à l’ESP-01. Comme je n’ai pas de bridge USB-RS232, j’utilise <a href="../../NodeMCU_esp8266_amica/">un module ESP-12E Amica</a>{rel=“nofollow”} sur lequel j’ai connecté la broche RST au GND pour que l’ESP-12E ne démarre pas. Ainsi les commandes envoyées de l’ordi se retrouvent directement sur les broches TX et RX de l’ESP-12E. Ce montage peut être schématiquement représenté de la façon suivante&nbsp;:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">ordi</span> TX <span class="at">-------</span>   <span class="at">-</span> ESP8266-12E TX <span class="at">-------</span> ESP8266-01 TX</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>               <span class="ex">\/</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>               <span class="ex">/</span><span class="dt">\</span></span>
@@ -362,7 +362,7 @@ ESP.getResetInfoPtr()
 <section id="à-lire-aussi-1" class="level3">
 <h3 class="anchored" data-anchor-id="à-lire-aussi-1">À lire aussi</h3>
 <ul>
-<li><a href="https://www.hackster.io/rayburne/esp8266-01-using-arduino-ide-67a124">hackster.io — Ray Burnette — ESP8266-01 using Arduino IDE</a></li>
+<li><a href="https://www.hackster.io/rayburne/esp8266-01-using-arduino-ide-67a124">hackster.io — Ray Burnette — ESP8266-01 using Arduino IDE</a>{rel=“nofollow”}</li>
 <li><a href="http://www.allaboutcircuits.com/projects/breadboard-and-program-an-esp-01-circuit-with-the-arduino-ide/">allaboutcircuits.com — Charles R. Hampton — Breadboard and Program an ESP-01 Circuit with the Arduino IDE</a></li>
 <li><a href="http://playground.boxtec.ch/doku.php/wireless/esp8266">playground.boxtec.ch — ESP8266 WiFi Module</a></li>
 </ul>
@@ -636,7 +636,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
 <script src="../../js/target_blank.js"></script>
-<script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":true,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});</script>
 
 
 

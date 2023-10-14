@@ -11,7 +11,7 @@ image: ./images/banner_2019-03-27-plateforme-de-stewart-esp32.jpg
 lang: fr
 layout: page
 lightbox: auto
-pagetitle: "{{< meta title >}} &#8211; ouilogique.com"
+pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Plateforme de Stewart pilotée avec un ESP32
 ---
 
@@ -284,7 +284,7 @@ PDF à trouver :
 
 ### Application 3 : Ball bouncing
 
--   ~~poe.olin.edu/2017/Bounce/~~
+-   <https://poe.olin.edu/2017/Bounce/>{rel="nofollow"}
 -   <https://github.com/TShapinsky/Bounce>
 
 ## IMPLÉMENTATION
@@ -316,8 +316,8 @@ PDF à trouver :
 -   GWS Micro 2BBMG servo (<https://www.youtube.com/watch?v=TgqJbneXZI8>)
 -   HS5485HB (<https://github.com/a6guerre/Ball-balanced-on-Stewart-Platform/blob/master/Readme.pdf>)
 -   <http://www.robotis.us/dynamixel-mx-64t/> (Utilisé par Arun Dayal Udai)
--   MG995 (<https://www.banggood.com/MG995-High-Torgue-Mental-Gear-Analog-Servo-p-73885.html>) (Rolf)
--   Tower Pro SG-5010 servos ~~(01.org/developerjourney/recipe/building-stewart-platform)~~
+-   MG995 (<https://www.banggood.com/MG995-High-Torgue-Mental-Gear-Analog-Servo-p-73885.html>){rel="nofollow"} (Rolf)
+-   Tower Pro SG-5010 servos <https://01.org/developerjourney/recipe/building-stewart-platform>{rel="nofollow"}
 -   Hitec HS-5625MG (utilisé par <https://github.com/xoxota99/stewy>)
 -   MG996R <https://fr.aliexpress.com/item//32636102294.html>
 -   Parallax 900-00005 (utilisé par fullmotiondynamics)
@@ -353,11 +353,11 @@ PDF à trouver :
 
 ### Liste complète de matériel
 
--   ~~01.org/developerjourney/recipe/building-stewart-platform~~
+-   <https://01.org/developerjourney/recipe/building-stewart-platform>{rel="nofollow"}
 
 ### Touch screen
 
--   Digikey 360-3520-ND ~~www.digikey.ch/short/pj85db~~ (utilisé par <https://github.com/xoxota99/stewy>)
+-   [Digikey 360-3520-ND](https://www.digikey.ch/short/pj85db){rel="nofollow"} (utilisé par <https://github.com/xoxota99/stewy>)
 -   <https://aliexpress.com/af/32809597549.html>
 
 ### ESP32
@@ -406,8 +406,8 @@ Cinématique inverse avec servomoteurs **😃 Meilleure source pour les calculs 
 
 Analyse vectorielle des lieux de singularité de la plate-forme de Gough-Stewart
 
--   ~~corpus.ulaval.ca/jspui/bitstream/20.500.11794/23444/1/28962.pdf~~
--   <https://stringfixer.com/fr/Stewart_platform>
+-   <https://corpus.ulaval.ca/jspui/bitstream/20.500.11794/23444/1/28962.pdf>{rel="nofollow"}
+-   <https://stringfixer.com/fr/Stewart_platform>{rel="nofollow"}
 -   <https://fr.lambdageeks.com/parallel-robot-kinematics/>
 -   <https://fr.wikipedia.org/wiki/Reymond_Clavel>
 -   <https://fr.wikipedia.org/wiki/Robot_Delta>
