@@ -121,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <p>Pour mon <a href="../../programmer_un_msp430_en_mode_ISP/">projet de programmation d’un MSP430 en mode ISP</a>, j’ai utilisé une LED RGB. C’est simplement trois LED dans un seul boîtier avec quatre pattes&nbsp;: une pour chaque couleur et une pour la masse.</p>
-<p>Jusque là, rien de bien méchant. Mais comme je n’avais qu’une LED de ce type et que je l’ai soudée sur mon <a href="https://www.adafruit.com/blog/2011/11/18/adafruit-perma-proto-half-sized-breadboard-pcb-3-pack/">Perma-Proto d’Adafruit</a>, il m’en fallait des nouvelles. Ni une, ni deux, j’ai commandé quatre <a href="https://shop.boxtec.ch/led-neopixel-8mm-p9823-p-42265.html">LED P9823-F8</a> chez Boxtec.</p>
+<p>Jusque là, rien de bien méchant. Mais comme je n’avais qu’une LED de ce type et que je l’ai soudée sur mon <a href="https://blog.adafruit.com/2011/11/18/adafruit-perma-proto-half-sized-breadboard-pcb-3-pack/">Perma-Proto d’Adafruit</a>, il m’en fallait des nouvelles. Ni une, ni deux, j’ai commandé quatre <a href="https://shop.boxtec.ch/led-neopixel-8mm-p9823-p-42265.html">LED P9823-F8</a> chez Boxtec.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="./images/67053.jpg" class="lightbox" title="ouilogique.com" data-gallery="quarto-lightbox-gallery-1"><img src="./images/67053.jpg" class="img-fluid figure-img"></a></p>
@@ -129,7 +129,7 @@ ul.task-list li input[type="checkbox"] {
 </figure>
 </div>
 <p>Mal m’en a pris, elles ne sont pas du tout du même type que ma LED RGB de base. En fait ce sont des LED adressables en PWM. Eh oui, elles contiennent de la logique capable de comprendre un signal PWM et de s’allumer en conséquence. Avec en plus la possibilité d’être mises en série.</p>
-<p>D’après Boxtec, la <a href="https://shop.boxtec.ch/led-neopixel-8mm-p9823-p-42265.html">LED P9823-F8</a> est compatible avec <a href="https://www.adafruit.com/datasheets/WS2812.pdf">le modèle WS2812 vendu par Adafruit</a>.</p>
+<p>D’après Boxtec, la <a href="https://shop.boxtec.ch/led-neopixel-8mm-p9823-p-42265.html">LED P9823-F8</a> est compatible avec <a href="https://cdn-shop.adafruit.com/datasheets/WS2812.pdf">le modèle WS2812 vendu par Adafruit</a>.</p>
 <p>Pour la programmation sur Arduino, j’ai trouvé deux librairies&nbsp;:</p>
 <ul>
 <li><a href="https://github.com/adafruit/Adafruit_NeoPixel">NeoPixels d’Adafruit</a></li>
@@ -453,7 +453,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
 <script src="../../js/target_blank.js"></script>
-<script>var lightboxQuarto = GLightbox({"loop":true,"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
 
 
 
