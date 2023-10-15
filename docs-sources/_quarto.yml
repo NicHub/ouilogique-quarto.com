@@ -39,8 +39,8 @@ website:
     center:
       - text: "{{< fa regular house >}}"
         file: index.qmd
-      - icon: github
-        href: https://github.com/NicHub
+      # - icon: github
+      #   href: https://github.com/NicHub
   navbar:
     right:
       - text: "{{< fa regular house >}}"
