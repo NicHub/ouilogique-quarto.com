@@ -92,6 +92,6 @@ for file in files:
                         print(file)
                         print(line)
 """
-{rel=“nofollow”}
-{:rel=“nofollow”}
+{rel="nofollow"}
+{:rel="nofollow"}
 """
