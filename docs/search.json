@@ -1789,7 +1789,7 @@
     "href": "posts/2015-09-27-NodeMCU_esp8266/index.html#hello-world",
     "title": "Mise en route d’une carte WeMos-LoLin avec le firmware NodeMCU et un module WiFi ESP8266",
     "section": "Hello World",
-    "text": "Hello World\nCréer un fichier init_1.lua\n-- init_1.lua\n-- Fait clignoter la LED de l’ESP8266\nled1 = 4\ngpio.mode( led1, gpio.OUTPUT )\nfor i=1,10 do\n    gpio.write( led1, gpio.HIGH )\n    tmr.delay( 0.1E6 )\n    gpio.write( led1, gpio.LOW )\n    tmr.delay( 1E6 )\nend\nprint( \"Coucou, c'est moi !\" )\nPour l’upload, créer un fichier upload.sh (voir ci-dessus).\nAlternativement, il est possible d’envoyer le fichier ligne par ligne avec screen ou CoolTerm.\nfile.open( \"init.lua\", \"w\" )\nfile.writeline([[ led1 = 4                          ]])\nfile.writeline([[ gpio.mode( led1, gpio.OUTPUT )    ]])\nfile.writeline([[ for i=1,10 do                     ]])\nfile.writeline([[     gpio.write( led1, gpio.HIGH ) ]])\nfile.writeline([[     tmr.delay( 0.1E6 )            ]])\nfile.writeline([[     gpio.write( led1, gpio.LOW )  ]])\nfile.writeline([[     tmr.delay( 1E6 )              ]])\nfile.writeline([[ end                               ]])\nfile.writeline([[ print( \"Coucou, c'est moi !\" )    ]])\nfile.close()"
+    "text": "Hello World\nCréer un fichier init_1.lua\n-- init_1.lua\n-- Fait clignoter la LED de l’ESP8266\nled1 = 4\ngpio.mode( led1, gpio.OUTPUT )\nfor i=1,10 do\n    gpio.write( led1, gpio.HIGH )\n    tmr.delay( 0.1E6 )\n    gpio.write( led1, gpio.LOW )\n    tmr.delay( 1E6 )\nend\nprint( \"Coucou, c'est moi !\" )\nPour l’upload, créer un fichier upload.sh (voir ci-dessus).\n\nComme indiqué ci-dessus, on peut aussi utiliser screen ou CoolTerm.\n\nfile.open( \"init.lua\", \"w\" )\nfile.writeline([[ led1 = 4                          ]])\nfile.writeline([[ gpio.mode( led1, gpio.OUTPUT )    ]])\nfile.writeline([[ for i=1,10 do                     ]])\nfile.writeline([[     gpio.write( led1, gpio.HIGH ) ]])\nfile.writeline([[     tmr.delay( 0.1E6 )            ]])\nfile.writeline([[     gpio.write( led1, gpio.LOW )  ]])\nfile.writeline([[     tmr.delay( 1E6 )              ]])\nfile.writeline([[ end                               ]])\nfile.writeline([[ print( \"Coucou, c'est moi !\" )    ]])\nfile.close()"
   },
   {
     "objectID": "posts/2015-09-27-NodeMCU_esp8266/index.html#exemple-avec-un-mini-serveur-web",
@@ -1838,7 +1838,7 @@
     "href": "posts/2016-10-22-esp8266-dht22-oled/index.html#matériel",
     "title": "Température et humidité avec un capteur DHT22 sur ESP8266",
     "section": "Matériel",
-    "text": "Matériel\n\nPullups I²C : 4.7 kΩ\nPullup DHT22 : 10 kΩ\nESP8266\nCapteur de température et d’humidité DHT22\nÉcran OLED 128×64"
+    "text": "Matériel\n\nPullups I²C : 4.7 kΩ\nPullup DHT22 : 10 kΩ\nESP8266\nCapteur de température et d’humidité DHT22\nÉcran OLED 128×64{rel=“nofollow”}"
   },
   {
     "objectID": "posts/2015-06-11-mooc_initiation_aux_microcontroleurs/index.html",

@@ -153,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/NodeMCU_esp8266_001.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="ouilogique.com"><img src="./images/NodeMCU_esp8266_001.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/NodeMCU_esp8266_001.jpg" class="lightbox" title="ouilogique.com" data-gallery="quarto-lightbox-gallery-1"><img src="./images/NodeMCU_esp8266_001.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">ouilogique.com</figcaption>
 </figure>
 </div>
@@ -177,7 +177,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="référence-fabricant">Référence fabricant</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/NodeMCU_esp8266_002_lowres.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="ouilogique.com"><img src="./images/NodeMCU_esp8266_002_lowres.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/NodeMCU_esp8266_002_lowres.jpg" class="lightbox" title="ouilogique.com" data-gallery="quarto-lightbox-gallery-2"><img src="./images/NodeMCU_esp8266_002_lowres.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">ouilogique.com</figcaption>
 </figure>
 </div>
@@ -242,7 +242,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="pinout">Pinout</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/NodeMCU_esp8266_lolin_pinout.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="ouilogique.com"><img src="./images/NodeMCU_esp8266_lolin_pinout.jpg" class="img-fluid figure-img"></a></p>
+<p><a href="./images/NodeMCU_esp8266_lolin_pinout.jpg" class="lightbox" title="ouilogique.com" data-gallery="quarto-lightbox-gallery-3"><img src="./images/NodeMCU_esp8266_lolin_pinout.jpg" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">ouilogique.com</figcaption>
 </figure>
 </div>
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>En C, avec le SDK d’Espressif <a href="http://bbs.espressif.com" rel="nofollow">http://bbs.espressif.com</a></li>
 <li>En C, avec <a href="https://github.com/SmingHub/Sming">Sming</a></li>
 <li><a href="#programmation-de-lesp8266-en-lua">En Lua (voir ci-dessous)</a></li>
-<li>En JavaScript, avec le firmware <a href="http://www.espruino.com/">Espruino</a></li>
+<li>En JavaScript, avec le firmware <a href="http://www.espruino.com/" rel="“nofollow”">Espruino</a></li>
 <li>En <a href="https://micropython.org">MicroPython</a></li>
 <li>En <a href="http://www.esp8266basic.com">BASIC</a></li>
 </ul>
@@ -291,7 +291,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Dans le menu <code>Outils</code></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/esp8266-configuration-arduino-c.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="ouilogique.com"><img src="./images/esp8266-configuration-arduino-c.png" class="img-fluid figure-img"></a></p>
+<p><a href="./images/esp8266-configuration-arduino-c.png" class="lightbox" title="ouilogique.com" data-gallery="quarto-lightbox-gallery-4"><img src="./images/esp8266-configuration-arduino-c.png" class="img-fluid figure-img"></a></p>
 <figcaption class="figure-caption">ouilogique.com</figcaption>
 </figure>
 </div>
@@ -347,7 +347,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="#esp8266-nodejs">esp8266 (Node.js)</a></li>
 <li><a href="#luatool">luatool</a></li>
 <li><a href="#nodemcu-uploader">nodemcu-uploader</a></li>
-<li><a href="#la-main">upload à la main</a></li>
+<li><a href="#à-la-main">upload à la main</a></li>
 </ul>
 <section id="esplorer" class="level3">
 <h3 class="anchored" data-anchor-id="esplorer">Esplorer</h3>
@@ -442,7 +442,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="cf">end</span></span>
 <span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span><span class="op">(</span> <span class="st">"Coucou, c'est moi !"</span> <span class="op">)</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Pour l’upload, créer un fichier <code>upload.sh</code> (voir ci-dessus).</p>
-<p>Alternativement, il est possible d’envoyer le fichier ligne par ligne avec <a href="https://developer.apple.com/library/mac/documentation/Darwin/Reference/ManPages/man1/screen.1.html">screen</a> ou <a href="http://freeware.the-meiers.org">CoolTerm</a>.</p>
+<blockquote class="blockquote">
+<p><a href="#à-la-main">Comme indiqué ci-dessus</a>, on peut aussi utiliser screen ou CoolTerm.</p>
+</blockquote>
 <div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">file.open</span><span class="er">(</span> <span class="st">"init.lua"</span><span class="ex">,</span> <span class="st">"w"</span> <span class="kw">)</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">file.writeline</span><span class="er">(</span><span class="kw">[[</span> led1 <span class="ot">=</span> 4                          <span class="kw">]])</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ex">file.writeline</span><span class="er">(</span><span class="kw">[[</span> gpio.mode<span class="op">(</span> led1, gpio.OUTPUT <span class="op">)</span>    <span class="kw">]])</span></span>
@@ -787,7 +789,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <script src="../../js/file_list.js"></script>
 <script src="../../js/prev_next_buttons.js"></script>
 <script src="../../js/target_blank.js"></script>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":true,"openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":true});</script>
 
 
 
