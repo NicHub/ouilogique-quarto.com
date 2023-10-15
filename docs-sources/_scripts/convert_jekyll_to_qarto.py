@@ -109,13 +109,13 @@ def extract_img_links_and_copy_img(dest_dir, dest_file):
             or ".png" in link.lower()
             or ".svg" in link.lower()
         ):
-            if "../../" in link:
+            if REL_HOME in link:
                 COUNT_LINKS += 1
                 img_name = os.path.split(link)[-1]
                 img_name = os.path.split(link)[-1]
                 content = content.replace(link, f"./images/{img_name}")
                 source_img_path = link.replace(
-                    "../../", os.path.expanduser(SOURCE_PATH)
+                    REL_HOME, os.path.expanduser(SOURCE_PATH)
                 )
                 dest_dir_img = f"{dest_dir}images/"
                 os.makedirs(f"{dest_dir_img}", exist_ok=True)
@@ -315,7 +315,7 @@ def adapt_links(dest_file):
                 "{:rel",
                 "{rel",
             )
-            pos1 = line.find("../../files")
+            pos1 = line.find(f"{REL_HOME}files")
             if pos1 > -1:
                 pos2 = line.find(")", pos1)
                 link = line[pos1:pos2]
@@ -417,17 +417,16 @@ def create_prev_next_links_js():
             non_draft_files.append(dest_file)
 
     prev_next_links = []
-    home_url = "../../"
     for id, _file in enumerate(sorted(non_draft_files, reverse=True)):
         inject_js(_file)
-        _next = f"../{non_draft_files[id - 1]}" if id > 0 else home_url
+        _next = f"../{non_draft_files[id - 1]}" if id > 0 else REL_HOME
         _prev = (
             f"../{non_draft_files[id + 1]}"
             if id < len(non_draft_files) - 1
-            else home_url
+            else REL_HOME
         )
-        _prev = _prev.replace("/index.qmd", "").replace("../../posts/", "../")
-        _next = _next.replace("/index.qmd", "").replace("../../posts/", "../")
+        _prev = _prev.replace("/index.qmd", "").replace(f"{REL_HOME}posts/", "../")
+        _next = _next.replace("/index.qmd", "").replace(f"{REL_HOME}posts/", "../")
         _file = os.path.split(os.path.split(_file)[0])[-1].replace(".md", "")
         prev_next_links.append(
             {
@@ -466,14 +465,14 @@ def main():
 
 
 SOURCE_PATH = os.path.expanduser("~/kdnicomac/sites/ouilogique.com/")
-# SOURCE_PATH_POSTS = os.path.expanduser("~/Sites/ouilogique.com/_posts/blog/")
-SOURCE_PATH_POSTS = os.path.expanduser("~/kdnicomac/sites/ouilogique.com/_posts/blog/")
+SOURCE_PATH_POSTS = os.path.expanduser("~/kdnicomac/sites/ouilogique.com/_posts/")
 DEST_PATH = "../"
 DEST_PATH_POSTS = "../posts/"
 FILES = sorted(os.listdir(SOURCE_PATH_POSTS), reverse=True)
 # FILES = [
 #     "2019-03-27-plateforme-de-stewart-esp32.md",
 # ]
+REL_HOME = "../"
 
 COUNT_LINKS = 0
 if __name__ == "__main__":
