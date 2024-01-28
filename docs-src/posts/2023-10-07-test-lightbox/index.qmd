@@ -47,6 +47,7 @@ description="The Edgartown Lighthouse is a short walk from downtown and has beau
 Options for lightbox can be passed using chunk options.
 
 ```{r}
+#| label: Simple demo R plot 1
 #| fig-cap: Simple demo R plot
 #| lightbox:
 #|   group: r-graph
@@ -55,6 +56,7 @@ plot(1:10, rnorm(10))
 ```
 
 ```{r}
+#| label: Plot about cars data
 #| fig-cap: Plot about cars data
 #| lightbox:
 #|   group: r-graph
@@ -65,6 +67,7 @@ plot(cars)
 It is possible to create several plots, and group them in a lightbox gallery. Use list in YAML for options when you have several plots, on per plot.
 
 ```{r}
+#| label: plots
 #| fig-cap:
 #|   - Caption for first plot
 #|   - Caption for second plot
@@ -80,6 +83,7 @@ plot(cars)
 When `lightbox: auto` in main YAML config, you can opt-out lightbox on a plot by setting `lightbox: false`
 
 ```{r}
+#| label: mtcars
 #| fig-cap: mtcars
 #| lightbox: false
 plot(mtcars)
@@ -97,6 +101,7 @@ license](https://unsplash.com/license), view originals below:
 -   [Edgartown Sailboat](https://unsplash.com/photos/IiLiz7XpQpI)
 
 ```{r}
+#| label: Simple demo R plot 2
 #| fig-cap: Simple demo R plot
 #| lightbox:
 #|   group: r-graph

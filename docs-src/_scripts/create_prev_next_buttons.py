@@ -60,15 +60,19 @@ def readyaml_header(file_path):
     yaml_header = ""
     content = ""
     cnt = 0
-    with open(file_path, "rt", encoding="utf-8") as _f:
-        for line in _f:
-            if line[:3] == "---":
-                cnt += 1
-                continue
-            if cnt < 2:
-                yaml_header += line
-            else:
-                content += line
+    try:
+        with open(file_path, "rt", encoding="utf-8") as _f:
+            for line in _f:
+                if line[:3] == "---":
+                    cnt += 1
+                    continue
+                if cnt < 2:
+                    yaml_header += line
+                else:
+                    content += line
+    except Exception as _e:
+        print(_e)
+        print(file_path)
     yaml_header = yaml.safe_load(yaml_header)
     return yaml_header, content
 

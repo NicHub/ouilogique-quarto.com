@@ -141,15 +141,20 @@ def readyaml_header(file_path):
     yaml_header = ""
     content = ""
     cnt = 0
-    with open(file_path, "rt", encoding="utf-8") as _f:
-        for line in _f:
-            if line[:3] == "---":
-                cnt += 1
-                continue
-            if cnt < 2:
-                yaml_header += line
-            else:
-                content += line
+    try:
+        with open(file_path, "rt", encoding="utf-8") as _f:
+            for line in _f:
+                if line[:3] == "---":
+                    cnt += 1
+                    continue
+                if cnt < 2:
+                    yaml_header += line
+                else:
+                    content += line
+    except Exception as _e:
+        print(_e)
+        print(file_path)
+
     # print(yaml_header)
     # print(content)
 
@@ -468,7 +473,11 @@ SOURCE_PATH = os.path.expanduser("~/kdnicomac/sites/ouilogique.com/")
 SOURCE_PATH_POSTS = os.path.expanduser("~/kdnicomac/sites/ouilogique.com/_posts/")
 DEST_PATH = "../"
 DEST_PATH_POSTS = "../posts/"
-FILES = sorted(os.listdir(SOURCE_PATH_POSTS), reverse=True)
+FILES = []
+for file in sorted(os.listdir(SOURCE_PATH_POSTS), reverse=True):
+    if file.endswith(".md"):
+        FILES.append(file)
+SystemExit()
 # FILES = [
 #     "2019-03-27-plateforme-de-stewart-esp32.md",
 # ]

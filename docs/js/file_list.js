@@ -1,4 +1,5 @@
 file_list = [
+"/posts/2023-11-11-ne-pressez-plus-sur-boot-pour-flasher-un-esp/",
 "/posts/2023-10-07-test-lightbox/",
 "/posts/2023-05-30-flasher-un-bootloader/",
 "/posts/2023-03-09-installer-raspberry-pi-os-sur-raspberry-pi-sans-clavier-ni-souris-ni-ecran/",

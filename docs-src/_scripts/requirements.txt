@@ -1,5 +1,5 @@
 # python3 -m pip install --upgrade pip
-# python3 -m pip install -r requirements.txt
+# python3 -m pip install --upgrade -r requirements.txt
 # See: https://learnpython.com/blog/python-requirements-file/
 # python3 -m pip freeze
 # python3 -m pip list --outdated

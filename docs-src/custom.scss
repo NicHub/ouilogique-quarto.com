@@ -76,10 +76,7 @@ $final_angle: 90deg;
     }
 }
 
-
-//
-
-.cls-site-logo img,
+.cls-site-logo img
 {
     animation-name: rotateImageOnPageLoadImg;
     animation-duration: 1.0s;
@@ -99,6 +96,7 @@ $final_angle: 90deg;
     }
 }
 
+// Indique que le lien est cassé.
 [rel="nofollow"] {
 	text-decoration: line-through;
 	color:grey;

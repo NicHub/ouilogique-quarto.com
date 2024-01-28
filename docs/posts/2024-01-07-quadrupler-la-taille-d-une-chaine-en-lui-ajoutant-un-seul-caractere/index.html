@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr" xml:lang="fr"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Nico">
+
+<title>Comment&nbsp;quadrupler la&nbsp;taille&nbsp;d’une&nbsp;chaine en&nbsp;lui&nbsp;ajoutant un&nbsp;seul&nbsp;caractère&nbsp;? – ouilogique.com</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<link href="../../favicon.ico" rel="icon">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "language": {
+    "search-no-results-text": "Pas de résultats",
+    "search-matching-documents-text": "documents trouvés",
+    "search-copy-link-title": "Copier le lien vers la recherche",
+    "search-hide-matches-text": "Cacher les correspondances additionnelles",
+    "search-more-match-text": "correspondance de plus dans ce document",
+    "search-more-matches-text": "correspondances de plus dans ce document",
+    "search-clear-button-title": "Effacer",
+    "search-detached-cancel-button-title": "Annuler",
+    "search-submit-button-title": "Envoyer",
+    "search-label": "Recherche"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html" rel="" target="">
+ <span class="menu-text"><i class="fa-regular fa-house" aria-label="house"></i></span></a>
+  </li>  
+</ul>
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Comment&nbsp;quadrupler la&nbsp;taille&nbsp;d’une&nbsp;chaine en&nbsp;lui&nbsp;ajoutant un&nbsp;seul&nbsp;caractère&nbsp;?</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Auteur·rice</div>
+    <div class="quarto-title-meta-contents">
+             <p>Nico </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Date de publication</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">7 janvier 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+
+<p>Dans cet article, nous allons découvrir qu’avec Python, il est possible de quadrupler la mémoire nécessaire à une chaine en ne lui ajoutant qu’un seul caractère.</p>
+<p>Les versions utilisées pour les tests sont&nbsp;:</p>
+<ul>
+<li>Python 3.11.6</li>
+<li>Python 3.12.1</li>
+</ul>
+<p>L’OS est macOS Sonoma 14.2.1 et les interpréteurs Python ont été installés avec <a href="https://brew.sh/">Homebrew</a>.</p>
+<blockquote class="blockquote">
+<p>N.B. J’aurais bien voulu tester sur CircuitPython sur un ESP32, malheureusement, la fonction <code>sys.getsizeof()</code> n’existe pas sur cette plateforme.</p>
+</blockquote>
+<p>L’idée m’est venue d’écrire cet article à la suite d’une <a href="https://stackoverflow.com/q/77310610/3057377">question sur Stackoverflow</a> concernant la comparaison entre la taille de deux chaines&nbsp;: une chaine dans un fichier&nbsp;UTF-8 stocké sur un disque et la même chaine dans une variable Python de type <code>string</code>. L’auteur s’étonne que la taille en mémoire soit 4&nbsp;fois plus grande que celle sur disque. Mais est-ce si surprenant&nbsp;? Voyons cela d’un peu plus près.</p>
+<section id="différences-de-tailles" class="level2">
+<h2 class="anchored" data-anchor-id="différences-de-tailles">Différences de tailles</h2>
+<p>Il faut d’abord savoir que Python enregistre les chaines avec des caractères codés sur 1, 2 ou 4&nbsp;octets, mais tous les caractères d’une même chaine doivent être codés avec le même nombre d’octets. C’est “l’encodage à taille fixe” ou <em>“fixed-width encoding”</em> en anglais.</p>
+<p>En UTF-8, les choses sont un peu différentes, les caractères d’une chaine sont stockés sur 1, 2, 3 ou 4&nbsp;octets, mais il est possible d’utiliser des caractères codés avec des nombres différents d’octets dans la même chaine. C’est “l’encodage à taille variable”, ou <em>“variable-width encoding”</em> en anglais.</p>
+<p>Cette différence entre taille fixe et taille variable a une conséquence intéressante&nbsp;: il est possible de quadrupler la taille d’une chaine en mémoire en lui ajoutant un seul caractère. Voici comment.</p>
+</section>
+<section id="cas-où-la-taille-est-presque-identique-en-python-et-utf-8" class="level2">
+<h2 class="anchored" data-anchor-id="cas-où-la-taille-est-presque-identique-en-python-et-utf-8">Cas où la taille est (presque) identique en Python et UTF-8</h2>
+<p>Tout d’abord, créons une chaine contenant 1000&nbsp;fois le même caractère codé sur 1&nbsp;octet, par exemple le caractère <code>A</code> (<code>chr(65)</code>) et regardons la taille du résultat.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"# chaine                         : 1000 * chr(65)"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>s1 <span class="op">=</span> <span class="dv">1000</span> <span class="op">*</span> <span class="bu">chr</span>(<span class="dv">65</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"taille de la chaine python (RAM) : </span><span class="sc">{</span>sys<span class="sc">.</span>getsizeof(s1)<span class="sc">}</span><span class="ss"> octets"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 1049 avec Python 3.11</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 1041 avec Python 3.12</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(s1))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;class 'str'&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On voit que cette chaine fait un peu plus que 1000&nbsp;octets. Les 1000&nbsp;premiers octets sont utilisés pour les 1000&nbsp;caractères <code>A</code> et les quelques octets restants sont utilisés pour enregistrer des métadonnées. Mais laissons ça de côté pour l’instant.</p>
+<p>Convertissons maintenant cette chaine en sa représentation&nbsp;UTF-8.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>s1u <span class="op">=</span> s1.encode(<span class="st">"utf-8"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"taille de la chaine utf-8 (RAM)  : </span><span class="sc">{</span>sys<span class="sc">.</span>getsizeof(s1u)<span class="sc">}</span><span class="ss"> octets"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1033 Python 3.11 et 3.12</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(s1u))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># &lt;class 'bytes'&gt;</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On constate que la taille de la chaine codée en UTF-8 et stockée en mémoire vive est d’environ 1000&nbsp;octets. Comme pour la chaine précédente, Python ajoute quelques octets pour les métadonnées. Cette chaîne est stockée avec le type <code>bytes</code>, c’est-à-dire une séquence d’octets immuables.</p>
+<p>Convertissons une deuxième fois cette chaine, mais cette fois-ci, enregistrons-la sur le disque.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fname <span class="op">=</span> <span class="st">"s1u.txt"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="bu">file</span><span class="op">=</span>fname, mode<span class="op">=</span><span class="st">"wt"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> _f:</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    _f.write(s1)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"taille de la chaine utf-8 (HD)   : </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>getsize(fname)<span class="sc">}</span><span class="ss"> octets"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1000 Python 3.11 et 3.12</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On constate que la taille de la chaine codée en UTF-8 et stockée sur un disque dur est exactement 1000&nbsp;octets.</p>
+<p>Conclusion&nbsp;: si on fait abstraction de la place prise par les métadonnées qui ne dépend pas de la taille de la chaine, on voit qu’une chaine qui contient plusieurs occurrences du caractère <code>A</code> a la même taille dans les trois cas&nbsp;: 1.&nbsp;en mémoire au format Python, 2.&nbsp;en mémoire au format&nbsp;UTF-8, 3.&nbsp;sur un disque au format&nbsp;UTF-8.</p>
+<p>Voyons maintenant quand cette égalité n’est plus vraie.</p>
+</section>
+<section id="quadruplons-la-taille-de-la-chaine-python" class="level2">
+<h2 class="anchored" data-anchor-id="quadruplons-la-taille-de-la-chaine-python">Quadruplons la taille de la chaine Python</h2>
+<p>Ajoutons le caractère <code>😈</code> (<code>chr(128520)</code>) à notre chaine initiale et regardons quelle est la taille du résultat. À noter que ce caractère est codé sur 4&nbsp;octets autant dans une chaine Python qu’une chaine UTF-8.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>s2 <span class="op">=</span> s1 <span class="op">+</span> <span class="bu">chr</span>(<span class="dv">128520</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"taille de la chaine python (RAM) : </span><span class="sc">{</span>sys<span class="sc">.</span>getsizeof(s2)<span class="sc">}</span><span class="ss"> octets"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 4080 avec Python version == 3.11</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 4064 avec Python version == 3.12</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>On constate que sa taille est maintenant de 4000&nbsp;octets, plus quelques octets pour les métadonnées. Sa taille en mémoire a donc quadruplé en ajoutant un seul caractère&nbsp;! Bingo, c’est l’effet de l’encodage à largeur fixe&nbsp;! Si un caractère de la chaine est codé sur 4&nbsp;octets, alors tous les autres le seront aussi. On constate également que la taille des métadonnées a légèrement augmenté car les caractères seuls ne prennent que 1001&nbsp;×&nbsp;4&nbsp;=&nbsp;4004&nbsp;octets. À noter également qu’en Python, les chaines sont immuables (<em>immutables</em> en anglais). Ce n’est donc pas la chaine initiale qui a quadruplé de taille, mais une copie modifiée de celle-ci.</p>
+<p>Regardons maintenant ce qui se passe si on convertit notre nouvelle chaine en UTF-8 et qu’on mesure la taille du résultat.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>s2u <span class="op">=</span> s2.encode(<span class="st">"utf-8"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"taille de la chaine utf-8 (RAM)  : </span><span class="sc">{</span>sys<span class="sc">.</span>getsizeof(s2u)<span class="sc">}</span><span class="ss"> octets"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1037 Python 3.11 et 3.12</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fname <span class="op">=</span> <span class="st">"s2u.txt"</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="bu">file</span><span class="op">=</span>fname, mode<span class="op">=</span><span class="st">"wt"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> _f:</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    _f.write(s2)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"taille de la chaine utf-8 (HD)   : </span><span class="sc">{</span>os<span class="sc">.</span>path<span class="sc">.</span>getsize(fname)<span class="sc">}</span><span class="ss"> octets"</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 1004 Python 3.11 et 3.12</span></span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Résultat des courses, le rapport de taille entre la chaine Python et la chaine&nbsp;UTF-8 est donc de&nbsp;4&nbsp;!</strong></p>
+<p>Si on refaisait l’exercice en utilisant 1000&nbsp;×&nbsp;<code>😈</code> et 1&nbsp;×&nbsp;<code>A</code>, on trouverait un rapport de taille proche de&nbsp;1 (en faisant abstraction des métadonnées).</p>
+<p>On constate également qu’en UTF-8 la taille de s2 est 4&nbsp;octets plus grande que celle de s1. Ceci est dû au fait qu’UTF-8 enregistre les caractères avec leur taille initiale, donc 1000&nbsp;×&nbsp;1&nbsp;octet pour le caractère&nbsp;<code>A</code> et 1&nbsp;×&nbsp;4&nbsp;octets pour le caractère <code>😈</code>. Comme précédemment, la chaine en mémoire prend quelques octets supplémentaires pour les métadonnées.</p>
+<p>Dans cet article, je n’ai parlé que des caractères codés sur 1 ou 4 octets, mais le raisonnement peut être étendu aux caractères codés sur 2 ou 3&nbsp;octets. Cependant, il faut prendre quelques précautions car les plages des tailles en octets ne se confondent pas pour tous les points de code. Par exemple, les points de code&nbsp;2048 à 65’535 sont codés sur 3&nbsp;octets en UTF-8 mais sur 2&nbsp;octets en Python. Il y a d’autres différences qui feront l’objet d’un autre article.</p>
+<p>En conclusion, le rapport entre la taille mémoire utilisée par Python et la taille en UTF-8 peut varier d’un facteur allant de 1 à&nbsp;4. Ces chiffres ne sont pas valables pour les très petites chaines à cause de la taille des métadonnées. Par contre dès que les chaines sont plus grandes, ça fonctionne très bien. J’ai mesuré ce rapport sur une dizaine de fichiers contenant des livres entiers en français et je trouve un rapport moyen de 1.9.</p>
+</section>
+<section id="réponse-à-la-question" class="level2">
+<h2 class="anchored" data-anchor-id="réponse-à-la-question">Réponse à la question</h2>
+<p>Concernant la <a href="https://stackoverflow.com/q/77310610/3057377">question sur Stackoverflow</a>, le fichier qui posait question peut être téléchargé ici&nbsp;: <a href="https://data.statmt.org/cc-100/it.txt.xz" class="uri">https://data.statmt.org/cc-100/it.txt.xz</a>.</p>
+<p>Il est assez volumineux, mais Python s’en sort très bien concernant la vitesse de lecture. J’arrive à créer le décompte ci-dessous en moins de 600&nbsp;ms sur un MacBook Pro de 2021 avec une puce M1 Pro (qui peut faire mieux en Python&nbsp;?).</p>
+<p>Et la réponse à la question, c’est que le fichier contient beaucoup plus de caractères codés sur 1&nbsp;octet que de caractères codés sur 2, 3 ou 4&nbsp;octets. C’est contre-intuitif, mais maintenant, vous savez pourquoi c’est comme ça.</p>
+<pre><code>    1 byte·s ×    149_832_252 occurrence·s =     149_832_252 byte·s on disk
+    2 byte·s ×        941_043 occurrence·s =       1_882_086 byte·s on disk
+    3 byte·s ×        583_296 occurrence·s =       1_749_888 byte·s on disk
+    4 byte·s ×          3_208 occurrence·s =          12_832 byte·s on disk
+                               TOTAL UTF-8 =     153_477_058 byte·s on disk
+
+                     Total character count =     151_359_799 character·s
+Size in Python string format = 151_359_799 × 4 = 605_439_272 byte·s in RAM
+
+                   Ratio Python String / UTF-8 =         3.9</code></pre>
+
+
+</section>
+
+<p>© ouilogique.com</p></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copié");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copié");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../../index.html"><i class="fa-regular fa-house" aria-label="house"></i></a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script src="../../js/file_list.js"></script>
+<script src="../../js/prev_next_buttons.js"></script>
+<script src="../../js/target_blank.js"></script>
+
+
+
+
+</body></html>
