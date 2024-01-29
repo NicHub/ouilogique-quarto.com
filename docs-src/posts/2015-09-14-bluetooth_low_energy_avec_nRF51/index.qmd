@@ -6,8 +6,6 @@ author: Nico
 categories: []
 date: 2015-09-14 00:00:00+01:00
 draft: false
-filters:
-- lightbox
 image: ./images/banner_2015-09-14-bluetooth_low_energy_avec_nRF51.jpg
 lang: fr
 layout: page

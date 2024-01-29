@@ -5,8 +5,6 @@ author: Nico
 categories: []
 date: 2016-11-01 20:17:00+01:00
 draft: false
-filters:
-- lightbox
 lang: fr
 layout: page
 lightbox: auto

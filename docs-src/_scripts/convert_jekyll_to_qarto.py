@@ -37,7 +37,7 @@ def make_yaml_header_compliant(fpath):
     yaml_header["aliases"] += [new_fpath]
     del yaml_header["redirect_from"]
     yaml_header["pagetitle"] = "{{< meta title >}} &#8211; ouilogique.com"
-    yaml_header["filters"] = ["lightbox"]
+    # yaml_header["filters"] = ["lightbox"]
     yaml_header["lightbox"] = "auto"
 
     yaml_header = f"---\n{yaml.safe_dump(yaml_header, allow_unicode=True, indent=4, width=4)}---\n"

@@ -12,8 +12,6 @@ categories:
 - nRF51
 date: 2015-05-28 12:00:00+02:00
 draft: false
-filters:
-- lightbox
 lang: fr
 layout: page
 lightbox: auto
