@@ -5,8 +5,6 @@ author: Nico
 categories: []
 date: 2015-11-01 00:26:00+01:00
 draft: false
-filters:
-- lightbox
 image: ./images/banner_2015-11-01-Strinity_Sensors_Cobber.jpg
 lang: fr
 layout: page
