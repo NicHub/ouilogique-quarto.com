@@ -45,7 +45,6 @@ Il peut être téléchargé ici :
 On a le choix entre plusieurs moutures de l’OS.
 Celle que je préfère est la version “Raspberry Pi OS (64-bit)”.
 La raison est que j’ai besoin d’un OS 64 bit pour faire tourner Prince (<https://www.princexml.com/>).
-En cas de doute, il vaut mieux choisir l’OS recommandé, c’est-à-dire “Raspberry Pi OS (32-bit)”.
 
 ## Choix du terminal
 
@@ -102,20 +101,6 @@ arp -a
 nmap -sP 192.168.1.0/24
 ```
 
-## Mise à jour de Raspbian
-
-```bash
-sudo apt-get -y update       # Télécharge les informations des paquets à partir des sources configurées.
-sudo apt-get -y upgrade      # Mets à jour les paquets installés sans en supprimer.
-sudo apt-get -y dist-upgrade # Installe les versions candidates des paquets installés en installant ou en supprimant d’autres paquets si nécessaire.
-sudo apt-get -y autoremove   # Supprime les dépendances qui ne sont plus utilisées.
-```
-
-À voir aussi :
-
--   <https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade>
--   <https://askubuntu.com/a/527421/949794>
-
 ## Configuration
 
 ```bash
@@ -157,6 +142,29 @@ sudo raspi-config
 # Advanced Options / Expand filesystem
 ```
 
+## Mise à jour de Raspbian
+
+```bash
+###
+# ! La langue du système doit être configurée avec raspi-config avant la mise à jour.
+##
+
+# Télécharge les informations des paquets à partir des sources configurées.
+# Et mets à jour les paquets installés sans en supprimer.
+sudo apt-get -y update && sudo apt-get -y upgrade
+
+# Installe les versions candidates des paquets installés en installant ou en supprimant d’autres paquets si nécessaire.
+sudo apt-get -y dist-upgrade
+
+# Supprime les dépendances qui ne sont plus utilisées.
+sudo apt-get -y autoremove
+```
+
+À voir aussi :
+
+-   <https://www.lecoindunet.com/difference-apt-update-upgrade-full-upgrade>
+-   <https://askubuntu.com/a/527421/949794>
+
 ## SSH
 
 **Sur l’ordinateur hôte**
@@ -166,6 +174,17 @@ sudo raspi-config
 # il faut le créer avec `ssh-keygen`.
 ssh-keygen # Accepter toutes les valeurs par défaut.
 cat ~/.ssh/id_rsa.pub # + Copier le résultat dans le presse-papier.
+```
+
+**Édit du 2025-08-03**
+
+> Infomaniak impose une clé SSH avec un algorithme sûr, par exemple ed25519 :
+> <https://www.infomaniak.com/fr/support/faq/2054/se-connecter-avec-cle-ssh>.
+> À vérifier si ça fonctionne aussi sur RPi.
+
+```bash
+ssh-keygen -t ed25519
+cat ~/.ssh/id_ed25519.pub
 ```
 
 **Sur le RPi**
@@ -224,9 +243,7 @@ Par exemple RealVNC :
 -   <https://www.realvnc.com/en/connect/download/viewer/>.
 
 > N.B. Le client VNC installé par défaut sur macOS ne fonctionne pas pour se connecter au serveur VNC du RPi.
-> L’erreur retournée est<br>
-> _Le logiciel de l’ordinateur distant semble ne pas être compatible avec cette version de Partage d’écran._<br>
-> `bash /System/Library/CoreServices/Applications/Screen\ Sharing.app`
+> L’erreur retournée est<br>_Le logiciel de l’ordinateur distant semble ne pas être compatible avec cette version de Partage d’écran._<br>`bash /System/Library/CoreServices/Applications/Screen\ Sharing.app`
 
 ## Enlever les programmes inutiles
 
@@ -299,6 +316,8 @@ Par exemple,
 
 -   `F12 %` scinde le volet actuel en deux volets verticaux.
 -   `F12 |` scinde le volet actuel en deux volets horizontaux.
+-   `F12 C-i` active le volet suivant.
+-   `F12 C-o` décale le contenu de chaque volet.
 
 La liste de toutes les fonctions `F12` est disponible avec la commande `F12 ?`.
 
@@ -377,7 +396,6 @@ tmux set-option -g mouse on
 tmux set-option -g mouse off
 ```
 
-
 ```bash
 # https://ostechnix.com/install-tmux-plugin-manager/
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -392,18 +410,16 @@ set -g @plugin 'tmux-plugins/tmux-sensible'
 run '~/.tmux/plugins/tpm/tpm'
 
 
-``````
-
+```
 
 À voir aussi :
 
-- <https://tmuxcheatsheet.com/>
-- [Tmux has forever changed the way I write code.]
-- [Tutorial Install And Use Tmux on MacOS]
+-   <https://tmuxcheatsheet.com/>
+-   [Tmux has forever changed the way I write code.]
+-   [Tutorial Install And Use Tmux on MacOS]
 
 [Tmux has forever changed the way I write code.]: https://youtu.be/DzNmUNvnB04
 [Tutorial Install And Use Tmux on MacOS]: https://blog.eldernode.com/install-and-use-tmux-on-macos/
-
 
 ### GNU screen
 
@@ -526,7 +542,7 @@ Raspbian Stretch propose la version 3.5 de Python.
 Comme Python 3.6 apporte de nouvelles fonctionnalités comme les _f-strings_ et que le module `asyncio` a été amélioré, je pense que c’est intéressant de l’installer aussi.
 L’idée est aussi de pouvoir tester le module [quart][quart].
 
-Source : <https://liftcodeplay.com/2017/06/30/how-to-install-python-3-6-on-raspbian-linux-for-raspberry-pi/>
+Source : <https://liftcodeplay.com/2017/06/30/how-to-install-python-3-6-on-raspbian-linux-for-raspberry-pi/>{rel="nofollow"}
 Les versions de Python disponibles sont téléchargeables à : <https://www.python.org/ftp/python/>
 Temps d’installation : environ 30 min.
 Cette procédure n’écrase pas les versions de Python existantes.
@@ -569,7 +585,7 @@ sudo python3.6 -m pip install --upgrade pip
 sudo python3.6 -m pip install quart
 ```
 
-[quart]: https://gitlab.com/pgjones/quart
+[quart]: https://github.com/pallets/quart/
 
 ### picocom
 
@@ -721,6 +737,10 @@ Voici quelques explications sur ces informations.
 -   [What you need to know about disks and disk partitions in Linux](https://linuxbsdos.com/2021/11/27/what-you-need-to-know-about-disks-and-disk-partitions-in-linux/).
 -   [What is NVMe SSD technology?](https://www.kingston.com/en/ssd/what-is-nvme-ssd-technology)
 -   [What Is an MMC Card - Full Guide](https://recoverit.wondershare.com/memorycard-recovery/what-is-mmc-card.html)
+
+## Configurer les interfaces réseaux
+
+Pour activer ou désactiver les différentes interfaces réseaux, on peut utiliser `nmtui`.
 
 ## À voir aussi
 

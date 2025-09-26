@@ -396,7 +396,7 @@ Fiche technique des boards WROOM, WROVER et WROVER-B²&nbsp;&nbsp;: GPIO 6, 7, 8
 <blockquote class="blockquote">
 <p>ESP32-D2WD’s pins GPIO16, GPIO17, SD_CMD, SD_CLK, SD_DATA_0 and SD_DATA_1 are used for connecting the embedded flash, and are not recommended for other uses.</p>
 </blockquote>
-<p><strong>² Fiche technique des boards WROOM, WROVER et WROVER-B</strong> <a href="https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf">Fiche technique WROOM</a> <a href="https://www.espressif.com/sites/default/files/documentation/esp32-wrover_datasheet_en.pdf">Fiche technique WROVER</a> <a href="https://www.espressif.com/sites/default/files/documentation/esp32-wrover-b_datasheet_en.pdf">Fiche technique WROVER-B</a> Fin du chapitre 2.2 (Pin Description)</p>
+<p><strong>² Fiche technique des boards WROOM, WROVER et WROVER-B</strong> <a href="https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32_datasheet_en.pdf">Fiche technique WROOM</a> <a href="https://www.espressif.com/sites/default/files/documentation/esp32-wrover_datasheet_en.pdf" rel="nofollow">Fiche technique WROVER</a> <a href="https://www.espressif.com/sites/default/files/documentation/esp32-wrover-b_datasheet_en.pdf">Fiche technique WROVER-B</a> Fin du chapitre 2.2 (Pin Description)</p>
 <blockquote class="blockquote">
 <p>Pins SCK/CLK, SDO/SD0, SDI/SD1, SHD/SD2, SWP/SD3 and SCS/CMD, namely, GPIO6 to GPIO11 are connected to the integrated SPI flash integrated on the module and are not recommended for other uses.</p>
 </blockquote>
@@ -430,7 +430,7 @@ Fiche technique des boards WROOM, WROVER et WROVER-B²&nbsp;&nbsp;: GPIO 6, 7, 8
 <p>💥 ⇒ Différences entre Espressif et Wemos 🚫 ⇒ Broches à ne pas utiliser</p>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 12%">
+<col style="width: 11%">
 <col style="width: 13%">
 <col style="width: 15%">
 <col style="width: 13%">
@@ -644,10 +644,61 @@ Fiche technique des boards WROOM, WROVER et WROVER-B²&nbsp;&nbsp;: GPIO 6, 7, 8
 </tr>
 </tbody>
 </table>
-
-
 </section>
 </section>
+</section>
+<section id="pinout-ttgo-lora" class="level2">
+<h2 class="anchored" data-anchor-id="pinout-ttgo-lora">Pinout TTGO LoRa</h2>
+<p>LoRa DIO2 et DIO1 doivent être connectés à GPIO32 et GPIO33 respectivement. Source&nbsp;: <a href="https://github.com/LilyGO/TTGO-LORA32/issues/3#issuecomment-363007465" class="uri">https://github.com/LilyGO/TTGO-LORA32/issues/3#issuecomment-363007465</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./images/ttgo-lora-002.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="Pinout TTGO LoRa"><img src="./images/ttgo-lora-002.jpg" class="img-fluid figure-img" alt="Pinout TTGO LoRa"></a></p>
+<figcaption>Pinout TTGO LoRa</figcaption>
+</figure>
+</div>
+</section>
+<section id="pinout-xiao-nrf52840" class="level2">
+<h2 class="anchored" data-anchor-id="pinout-xiao-nrf52840">Pinout XIAO nRF52840</h2>
+<p>Page du produit&nbsp;: <a href="https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html" class="uri">https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html</a></p>
+<p>Infos techniques&nbsp;: <a href="https://wiki.seeedstudio.com/XIAO_BLE/" class="uri">https://wiki.seeedstudio.com/XIAO_BLE/</a></p>
+<p>Schéma de la version Sense&nbsp;: <a href="https://files.seeedstudio.com/wiki/XIAO-BLE/Seeed-Studio-XIAO-nRF52840-Sense-v1.1.pdf" class="uri">https://files.seeedstudio.com/wiki/XIAO-BLE/Seeed-Studio-XIAO-nRF52840-Sense-v1.1.pdf</a></p>
+<!--
+![Pinout XIAO-nRF52840][Pinout XIAO-nRF52840]
+
+[Pinout XIAO-nRF52840]: ./docs/XIAO-nRF52840.jpg
+ -->
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./images/XIAO-nRF52840-2.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="Pinout XIAO-nRF52840 v2"><img src="./images/XIAO-nRF52840-2.jpg" class="img-fluid figure-img" alt="Pinout XIAO-nRF52840 v2"></a></p>
+<figcaption>Pinout XIAO-nRF52840 v2</figcaption>
+</figure>
+</div>
+</section>
+<section id="pinout-xiao-esp32s3-plus" class="level2">
+<h2 class="anchored" data-anchor-id="pinout-xiao-esp32s3-plus">Pinout XIAO ESP32S3 Plus</h2>
+<p>Page du produit&nbsp;: <a href="https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Plus-p-6361.html" class="uri">https://www.seeedstudio.com/Seeed-Studio-XIAO-ESP32S3-Plus-p-6361.html</a></p>
+<blockquote class="blockquote">
+<p>Note&nbsp;: Comparé à l’ESP32S3, l’ESP32S3 Plus a 9&nbsp;GPIO supplémentaires disponibles sur les broches semi-circulaires.</p>
+</blockquote>
+<p>Schéma de l’ESP32S3&nbsp;: <a href="https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_SCH_v1.1.pdf" class="uri">https://files.seeedstudio.com/wiki/SeeedStudio-XIAO-ESP32S3/res/XIAO_ESP32S3_SCH_v1.1.pdf</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./images/XIAO-ESP32S3-Plus.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-21" title="XIAO-ESP32S3-Plus"><img src="./images/XIAO-ESP32S3-Plus.jpg" class="img-fluid figure-img" alt="XIAO-ESP32S3-Plus"></a></p>
+<figcaption>XIAO-ESP32S3-Plus</figcaption>
+</figure>
+</div>
+</section>
+<section id="pinout-xiao-wio-sx1262" class="level2">
+<h2 class="anchored" data-anchor-id="pinout-xiao-wio-sx1262">Pinout XIAO WIO-SX1262</h2>
+<p>Schéma du WIO-SX1262&nbsp;: <a href="https://files.seeedstudio.com/products/SenseCAP/Wio_SX1262/Schematic_Diagram_Wio-SX1262_for_XIAO.pdf" class="uri">https://files.seeedstudio.com/products/SenseCAP/Wio_SX1262/Schematic_Diagram_Wio-SX1262_for_XIAO.pdf</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="./images/Z4T-WIO-SX1262.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-22" title="XIAO-WIO-SX1262"><img src="./images/Z4T-WIO-SX1262.webp" class="img-fluid figure-img" alt="XIAO-WIO-SX1262"></a></p>
+<figcaption>XIAO-WIO-SX1262</figcaption>
+</figure>
+</div>
+
+
 </section>
 
 <p>© ouilogique.com</p></main> <!-- /main -->

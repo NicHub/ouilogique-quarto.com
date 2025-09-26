@@ -16,7 +16,7 @@ pagetitle: '{{< meta title >}} &#8211; ouilogique.com'
 title: Mélodies avec un Arduino&nbsp;UNO
 ---
 
-Voici un programme écrit par [Pierre-Yves Rochat, professeur du MOOC sur les µcontrôleurs de l’EPFL](https://fr.coursera.org/course/microcontroleurs) qui montre comment utiliser les timers et les interruptions de l’Arduino UNO (ou du Diduino) pour jouer des mélodies.
+Voici un programme écrit par [Pierre-Yves Rochat, professeur du MOOC sur les µcontrôleurs de l’EPFL](https://www.coursera.org/learn/microcontroleurs){rel="nofollow"} qui montre comment utiliser les timers et les interruptions de l’Arduino UNO (ou du Diduino) pour jouer des mélodies.
 
 Le fonctionnement du programme est décrit dans ce document :
 

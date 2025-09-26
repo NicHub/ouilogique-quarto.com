@@ -28,7 +28,7 @@ Cet article m’a été inspiré par [la vidéo d’Andreas Spiess “How to Hac
 
 ## Matériel
 
--   SDR-Dongle: <http://s.click.aliexpress.com/e/bQ91w8QM>{rel="nofollow"} ou <http://bit.ly/2NcRMT2>
+-   SDR-Dongle: <http://s.click.aliexpress.com/e/bQ91w8QM>{rel="nofollow"} ou <http://bit.ly/2NcRMT2>{rel="nofollow"}
 -   Raspberry Pi modèle 2 ou 3. On peut aussi utiliser URH sur Windows, Linux et sur Mac, donc le RPi est optionnel. À noter que l’adaptateur SDR que j’ai n’est pas reconnu par URH sur mon Mac et j’ai donc opté pour la solution RPi.
 -   Un Arduino UNO ou équivalent
 -   Un bouton
@@ -129,3 +129,21 @@ Et il ne reste plus qu’à flasher l’Arduino et faire un test.
 [rf433-spoof sur github]: https://github.com/NicHub/ouilogique-Arduino/tree/master/rf433-spoof
 [émetteur rf433]: https://fr.aliexpress.com/item/1Lot-1-pair-2pcs-RF-wireless-receiver-module-transmitter-module-Ordinary-super-regeneration-315-433MHZ-DC5V/968306683.html
 [clé rf433]: https://fr.aliexpress.com/item/Universal-2-Channels-Electric-Garage-Door-Cloning-Remote-Control-Key-Fob-433mhz/32816768549.html
+
+## Autres logiciels
+
+### CubicSDR
+
+[cubicsdr.com](https://cubicsdr.com/)
+
+![Cubic SDR][img_5]
+
+[img_5]: ./images/hacker-une-cle-rf433-005.jpg
+
+### SDRangel
+
+[www.sdrangel.org](https://www.sdrangel.org/)
+
+![SDR angel][img_6]
+
+[img_6]: ./images/hacker-une-cle-rf433-006.jpg

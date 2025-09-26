@@ -135,6 +135,10 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://github.com/NicHub/stewart-platform-esp32" class="uri">https://github.com/NicHub/stewart-platform-esp32</a></li>
 </ul>
+<p>Le code de ce projet a été utilisé par Jakob Frabosilio pour sa thèse de Master qu’il a présenté en septembre 2024 à <em>Cal Poly</em> (<em>Faculty of California Polytechnic State University</em>), San Luis Obispo.</p>
+<p><a href="https://digitalcommons.calpoly.edu/theses/2914/">Design and Implementation of an Inverted Short Baseline Acoustic Positioning System</a></p>
+<p>Quelques images et vidéos sont disponibles ici&nbsp;:</p>
+<p><a href="https://github.com/NicHub/stewart-platform-esp32/issues/5" class="uri">https://github.com/NicHub/stewart-platform-esp32/issues/5</a></p>
 </section>
 <section id="quatrième-version" class="level2">
 <h2 class="anchored" data-anchor-id="quatrième-version">Quatrième version</h2>
@@ -153,18 +157,19 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <iframe width="799" height="449" src="https://www.youtube-nocookie.com/embed/1ll8JVwJC50?si=UcQgFnI2AXPPRVbU" title="YouTube video player" frameborder="0" allow="web-share" allowfullscreen="">
 </iframe>
+<p><br></p>
 <blockquote class="blockquote">
-<p>Changement de bande adhésive pour tenir le câble du Nunshunk. Le fil rouge à gauche du breadboard ne sert à rien.</p>
+<p>Changement de bande adhésive pour tenir le câble du Nunshunk et ajout d’un condensateur de 10&nbsp;µF entre la broches RST et GND qui permet de <a href="../ne-pressez-plus-sur-boot-pour-flasher-un-esp/">ne plus être obligé de presser sur BOOT lorsqu’on flashe l’ESP</a>.</p>
 </blockquote>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2023-01-30-proto-plateforme-de-stewart_001.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Plateforme de Stewart — ouilogique.com"><img src="./images/2023-01-30-proto-plateforme-de-stewart_001.jpg" class="img-fluid figure-img" alt="Plateforme de Stewart — ouilogique.com"></a></p>
+<p><a href="./images/2024-04-14-proto-plateforme-de-stewart_001.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Plateforme de Stewart — ouilogique.com"><img src="./images/2024-04-14-proto-plateforme-de-stewart_001.jpg" class="img-fluid figure-img" alt="Plateforme de Stewart — ouilogique.com"></a></p>
 <figcaption>Plateforme de Stewart — ouilogique.com</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="./images/2023-01-30-proto-plateforme-de-stewart_002.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Plateforme de Stewart — ouilogique.com"><img src="./images/2023-01-30-proto-plateforme-de-stewart_002.jpg" class="img-fluid figure-img" alt="Plateforme de Stewart — ouilogique.com"></a></p>
+<p><a href="./images/2024-04-14-proto-plateforme-de-stewart_003.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Plateforme de Stewart — ouilogique.com"><img src="./images/2024-04-14-proto-plateforme-de-stewart_003.jpg" class="img-fluid figure-img" alt="Plateforme de Stewart — ouilogique.com"></a></p>
 <figcaption>Plateforme de Stewart — ouilogique.com</figcaption>
 </figure>
 </div>
@@ -336,7 +341,9 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="meccad-ball-and-plate" class="level2">
 <h2 class="anchored" data-anchor-id="meccad-ball-and-plate">MECCAD Ball and plate</h2>
-<p>https://youtu.be/bEM5AywnzKg</p>
+<ul>
+<li>https://youtu.be/bEM5AywnzKg</li>
+</ul>
 </section>
 <section id="sprk-a-low-cost-stewart-platform-for-motion-study-in-surgical-robotics" class="level2">
 <h2 class="anchored" data-anchor-id="sprk-a-low-cost-stewart-platform-for-motion-study-in-surgical-robotics">SPRK: A Low-Cost Stewart Platform For Motion Study In Surgical Robotics</h2>
@@ -556,15 +563,21 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 <section id="système-complet-avec-caméra-swiftflying-store" class="level3">
-<h3 class="anchored" data-anchor-id="système-complet-avec-caméra-swiftflying-store">Système complet avec caméra <a href="https://swiftflying.fr.aliexpress.com/store/3246059">Swiftflying Store</a></h3>
+<h3 class="anchored" data-anchor-id="système-complet-avec-caméra-swiftflying-store">Système complet avec caméra <a href="https://swiftflying.fr.aliexpress.com/store/3246059" rel="nofollow">Swiftflying Store</a></h3>
 <ul>
-<li>Le lien ne fonctionne plus&nbsp;: fr.aliexpress.com/item/32957141466.html</li>
+<li><a href="https://fr.aliexpress.com/item/32957141466.html" rel="nofollow">https://fr.aliexpress.com/item/32957141466.html</a></li>
 </ul>
+<!--
+## Pinout
+
+31 DIRA GPIO14
+34 TC5 GPIO13
+TC4 GPIO15
+STPA
+STPB
+28 DIRB GPIO25
+-->
 </section>
-</section>
-<section id="pinout" class="level2">
-<h2 class="anchored" data-anchor-id="pinout">Pinout</h2>
-<p>31 DIRA GPIO14 34 TC5 GPIO13 TC4 GPIO15 STPA STPB 28 DIRB GPIO25</p>
 </section>
 <section id="delta-robot-one-robot-delta-arduino" class="level2">
 <h2 class="anchored" data-anchor-id="delta-robot-one-robot-delta-arduino">DELTA-ROBOT ONE — Robot Delta Arduino</h2>
@@ -585,11 +598,11 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="https://corpus.ulaval.ca/jspui/bitstream/20.500.11794/23444/1/28962.pdf" rel="nofollow">https://corpus.ulaval.ca/jspui/bitstream/20.500.11794/23444/1/28962.pdf</a></li>
 <li><a href="https://stringfixer.com/fr/Stewart_platform" rel="nofollow">https://stringfixer.com/fr/Stewart_platform</a></li>
-<li><a href="https://fr.lambdageeks.com/parallel-robot-kinematics/" class="uri">https://fr.lambdageeks.com/parallel-robot-kinematics/</a></li>
+<li><a href="https://fr.lambdageeks.com/parallel-robot-kinematics/" rel="nofollow">https://fr.lambdageeks.com/parallel-robot-kinematics/</a></li>
 <li><a href="https://fr.wikipedia.org/wiki/Reymond_Clavel" class="uri">https://fr.wikipedia.org/wiki/Reymond_Clavel</a></li>
 <li><a href="https://fr.wikipedia.org/wiki/Robot_Delta" class="uri">https://fr.wikipedia.org/wiki/Robot_Delta</a></li>
 <li><a href="https://vimeo.com/129643275" class="uri">https://vimeo.com/129643275</a></li>
-<li><a href="https://www.ni.com/fr-ch/shop/product/6-dof-stewart-platform-control-library.html" class="uri">https://www.ni.com/fr-ch/shop/product/6-dof-stewart-platform-control-library.html</a></li>
+<li><a href="https://www.ni.com/fr-ch/shop/product/6-dof-stewart-platform-control-library.html" rel="nofollow">https://www.ni.com/fr-ch/shop/product/6-dof-stewart-platform-control-library.html</a></li>
 <li><a href="https://www.ni.com/fr-ch/shop/product/stewart-platform-trainer-toolkit.html" class="uri">https://www.ni.com/fr-ch/shop/product/stewart-platform-trainer-toolkit.html</a></li>
 <li><a href="https://www.xarg.org/paper/inverse-kinematics-of-a-stewart-platform/" class="uri">https://www.xarg.org/paper/inverse-kinematics-of-a-stewart-platform/</a></li>
 <li><a href="https://youtu.be/1jrP3_1ML9M" class="uri">https://youtu.be/1jrP3_1ML9M</a></li>
@@ -614,10 +627,28 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://youtu.be/VeD4_FghKhQ" class="uri">https://youtu.be/VeD4_FghKhQ</a></li>
 <li><a href="https://youtu.be/PzOGIeGEyHY" class="uri">https://youtu.be/PzOGIeGEyHY</a></li>
 <li><a href="https://upcommons.upc.edu/bitstream/handle/2117/101560/Memoria_TFG_Aitor_Ramirez.pdf?sequence=1&amp;isAllowed=y" class="uri">https://upcommons.upc.edu/bitstream/handle/2117/101560/Memoria_TFG_Aitor_Ramirez.pdf?sequence=1&amp;isAllowed=y</a></li>
+<li><a href="https://youtu.be/hkoTRNfivbU">Fast Programming of 6-DOF Hexapod 6-Axis Motion Stewart Platform: Software, Mechanics, Controller</a></li>
+<li><a href="https://youtu.be/fDgqAfzSy0c">Stewart Platform Joystick</a></li>
+<li><a href="https://youtu.be/v4F-cGDGiEw">I Built a Ball Balancing Robot</a></li>
+<li><a href="https://www.youtube.com/watch?v=pfTdJD2OakA">How Flight Simulators Trick Your Brain</a></li>
 </ul>
-<p><a href="https://youtu.be/hkoTRNfivbU">Fast Programming of 6-DOF Hexapod 6-Axis Motion Stewart Platform: Software, Mechanics, Controller</a></p>
-<p><a href="https://youtu.be/fDgqAfzSy0c">Stewart Platform Joystick</a></p>
-<p><a href="https://youtu.be/v4F-cGDGiEw">I Built a Ball Balancing Robot</a></p>
+</section>
+<section id="liens-vers-cette-page" class="level2">
+<h2 class="anchored" data-anchor-id="liens-vers-cette-page">Liens vers cette page</h2>
+<ul>
+<li><a href="https://www.oly-forum.com/topic/22413-hexapod-als-makrokopf/?do=findComment&amp;comment=465403">Hexapod als Makrokopf?</a></li>
+</ul>
+</section>
+<section id="à-classer" class="level2">
+<h2 class="anchored" data-anchor-id="à-classer">À classer</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=kAaYaZcpbLo">Ball Balancing Robot pt.1</a></li>
+<li><a href="https://github.com/T-Kuhn/HighPrecisionStepperJuggler/">HighPrecisionStepperJuggler</a>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=lYyAMDYzJQM">The Octo-Bouncer</a></li>
+</ul></li>
+<li><a href="https://www.youtube.com/watch?v=0BDvbljP4Yk">Why this Plate never lets the Ball Fall? Ball on Plate PID controller with Arduino</a></li>
+</ul>
 
 
 </section>

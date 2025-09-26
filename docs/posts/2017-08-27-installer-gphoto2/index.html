@@ -261,6 +261,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><a href="https://github.com/NicHub/ouilogique.com/commit/d4f594d08b8c9a30e6577072fafda794f4ec93bc" class="uri">https://github.com/NicHub/ouilogique.com/commit/d4f594d08b8c9a30e6577072fafda794f4ec93bc</a></li>
 <li><a href="https://packages.debian.org/stretch/gphoto2" class="uri">https://packages.debian.org/stretch/gphoto2</a></li>
 </ul>
+</section>
+<section id="préparer-un-appareil-android" class="level2">
+<h2 class="anchored" data-anchor-id="préparer-un-appareil-android">Préparer un appareil Android</h2>
+<p>source&nbsp;: <a href="https://www.xda-developers.com/install-adb-windows-macos-linux/" class="uri">https://www.xda-developers.com/install-adb-windows-macos-linux/</a></p>
+<ul>
+<li>Activer les options de développement</li>
+<li>Activer le débogage USB</li>
+</ul>
+</section>
+<section id="préparer-un-mac" class="level2">
+<h2 class="anchored" data-anchor-id="préparer-un-mac">Préparer un Mac</h2>
+<p>Installer ADB (Android Debug Bridge)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> update <span class="kw">&amp;&amp;</span> <span class="ex">brew</span> upgrade</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install android-platform-tools</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> <span class="at">--help</span> <span class="kw">|</span> <span class="fu">less</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> devices</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> daemon not running<span class="kw">;</span> <span class="ex">starting</span> now at tcp:5037</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">*</span> daemon started successfully</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="ex">List</span> of devices attached</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="ex">R3CR306GCCY</span> unauthorized</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Autoriser sur l’appareil Android</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> devices</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">List</span> of devices attached</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">R3CR306GCCY</span> device</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="co"># CTRL D pour sortir</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> pull /storage/emulated/0/DCIM/Screenshots</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> pull /storage/emulated/0/DCIM/Camera/20240529_105639.heic</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> pull /sdcard/DCIM/Camera/</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="idées-en-vrac" class="level2">
+<h2 class="anchored" data-anchor-id="idées-en-vrac">Idées en vrac</h2>
+<blockquote class="blockquote">
+<p>Faut que je mette de l’ordre dans cette section…</p>
+</blockquote>
+<p><a href="https://github.com/Genymobile/scrcpy" class="uri">https://github.com/Genymobile/scrcpy</a></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install scrcpy</span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<p><a href="https://www.lesimprimantes3d.fr/forum/topic/47189-tuto-octolapse-pour-des-appareils-android-non-support%C3%A9s-par-gphoto2/" class="uri">https://www.lesimprimantes3d.fr/forum/topic/47189-tuto-octolapse-pour-des-appareils-android-non-support%C3%A9s-par-gphoto2/</a></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell am start <span class="at">-a</span> android.media.action.IMAGE_CAPTURE</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"am start -a android.media.action.STILL_IMAGE_CAMERA"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"input keyevent KEYCODE_WAKEUP"</span>  <span class="co">#...................... déverrouillage</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"input keyevent KEYCODE_SLEEP"</span> <span class="co">#........................ verrouillage</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"input keyevent KEYCODE_HOME"</span> <span class="co">#......................... écran d'accueil</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"input keyevent KEYCODE_CAMERA"</span> <span class="co">#....................... prise de la photo</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"input keyevent KEYCODE_FOCUS"</span> <span class="co">#........................ focus manuel avant de prendre une photo</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"am start -a android.media.action.IMAGE_CAPTURE"</span> <span class="co">#...... ouverture de l'application photo par défaut</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"am start -a android.media.action.STILL_IMAGE_CAMERA"</span> <span class="co">#. ouverture de l'application photo par défaut</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell <span class="st">"am force-stop com.sec.android.app.camera"</span> <span class="co">#............ fermeture de l'application photo</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell ls <span class="co">#.................................................... la fonction "ls" classique avec tous les paramètres possibles</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> pull <span class="va">$FullFileName</span> <span class="co">#.......................................... copier de fichier(s)</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="ex">adb</span> shell rm <span class="va">$FullFileName</span> <span class="co">#...................................... suppression de fichier(s)</span></span></code></pre></div><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></div>
+<!--
+"gphoto2" smartphone
+20220916_105454.jpg
+-->
 
 
 </section>

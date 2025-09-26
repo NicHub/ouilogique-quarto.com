@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/2024-04-24-roi/index.html",
+      "/posts/2024-02-08-nombre-polygonal-centre/index.html",
       "/posts/2023-11-11-ne-pressez-plus-sur-boot-pour-flasher-un-esp/index.html",
       "/posts/2023-10-07-test-lightbox/index.html",
       "/posts/2023-05-30-flasher-un-bootloader/index.html",
