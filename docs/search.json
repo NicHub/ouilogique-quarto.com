@@ -2163,41 +2163,6 @@
     "text": "Liens\n\nBMP180 Digital pressure sensor — Bosch Sensortec\nTSL2560, TSL2561 Light-to-Digital Converter — TAOS\nLien fourni sur page support Banggood http://pan.baidu.com/s/1qWjYtqs\n\n\n\n\nouilogique.com\n\n\n\n\n\nouilogique.com"
   },
   {
-    "objectID": "posts/2023-10-07-test-lightbox/index.html",
-    "href": "posts/2023-10-07-test-lightbox/index.html",
-    "title": "Simple Lightbox Example",
-    "section": "",
-    "text": "Here is a simple image with a description. This also overrides the description position and places it to the left of the image.\n\n\n\nBeach in Chilmark\n© ouilogique.com"
-  },
-  {
-    "objectID": "posts/2023-10-07-test-lightbox/index.html#chilmark",
-    "href": "posts/2023-10-07-test-lightbox/index.html#chilmark",
-    "title": "Simple Lightbox Example",
-    "section": "",
-    "text": "Here is a simple image with a description. This also overrides the description position and places it to the left of the image.\n\n\n\nBeach in Chilmark"
-  },
-  {
-    "objectID": "posts/2023-10-07-test-lightbox/index.html#elsewhere",
-    "href": "posts/2023-10-07-test-lightbox/index.html#elsewhere",
-    "title": "Simple Lightbox Example",
-    "section": "Elsewhere",
-    "text": "Elsewhere\nThe below demonstrates placing more than one image in a gallery. Note the usage of the layout-ncol which arranges the images on the page side by date. Adding the group attribute to the markdown images places the images in a gallery grouped together based upon the group name provided.\n\n\n\n\n\n\nAquinnah\n\n\n\n\n\n\n\nOak Bluffs\n\n\n\n\n\n\n\n\n\nVineyard lighthouse"
-  },
-  {
-    "objectID": "posts/2023-10-07-test-lightbox/index.html#with-computation-code-chunks",
-    "href": "posts/2023-10-07-test-lightbox/index.html#with-computation-code-chunks",
-    "title": "Simple Lightbox Example",
-    "section": "With computation code chunks",
-    "text": "With computation code chunks\nOptions for lightbox can be passed using chunk options.\n\nplot(1:10, rnorm(10))\n\n\n\n\nSimple demo R plot\n\n\n\n\n\nplot(cars)\n\n\n\n\nPlot about cars data\n\n\n\n\nIt is possible to create several plots, and group them in a lightbox gallery. Use list in YAML for options when you have several plots, on per plot.\n\nplot(mtcars)\n\n\n\n\nCaption for first plot\n\n\n\nplot(cars)\n\n\n\n\nCaption for second plot\n\n\n\n\nWhen lightbox: auto in main YAML config, you can opt-out lightbox on a plot by setting lightbox: false\n\nplot(mtcars)\n\n\n\n\nmtcars"
-  },
-  {
-    "objectID": "posts/2023-10-07-test-lightbox/index.html#credits",
-    "href": "posts/2023-10-07-test-lightbox/index.html#credits",
-    "title": "Simple Lightbox Example",
-    "section": "Credits",
-    "text": "Credits\nThe images in this example were used under the Unsplash license, view originals below:\n\nChilmark Beach\nAquinnah\nGingerbread House\nEdgartown Light\nEdgartown Sailboat\n\n\nplot(1:10, rnorm(10))\n\n\n\n\nSimple demo R plot\n\n\n\n\nhttps://vscode.dev/github/NicHub/ouilogique-quarto.com/blob/gh-pages/posts/2023-10-07-test-lightbox/index.qmd\ntest\n\n\n\n\n\n\nFigure 1: An Elephant\n\n\n\n\n\n\nAn Elephant\n\n\n\n\n\nAn Elephant\n\n\nThis is illustrated well by Figure 1.\nLink to test @test\n\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\n\nPlateforme de Stewart — ouilogique.com\n\n\n\n\n\n\nFigure 2: Famous Elephants\n\n\n\n\n\n\n\nChilmark has a reputation as having some of the best beaches on Martha’s Vineyard. Chilmark beaches are resident only in the summer, so be sure to have your proof of residency ready if you’d like to visit one of these special places. credit: Chilmark Beach\n\n\nThe waves break off the coast of Aquinnah on a beautiful summer day.\n\n\nOak Bluffs is famous for its Gingerbread cottages, busy town center, and party like atmosphere.\n\n\nThe Edgartown Lighthouse is a short walk from downtown and has beautiful views over the entrance to Edgartown Harbor.\n\n\nThis is 1 to 10 plot\n\n\nWe see our cars data above\n\n\nThis is the decription for first graph\n\n\nThis is the decription for second graph\n\n\nThis is 1 to 10 plot"
-  },
-  {
     "objectID": "posts/2015-11-16-NodeMCU_esp8266_amica/index.html",
     "href": "posts/2015-11-16-NodeMCU_esp8266_amica/index.html",
     "title": "Mise en route d’une carte Amica avec le firmware NodeMCU et un module WiFi ESP8266",
@@ -2534,6 +2499,69 @@
     "text": "theasciicode.com.ar\n\nhttps://theasciicode.com.ar/"
   },
   {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html",
+    "title": "Trucs et astuces en Bash",
+    "section": "",
+    "text": "terminal\nshell\nligne de commande\nconsole\n\nEn informatique, quelle est la différence entre une console, un shell, un terminal ?\nLes termes “console”, “shell” et “terminal” sont souvent utilisés de manière interchangeable, mais il existe en réalité des différences subtiles entre ces concepts en informatique.\nUne console fait référence à une interface utilisateur textuelle qui permet d'accéder à un système informatique, généralement sans interface graphique. Elle peut être située sur un ordinateur local ou être utilisée pour se connecter à distance à un système distant.\n\nUn shell (ou \"interpréteur de commandes\") est un programme qui fournit une interface en ligne de commande (CLI) à l'utilisateur pour interagir avec le système d'exploitation. Le shell peut être exécuté à l'intérieur d'une console ou d'un terminal, et il permet d'exécuter des commandes en tapant des instructions textuelles.\n\nUn terminal est un programme qui fournit une interface graphique à une console, permettant ainsi à l'utilisateur de visualiser et d'interagir avec le système d'exploitation de manière plus conviviale. Le terminal peut également exécuter un shell pour permettre à l'utilisateur d'exécuter des commandes en ligne de commande.\nEn résumé, une console est une interface utilisateur textuelle brute, un shell est un programme qui permet d’exécuter des commandes en ligne de commande, et un terminal est un programme qui fournit une interface graphique à une console pour permettre une interaction plus conviviale avec le système d’exploitation.\n© ouilogique.com"
+  },
+  {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#quelques-termes",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#quelques-termes",
+    "title": "Trucs et astuces en Bash",
+    "section": "",
+    "text": "terminal\nshell\nligne de commande\nconsole\n\nEn informatique, quelle est la différence entre une console, un shell, un terminal ?\nLes termes “console”, “shell” et “terminal” sont souvent utilisés de manière interchangeable, mais il existe en réalité des différences subtiles entre ces concepts en informatique.\nUne console fait référence à une interface utilisateur textuelle qui permet d'accéder à un système informatique, généralement sans interface graphique. Elle peut être située sur un ordinateur local ou être utilisée pour se connecter à distance à un système distant.\n\nUn shell (ou \"interpréteur de commandes\") est un programme qui fournit une interface en ligne de commande (CLI) à l'utilisateur pour interagir avec le système d'exploitation. Le shell peut être exécuté à l'intérieur d'une console ou d'un terminal, et il permet d'exécuter des commandes en tapant des instructions textuelles.\n\nUn terminal est un programme qui fournit une interface graphique à une console, permettant ainsi à l'utilisateur de visualiser et d'interagir avec le système d'exploitation de manière plus conviviale. Le terminal peut également exécuter un shell pour permettre à l'utilisateur d'exécuter des commandes en ligne de commande.\nEn résumé, une console est une interface utilisateur textuelle brute, un shell est un programme qui permet d’exécuter des commandes en ligne de commande, et un terminal est un programme qui fournit une interface graphique à une console pour permettre une interaction plus conviviale avec le système d’exploitation."
+  },
+  {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#utilité-de-tmux",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#utilité-de-tmux",
+    "title": "Trucs et astuces en Bash",
+    "section": "Utilité de tmux",
+    "text": "Utilité de tmux\ncrontab led @reboot /usr/bin/python3 /home/pi/Desktop/led_chase_1.py\nhttps://linuxize.com/post/bash-check-if-file-exists/\n[ -r /home/pi/.bash_profile ] && . /home/pi/.bash_profile [ -r /home/pi/.byobu/prompt ] && . /home/pi/.byobu/prompt #byobu-prompt#"
+  },
+  {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#update",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#update",
+    "title": "Trucs et astuces en Bash",
+    "section": "update",
+    "text": "update\nLa commande Bash sudo apt-get update sert à mettre à jour la liste des paquets disponibles sur un système Ubuntu ou Debian.\nPlus précisément, cette commande va se connecter aux serveurs de packages du système d’exploitation et télécharger les informations les plus récentes sur les paquets disponibles, leurs dépendances et les mises à jour disponibles.\nCela permet de maintenir le système à jour et de s’assurer que les dernières versions des logiciels et des correctifs de sécurité sont disponibles pour l’installation.\nIl est important de noter que cette commande ne met pas à jour les paquets eux-mêmes, mais seulement la liste des paquets disponibles. Pour installer les mises à jour disponibles, il faut utiliser la commande sudo apt-get upgrade."
+  },
+  {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#upgrade",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#upgrade",
+    "title": "Trucs et astuces en Bash",
+    "section": "upgrade",
+    "text": "upgrade\nLa commande Bash sudo apt-get upgrade sert à mettre à jour les paquets installés sur un système Ubuntu ou Debian.\nPlus précisément, cette commande va télécharger et installer les mises à jour disponibles pour les paquets installés sur le système. Cela permet de maintenir le système à jour en installant les dernières versions des logiciels et des correctifs de sécurité.\nIl est important de noter que la commande sudo apt-get upgrade ne va pas installer de nouveaux paquets, elle se contente de mettre à jour les paquets existants. Si vous souhaitez installer de nouveaux paquets, vous pouvez utiliser la commande sudo apt-get install suivie du nom du paquet que vous souhaitez installer.\nIl est recommandé de régulièrement exécuter la commande sudo apt-get update suivi de la commande sudo apt-get upgrade pour s’assurer que votre système est à jour et sécurisé."
+  },
+  {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#dist-upgrade",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#dist-upgrade",
+    "title": "Trucs et astuces en Bash",
+    "section": "dist-upgrade",
+    "text": "dist-upgrade\nLa commande Bash sudo apt-get dist-upgrade sert à effectuer une mise à niveau complète du système d’exploitation Ubuntu ou Debian.\nPlus précisément, cette commande va mettre à jour tous les paquets installés sur le système, y compris ceux qui nécessitent des modifications importantes de dépendances ou qui nécessitent la suppression ou l’ajout de nouveaux paquets.\nLa commande sudo apt-get dist-upgrade peut être utilisée pour effectuer une mise à niveau majeure du système, par exemple lorsqu’une nouvelle version majeure d’Ubuntu ou Debian est disponible.\nIl est important de noter que la commande sudo apt-get dist-upgrade est plus puissante que la commande sudo apt-get upgrade et peut entraîner la suppression ou l’ajout de paquets. Il est donc recommandé de bien vérifier les changements proposés avant de procéder à la mise à niveau.\nEn général, il est recommandé de faire une sauvegarde complète du système avant de procéder à une mise à niveau majeure."
+  },
+  {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#apt-get-vs-apt",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#apt-get-vs-apt",
+    "title": "Trucs et astuces en Bash",
+    "section": "apt-get vs apt",
+    "text": "apt-get vs apt\nLes commandes apt-get et apt sont toutes deux des outils de gestion de paquets pour les systèmes Ubuntu et Debian.\nLa principale différence entre ces deux commandes est que apt est une version simplifiée et plus conviviale de apt-get avec des options plus intuitives et des messages d’erreur plus clairs.\nLa commande apt offre une expérience utilisateur plus conviviale et plus facile à utiliser, en affichant des informations plus précises et en fournissant une sortie plus conviviale que apt-get.\nCependant, apt-get est toujours largement utilisé et peut être plus flexible dans certains cas d’utilisation, car il offre un contrôle plus fin sur les options et les paramètres.\nEn général, les deux commandes sont largement interchangeables et peuvent être utilisées selon les préférences personnelles de l’utilisateur."
+  },
+  {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#les-flux-standard-de-linux",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#les-flux-standard-de-linux",
+    "title": "Trucs et astuces en Bash",
+    "section": "Les flux standard de Linux",
+    "text": "Les flux standard de Linux\nSource : https://www.howtogeek.com/435903/what-are-stdin-stdout-and-stderr-on-linux/\nSous Linux, les flux - comme presque tout le reste - sont traités comme des fichiers. Vous pouvez lire du texte à partir d’un fichier et vous pouvez écrire du texte dans un fichier. Ces deux actions impliquent un flux de données. Le concept de traitement d’un flux de données comme un fichier n’est donc pas si compliqué que cela.\nIl y a trois flux standard :\n\nstdin (standard in) est le flux d’entrée standard. Il accepte du texte en entrée.\nstdout (standard out) est le flux de sortie standard.\nstderr (standard error) permet de renvoyer des éventuelles erreurs.\n\nSous Linux, les flux - comme presque tout le reste - sont traités comme des fichiers. Vous pouvez lire du texte à partir d’un fichier et vous pouvez écrire du texte dans un fichier. Ces deux actions impliquent un flux de données. Le concept de traitement d’un flux de données comme un fichier n’est donc pas si compliqué que cela.\nChaque fichier associé à un processus se voit attribuer un numéro unique pour l’identifier. C’est ce qu’on appelle le descripteur de fichier. Chaque fois qu’une action doit être effectuée sur un fichier, le descripteur de fichier est utilisé pour identifier le fichier.\nCes valeurs sont toujours utilisées pour stdin, stdout et stderr :\n0: stdin\n1: stdout\n2: stderr"
+  },
+  {
+    "objectID": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#commandes-utiles",
+    "href": "posts/2023-02-17-trucs-et-astuces-en-bash/index.html#commandes-utiles",
+    "title": "Trucs et astuces en Bash",
+    "section": "Commandes utiles",
+    "text": "Commandes utiles\ngrep # tout seul ou en pipe find ls rclone ps which man kill git md5 zip chmod alias sudo nano byobu cd ping wget curl apt-get arp -a echo printf"
+  },
+  {
     "objectID": "posts/2023-05-30-flasher-un-bootloader/index.html",
     "href": "posts/2023-05-30-flasher-un-bootloader/index.html",
     "title": "Flasher un bootloader",
@@ -2833,5 +2861,40 @@
     "title": "OUILOGIQUE.COM",
     "section": "Bienvenue sur ouilogique.com",
     "text": "Bienvenue sur ouilogique.com\nCe blog me sert d’aide-mémoire pour mes projets IoT sur Arduino et Raspberry Pi.\nBonne visite."
+  },
+  {
+    "objectID": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html",
+    "href": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html",
+    "title": "Comment quadrupler la taille d’une chaine en lui ajoutant un seul caractère ?",
+    "section": "",
+    "text": "Dans cet article, nous allons découvrir qu’avec Python, il est possible de quadrupler la mémoire nécessaire à une chaine en ne lui ajoutant qu’un seul caractère.\nLes versions utilisées pour les tests sont :\nL’OS est macOS Sonoma 14.2.1 et les interpréteurs Python ont été installés avec Homebrew.\nL’idée m’est venue d’écrire cet article à la suite d’une question sur Stackoverflow concernant la comparaison entre la taille de deux chaines : une chaine dans un fichier UTF-8 stocké sur un disque et la même chaine dans une variable Python de type string. L’auteur s’étonne que la taille en mémoire soit 4 fois plus grande que celle sur disque. Mais est-ce si surprenant ? Voyons cela d’un peu plus près.\n© ouilogique.com"
+  },
+  {
+    "objectID": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html#différences-de-tailles",
+    "href": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html#différences-de-tailles",
+    "title": "Comment quadrupler la taille d’une chaine en lui ajoutant un seul caractère ?",
+    "section": "Différences de tailles",
+    "text": "Différences de tailles\nIl faut d’abord savoir que Python enregistre les chaines avec des caractères codés sur 1, 2 ou 4 octets, mais tous les caractères d’une même chaine doivent être codés avec le même nombre d’octets. C’est “l’encodage à taille fixe” ou “fixed-width encoding” en anglais.\nEn UTF-8, les choses sont un peu différentes, les caractères d’une chaine sont stockés sur 1, 2, 3 ou 4 octets, mais il est possible d’utiliser des caractères codés avec des nombres différents d’octets dans la même chaine. C’est “l’encodage à taille variable”, ou “variable-width encoding” en anglais.\nCette différence entre taille fixe et taille variable a une conséquence intéressante : il est possible de quadrupler la taille d’une chaine en mémoire en lui ajoutant un seul caractère. Voici comment."
+  },
+  {
+    "objectID": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html#cas-où-la-taille-est-presque-identique-en-python-et-utf-8",
+    "href": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html#cas-où-la-taille-est-presque-identique-en-python-et-utf-8",
+    "title": "Comment quadrupler la taille d’une chaine en lui ajoutant un seul caractère ?",
+    "section": "Cas où la taille est (presque) identique en Python et UTF-8",
+    "text": "Cas où la taille est (presque) identique en Python et UTF-8\nTout d’abord, créons une chaine contenant 1000 fois le même caractère codé sur 1 octet, par exemple le caractère A (chr(65)) et regardons la taille du résultat.\nimport os\nimport sys\n\nprint(\"# chaine                         : 1000 * chr(65)\")\ns1 = 1000 * chr(65)\nprint(f\"taille de la chaine python (RAM) : {sys.getsizeof(s1)} octets\")\n# 1049 avec Python 3.11\n# 1041 avec Python 3.12\nprint(type(s1))\n# &lt;class 'str'&gt;\nOn voit que cette chaine fait un peu plus que 1000 octets. Les 1000 premiers octets sont utilisés pour les 1000 caractères A et les quelques octets restants sont utilisés pour enregistrer des métadonnées. Mais laissons ça de côté pour l’instant.\nConvertissons maintenant cette chaine en sa représentation UTF-8.\ns1u = s1.encode(\"utf-8\")\nprint(f\"taille de la chaine utf-8 (RAM)  : {sys.getsizeof(s1u)} octets\")\n# 1033 Python 3.11 et 3.12\nprint(type(s1u))\n# &lt;class 'bytes'&gt;\nOn constate que la taille de la chaine codée en UTF-8 et stockée en mémoire vive est d’environ 1000 octets. Comme pour la chaine précédente, Python ajoute quelques octets pour les métadonnées. Cette chaîne est stockée avec le type bytes, c’est-à-dire une séquence d’octets immuables.\nConvertissons une deuxième fois cette chaine en UTF-8 en l’enregistrant sur le disque.\nfname = \"s1u.txt\"\nwith open(file=fname, mode=\"wt\", encoding=\"utf-8\") as _f:\n    _f.write(s1)\nprint(f\"taille de la chaine utf-8 (HD)   : {os.path.getsize(fname)} octets\")\n# 1000 Python 3.11 et 3.12\nOn constate que la taille de la chaine codée en UTF-8 et stockée sur un disque dur est exactement 1000 octets.\nConclusion : si on fait abstraction de la place prise par les métadonnées qui ne dépend pas de la taille de la chaine, on voit qu’une chaine qui contient plusieurs occurrences du caractère A a la même taille dans les trois cas : 1. en mémoire au format Python, 2. en mémoire au format UTF-8, 3. sur un disque au format UTF-8.\nVoyons maintenant quand cette égalité n’est plus vraie."
+  },
+  {
+    "objectID": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html#quadruplons-la-taille-de-la-chaine-python",
+    "href": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html#quadruplons-la-taille-de-la-chaine-python",
+    "title": "Comment quadrupler la taille d’une chaine en lui ajoutant un seul caractère ?",
+    "section": "Quadruplons la taille de la chaine Python",
+    "text": "Quadruplons la taille de la chaine Python\nAjoutons le caractère 😈 (chr(128520)) à notre chaine initiale et regardons quelle est la taille du résultat. À noter que ce caractère est codé sur 4 octets, autant dans une chaine Python qu’une chaine UTF-8.\ns2 = s1 + chr(128520)\nprint(f\"taille de la chaine python (RAM) : {sys.getsizeof(s2)} octets\")\n# 4080 avec Python version == 3.11\n# 4064 avec Python version == 3.12\nOn constate que sa taille est maintenant de 4000 octets, plus quelques octets pour les métadonnées. Sa taille en mémoire a donc quadruplé en ajoutant un seul caractère ! Bingo, c’est l’effet de l’encodage à largeur fixe ! Si un caractère de la chaine est codé sur 4 octets, alors tous les autres le seront aussi. On constate également que la taille des métadonnées a légèrement augmenté car les caractères seuls ne prennent que 1001 × 4 = 4004 octets. À noter également qu’en Python, les chaines sont immuables (immutables en anglais). Ce n’est donc pas la chaine initiale qui a quadruplé de taille, mais une copie modifiée de celle-ci.\nRegardons maintenant ce qui se passe si on convertit notre nouvelle chaine en UTF-8 et qu’on mesure la taille du résultat.\ns2u = s2.encode(\"utf-8\")\nprint(f\"taille de la chaine utf-8 (RAM)  : {sys.getsizeof(s2u)} octets\")\n# 1037 Python 3.11 et 3.12\nfname = \"s2u.txt\"\nwith open(file=fname, mode=\"wt\", encoding=\"utf-8\") as _f:\n    _f.write(s2)\nprint(f\"taille de la chaine utf-8 (HD)   : {os.path.getsize(fname)} octets\")\n# 1004 Python 3.11 et 3.12\nRésultat des courses, le rapport de taille entre la chaine Python et la chaine UTF-8 est donc de 4 !\nSi on refaisait l’exercice en utilisant 1000 × 😈 et 1 × A, on trouverait un rapport de taille proche de 1 (en faisant abstraction des métadonnées).\nOn constate également qu’en UTF-8 la taille de s2 est 4 octets plus grande que celle de s1. Ceci est dû au fait qu’UTF-8 enregistre les caractères avec leur taille initiale, donc 1000 × 1 octet pour le caractère A et 1 × 4 octets pour le caractère 😈. Comme précédemment, la chaine en mémoire prend quelques octets supplémentaires pour les métadonnées.\nDans cet article, je n’ai parlé que des caractères codés sur 1 ou 4 octets, mais le raisonnement peut être étendu aux caractères codés sur 2 ou 3 octets. Cependant, il faut prendre quelques précautions car les plages des tailles en octets ne se confondent pas pour tous les points de code. Par exemple, les points de code 2048 à 65’535 sont codés sur 3 octets en UTF-8 mais sur 2 octets en Python. \nEn conclusion, le rapport entre la taille mémoire utilisée par Python et la taille en UTF-8 peut varier d’un facteur allant de 1 à 4. Ces chiffres ne sont pas valables pour les très petites chaines à cause de la taille des métadonnées. Par contre dès que les chaines sont plus grandes, ça fonctionne très bien. J’ai mesuré ce rapport sur une dizaine de fichiers contenant des livres entiers en français et je trouve un rapport moyen de 1.9."
+  },
+  {
+    "objectID": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html#réponse-à-la-question",
+    "href": "posts/2024-01-07-quadrupler-la-taille-d-une-chaine-en-lui-ajoutant-un-seul-caractere/index.html#réponse-à-la-question",
+    "title": "Comment quadrupler la taille d’une chaine en lui ajoutant un seul caractère ?",
+    "section": "Réponse à la question",
+    "text": "Réponse à la question\nConcernant la question sur Stackoverflow, le fichier qui posait question peut être téléchargé ici : https://data.statmt.org/cc-100/it.txt.xz.\nL’archive pèse 8.3 Go et le fichier décompressé 32 Go. C’est assez volumineux, mais Python s’en sort très bien concernant la vitesse de lecture. J’arrive à créer le décompte ci-dessous en moins de 600 ms sur un MacBook Pro de 2021 avec une puce M1 Pro (qui peut faire mieux en Python ?).\nEt la réponse à la question, c’est que le fichier contient beaucoup plus de caractères codés sur 1 octet que de caractères codés sur 2, 3 ou 4 octets. C’est contre-intuitif, mais maintenant, vous savez pourquoi c’est comme ça.\n    1 byte·s ×    149_832_252 occurrence·s =     149_832_252 byte·s on disk\n    2 byte·s ×        941_043 occurrence·s =       1_882_086 byte·s on disk\n    3 byte·s ×        583_296 occurrence·s =       1_749_888 byte·s on disk\n    4 byte·s ×          3_208 occurrence·s =          12_832 byte·s on disk\n                               TOTAL UTF-8 =     153_477_058 byte·s on disk\n\n                     Total character count =     151_359_799 character·s\nSize in Python string format = 151_359_799 × 4 = 605_439_272 byte·s in RAM\n\n                   Ratio Python String / UTF-8 =         3.9"
   }
 ]
